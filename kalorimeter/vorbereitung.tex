@@ -3,6 +3,9 @@
 \usepackage[german]{babel}
 \usepackage{siunitx}
 
+\usepackage{biblatex}
+\addbibresource{quelle.bib}
+
 \usepackage{amsmath, amssymb}
 
 \begin{document}
@@ -11,7 +14,7 @@ Zusammenhang zwischen molarer und spezifischer Wärmekapazität:
 $c = \frac{c_m}{M}$
 \begin{enumerate}
 	\item Wasser
-	\item Aluminium
+	\item Aluminium \cite[16]{handbuch}
 		\begin{align*}
 			c_m &= 24.30 \, \si{\joule\per\kelvin\per\mol}
 			\quad
@@ -19,7 +22,7 @@ $c = \frac{c_m}{M}$
 			\\
 			\Rightarrow c &= 0.90062 \, \si{\joule\per\kelvin\per\kg}
 		\end{align*}
-	\item Kupfer
+	\item Kupfer \cite[133f]{handbuch}
 		\begin{align*}
 			c_m &= 24.44 \, \si{\joule\per\kelvin\per\mol}
 			\quad
@@ -27,9 +30,9 @@ $c = \frac{c_m}{M}$
 			\\
 			\Rightarrow c &= 0.3846 \, \si{\joule\per\kelvin\per\kg}
 		\end{align*}
-	\item Glas
+	\item Glas \cite[944f]{handbuch}
 \end{enumerate}
 
-
+\printbibliography
 
 \end{document}
