@@ -1,19 +1,28 @@
 \documentclass[a4paper]{article}
 
 \usepackage[german]{babel}
-\usepackage{siunitx}
 
 \usepackage{biblatex}
 \addbibresource{quelle.bib}
 
 \usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+
+\usepackage[margin=2.5cm]{geometry}
 
 \begin{document}
 \section{Wärmekapazitäten}
 Zusammenhang zwischen molarer und spezifischer Wärmekapazität: 
 $c = \frac{c_m}{M}$
 \begin{enumerate}
-	\item Wasser
+	\item Wasser \cite{janaf}
+		\begin{align*}
+			c_m &= 75.349 \, \si{\joule\per\kelvin\per\mol}
+			\quad
+			M = 18.01528 \, \si{\gram\per\mol} 
+			\\
+			\Righarrow c &= 4.1825 \, \si{\joule\per\kelvin\per\kg}
+		\end{align*}
 	\item Aluminium \cite[16]{handbuch}
 		\begin{align*}
 			c_m &= 24.30 \, \si{\joule\per\kelvin\per\mol}
@@ -30,8 +39,13 @@ $c = \frac{c_m}{M}$
 			\\
 			\Rightarrow c &= 0.3846 \, \si{\joule\per\kelvin\per\kg}
 		\end{align*}
-	\item Glas \cite[944f]{handbuch}
+	\item Glas \cite[944f]{handbuch} 
+		\[
+			c_p = 730 \,\si{\joule\per\kelvin\per\kg}
+		\]
 \end{enumerate}
+
+\section{Gesetz von Dulong Petit}
 
 \printbibliography
 
