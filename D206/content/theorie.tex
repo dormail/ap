@@ -6,6 +6,38 @@ zwei Wärmereservoiren, mit dem Ziel die Kenngrößen der
 eingesetzten Wärmepumpe zu ermitteln.
 
 \subsection{Das Prinzip der Wärmepumpe}
+Aus Beobachtung von Prozessen in der Natur kann man sagen, dass Wärmeenergie immer vom heißeren zum kälteren
+Körper fließt. Durch externe (mechanische) Arbeit kann man diesen Fluß jedoch umkehren. \\
+Dabei nimmt nach 
+dem ersten Hauptsatz der Wärmelehre das wärmere Reservoir die Wärmeenergie $Q_1$ auf, welche sich aus der
+vom kälteren Reservoir entnommenen Wärmemenge $Q_2$, sowie der aufgewandten Arbeit $A$ zusammen:
+\begin{equation}
+	Q_1 = Q_2 + A
+	\label{eqn:waermemenge}
+\end{equation}
+
+Davon ausgehend lässt sich die Güteziffer der Wärmepumpe als der Quotient von abgegebener Wärme
+und aufgewandter Arbeit definieren:
+\begin{equation}
+	\nu = \frac{Q_1}{A}
+	\label{eqn:gueteziffer}
+\end{equation}
+
+Aus dem zweiten Hauptsatz der Thermodynamik lässt sich dabei eine weitere Beziehung herleiten:
+Ändert sich die Temperatur zwischen den Reservoiren nicht, dann ist die Summe der sogenannten 
+reduzierten Wärmemengen $\int \frac{\symup{d}Q}{T}$ verschwindet. Dies bedeutet für uns
+\begin{equation}
+	\frac{Q_1}{T_1} - \frac{Q_2}{T_2} = 0.
+	\label{eqn:reduzierte}
+\end{equation}
+
+Dabei muss jedoch beachtet werden, dass \eqref{eqn:reduzierte} nur für ideale reversible 
+Prozesse gilt. Dies kann von der technischen Realisierung der Wärmepumpe natürlich nicht erreicht werden.
+Für den realistischen, irreversiblen Fall gilt die Beziehung
+\begin{equation}
+	\frac{Q_1}{T_1} - \frac{Q_2}{T_2} > 0.
+	\label{eqn:reduzreal}
+\end{equation}
 
 \subsection{Die Arbeitsweise der Wärmepumpe}
 
@@ -13,7 +45,6 @@ eingesetzten Wärmepumpe zu ermitteln.
 Wärmepumpe}
 
 \subsubsection{Bestimmung der realen Güteziffer}
-$\nu$
 \subsubsection{Bestimmung des Massendurchsatzes}
 \subsubsection{Bestimmung der mechanischen Kompressorleistung 
 $N_\text{mech}$}
