@@ -55,7 +55,7 @@ Damit gilt für die in \ref{eqn:gueteziffer} definierte Güteziffer einer ideale
 Beziehungsweise für die Güte einer realen Wärmepumpe gilt
 \begin{equation}
 	\nu_\text{real} <
-	\nu_\text{id} = \frac{Q_1}{A} = \frac{T_1}{T_1 - T_2}
+	\frac{T_1}{T_1 - T_2}
 	\label{eqn:guetereal}
 \end{equation}
 
@@ -68,6 +68,25 @@ wenn die Temperaturdifferenz zwischen den Reservoiren $\vert T_1 - T_2 \vert$ ni
 Wärmepumpe}
 
 \subsubsection{Bestimmung der realen Güteziffer}
+
+Aus \ref{eqn:guetereal} wissen wir bereits, dass die Güteziffer der Quotient aus gewonnener Wärme 
+$Q_1$ und aufgewandter Arbeit $A$ ist. \\
+Für diese Wärmemenge müssen wir zunächst aus der Messreihe $T_1(t)$ für ein geeignetes Interval 
+den Differenzenquotienten $\Delta T_1 / \Delta t$ bilden. Aus diesem ergibt sich dann
+\begin{equation}
+	\frac{\Delta Q_1}{\Delta t}
+	= (m_1 c_\text w + m_\text k c_\text k) \frac{\Delta T_1}{\Delta t},
+	\label{eqn:bestgueteziffer1}
+\end{equation}
+wobei $m_1c_\text w$ der Wärmekapazität des Wassers im Reservoir 1 und $m_\text k c_\text k$ der
+Wärmekapazität der Kopferschlange im Eimer entsprechen. Daraus ergibt sich dann die 
+Güteziffer
+\begin{equation}
+	\nu = \frac{\Delta Q_1}{\Delta t \cdot N}
+	\label{eqn:gueteziffer}
+\end{equation}
+Mit $N$ für die durchschnittliche Kompressorleistung im Zeitintervall $\Delta t$.
+
 \subsubsection{Bestimmung des Massendurchsatzes}
 \subsubsection{Bestimmung der mechanischen Kompressorleistung 
 $N_\text{mech}$}
