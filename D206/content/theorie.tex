@@ -88,6 +88,25 @@ Güteziffer
 Mit $N$ für die durchschnittliche Kompressorleistung im Zeitintervall $\Delta t$.
 
 \subsubsection{Bestimmung des Massendurchsatzes}
+
+Wie eben für $T_1(t)$ nimmt man ebenfalls den Differenzenquotienten zu $T_2(t)$. Daraus 
+ergibt sich dann die pro Zeiteinheit aus Reserovir 2 entnommene Wärmemenge:
+\begin{equation}
+	\frac{\Delta Q_2}{\Delta t}
+	= (m_2 c_\text w + m_\text k c_\text k)  \frac{\Delta T_2}{\Delta t}
+	\label{eqn:waermeleitung2}
+\end{equation}
+
+Da für die Wärmeentnahme das Transportmedium verdampft und dabei pro Zeit- und Masseneinheit die 
+Verdampfungswärme $L$ benötigt wird, gilt der Massendurchsatz
+\begin{equation}
+	\frac{\Delta m}{\Delta t}
+	=
+	\frac{1}{L} \frac{\Delta Q_2}{\Delta t}
+	\label{eqn:massendurchsatz}
+\end{equation}
+wenn $L$ bekannt ist.
+
 \subsubsection{Bestimmung der mechanischen Kompressorleistung 
 $N_\text{mech}$}
 
