@@ -67,6 +67,10 @@ wenn die Temperaturdifferenz zwischen den Reservoiren $\vert T_1 - T_2 \vert$ ni
 \subsection{Die Bestimmung der Kenngrößen einer realen
 Wärmepumpe}
 
+Wenn man es gelingt, die Temperaturverl\"aufe als Funktionen der Zeit, also $T_1 = T_1(t)$ und
+$T_2 = T_2(t)$ aufzustellen, k\"onnen im nachfolgenden Teil die Differenzenquotienten durch
+die entsprechenden Differentialquotienten ersetzt werden.
+
 \subsubsection{Bestimmung der realen Güteziffer}
 
 Aus \ref{eqn:guetereal} wissen wir bereits, dass die Güteziffer der Quotient aus gewonnener Wärme 
@@ -110,4 +114,43 @@ wenn $L$ bekannt ist.
 \subsubsection{Bestimmung der mechanischen Kompressorleistung 
 $N_\text{mech}$}
 
-% \cite{sample}
+Um ein Gasvolument $V_a$ auf den Wert $V_b$ zu verringern, verrichtet der Kompressor die Arbeit
+\begin{equation}
+	A_m = 
+	-\int_{V_a}^{V_b} p \; \symup{d}V.
+	\label{eqn:arbeit-kompresion}
+\end{equation}
+
+Als gute N\"aherung nehmen wir nun an, dass die Kompression adiabatisch erfolgt. Dann gilt 
+f\"ur den Zusammenhang zwischen Druck und Volumen die bekannte Poissonsche Gleichnug
+\begin{equation}
+	p_a V_a^\kappa = p_b V_b^\kappa = p V^\kappa
+	\label{eqn:poissonsche_Gleichung}
+\end{equation}
+
+Dann erhalten wir f\"ur $A_m$
+\begin{align}
+	A_m 
+	&= -p_a V_a^\kappa \int_{V_a}^{V_b} V^{-\kappa} \; \symup dV
+	\\
+	&= \frac{1}{\kappa - 1} p_a V_a^\kappa \left(V_b^{-\kappa+1} - V_a^{-\kappa +1} \right)
+	\\
+	&= \frac{1}{\kappa - 1} \left( p_b \sqrt[-\kappa]{\frac{p_a}{p_b}} - p_a \right) V_a
+	\label{eqn:a_m}
+\end{align}
+und f\"u $N_\text{mech}$
+\begin{align}
+	N_\text{mech}
+	&= \frac{\Delta A_m}{\Delta t}
+	\\
+	&= \frac{1}{\kappa - 1}  \left( p_b \sqrt[-\kappa]{\frac{p_a}{p_b}} - p_a \right) 
+	\frac{\Delta V_a}{\Delta t}
+	\\
+	&=  \frac{1}{\kappa - 1}  \left( p_b \sqrt[-\kappa]{\frac{p_a}{p_b}} - p_a \right)
+	\frac{1}{\rho} \frac{\Delta m}{\Delta t}
+	\label{eqn:kompressorleistung}
+\end{align}
+
+Hierbei steht $\rho$ f\"ur die Dichte des Transportmediums im gasf\"ormigen Zustand, also 
+bei $p = p_a$. Mit der idealen Gasgleichung l\"asst sich $\rho$ ais dem Literaturwert f\"ur
+$\rho_0$ unter Normalbedinungen errechnen.
