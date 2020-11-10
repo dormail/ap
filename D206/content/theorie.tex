@@ -64,6 +64,12 @@ wenn die Temperaturdifferenz zwischen den Reservoiren $\vert T_1 - T_2 \vert$ ni
 
 \subsection{Die Arbeitsweise der Wärmepumpe}
 
+Die W\"armeenergie wird bei der W\"armepumpe mit einem Gas transportiert, welches beim
+Verdunsten W\"arme aus Reservoir 2 aufnimmt und beim Kondensieren an Reservoir 1 abgibt.
+\\
+Da der Transport aus der Phasenumwandlungsenergie des Gases resultiert, sollte man ein Gas mit einer
+m\"oglichst hohen Kondensationsw\"arme benutzen.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{content/aufbau.jpg}
@@ -71,6 +77,50 @@ wenn die Temperaturdifferenz zwischen den Reservoiren $\vert T_1 - T_2 \vert$ ni
 	\cite{anleitung}
 	\label{fig:aufbau}
 \end{figure}
+
+\autoref{fig:aufbau} zeigt den schematischen Aufbau. Die W\"armepumpe beruht auf einem Kreislauf,
+der durch den Kompressor K aufrecht erhalten wird:
+\begin{equation}
+	\text{Kompressor}
+	\rightarrow
+	\text{Reservoir 1}
+	\rightarrow
+	\text{Drosselventil}
+	\rightarrow
+	\text{Reservoir 2}
+	\rightarrow
+	\text{Kompressor}
+	\rightarrow
+	\cdots
+	\label{eqn:kreislauf}
+\end{equation}
+F\"ur den Betrieb der W\"armepumpe soll nun das Gas bei $T_1$ und $p_b$ fl\"ussig und 
+bei $T_2$ und $p_a$ gasf\"ormig sein.
+\\
+Dabei durchl\"uft das Transportmedium folgende Stationen:
+\begin{enumerate}
+	% Res 1
+	\item Das Gas str\"omt vom Kompressor durch Reservoir 1 und kondensiert. Dabei gibt es an
+		Res. 1 die Kondeationsw\"arme ab, wodurch Reservoir 1 sich langfristig erw\"armt.
+	% Drosselventil
+	\item Das nun fl\"ussige Gas flie\ss t durch das Drosselventil D, welches einen Druckunterschied
+		$p_b - p_a > 0$ erzeugt.
+	% Res 2
+	\item Das Fl\"ussiggas str\"omt in Reservoir 2 und wird gassf\"ormig. Die Verdunstung entzieht 
+		dabei dem Res. 2 W\"armeenergie, wodurch es abk\"uhlt.
+	% Kompressor
+	\item Das Gas wird vom Kompressor nahezu adiabatisch komprimmiert.
+\end{enumerate}
+
+F\"ur den st\"orungsfreien Betrieb kommen noch weitere Bauteile zum Einsatz, welche jedoch nichts zum
+Thermischen Prozess beitragen:
+\begin{itemize}
+	\item Der Reiniger (In \autoref{fig:aufbau} als ``R`` gekennzeichnet), welcher sicherstellt,
+		dass das Fl\"ussiggas keine Luftblasen enth\"alt.
+	\item Die Steuervorrichtung ``S``, die sicherstellt, dass keine Fl\"ussigkeitsreste in den 
+		Kompressor gelangen, da dieser sonst kaputt gehen w\"urde.
+\end{itemize}
+
 
 \subsection{Die Bestimmung der Kenngrößen einer realen
 Wärmepumpe}
