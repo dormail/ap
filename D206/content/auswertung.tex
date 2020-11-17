@@ -1,12 +1,188 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection*{a) Darstellung der Temperaturverläufe}
+Im ersten Schritt der Auswertung des Versuches wurden die gemessenen Temperaturverläufe graphisch dargestellt.
+In \autoref{fig:plot} 
+wurden die Daten in einem Zeit-Temperatur Diagramm geplottet. Die zur Verfügung gestellten Messdaten sind in einer Tabelle 
+im Anhang zu finden.
 
 \begin{figure}
   \centering
   \includegraphics{plot.pdf}
-  \caption{Plot.}
+  \caption{Gemessene Temperaturverläufe}
   \label{fig:plot}
 \end{figure}
+\newpage
+\subsection*{b) Nicht-lineare Ausgleichsrechnung}
+Als nächtes wurden die Messdaten durch die Funktion $T(t)=A\cdot t^2+B\cdot t+C$ approximiert.
+Mit der CurveFit Funktion und Fehlerrechnung in Python wurden dazu folgende Parameter ermittelt: 
 
+\begin{align*}
+  \intertext{Für T1:}
+  A_1 &= \SI{-0.011610+-0.000151}{\celsius\per\minute\squared}\\
+  B_1 &= \SI{1.216790 +- 0.005466}{\celsius\per\minute}\\
+  C_1 &= \SI{21.820081 +- 0.041345}{\celsius}
+\end{align*}
+  
+\begin{align*}  
+  \intertext{Für T2:}
+  A_2 &= \SI{0.003438 +- 0.000962}{\celsius\per\minute\squared}\\
+  B_2 &= \SI{-0.672523 +- 0.034819}{\celsius\per\minute}\\
+  C_2 &= \SI{22.720187 +- 0.263361}{\celsius}
+\end{align*} 
 
-Siehe \autoref{fig:plot}!
+In \autoref{fig:plotb} 
+sind die gefitteten Funktionen zusammen mit den Messdaten zu sehen . 
+
+\begin{figure}
+  \centering
+  \includegraphics{plot1.pdf}
+  \caption{Nichtlineare Approximation der Temperaturverläufe}
+  \label{fig:plotb}
+\end{figure}
+%\newpage
+\subsection*{c) Bestimmung der Differentialquotienten}
+Im nächsten Schritt sollten zu 4 verschiedenen Temperaturen die Differentialquotienten
+$dT1/dt$ und $dT2/dt$ bestimmt werden. Dazu wurden die ermittelten Approximationsfunktionen differenziert. Im Allgemeinen
+ergibt die Differenzierung die Funktion $T´(t)=2A\cdot t+B$. Im Speziellen ergeben sich also die Funktionen:
+\begin{align*}  
+  T1´ &= -0.024\cdot t+1.217\\
+  T2´ &= 0.006\cdot t-0.673 \\
+\end{align*} 
+
+Die berechneten Werte für die Differentialquotienten für vier Temperaturen
+sind in Tabelle \ref{tab:Diff} aufgelistet. Hier wurden die Fehlerwerte aus den Fehlern der einzelnen Parameter nach
+\begin{equation*}
+  \symup{\Delta} \frac{\symup{d}T}{\symup{d}t} = \sqrt{(2t\cdot\symup{\Delta} A)² + (\symup{\Delta} B)²}
+  \end{equation*}
+  berechnet. Gewählt wurden die Temperaturen bei 8, 16, 24 und 32 Minuten. 
+\begin{table}
+\centering
+\caption{Differentialquotienten}
+\label{tab:Diff}
+\sisetup{table-format=2.1}
+\begin{tabular}{c c c c c}
+\toprule
+$t \, [\si{\minute}]$ &$T1 \, [\si{\celsius}]$ &$T2 \, [\si{\celsius}]$ & $\frac{\symup{d}T_1}{\symup{d}t} \,[\si{\celsius\per\minute}]$ & 
+$\frac{\symup{d}T_2}{\symup{d}t} \,[\si{\celsius\per\minute}]$\\
+\midrule
+ 8 & 30.9&17.7&1.025 \pm \,0.006 & -0.625 \pm \,0.038\\
+ 16 & 38.4&12.4&0.833 \pm \,0.007 & -0.577 \pm \,0.046\\
+ 24 & 44.3&8.7&0.641 \pm \,0.009 & -0.529 \pm \,0.058\\
+ 32 & 48.9&4.3&0.449 \pm \,0.011 & -0.481 \pm \,0.071\\
+\bottomrule
+\end{tabular}
+\end{table}
+\newpage
+\subsection*{d) Bestimmung der Güteziffern}
+Aus den errechneten Werten für die Differentialquotienten kann nun die Güteziffer der benutzten Wärmepumpe 
+ermittelt werden. Anschließend wird dieses Ergebnis mit der Güteziffer einer idealen Wärmepumpe verglichen.
+Im Theorieteil wurde bereits beschrieben, dass die reale Güteziffer nach  den Gleichungen (\ref{eqn:bestgueteziffer1}) 
+und (\refeq{eqn:messgueteziffer}) bestimmt werden kann.
+ 
+ Dabei ist die spezifische Wärmekapazität des Wassers $c_w = \SI{4.187}{\joule\per\gram\per\kelvin}$, die Masse des Wassers 
+ $m_1 = \SI{4}{\kilogram}$ und die Wärmekapazität 
+ der Kupferschlangen ist gegeben als $c_\text{k} m_\text{k}$ = \SI{750}{\joule\per\kelvin}.
+ Die ideale Güteziffer wurde hier nach Gleichung (\ref{eqn:gueteideal}) bestimmt. In Tabelle \ref{tab:Güte} wurden die so errechneten Werte 
+ für die reale Güteziffer $\nu$ und die
+ ideale Güteziffer $\nu_\text{id}$ angegeben. Zur besseren Vergleichbarkeit wurde außerdem das Verhältnis der beiden Werte aufgelistet. 
+ 
+ \begin{table}
+ \centering
+ \caption{Güteziffern}
+ \label{tab:Güte}
+ \sisetup{table-format=2.1}
+ \begin{tabular}{c c c c}
+ \toprule
+ $t \, [\si{\minute}]$ &$\nu \,$ &$\nu_\text{id} \,$ & $\frac{\nu_\text{id}}{\nu} \,$  \\
+ \midrule
+  8 & 2.49 \pm \,0.02 & 23.03 & 9.2 \\
+  16 & 2.02 \pm \,0.02 & 11.98 &  5.9\\
+  24 & 1.56 \pm \,0.03 & 8.92 & 5.7 \\
+  32 & 1.09 \pm \,0.04 & 7.22 & 6.6 \\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+ 
+An der Tabelle ist direkt zu erkennen, dass die ermittelten Werte für $\nu $ und $\nu_\text{id}$ 
+stark voneinander abweichen. So ist $\nu_\text{id}$ für die betrachteten Werte zwischen 5.7 und 9.2 mal so hoch wie $\nu $.
+
+ \subsection*{e) Bestimmung des Massendurchsatzes}
+ Wie in 1.3.2. beschrieben kann der Massendurchsatz mit den Formeln (\ref{eqn:waermeleitung2}) 
+ und (\refeq{eqn:massendurchsatz}) ermittelt werden. Die Masse des zweiten Reservoirs ist dabei gegeben als $m_2=m_1=4kg$.
+ Zusätzlich wird für die Bestimmung des Massendurchsatzes die Verdampfungswärme L benötigt. Diese Verdampfungswärme L eines 
+ Stoffes kann man aus seiner Dampfdruck-Kurve gewinnen. Dazu muss eine Ausgleichsrechnung zu der zugehörigen Dampfdruck-Kurve 
+ durchgeführt werden. Hier wurde eine lineare Ausgleichsrechnung zu den Werten ln(p2) und 1/T2 durchgeführt. Die Messdaten und die 
+ Ausgleichsgerade wurden in \autoref{fig:plote} dargestellt.
+ \begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Ausgleichsrechnung zur Bestimmung der Verdampfungswärme}
+  \label{fig:plote}
+\end{figure}
+ 
+ Als Parameter der Ausgleichsgeraden(ax+b) ergeben sich $a=-1719.830 \pm 88.369$ und $b=7.327 \pm 0.310$.
+ Nach  $L_\text{reg} = -a \cdot R$, mit 
+ $R= \SI{8.3144621}{\joule\per\mol\per\kelvin}$ als der universellen Gaskonstanten  
+ lässt sich L also bestimmen:
+ 
+ \begin{equation*}
+ L= \SI{14300+-734}{\joule\per\mol}
+ \end{equation*}
+ 
+ Umgerechnet in Gramm mit der molaren Masse von Dichlordifluormethan $M=120,91 g/mol$ ergibt sich:
+ 
+ \begin{equation*}
+ L = \SI{118+-6}{\joule\per\gram}
+ \end{equation*}
+ 
+ Mit den bereits bestimmten Differentialquotienten lassen sich nun die Massendurchsätze nach den Formeln (\ref{eqn:waermeleitung2}) 
+ und (\refeq{eqn:massendurchsatz}) berechnen. Im Folgenden wurden die Massendurchsätze zu den verschiedenen Zeiten aufgelistet:
+ \begin{table}
+  \centering
+  \label{tab:massendurchsatz}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c}
+  \toprule
+  $t \,[min] $ & $\frac{\Delta m}{\Delta t} [\si{\frac{g}{min}}]$  \\
+  \midrule
+  8  & -92.68 $\pm$ 4.8 \\
+  16 & -85.56 $\pm$ 4.2 \\
+  24 & -78.44 $\pm$ 3.6 \\
+  32 & -71.33 $\pm$ 3.6 \\
+  \bottomrule
+  \end{tabular}
+  \caption{Massendurchsätze}
+  \end{table} 
+  \newpage
+  \subsection*{f) Bestimmung der mechanischen Kompressorleistung}
+  Nun sollte die mechanische Leistung des Kompressors, die dieser abgibt, wenn
+  er zwischen den Drücken p1 und p2 arbeitet, für die 4 bereits betrachteten Temperaturen berechnet werden. In Abschnitt 
+  1.3.3 wurde beschrieben wie die mechanische Kompressorleistung $N_\text{mech}$ mit \autoref{eqn:kompressorleistung} 
+  berechnet werden kann. Dazu muss $\rho$ aus der idealen Gasgleichung und den zur Verfügung gestellten Daten
+  für Cl2F2C ($ρ_0= 5,51 g/l$ bei $T = 0°C$ und $p = 1 Bar, κ = 1,14$)bestimmt werden. 
+  Zur Bestimmung von $\rho$ ergibt sich in unserem Versuch:
+  
+  \begin{equation*}
+  \rho = \frac{p_\text{2} \cdot \rho_\text{o} \cdot T_\text{o}}{p_\text{o} \cdot T_2}.
+  \end{equation*}
+  Aus den beschriebenen Gleichungen und dem bereits berechneten Massendurchsatz lässt sich dann die mechanische Kompressorleistung 
+  zu folgenden Werten bestimmen:
+
+  \begin{table}
+    \centering
+    \caption{Mechanische Kompressorleistung}
+    \label{tab:Kompressor}
+    \sisetup{table-format=2.1}
+    \begin{tabular}{c c c}
+    \toprule
+    $t \,[min]$ & $\rho \,[\si{\gram\per\liter}]$ & 
+    $ N_\text{mech} \,[\SI{e-3}{\watt}]$\\
+    \midrule
+     8 & 21.73 & -5.01 \pm \,0.13\\
+     16 & 18.97 & -10.02 \pm \,0.16\\
+     24 & 18.16 & -14.09 \pm \,0.17\\
+     32 & 17.36 & -17.15 \pm \,0.16\\
+    \bottomrule
+    \end{tabular}
+    \end{table}
