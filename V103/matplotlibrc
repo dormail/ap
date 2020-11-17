@@ -19,4 +19,4 @@ pgf.rcfonts : False
 # TeX benutzen
 text.usetex : True
 pgf.texsystem : lualatex
-pgf.preamble : \input{header-matplotlib.tex}
+#pgf.preamble : \input{header-matplotlib.tex}
