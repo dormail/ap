@@ -11,8 +11,8 @@ import pandas as pd
 # stab der an beiden enden aufliegt
 L = 28.5 # aufhaengepunkt in cm
 
-df1 = pd.read_csv('daten1_1.csv')
-df2 = pd.read_csv('daten1_2.csv')
+df1 = pd.read_csv('daten/daten1_1.csv')
+df2 = pd.read_csv('daten/daten1_2.csv')
 x1 = df1['stellung der messuhr in cm']
 x2 = df2['stellung der messuhr in cm']
 
@@ -31,8 +31,8 @@ plt.close()
 # messung 2
 # stab1 mit einem freien ende
 L = 53 # aufhaengepunkt in cm
-df1 = pd.read_csv('daten2_1.csv')
-df2 = pd.read_csv('daten2_2.csv')
+df1 = pd.read_csv('daten/daten2_1.csv')
+df2 = pd.read_csv('daten/daten2_2.csv')
 x1 = df1['stellung der messuhr in cm']
 x2 = df2['stellung der messuhr in cm']
 
@@ -56,8 +56,8 @@ plt.close()
 # messung 3
 # stab2 mit einem freien ende
 L = 53 # aufhaengepunkt in cm
-df1 = pd.read_csv('daten3_1.csv')
-df2 = pd.read_csv('daten3_2.csv')
+df1 = pd.read_csv('daten/daten3_1.csv')
+df2 = pd.read_csv('daten/daten3_2.csv')
 x1 = df1['stellung der messuhr in cm']
 x2 = df2['stellung der messuhr in cm']
 
