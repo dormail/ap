@@ -76,8 +76,14 @@ df2 = pd.read_csv('daten/daten1_2.csv')
 x1 = df1['stellung der messuhr in cm'] * 0.01
 x2 = df2['stellung der messuhr in cm'] * 0.01
 
+x1_messung1 = x1
+x2_messung1 = x2
+
 D1 = df1['biegung in micrometer'] / 1000000 # nun in metern
 D2 = df2['biegung in micrometer'] / 1000000 # nun in metern
+
+D1_messung1 = D1
+D2_messung1 = D2
 
 # fuer den fit muss eine seite auf die andere gebracht werden
 pos_right = np.append(x1[x1 < 0.285], x2[x2 < .285])
@@ -105,17 +111,29 @@ print(fitting_data)
 #plt.scatter(pos_mirrored, fitting_data, c='b')
 popt, pcov = opt.curve_fit(D_mit, fitting_x, fitting_data)
 E = popt[0]
+
 print(f'E-Modul fuer Stab 1 nach Messung 1:\t{E:.4}')
+error = np.sqrt(np.diag(pcov))
+e = error[0]
+print(f'Abweichung: \t{error[0]:.4}')
+
+
 
 # plot der Theoriekurve
+# linke haelfte
 x = np.linspace(0,0.285)
 plt.plot(x, D_mit(x,E), 'r',
-        label=rf'Theoriekurve für $E={{{E:.4}}}$')
+        label=rf'Theoriekurve für $E=({{{E:.4}}})$Pa')
+plt.fill_between(x, D_mit(x,E+e), D_mit(x,E-e), 
+        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
+# rechte haelfte
 x = np.linspace(.285,0.57)
 plt.plot(x, D_mit_left(x,E), 'r')
+plt.fill_between(x, D_mit_left(x,E+e), D_mit_left(x,E-e), 
+        facecolor='red', alpha=0.5)
 
-lx1 = np.abs(x1 - L)
-lx2 = np.abs(x2 - L)
+# lx1 = np.abs(x1 - L)
+# lx2 = np.abs(x2 - L)
 
 plt.scatter(x1, D1, c='b', marker='+', label='Messuhr 1')
 plt.scatter(x2, D2, c='g', marker='+', label='Messuhr 2')
@@ -137,9 +155,13 @@ df1 = pd.read_csv('daten/daten2_1.csv')
 df2 = pd.read_csv('daten/daten2_2.csv')
 x1 = df1['stellung der messuhr in cm'] * 0.01
 x2 = df2['stellung der messuhr in cm'] * 0.01
+x1_messung2 = x1
+x2_messung2 = x2
 
 D1 = df1['biegung in micrometer'] / 1000000 # nun in metern
 D2 = df2['biegung in micrometer'] / 1000000 # nun in metern
+D1_messung2 = D1
+D2_messung2 = D2
 
 lx1 = np.abs(L - x1)
 lx2 = np.abs(L - x2)
@@ -157,12 +179,18 @@ D_all = np.append(D1, D2)
 popt, pcov = opt.curve_fit(D, x_all, D_all)
 E = popt[0]
 print(f'E-Modul für Stab 1 nach Messung 2: \t {E:.4}')
+error = np.sqrt(np.diag(pcov))
+e = error[0]
+print(f'Abweichung: \t{error[0]:.4}')
 
 # plot der Theoriekurve
 x = np.linspace(0,L)
 plt.plot(x, D(x,E), 'r', 
         label=rf'Theoriekurve für $E={{{E:.4}}}$')
         #label=rf'Theoriekurve für $E={{{E:.4}}} \, \frac{{N}}{{m^2}}$')
+# plot der sigma umgebung
+plt.fill_between(x, D(x,E+e), D(x,E-e), 
+        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
 
 c = np.sqrt(E / dichte1)
 print(f'Schallgeschwindigkeit in Stab 1:\t{c}')
@@ -182,9 +210,13 @@ df1 = pd.read_csv('daten/daten3_1.csv')
 df2 = pd.read_csv('daten/daten3_2.csv')
 x1 = df1['stellung der messuhr in cm'] * 0.01
 x2 = df2['stellung der messuhr in cm'] * 0.01
+x1_messung3 = x1
+x2_messung3 = x2
 
 D1 = df1['biegung in micrometer'] / 1000000
 D2 = df2['biegung in micrometer'] / 1000000
+D1_messung3 = D1
+D2_messung3 = D2
 
 lx1 = np.abs(L - x1)
 lx2 = np.abs(L - x2)
@@ -199,13 +231,19 @@ x_all = np.append(x1, x2)
 D_all = np.append(D1, D2)
 popt, pcov = opt.curve_fit(D, x_all, D_all)
 E = popt[0]
-print(f'Elastizitätsmodul für Stab 2: \t {E}')
+print(f'Elastizitätsmodul für Stab 2: \t {E:.4}')
+error = np.sqrt(np.diag(pcov))
+print(f'Abweichung: \t{error[0]:.4}')
 
 # plot der Theoriekurve
 x = np.linspace(0,L)
 plt.plot(x, D(x,E), 'r', 
-        label=rf'Theoriekurve für $E={{{E:.4}}}$')
-        #label=rf'Theoriekurve für $E={{{E:.4}}} \, \frac{{N}}{{m^2}}$')
+        label=rf'Theoriekurve für $E={{{E:.4}}}$Pa')
+
+# plot der sigma umgebung
+e = error[0]
+plt.fill_between(x, D(x,E+e), D(x,E-e), 
+        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
 
 c = np.sqrt(E / dichte2)
 print(f'Schallgeschwindigkeit in Stab 2:\t{c}')
