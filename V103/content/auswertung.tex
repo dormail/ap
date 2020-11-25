@@ -1,12 +1,89 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Messdaten}
+\label{sec:Messdaten}
+Es wurden insgesamt drei Messreihen an zwei Werksstoffen durchgeführt. Dabei
+wurde ein Werkstoff einseitig eingespannt belastet und auch beidseitig aufliegend,
+der zweite nur einseitig bespannt. Die Messungen liefen wie folgt ab:
+\begin{enumerate}
+	\item Werksstoff 1, beidseitig aufliegend
+	\item Werksstoff 1, einseitg eingespannt 
+	\item Werksstoff 2, einseitg eingespannt 
+\end{enumerate}
 
+Die Biegung wurde dabei immer mit zwei Uhren an zwei Orten gleichzeitig 
+gemessen, welche zum Teil farblich getrennt in den Diagrammen abgetragen werden,
+um Fehler in der Messaperatur zu erkennen.
+
+\subsection{Nicht-lineare Ausgleichrechnung und Bestimmung des E-Moduls}
+Wie in \autoref{sec:Theorie} hergeleitet, lässt sich die Biegung $D(x)$ mit 
+Polynomen beschreiben. Bei einseitiger Einspannung gilt
+\begin{equation}
+	D(x) = \frac{F}{2 \, E \, \mathbf{I}} \left(Lx^2 - \frac{x^3}{3} \right).
+	\label{eqn:d_einseitig}
+\end{equation}
+
+Bei beidseitiger Auflage gilt
+\begin{equation}
+	D(x) =
+	\begin{cases}
+		\frac{F}{48 \, E \, \mathbf{I}}  
+		\left( 3L^2x - 4x^3 \right)
+		& \text{falls } x \in \left[0, \frac L2 \right] \\
+		\frac{F}{48 \, E \, \mathbf{I}}  
+		\left( 4x^3 - 12Lx^2 + 9L^x - L^3 \right)
+		& \text{falls } x \in \left[ \frac L2, L \right]
+	\end{cases}
+	.
+	\label{eqn:d_beidseitig}
+\end{equation}
+
+Das Flächenträgheitsmoment $\mathbf{I}$ wird (da wir mit runden Stäben gearbeitet
+haben) in Polarkoordinaten berechnet:
+\begin{align}
+	\mathbf{I} 
+	&= \int_Q y^2 dq(y) 
+	\\
+	&= \int_0^{2\pi} d\varphi \int_0^r dr^\prime r^\prime 
+	\left( r^\prime\sin(\varphi) \right)^2
+	\\
+	&= \frac{\pi}{4} r^4
+\end{align}
+
+Mit der Methode der kleinsten Quadrate kann somit eine Ausgleichkurve bestimmt
+werden, wodurch man auch zu jeder Messreihe ein Wert für $E$ erhält.
+
+\newpage
+Da wir Stab 1 sowohl einseitig eingespannt, als auch beidseitig liegend 
+getestet entstehen mit dieser Methode zwei Ergebnisse zum E-Modul von diesem.
+
+Dabei hat uns die Messung 1 einen Wert für $E$ geliefert
+\begin{equation}
+	E_1 = (192 \pm 13) \si{\giga\pascal}
+	\label{eqn:E_messung1}
+\end{equation}
+der sich stark von dem Ergebniss aus der zweiten Messung unterscheidet.
+\begin{equation}
+	E_2 = (92.5 \pm 1.9) \si{\giga\pascal}
+	\label{eqn:E_messung2}
+\end{equation}
+
+Dazu fiel ein Messwert in der ersten Messung auf, wo für die Position
+einer Messuhr
+$64 \si{\cm}$ eingetragen wurde. Da die Messleiste nur bis $57 \si{\cm}$ geht
+wurde dieser Wert in \autoref{fig:plot1} rot markiert und bei der Auswertung 
+nicht mit einbezogen.
+
+\begin{figure}[H]
+	\includegraphics{build/plot1.pdf}
+	\caption{Plot und Fit zu Messung 1}
+	\label{fig:plot1}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics{build/plot2.pdf}
+	\caption{Plot und Fit zu Messung 2}
+	\label{fig:plot2}
+\end{figure}
 
 Siehe \autoref{fig:plot}!
