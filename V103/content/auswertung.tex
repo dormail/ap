@@ -55,26 +55,6 @@ Mit der Methode der kleinsten Quadrate kann somit eine Ausgleichkurve bestimmt
 werden, wodurch man auch zu jeder Messreihe ein Wert für $E$ erhält.
 
 \newpage
-Da wir Stab 1 sowohl einseitig eingespannt, als auch beidseitig liegend 
-getestet entstehen mit dieser Methode zwei Ergebnisse zum E-Modul von diesem.
-
-Dabei hat uns die Messung 1 einen Wert für $E$ geliefert
-\begin{equation}
-	E_1 = (192 \pm 13) \si{\giga\pascal}
-	\label{eqn:E_messung1}
-\end{equation}
-der sich stark von dem Ergebniss aus der zweiten Messung unterscheidet.
-\begin{equation}
-	E_2 = (92.5 \pm 1.9) \si{\giga\pascal}
-	\label{eqn:E_messung2}
-\end{equation}
-
-Dazu fiel ein Messwert in der ersten Messung auf, wo für die Position
-einer Messuhr
-$64 \si{\cm}$ eingetragen wurde. Da die Messleiste nur bis $57 \si{\cm}$ geht
-wurde dieser Wert in \autoref{fig:plot1} rot markiert und bei der Auswertung 
-nicht mit einbezogen.
-
 \begin{figure}[H]
 	\includegraphics{build/plot1.pdf}
 	\caption{Plot und Fit zu Messung 1}
@@ -85,5 +65,39 @@ nicht mit einbezogen.
 	\caption{Plot und Fit zu Messung 2}
 	\label{fig:plot2}
 \end{figure}
+\subsubsection{Ausgleichsrechnung für Stab 1}
+Da wir Stab 1 sowohl einseitig eingespannt, als auch beidseitig liegend,
+getestet haben, entstehen mit dieser Methode zwei Ergebnisse zum E-Modul von diesem.
 
-Siehe \autoref{fig:plot}!
+\begin{equation}
+	E_1 = (192 \pm 13) \si{\giga\pascal},
+	\label{eqn:E_messung1}
+\end{equation}
+\begin{equation}
+	E_2 = (92.5 \pm 1.9) \si{\giga\pascal}
+	\label{eqn:E_messung2}
+\end{equation}
+Dabei hat uns die Messung 1 einen Wert für $E$ geliefert
+der sich stark von dem Ergebniss aus der zweiten Messung unterscheidet (vgl.
+\ref{eqn:E_messung1} und \ref{eqn:E_messung2}).
+
+Dazu fiel ein Messwert in der ersten Messung auf, wo für die Position
+einer Messuhr
+$64 \si{\cm}$ eingetragen wurde. Da die Messleiste nur bis $57 \si{\cm}$ geht
+wurde dieser Wert in \autoref{fig:plot1} rot markiert und bei der Auswertung 
+nicht mit einbezogen.
+
+\subsubsection{Ausgleichsrechnung für Stab 2}
+\begin{figure}[H]
+	\includegraphics{build/plot3.pdf}
+	\caption{Plot und Fit zu Messung 3}
+	\label{fig:plot3}
+\end{figure}
+
+Für Stab 2 erhält man mit der selben Methode ein Elastizitätsmodul von
+\begin{equation}
+	E_3 = (130.9 \pm 0.96) \si{\giga\pascal}
+	\label{eqn:E_messung3}
+\end{equation}
+Der Plot der Daten mit einer Theoriekurve für das bestimmte Elastizitätsmodul
+ist in \autoref{fig:plot3} zu sehen.
