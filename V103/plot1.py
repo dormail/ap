@@ -106,7 +106,7 @@ plt.fill_between(DBeidseitigRechts(x, E), DBeidseitigRechts(x,E+e), DBeidseitigR
 #
 # datenpunkte
 plt.scatter(DBeidseitigRechts(x1, E), D1, c='b', marker='+', label='Messuhr 1')
-#plt.scatter(x2, D2, c='g', marker='+', label='Messuhr 2')
+plt.scatter(DBeidseitigLinks(x2, E), D2, c='g', marker='+', label='Messuhr 2')
 #plt.scatter(D_mit_left(0.64, E),130 / 1000000, c='r', marker='+', label='Fehlerhafte Messung')
 
 # visuals
