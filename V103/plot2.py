@@ -98,8 +98,7 @@ x = np.linspace(0,L)
 plt.plot(skalierung(x), D(x,E), 'r', 
         label=rf'Theoriekurve für $E={{{E:.4}}}$')
         #label=rf'Theoriekurve für $E={{{E:.4}}} \, \frac{{N}}{{m^2}}$')
-print(skalierung(x[-1]))
-print(D(x[-1], E))
+
 # plot der sigma umgebung
 plt.fill_between(skalierung(x), D(x,E+e), D(x,E-e), 
         facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
@@ -133,46 +132,23 @@ D2_messung3 = D2
 lx1 = np.abs(L - x1)
 lx2 = np.abs(L - x2)
 
-plt.scatter(x1, D1, c='b', marker='+', 
-    label='Messuhr 1')
-plt.scatter(x2, D2, c='g', marker='+',
-        label='Messuhr 2')
 
 # curve fit
 x_all = np.append(x1, x2)
 D_all = np.append(D1, D2)
 popt, pcov = opt.curve_fit(D, x_all, D_all)
+
+# ausgabe der ergebnisse
 E = popt[0]
-print(f'Elastizitätsmodul für Stab 2: \t {E:.4}')
 error = np.sqrt(np.diag(pcov))
+print(f'Elastizitätsmodul für Stab 2: \t {E:.4}')
 print(f'Abweichung: \t{error[0]:.4}')
 
-# plot der Theoriekurve
-x = np.linspace(0,L)
-plt.plot(x, D(x,E), 'r', 
-        label=rf'Theoriekurve für $E={{{E:.4}}}$Pa')
-
-# plot der sigma umgebung
-e = error[0]
-plt.fill_between(x, D(x,E+e), D(x,E-e), 
-        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
-
-c = np.sqrt(E / dichte2)
-print(f'Schallgeschwindigkeit in Stab 2:\t{c}')
-
-plt.xlabel(r'$\frac{x}{cm}$')
-plt.legend()
-#plt.title('Stab 2, einseitig eingespannt')
-plt.close()
-
-# messwerte
+# plot der messwerte
 plt.scatter(skalierung(x1), D1, c='b', marker='+', 
     label='Messuhr 1')
 plt.scatter(skalierung(x2), D2, c='g', marker='+',
         label='Messuhr 2')
-#plt.title('Stab 1, einseitig eingespannt')
-plt.title(rf'Messdaten und Fit zu Stab 2, einseitig eingespannt')
-
 
 # plot der Theoriekurve
 x = np.linspace(0,L)
@@ -186,6 +162,7 @@ plt.fill_between(skalierung(x), D(x,E+e), D(x,E-e),
 c = np.sqrt(E / dichte1)
 print(f'Schallgeschwindigkeit in Stab 2:\t{c}')
 
+# visuals
 plt.title(rf'Messdaten und Fit zu Stab 2, einseitig eingespannt')
 plt.legend()
 plt.xlabel(r'$(Lx^2 - x^3/3) / \si{\meter}$')
