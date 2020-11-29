@@ -1,103 +1,213 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Messdaten}
-\label{sec:Messdaten}
-Es wurden insgesamt drei Messreihen an zwei Werksstoffen durchgeführt. Dabei
-wurde ein Werkstoff einseitig eingespannt belastet und auch beidseitig aufliegend,
-der zweite nur einseitig bespannt. Die Messungen liefen wie folgt ab:
-\begin{enumerate}
-	\item Werksstoff 1, beidseitig aufliegend
-	\item Werksstoff 1, einseitg eingespannt 
-	\item Werksstoff 2, einseitg eingespannt 
-\end{enumerate}
+\subsection{Bestimmung des E-Moduls von Stab 1 mit beidseitiger Auflage}
+\label{sec:messung1}
+Bei Stab 1 ergaben sich bei beidseitiger Auflage mit einem Gewicht von $949.9 \si{\gram}$ 
+die Messwerte in \autoref{tab:messdaten1}.
 
-Die Biegung wurde dabei immer mit zwei Uhren an zwei Orten gleichzeitig 
-gemessen, welche zum Teil farblich getrennt in den Diagrammen abgetragen werden,
-um Fehler in der Messaperatur zu erkennen.
-
-\subsection{Nicht-lineare Ausgleichrechnung und Bestimmung des E-Moduls}
-Wie in \autoref{sec:Theorie} hergeleitet, lässt sich die Biegung $D(x)$ mit 
-Polynomen beschreiben. Bei einseitiger Einspannung gilt
-\begin{equation}
-	D(x) = \frac{F}{2 \, E \, \mathbf{I}} \left(Lx^2 - \frac{x^3}{3} \right).
-	\label{eqn:d_einseitig}
-\end{equation}
-
-Bei beidseitiger Auflage gilt
-\begin{equation}
-	D(x) =
-	\begin{cases}
-		\frac{F}{48 \, E \, \mathbf{I}}  
-		\left( 3L^2x - 4x^3 \right)
-		& \text{falls } x \in \left[0, \frac L2 \right] \\
-		\frac{F}{48 \, E \, \mathbf{I}}  
-		\left( 4x^3 - 12Lx^2 + 9L^x - L^3 \right)
-		& \text{falls } x \in \left[ \frac L2, L \right]
-	\end{cases}
-	.
-	\label{eqn:d_beidseitig}
-\end{equation}
-
-Das Flächenträgheitsmoment $\mathbf{I}$ wird (da wir mit runden Stäben gearbeitet
-haben) in Polarkoordinaten berechnet:
-\begin{align}
-	\mathbf{I} 
-	&= \int_Q y^2 dq(y) 
+\begin{table}
+	\centering
+	\caption{Messdaten für einen beidseitig aufliegenden Stab, $x$ beschreibt
+	die Position der Messuhr, wobei $0\si{\centi\meter}$
+	dem rechten Auflagepunkt, $28.5\si{\centi\meter}$ der Mitte bzw. dem Auflagepunkt 
+	des Gewichts entspricht und $57\si{\centi\meter}$ linken Auflagepunkt entspricht.
+	$D$ beschreibt die Auslenkung des Stabes an der Stelle $x$ bei Belastung.}
+	\label{tab:messdaten1}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c}
+	\toprule
+	% ueberschriften der einzelnen spalten}
+	Messuhr &
+	$x / \si{\centi\meter}$ &
+	$D(x) / \si{\micro\meter}$
 	\\
-	&= \int_0^{2\pi} d\varphi \int_0^r dr^\prime r^\prime 
-	\left( r^\prime\sin(\varphi) \right)^2
-	\\
-	&= \frac{\pi}{4} r^4
-\end{align}
+	\midrule
+	1 & 47 & 200 \\
+	1 & 20 & 200 \\
+	1 & 23 & 310 \\
+	1 & 9 & 95 \\
+	1 & 13 & 160 \\
+	1 & 15 & 185 \\
+	2 & 40 & 285.5 \\
+	2 & 35 & 360 \\
+	2 & 31 & 380 \\
+	2 & 42 & 275 \\
+	2 & 38 & 210 \\
+	2 & 64 & 130 \\
+	\bottomrule
+\end{tabular}
+\end{table}
 
-Mit der Methode der kleinsten Quadrate kann somit eine Ausgleichkurve bestimmt
-werden, wodurch man auch zu jeder Messreihe ein Wert für $E$ erhält.
+Der letzte Messwert (für $x = 64\si{\centi\meter}$) wird dabei in der Auswertung nicht
+betrachtet, da dieser Außerhalb des Stabes liegt und somit keiner richtigen Messung 
+zugeordnet werden kann.
 
-\newpage
+Mit der Methode der kleinsten Quadrate wird die in \autoref{sec:Theorie} hergeleitete
+Funktion 
+\begin{equation}
+	D(x) = \frac{F}{48 \, E \, \mathbf{I}} \left(4x^3 - 12Lx^2 + 9L^2x - L^3 \right)
+\end{equation}
+an die Messdaten gefittet. Da der Elastizitätsmodul der einzige
+Freiheitsgrad des Polynoms ist, erhält man dadurch auch einen Wert für diesen.
+
+Um die Abweichungen von der Theoriekurve besser Sichtbar zu machen, 
+wurden in \autoref{fig:plot-messung1} die Messdaten gegen $3L^2x - 4x^3$ grafisch 
+aufgetragen.
 \begin{figure}[H]
+	\centering
 	\includegraphics{build/plot1.pdf}
-	\caption{Plot und Fit zu Messung 1}
-	\label{fig:plot1}
+	\caption{Messdaten und Theoriekurve zur Messung 1}
+	\label{fig:plot-messung1}
 \end{figure}
+
+Mit dieser Methode erhielten wir einen Wert für den Elastizitätsmodul von
+\begin{equation}
+	E = (192 \pm 13.1) \si{\giga\pascal}.
+	\label{eqn:E-messung1}
+\end{equation}
+Wobei sich der Fehler aus der Covarianz-Matrix zum Curve-Fit ergibt.
+
+\subsection{Bestimmung des E-Moduls von Stab 1 mit einseitiger Einspannung}
+\label{sec:messung2}
+
+Bei Stab 1 ergaben sich bei einseitiger Einspannung 
+mit einem Gewicht von $949.9 \si{\gram}$ 
+die Messwerte in \autoref{tab:messdaten2}.
+
+\begin{table}
+	\centering
+	\caption{Messdaten für Stab 1, einseitig eingespannt. $x$ beschreibt
+	die Position der Messuhr, wobei $0\si{\centi\meter}$
+	dem Ort bei der Einspannung entspricht.
+	$D$ beschreibt die Auslenkung des Stabes an der Stelle $x$ unter Last.}
+	\label{tab:messdaten2}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c}
+	\toprule
+	% ueberschriften der einzelnen spalten}
+	Messuhr &
+	$x / \si{\centi\meter}$ &
+	$D(x) / \si{\micro\meter}$
+	\\
+	\midrule
+	% messuhr 1
+	1 & 5 & 180 \\
+	1 & 14 & 1120 \\
+	1 & 18 & 2750 \\
+	1 & 22 & 2500 \\
+	1 & 26 & 3310 \\
+	1 & 30 & 4200 \\
+	1 & 34 & 5100 \\
+	1 & 38 & 6010 \\
+	1 & 16 & 1420 \\
+	1 & 39 & 6010 \\
+	% messuhr 2
+	2 & 12 & 850 \\
+	2 & 20 & 2100 \\
+	2 & 24 & 2880 \\
+	2 & 28 & 3800 \\
+	2 & 32 & 4680 \\
+	2 & 36 & 5600 \\
+	2 & 40 & 6600 \\
+	2 & 44 & 7600 \\
+	2 & 42 & 7360 \\
+	2 & 48 & 7500 \\
+	\bottomrule
+\end{tabular}
+\end{table}
+
+Wie in \autoref{sec:messung1} wird auch hier mit einer Ausgleichrechnung 
+gearbeitet. Da es sich jetzt um eine einseitige Einspannung handelt wird mit der
+Funktion
+\begin{equation}
+	D(x) = \frac{F}{2 \, E \, \mathbf{I}} \left(Lx^2 - \frac{x^3}{x} \right)
+\end{equation}
+gearbeitet.
+
+Zur Verdeutlichung des Abweichungen in der grafischen Darstellung in
+\autoref{fig:plot-messung2} gegen $Lx^2 - x^3/3$ aufgetragen.
 \begin{figure}[H]
+	\centering
 	\includegraphics{build/plot2.pdf}
-	\caption{Plot und Fit zu Messung 2}
-	\label{fig:plot2}
+	\caption{Messdaten und Theoriekurve zur Messung 2}
+	\label{fig:plot-messung2}
 \end{figure}
-\subsubsection{Ausgleichsrechnung für Stab 1}
-Da wir Stab 1 sowohl einseitig eingespannt, als auch beidseitig liegend,
-getestet haben, entstehen mit dieser Methode zwei Ergebnisse zum E-Modul von diesem.
 
+Mit dieser Methode erhält man ein Elastizitätsmodul für Stab 1 von
 \begin{equation}
-	E_1 = (192 \pm 13) \si{\giga\pascal},
-	\label{eqn:E_messung1}
+	E = (92.5 \pm 1.9) \si{\giga\pascal}
+	\label{eqn:E-messung2}
 \end{equation}
+
+\subsection{Bestimmung des E-Moduls von Stab 2 mit einseitiger Einspannung}
+\label{sec:messung3}
+
+Da in der dritten Messreihe ebenfalls mit einem einseitig eingespannten Stab gearbeitet
+wurde, ist das Vorgehen komplett analog zu dem in \autoref{sec:messung2}. Auch hier wurde
+der Stab am freien Ende mit einem Gewicht von $949.9\si{\gram}$ belastet.
+\\
+Die Messwerte sind in \autoref{tab:messdaten3} zu sehen.
+
+\begin{table}
+	\centering
+	\caption{Messdaten für Stab 2, einseitig eingespannt. $x$ beschreibt
+	die Position der Messuhr, wobei $0\si{\centi\meter}$
+	dem Ort bei der Einspannung entspricht.
+	$D$ beschreibt die Auslenkung des Stabes an der Stelle $x$ unter Last.}
+	\label{tab:messdaten3}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c}
+	\toprule
+	% ueberschriften der einzelnen spalten}
+	Messuhr &
+	$x / \si{\centi\meter}$ &
+	$D(x) / \si{\micro\meter}$
+	\\
+	\midrule
+	% messuhr 1 \\
+	1 & 4 & 90 \\
+	1 & 6 & 175 \\
+	1 & 8 & 280 \\
+	1 & 16 & 965 \\
+	1 & 18 & 1190 \\
+	1 & 20 & 1420 \\
+	1 & 28 & 2600 \\
+	1 & 30 & 2870 \\
+	1 & 32 & 3190 \\
+	1 & 40 & 4480 \\
+	% messuhr 2 \\
+	2 & 10 & 410 \\
+	2 & 12 & 570 \\
+	2 & 14 & 760 \\
+	2 & 22 & 1700 \\
+	2 & 24 & 1990 \\
+	2 & 26 & 2280 \\
+	2 & 34 & 3500 \\
+	2 & 36 & 3880 \\
+	2 & 38 & 4200 \\
+	2 & 46 & 5580 \\
+	\bottomrule
+\end{tabular}
+\end{table}
+
+Die Ausgleichsrechnung ergab dabei ein E-Modul zu Stab 2 von
 \begin{equation}
-	E_2 = (92.5 \pm 1.9) \si{\giga\pascal}
-	\label{eqn:E_messung2}
+	E = (130.9 \pm 0.9) \si{\giga\pascal}.
+	\label{eqn:E-messung3}
 \end{equation}
-Dabei hat uns die Messung 1 einen Wert für $E$ geliefert
-der sich stark von dem Ergebniss aus der zweiten Messung unterscheidet (vgl.
-\ref{eqn:E_messung1} und \ref{eqn:E_messung2}).
 
-Dazu fiel ein Messwert in der ersten Messung auf, wo für die Position
-einer Messuhr
-$64 \si{\cm}$ eingetragen wurde. Da die Messleiste nur bis $57 \si{\cm}$ geht
-wurde dieser Wert in \autoref{fig:plot1} rot markiert und bei der Auswertung 
-nicht mit einbezogen.
+Ein Plot der Messdaten sowie eine Theoriekurve zum bestimmten E-Modul sind in 
+\autoref{fig:plot-messung3} zu sehen. Die Abweichung in der Covarianz-Matrix beim
+Curve-Fit sind so klein, dass das $\sigma$-Intervall kaum noch zu sehen ist.
 
-\subsubsection{Ausgleichsrechnung für Stab 2}
 \begin{figure}[H]
+	\centering
 	\includegraphics{build/plot3.pdf}
-	\caption{Plot und Fit zu Messung 3}
-	\label{fig:plot3}
+	\caption{Messdaten und Theoriekurve zur Messung 3}
+	\label{fig:plot-messung3}
 \end{figure}
 
-Für Stab 2 erhält man mit der selben Methode ein Elastizitätsmodul von
-\begin{equation}
-	E_3 = (130.9 \pm 0.96) \si{\giga\pascal}
-	\label{eqn:E_messung3}
-\end{equation}
-Der Plot der Daten mit einer Theoriekurve für das bestimmte Elastizitätsmodul
-ist in \autoref{fig:plot3} zu sehen.
+% Machen wir nur evtl
+% \subsection{Bestimmung der Dichte der Werkstoffe}
+% \label{sec:Dichte}
