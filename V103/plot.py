@@ -107,23 +107,24 @@ print(f'Abweichung: \t{error[0]:.4}')
 ### plot der Theoriekurve ###
 # linke haelfte
 x = np.linspace(0,0.285)
-plt.plot(x, D_mit(x,E), 'r',
+plt.plot(D_mit(x, E), D_mit(x,E), 'r',
         label=rf'Theoriekurve für $E=({{{E:.5}}})$Pa')
-plt.fill_between(x, D_mit(x,E+e), D_mit(x,E-e), 
-        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
+plt.fill_between(D_mit(x, E), D_mit(x,E+e), D_mit(x,E-e), 
+        facecolor='red', alpha=0.3, label=rf'$\sigma$-Umgebung')
 # rechte haelfte
 x = np.linspace(.285,0.57)
-plt.plot(x, D_mit_left(x,E), 'r')
-plt.fill_between(x, D_mit_left(x,E+e), D_mit_left(x,E-e), 
-        facecolor='red', alpha=0.5)
+plt.plot(D_mit_left(x, E), D_mit_left(x,E), 'r')
+plt.fill_between(D_mit_left(x, E), D_mit_left(x,E+e), D_mit_left(x,E-e), 
+        facecolor='red', alpha=0.3)
 
 # datenpunkte
-plt.scatter(x1, D1, c='b', marker='+', label='Messuhr 1')
-plt.scatter(x2, D2, c='g', marker='+', label='Messuhr 2')
-plt.scatter(0.64,130 / 1000000, c='r', marker='+', label='Fehlerhafte Messung')
+plt.scatter(D_mit(x1, E), D1, c='b', marker='+', label='Messuhr 1')
+plt.scatter(D_mit(x2, E), D2, c='g', marker='+', label='Messuhr 2')
+plt.scatter(D_mit_left(0.64, E),130 / 1000000, c='r', marker='+', label='Fehlerhafte Messung')
 
-plt.xlabel(r'$x / \si{m}$')
-plt.ylabel(r'$D(x) / \si{m}$')
+# visuals
+plt.xlabel(r'$D(x) / \si{m}$')
+plt.ylabel(r'$1 / \si{m}$')
 plt.title(rf'Messdaten und Fit zu Stab 1, beidseitig eingespannt')
 plt.legend()
 
@@ -155,12 +156,6 @@ D2_messung2 = D2
 lx1 = np.abs(L - x1)
 lx2 = np.abs(L - x2)
 
-plt.scatter(x1, D1, c='b', marker='+', 
-    label='Messuhr 1')
-plt.scatter(x2, D2, c='g', marker='+',
-        label='Messuhr 2')
-#plt.title('Stab 1, einseitig eingespannt')
-plt.title(rf'Messdaten und Fit zu Stab 1, einseitig eingespannt')
 
 # curve fit
 x_all = np.append(x1, x2)
@@ -172,13 +167,21 @@ error = np.sqrt(np.diag(pcov))
 e = error[0]
 print(f'Abweichung: \t{error[0]:.4}')
 
+# plot der messdaten
+plt.scatter(D(x1, E), D1, c='b', marker='+', 
+    label='Messuhr 1')
+plt.scatter(D(x2, E), D2, c='g', marker='+',
+        label='Messuhr 2')
+#plt.title('Stab 1, einseitig eingespannt')
+plt.title(rf'Messdaten und Fit zu Stab 1, einseitig eingespannt')
+
 # plot der Theoriekurve
 x = np.linspace(0,L)
-plt.plot(x, D(x,E), 'r', 
+plt.plot(D(x, E), D(x,E), 'r', 
         label=rf'Theoriekurve für $E={{{E:.4}}}$')
         #label=rf'Theoriekurve für $E={{{E:.4}}} \, \frac{{N}}{{m^2}}$')
 # plot der sigma umgebung
-plt.fill_between(x, D(x,E+e), D(x,E-e), 
+plt.fill_between(D(x, E), D(x,E+e), D(x,E-e), 
         facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
 
 c = np.sqrt(E / dichte1)

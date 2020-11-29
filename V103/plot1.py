@@ -33,9 +33,9 @@ def DBeidseitigRechts(x, E):
     F = m * 9.81 # Kraft durch die Masse m
     
     I = np.pi * r**4 / 4 # flaechentraegheistmoment
-    L = 0.53 # hebelarm in metern
+    L = 0.53 # stablaenge in metern
     # return F / (48 * E * I) * (4 * x**3 - 12 * L * x**2 + 9 * L**2 * x - L**3)
-    return F / (48 * E * I) * (3 * L**2 * x - 4 * x**3) * 1000
+    return F / (48 * E * I) * (3 * L**2 * x - 4 * x**3)
 
 def DBeidseitigLinks(x,E):
     r = 0.005 # radius der staebe in meter
@@ -44,9 +44,12 @@ def DBeidseitigLinks(x,E):
     F = m * 9.81 # Kraft durch die Masse m
     
     I = np.pi * r**4 / 4 # flaechentraegheistmoment
-    L = 0.53 # hebelarm in metern
-    return F / (48 * E * I) * (4 * x**3 - 12 * L * x**2 + 9 * L**2 * x - L**3) * 1000
+    L = 0.53 # stablaenge in metern
+    return F / (48 * E * I) * (4 * x**3 - 12 * L * x**2 + 9 * L**2 * x - L**3)
 
+def skalierung(x):
+    L = 0.53 # stablaenge in metern
+    return 3 * L**2 * x - 4 * x**3
 
 # allgemeine Daten
 r = 0.005 # radius der staebe in meter
@@ -96,22 +99,22 @@ print(f'Abweichung: \t{error[0]:.4}')
 ### plot der Theoriekurve ###
 # linke haelfte
 x = np.linspace(0,0.285)
-plt.plot(DBeidseitigRechts(x,E), DBeidseitigRechts(x,E), 'r',
+plt.plot(skalierung(x), DBeidseitigRechts(x,E), 'r',
         label=rf'Theoriekurve für $E=({{{E:.5}}})$Pa')
-plt.fill_between(DBeidseitigRechts(x, E), DBeidseitigRechts(x,E+e), DBeidseitigRechts(x,E-e), 
+plt.fill_between(skalierung(x), DBeidseitigRechts(x,E+e), DBeidseitigRechts(x,E-e), 
         facecolor='red', alpha=0.3, label=rf'$\sigma$-Umgebung')
 ## rechte haelfte
 #plt.fill_between(D_mit_left(x, E), 1000* D_mit_left(x,E+e), 1000* D_mit_left(x,E-e), 
 #        facecolor='red', alpha=0.3)
 #
 # datenpunkte
-plt.scatter(DBeidseitigRechts(x1, E), D1, c='b', marker='+', label='Messuhr 1')
-plt.scatter(DBeidseitigLinks(x2, E), D2, c='g', marker='+', label='Messuhr 2')
+plt.scatter(skalierung(x1), D1, c='b', marker='+', label='Messuhr 1')
+plt.scatter(skalierung(x2), D2, c='g', marker='+', label='Messuhr 2')
 #plt.scatter(D_mit_left(0.64, E),130 / 1000000, c='r', marker='+', label='Fehlerhafte Messung')
 
 # visuals
-plt.xlabel(r'$D(x) / \si{m}$')
-plt.ylabel(r'$1 / \si{mm}$')
+plt.xlabel(r'$(3L^2x - 4x^3) / \si{m}$')
+plt.ylabel(r'$1 / \si{\meter}$')
 plt.title(rf'Messdaten und Fit zu Stab 1, beidseitig eingespannt')
 plt.legend()
 

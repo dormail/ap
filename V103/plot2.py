@@ -98,6 +98,8 @@ x = np.linspace(0,L)
 plt.plot(skalierung(x), D(x,E), 'r', 
         label=rf'Theoriekurve für $E={{{E:.4}}}$')
         #label=rf'Theoriekurve für $E={{{E:.4}}} \, \frac{{N}}{{m^2}}$')
+print(skalierung(x[-1]))
+print(D(x[-1], E))
 # plot der sigma umgebung
 plt.fill_between(skalierung(x), D(x,E+e), D(x,E-e), 
         facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
@@ -107,8 +109,8 @@ print(f'Schallgeschwindigkeit in Stab 1:\t{c}')
 
 plt.title(rf'Messdaten und Fit zu Stab 1, einseitig eingespannt')
 plt.legend()
-plt.xlabel(r'$Lx^2 - x^3/3$')
-plt.ylabel(r'$D(x) / \si{m}$')
+plt.xlabel(r'$(Lx^2 - x^3/3) / \si{\meter}$')
+plt.ylabel(r'$1 / \si{m}$')
 
 plt.savefig('build/plot2.pdf')
 plt.close()
@@ -161,11 +163,6 @@ print(f'Schallgeschwindigkeit in Stab 2:\t{c}')
 plt.xlabel(r'$\frac{x}{cm}$')
 plt.legend()
 #plt.title('Stab 2, einseitig eingespannt')
-plt.title(rf'Messdaten und Fit zu Stab 2, einseitig eingespannt')
-plt.xlabel(r'$x / \si{m}$')
-plt.ylabel(r'$D(x) / \si{m}$')
-
-plt.savefig('build/plot3.pdf')
 plt.close()
 
 # messwerte
@@ -191,22 +188,8 @@ print(f'Schallgeschwindigkeit in Stab 2:\t{c}')
 
 plt.title(rf'Messdaten und Fit zu Stab 2, einseitig eingespannt')
 plt.legend()
-plt.xlabel(r'$Lx^2 - x^3/3$')
-plt.ylabel(r'$D(x) / \si{m}$')
+plt.xlabel(r'$(Lx^2 - x^3/3) / \si{\meter}$')
+plt.ylabel(r'$1 / \si{m}$')
 
 plt.savefig('build/plot3.pdf')
 plt.close()
-# 
-# # messung 3
-# # stab2 mit einem freien ende
-# d3 = df3['stellung der messuhr in cm']
-# x3 = df3['biegung in micrometer']
-# 
-# plt.scatter(d3,x3, c='k', marker='+')
-# plt.savefig('build/plot3.pdf')
-# 
-# 
-# #plt.show()
-# 
-# # in matplotlibrc leider (noch) nicht möglich
-# # plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
