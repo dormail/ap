@@ -115,7 +115,7 @@ plt.scatter(skalierung(x2), D2, c='g', marker='+', label='Messuhr 2')
 # visuals
 plt.xlabel(r'$(3L^2x - 4x^3) / \si{m}$')
 plt.ylabel(r'$1 / \si{\meter}$')
-plt.title(rf'Messdaten und Fit zu Stab 1, beidseitig eingespannt')
+plt.title(rf'Messdaten und Fit zu Stab 1, beidseitig aufliegend')
 plt.legend()
 
 plt.savefig('build/plot1.pdf')
