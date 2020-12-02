@@ -83,4 +83,29 @@ der bekannten Widerstände und davon, wie niedrig die Brückenspannung in ihrem 
 Da die Brückenspannung proportional zur Speisespannung ist, sollte diese möglichst
 groß gewählt werden.
 
+\subsection{Verallgemeinerung auf komplexe Widerstände}
+\label{sec:komplexe-widerstände}
+Wenn die Brückenschaltung nicht nur Widerstände, sondern auch Kapazitäten und Induktivitäten
+enthält, muss der Formalismus aus \autoref{eqn:abgleichbedingung} auf diese verallgemeinert
+werden. Dazu bietet sich die Darstellung als komplexer Widerstand
+\begin{equation}
+	Z = X + jY
+	\label{eqn:komplexer-widerstand}
+\end{equation}
+an, wobei X den leistungsverbrauchenden Wirkwiderstand und Y den Blindwiderstand darstellt.
+
+Die Abgleichbedingung aus \autoref{eqn:prinzipielle-abgleichbedingung} muss dann als komplexe
+Gleichung interpretiert werden, d.h. dass Imaginär- und Realteil auf beiden Seiten gleich sein
+müssen. Da aus der Darstellung als komplexer Widerstand zwei Unbekannte ($X$ und $Y$) resultieren,
+folgen damit auch zwei Gleichungen:
+\begin{equation}
+	X_1X_4 - Y_1Y_4 = X_2X_3 - Y_2Y_3 
+	\quad \text{und} \quad
+	X_1Y_4 - X_4Y_1 = X_2Y_3 - X_3Y_2.
+	\label{eqn:komplexe-abgleichbedingung}
+\end{equation}
+Elektrotechnisch bedeutet dies, dass sowohl Betrag, als auch Phase des Wechselstroms verschwinden
+müssen. Aus den zwei Freiheitsgraden folgt auch, dass an der Brückenschaltung zwei voneinander
+unabhängige Stellglieder existieren müssen.
+
 \cite{sample}
