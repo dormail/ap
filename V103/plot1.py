@@ -102,7 +102,7 @@ x = np.linspace(0,0.285)
 plt.plot(skalierung(x), DBeidseitigRechts(x,E), 'r',
         label=rf'Theoriekurve für $E=({{{E:.5}}})$Pa')
 plt.fill_between(skalierung(x), DBeidseitigRechts(x,E+e), DBeidseitigRechts(x,E-e), 
-        facecolor='red', alpha=0.3, label=rf'$\sigma$-Umgebung')
+        facecolor='red', alpha=0.3, label=rf'Fehlertoleranz von E')
 ## rechte haelfte
 #plt.fill_between(D_mit_left(x, E), 1000* D_mit_left(x,E+e), 1000* D_mit_left(x,E-e), 
 #        facecolor='red', alpha=0.3)

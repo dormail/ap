@@ -10,6 +10,7 @@ Flächenträgheitsmoment von
 	= \frac{\pi}{64} \cdot 10^{-8} \si{\m^4}
 	\label{eqn:IWert}
 \end{equation}
+resultiert.
 
 \subsection{Bestimmung des E-Moduls von Stab 1 mit beidseitiger Auflage}
 \label{sec:messung1}
@@ -50,7 +51,7 @@ die Messwerte in \autoref{tab:messdaten1}.
 \end{table}
 
 Der letzte Messwert (für $x = 64\si{\centi\meter}$) wird dabei in der Auswertung nicht
-betrachtet, da dieser Außerhalb des Stabes liegt und somit keiner richtigen Messung 
+betrachtet, da dieser Außerhalb des Messbereichs liegt und somit keiner richtigen Messung 
 zugeordnet werden kann.
 
 Mit der Methode der kleinsten Quadrate wird die in \autoref{sec:Theorie} hergeleitete
@@ -74,7 +75,7 @@ aufgetragen.
 	\label{fig:plot-messung1}
 \end{figure}
 
-Mit dieser Methode erhielten wir einen Wert für den Elastizitätsmodul von
+Diese Methode ergibt für den Elastizitätsmodul von Stab 1
 \begin{equation}
 	E = (192 \pm 13.1) \si{\giga\pascal}.
 	\label{eqn:E-messung1}
@@ -138,8 +139,9 @@ Funktion
 \end{equation}
 gearbeitet.
 
-Zur Verdeutlichung des Abweichungen in der grafischen Darstellung in
-\autoref{fig:plot-messung2} gegen $Lx^2 - x^3/3$ aufgetragen.
+Zur Verdeutlichung der Abweichungen werden in der grafischen Darstellung in
+\autoref{fig:plot-messung2} die Messreihe und Theoriekurve gegen
+$Lx^2 - x^3/3$ aufgetragen.
 \begin{figure}[H]
 	\centering
 	\includegraphics{build/plot2.pdf}
@@ -157,7 +159,8 @@ Mit dieser Methode erhält man ein Elastizitätsmodul für Stab 1 von
 \label{sec:messung3}
 
 Da in der dritten Messreihe ebenfalls mit einem einseitig eingespannten Stab gearbeitet
-wurde, ist das Vorgehen komplett analog zu dem in \autoref{sec:messung2}. Auch hier wurde
+wurde, ist das Vorgehen komplett analog zu dem in \autoref{sec:messung2}.
+Auch hier wurde
 der Stab am freien Ende mit einem Gewicht von $949.9\si{\gram}$ belastet.
 \\
 Die Messwerte sind in \autoref{tab:messdaten3} zu sehen.
@@ -211,8 +214,9 @@ Die Ausgleichsrechnung ergab dabei ein E-Modul zu Stab 2 von
 \end{equation}
 
 Ein Plot der Messdaten sowie eine Theoriekurve zum bestimmten E-Modul sind in 
-\autoref{fig:plot-messung3} zu sehen. Die Abweichung in der Covarianz-Matrix beim
-Curve-Fit sind so klein, dass das $\sigma$-Intervall kaum noch zu sehen ist.
+\autoref{fig:plot-messung3} zu sehen. Die Unsicherheiten in der 
+Covarianz-Matrix beim
+Curve-Fit sind so klein, dass das Intervall kaum noch zu sehen ist.
 
 \begin{figure}[H]
 	\centering

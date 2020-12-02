@@ -101,7 +101,7 @@ plt.plot(skalierung(x), D(x,E), 'r',
 
 # plot der sigma umgebung
 plt.fill_between(skalierung(x), D(x,E+e), D(x,E-e), 
-        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
+        facecolor='red', alpha=0.5, label=rf'Fehlertoleranz von E')
 
 c = np.sqrt(E / dichte1)
 print(f'Schallgeschwindigkeit in Stab 1:\t{c}')
@@ -157,7 +157,7 @@ plt.plot(skalierung(x), D(x,E), 'r',
         #label=rf'Theoriekurve für $E={{{E:.4}}} \, \frac{{N}}{{m^2}}$')
 # plot der sigma umgebung
 plt.fill_between(skalierung(x), D(x,E+e), D(x,E-e), 
-        facecolor='red', alpha=0.5, label=rf'$\sigma$-Umgebung')
+        facecolor='red', alpha=0.5, label=rf'Fehlertoleranz von E')
 
 c = np.sqrt(E / dichte1)
 print(f'Schallgeschwindigkeit in Stab 2:\t{c}')
