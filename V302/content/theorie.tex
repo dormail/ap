@@ -1,4 +1,86 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+% zielsetzung
+In diesem Versuch wurden verschieden elektrische Bauteile in Brückenschaltungen
+eingesetz, um deren (komplexen) Widerstände zu bestimmen.
+
+Dabei wird hier mit der Nullmethode gearbeitet, d.h. dass durch variable Bauteile
+die Brückenspannung zum verschwinden gebracht wird.
+
+\subsection{Kirchoffschen Gesetze}
+\label{sec:kirchhoff}
+Zur Berechnung vom Stromfluss in Schaltungen werden zwei Gesetze, die
+kirchhoffschen Gesetze, verwendet:
+\begin{enumerate}
+	\item Die \textbf{Knotenregel} besagt, dass an jedem Punkt in einem Stromkreis
+		die Summe aller Ströme (wobei Eingangsströme mit $\mathbf{I} > 0$ und
+		Ausgangsströme mit $\mathbf{I} < 0$ betrachtet werden) verschwindet:
+		\begin{equation}
+			\sum_k \mathbf{I}_k = 0.
+			\label{eqn:knotenregel}
+		\end{equation}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.4\textwidth]{bilder/knotenregel.png}
+			\caption{Darstellung eines ``Knotens`` in einem Stromkreis}
+			\label{fig:knotenregel}
+		\end{figure}
+	\item Nach der \textbf{Maschenregel} ist die Summe der Potentialdifferenzen
+		in einem geschlossenen Stromkreis (``Masche``) 0:
+		\begin{equation}
+			\sum_k U_k = \sum_k \mathbf{I}_k R_k= 0
+			\label{eqn:maschenregel}
+		\end{equation}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\textwidth]{bilder/maschenregel.png}
+			\caption{Darstellung einer Masche in einem Leiternetzwerk}
+			\label{fig:maschenregel}
+		\end{figure}
+\end{enumerate}
+
+\subsection{Berechnung der Brückenspannung und Herleitung der 
+Abgleichbedingung}
+\label{eqn:abgleichbedingung}
+
+In einer Brückenschaltung werden die Stromflüsse in zwei parallelen (jedoch in ihren
+Bauteilen nur bedingt gleichen) Stromleitern zwischen zwei Punkten (in 
+\autoref{fig:prinzipielle-brueckenschaltung} als A und B bezeichnet) die Potentialdifferenz 
+betrachtet.
+Diese Potentialdifferenz wird auch im Allgemeinen als Brückenspannung bezeichnet.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{bilder/prinzipielle-brueckenschaltung.png}
+	\caption{Prinzipielle Brückenschaltung}
+	\label{fig:prinzipielle-brueckenschaltung}
+\end{figure}
+
+Mit dem ersten kirchhoffschen Gesetz lassen sich dann für $U=0$ die Bedingungen für
+die parallelen Ströme herleiten:
+\begin{equation}
+	\mathbf{I}_1 = \mathbf{I}_2
+	\quad \text{und} \quad
+	\mathbf{I}_3 = \mathbf{I}_4.
+	\label{eqn:brueckenschaltung-stroeme}
+\end{equation}
+
+%%%% hier noch ne herleitung %%%%%
+
+\autoref{eqn:brueckenspannung-unabhaengig} liefert einen Ausdruck für die Brückenspannung
+welche nur von den Widerständen $R_i$, jedoch nicht von der Speisespannung $U_S$ abhängt.
+Diese verschwindet, wenn
+\begin{equation}
+	R_1R_4 = R_2R_3
+	\label{eqn:prinzipielle-abgleichbedingung}
+\end{equation}
+erfüllt ist. Im Falle $U=0$ spricht man auch von einer abgeglichenen Brücke. Da die 
+Abgleichbedingung nur von den Widerständen abhängt, kann damit ein unbekannter Widerstand
+bestimmt werden. Die Genauigkeit von einer Messung hängt dann nur noch von der Genauigkeit
+der bekannten Widerstände und davon, wie niedrig die Brückenspannung in ihrem Minimum ist
+(da $U=0$ auch nur ein theoretisches Optimum ist).
+Da die Brückenspannung proportional zur Speisespannung ist, sollte diese möglichst
+groß gewählt werden.
+
 \cite{sample}
