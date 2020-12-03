@@ -42,7 +42,7 @@ kirchhoffschen Gesetze, verwendet:
 
 \subsection{Berechnung der Brückenspannung und Herleitung der 
 Abgleichbedingung}
-\label{eqn:abgleichbedingung}
+\label{sec:abgleichbedingung}
 
 In einer Brückenschaltung werden die Stromflüsse in zwei parallelen (jedoch in ihren
 Bauteilen nur bedingt gleichen) Stromleitern zwischen zwei Punkten (in 
@@ -133,6 +133,21 @@ eine Formel für das unbekannte Bauteil hergeleitet.
 
 \subsubsection{Wheatstonesche Brücke}
 \label{sec:WheatstonescheBrücke}
+In der Wheatstoneschen Brücke sind alle $R_i$ ohmsche Widerstände, wobei hier $R_1$ ein unbekannter
+Widerstand ist, die Anderen sind bekannt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{bilder/wheatstone.png}
+	\caption{Schaltplan der Wheatstoneschen Brückenschaltung}
+	\label{fig:wheatstone-bruecke}
+\end{figure}
+
+Mit \autoref{eqn:prinzipielle-abgleichbedingung} lautet dann der unbekannte Widerstand
+\begin{equation}
+	R_x = R_2 \frac{R_3}{R_4}.
+	\label{eqn:wheatstone-rx}
+\end{equation}
 
 \subsubsection{Kapazitätsmessbrücke}
 \label{sec:kapazitaetsmessbruecke}
