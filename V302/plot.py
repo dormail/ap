@@ -1,21 +1,19 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import scipy
+import scipy.optimize as opt
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+### data import ###
+d1 = pd.read_csv('daten/WienRobinson.csv')
+f = d1['f'] 
+U_Br = d1['2U_Br']/2
+
+plt.plot(f, U_Br, label='Kurve')
+plt.xlabel(r'$f \:/\: \si{\hertz}$')
+plt.ylabel(r'$U_{Br} \:/\: \si{\volt}$')
 plt.legend(loc='best')
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+#plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
+plt.savefig('build/WRplot.pdf')

@@ -1,9 +1,38 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Wheatstone-Brücke}
+Für die Messung des Widerstandes (Wert 11) wurden drei Messreihen vorgenommen, bei denen $R_2$ variiert wurde und das Potentiometer($R_3, R_4=1\si{\kilo}\si{\ohm}-R_3$) abgestimmt wurde, sodass ein Spannungsminimum entsteht. Die eingesetzten, gemessenen und berechneten  Widerstände wurden in \autoref{tab:WS} aufgelistet. Der Widerstand $R_x$ kann mit diesen Werten nach \autoref{eqn:wheatstone-rx} berechnet werden.
+
+Mit der für das Potentiometer (also für $R_3/R_4$) gegebenen Messungenauigkeit von $0.5\%$ und der Gaußschen Fehlerfortpflanzung lässt sich auch der Fehler für $R_x$ bestimmen. Aus den drei Messreihen und der Fehlerrechnung ergibt sich dann 
+%eine Standardabweichung (der Stichprobe) von $\sigma_{R_x}=1.921 \si{\ohm}$ und 
+für $R_x$:
+\begin{align}
+  R_x=(490.86 \pm 3.33)\si{\ohm}
+\end{align}
+
+\begin{table}
+  \centering
+  \caption{Daten zur Wheatstone-Brücke}
+  \label{tab:WS}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $R_2 \, [\si{\ohm}]$ &$R_3 \, [\si{\ohm}]$ &$R_4 \, [\si{\ohm}]$ & $R_x \, [\si{\ohm}]$\\
+  \midrule
+   664 & 425.25 & 574.75& 491.285\\
+   1000 & 330 & 670 & 492.537 \\
+   332 & 595.5 & 404.5 & 488.766 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+%\newpage
+
+
+\subsection{Wien-Robinson-Brücke}
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
+  \includegraphics{WRplot.pdf}
   \caption{Plot.}
   \label{fig:plot}
 \end{figure}
