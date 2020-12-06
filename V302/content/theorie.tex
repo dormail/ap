@@ -150,7 +150,44 @@ Mit \autoref{eqn:prinzipielle-abgleichbedingung} lautet dann der unbekannte Wide
 \end{equation}
 
 \subsubsection{Kapazitätsmessbrücke}
-\label{sec:kapazitaetsmessbruecke}
+\label{sec:theorie-kapazitaetsmessbruecke}
+
+Wie der Name andeutet, können mit dieser Brückenschaltung die Kennzahlen eines Kondensators bestimmt werden.
+Ein realer Kondensator besitzt allerdings nicht ner den komplexen Anteil wie in \autoref{eqn:impedanzen},
+sondern hat auch dielekterische Verluste.
+
+Daher benutzt man ein Ersatzschaltbild mit einem Widerstand $R$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{bilder/ersatz-kapazitaet.png}
+	\caption{Ersatzschaltbild eines realen Kondensators.}
+	\label{fig:ersatz-kondensator}
+\end{figure}
+Der reale Widerstand lautet somit
+\begin{equation}
+	R_{C_\text{real}} = R - \frac{j}{\omega C}.
+	\label{eqn:realer-wderstand-kondensator}
+\end{equation}
+
+Da jetzt für den unbekannten Kondensator $R_{C_\text{real}}$ zwei unbekannte vorliegen ($R$ und $C$), muss 
+auch ein weiterer Freiheitsgrad zur Abstimmvorrichtung hinzugefügt werden.
+
+In diesem Versuchsaufbau (siehe \autoref{fig:kapazitaetsbruecke}) wird dieser durch einen Veränderlichen $R_2$
+realisiert.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{bilder/kapazitaetsbruecke.png}
+	\caption{Schaltplan zur Kapazitätsmessbrücke.}
+	\label{fig:kapazitaetsbruecke}
+\end{figure}
+
+Die Abgleichbedingung liefert dann
+\begin{equation}
+	R_x = R_2 \frac{R_3}{R_4}
+	\qquad
+	C_x = C_2 \frac{R_4}{R_3}
+	\label{eqn:values-kapazitaeten}
+\end{equation}
 
 \subsubsection{Induktivitätsmessbrücke}
 \label{sec:induktivitätsmessbrücke}
