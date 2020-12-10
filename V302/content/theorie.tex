@@ -118,7 +118,7 @@ Die Impedanzen im komplexen sind dabei
 \begin{align}
 	Z_R &= R, \\
 	Z_L &= j\omega L, \\
-	Z_C &= -\frac{j}{\omega} L. \\
+	Z_C &= -\frac{j}{\omega} L.
 	\label{eqn:impedanzen}
 \end{align}
 Damit muss beachtet werden, dass diese auch von der Kreisfrequenz des Wechselstroms $\omega$ 
@@ -165,7 +165,7 @@ Daher benutzt man ein Ersatzschaltbild mit einem Widerstand $R$.
 \end{figure}
 Der reale Widerstand lautet somit
 \begin{equation}
-	R_{C_\text{real}} = R - \frac{j}{\omega C}.
+	Z_{C_\text{real}} = R - \frac{j}{\omega C}.
 	\label{eqn:realer-wderstand-kondensator}
 \end{equation}
 
@@ -191,6 +191,31 @@ Die Abgleichbedingung liefert dann
 
 \subsubsection{Induktivitätsmessbrücke}
 \label{sec:theorie-induktivitätsmessbrücke}
+
+Wie eben schon für Kondensatoren, müssen hier auch für Spulen einige Vorüberlegungen getroffen werden.
+Diese sind auch verlustbehaftet, weswegen auch hier ein Ersatzschaltbild mit einem Widerstand zum Einsatz kommt.
+Die Impedanz lautet dann
+\begin{equation}
+	Z_{L_\text{real}} = R + j \omega L.
+	\label{eqn:reale-induktivitaet}
+\end{equation}
+
+Der Aufbau der Induktivitätsmessbrücke besitzt erfolgt analog zu der Kapazitätsmessbrücke:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{bilder/induktivitaetsbruecke.png}
+	\caption{Schaltplan zur Induktivitätsmessbrücke.}
+	\label{fig:induktivitaetsbruecke}
+\end{figure}
+
+Die Kennziffern der unbekannten Spule folgen dann aus \autoref{eqn:komplexe-abgleichbedingung}:
+\begin{equation}
+	R_x = R_2 \frac{R_3}{R_4}
+	\qquad
+	L_x = L_2 \frac{R_3}{R_4}.
+	\label{eqn:values-induktivitaetsbruecke}
+\end{equation}
+
 
 \subsubsection{Maxwell-Brücke}
 \label{sec:theorie-maxwell-bruecke}
