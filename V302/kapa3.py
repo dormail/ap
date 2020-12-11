@@ -10,21 +10,26 @@ from uncertainties.unumpy import (nominal_values as noms,
 
 
 ### data import ###
-d1 = pd.read_csv('daten/Wheatstone.csv')
-R_2 = d1['R_2'] 
-R_3 = d1['R_3']
+d1 = pd.read_csv('daten/CWert3.csv')
+C_2 = d1['C2/nF']
+R_2 = d1['R2'] 
+R_3 = d1['R3']
 R_4=1000-R_3
-y=unp.uarray(R_3/R_4,0.005*R_3/R_4)
-R_x=R_2*y
-
-mR_x=np.mean(noms(R_x))
-#print(R_x)
+p=unp.uarray(R_3/R_4,0.005*R_3/R_4)
+p1=unp.uarray(R_4/R_3,0.005*R_4/R_3)
+R2=unp.uarray(R_2,0.03*R_2)
+C_x=C_2*p1
+mC_x=np.mean(noms(C_x))
+print(C_x)
 #print(noms(R_x))
 #print(stds(R_x))
-sd=np.std(noms(R_x), ddof=1)
-sdm=sd/1.732
+sdc=np.std(noms(C_x), ddof=1)
+sdmc=sdc/(2**(1/2))
+
 #print(f'Standardabweichung: \t {sd:.4}')
 #print(f'FehlerMittelwert: \t {sdm:.4}')
 #print(f'Mittelwert: \t {mR_x:.4}')
-u=ufloat(mR_x,np.mean(stds(R_x))+sdm)
-print(f'Wert_11_R_x= \t {u:.4}')
+c=ufloat(mC_x,np.mean(stds(C_x))+sdmc)
+print(f'Wert_3_C_x[nF]= \t {c:.5}')
+
+

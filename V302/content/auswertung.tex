@@ -4,11 +4,11 @@
 \subsection{Wheatstone-Brücke}
 Für die Messung des Widerstandes (Wert 11) wurden drei Messreihen vorgenommen, bei denen $R_2$ variiert wurde und das Potentiometer($R_3, R_4=1\si{\kilo}\si{\ohm}-R_3$) abgestimmt wurde, sodass ein Spannungsminimum entsteht. Die eingesetzten, gemessenen und berechneten  Widerstände wurden in \autoref{tab:WS} aufgelistet. Der Widerstand $R_x$ kann mit diesen Werten nach \autoref{eqn:wheatstone-rx} berechnet werden.
 
-Mit der für das Potentiometer (also für $R_3/R_4$) gegebenen Messungenauigkeit von $0.5\%$ und der Gaußschen Fehlerfortpflanzung lässt sich auch der Fehler für $R_x$ bestimmen. Aus den drei Messreihen und der Fehlerrechnung ergibt sich dann 
-%eine Standardabweichung (der Stichprobe) von $\sigma_{R_x}=1.921 \si{\ohm}$ und 
+Mit der für das Potentiometer (also für $R_3/R_4$) gegebenen Messungenauigkeit von $0.5\%$ und der Standardabweichung für $R_x$ von $\sigma_{R_x}=1.921 \si{\ohm}$ lässt sich auch ein Fehler bestimmen. Für $R_x$ ergibt sich dann: 
+
 für $R_x$:
 \begin{align}
-  R_x=(490.86 \pm 3.33)\si{\ohm}
+  R_x=(490.9 \pm 3.6)\si{\ohm}
 \end{align}
 
 \begin{table}
@@ -27,8 +27,18 @@ für $R_x$:
   \end{tabular}
 \end{table}
 %\newpage
-
-
+\subsection{Kapazitätsmessbrücke}
+Für die Werte des verlustbehafteten Kondensators (Wert 9) ergibt sich also:
+\begin{align}
+  C_9=(193.19 \pm 58.88)\si{\nano} \si{\farad}\\
+  R_9=(14.95 \pm 7.50)\si{\kilo} \si{\ohm}\\
+\end{align}
+Für den Wert des Kondensators (Wert 3) ergibt sich:
+\begin{align}
+  C_3=(434.94 \pm 8.32)\si{\nano} \si{\farad}
+\end{align}
+\subsection{Induktivitätsmessbrücke}
+\subsection{Maxwell-Brücke}
 \subsection{Wien-Robinson-Brücke}
 \begin{figure}
   \centering
