@@ -220,6 +220,38 @@ Die Kennziffern der unbekannten Spule folgen dann aus \autoref{eqn:komplexe-abgl
 \subsubsection{Maxwell-Brücke}
 \label{sec:theorie-maxwell-bruecke}
 
+Eine Alternative zu der in \autoref{sec:theorie-induktivitätsmessbrücke} diskutierten Methode zur
+Bestimmung unbekannter Induktivitäten ist die Maxwell-Brücke, die Schaltung ist in 
+\autoref{fig:maxwell-schaltplan} zu sehen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{bilder/maxwellbruecke.png}
+	\caption{Schaltplan zur Maxwell-Brücke.}
+	\label{fig:maxwell-schaltplan}
+\end{figure}
+
+Der Unterschied zur Induktivitätsbrücke besteht dadrin, dass $R_2$ konstant gehalten wird und keine 
+Induktivität enthält. Der zweite Freihatsgrad im System wird durch den parallel liegenden, nun
+variablen $R_4$ mit einem parallel geschalteten Kondensator $C_4$ realisiert.
+
+Aus \autoref{eqn:komplexe-abgleichbedingung} folgen dann die Gleichungen
+\begin{equation}
+	R_x R_4 + \omega^2 R_4^2 C_4 L_x = R_2 R_3 \left(1 + \omega^2 C_4^2 R_4^2 \right)
+	\label{eqn:maxwell-gleichung1}
+\end{equation}
+und
+\begin{equation}
+	-\omega R_x R_4^2 C_4 = 0.
+	\label{eqn:maxwell-gleichung2}
+\end{equation}
+Diese liefern die unbekannten Größen
+\begin{equation}
+	R_x = \frac{R_2 R_3}{R_4}
+	\qquad
+	L_x = R_2 R_3 R_4.
+	\label{eqn:kenngroessen-maxwell}
+\end{equation}
+
 \subsubsection{Wien-Robinson-Brücke}
 \label{sec:theorie-wien-robinson-bruecke}
 
