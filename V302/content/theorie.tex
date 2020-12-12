@@ -68,16 +68,42 @@ die parallelen Ströme herleiten:
 	\label{eqn:brueckenschaltung-stroeme}
 \end{equation}
 
-%%%% hier noch ne herleitung %%%%%
-
-\autoref{eqn:brueckenspannung-unabhaengig} liefert einen Ausdruck für die Brückenspannung
-welche nur von den Widerständen $R_i$, jedoch nicht von der Speisespannung $U_S$ abhängt.
-Diese verschwindet, wenn
+Das zweite Kirchhoffsche Gesetz gibt Auskunft über die Spannungen:
 \begin{equation}
-	R_1R_4 = R_2R_3
+	U = - R_1 \mathbf{I}_1 + R_3 \mathbf{I}_3
+	%\quad
+	\text{ und }
+	%\quad
+	-U = -R_2 \mathbf{I}_2 + R_4 \mathbf{I}_4.
+	\label{eqn:allgemein-kirchhoff2}
+\end{equation}
+In \autoref{eqn:allgemein-kirchhoff2} können dank \autoref{eqn:brueckenschaltung-stroeme} 
+$\mathbf{I}_2$ und $\mathbf{I}_4$ durch $\mathbf{I}_1$ bzw. $\mathbf{I}_3$ ersetzt werden.
+\\
+Gleichsetzen beider Ausdrücke liefert dann
+\begin{equation}
+	U = \frac{R_2 R_3 - R_1 R_4}{R_3 + R_4} \mathbf{I}_1.
+	\label{eqn:ablgeich-abhaengig}
+\end{equation}
+
+Mit der Speisespannung
+\begin{equation}
+	U_S = \mathbf{I}_1 (R_1 + R_2)
+	\label{eqn:speisespannung}
+\end{equation}
+lautet die Brückenspannung
+\begin{equation}
+	U = \frac{R_2 R_3 - R_1 R_4}{(R_3 + R_4)(R_1 + R_2)} U_S.
+	\label{eqn:brueckenspannung-unabhaengig}
+\end{equation}
+
+Die Brückenspannung verschwindet wenn der Zähler im Bruch 0 ist, also
+\begin{equation}
+	R_1R_4 = R_2R_3.
 	\label{eqn:prinzipielle-abgleichbedingung}
 \end{equation}
-erfüllt ist. Im Falle $U=0$ spricht man auch von einer abgeglichenen Brücke. Da die 
+
+Im Falle $U=0$ spricht man auch von einer abgeglichenen Brücke. Da die 
 Abgleichbedingung nur von den Widerständen abhängt, kann damit ein unbekannter Widerstand
 bestimmt werden. Die Genauigkeit von einer Messung hängt dann nur noch von der Genauigkeit
 der bekannten Widerstände und davon, wie niedrig die Brückenspannung in ihrem Minimum ist
@@ -88,7 +114,7 @@ groß gewählt werden.
 \subsection{Verallgemeinerung auf komplexe Widerstände}
 \label{sec:komplexe-widerstände}
 Wenn die Brückenschaltung nicht nur Widerstände, sondern auch Kapazitäten und Induktivitäten
-enthält, muss der Formalismus aus \autoref{eqn:abgleichbedingung} auf diese verallgemeinert
+enthält, muss der Formalismus aus \autoref{sec:abgleichbedingung} auf diese verallgemeinert
 werden. Dazu bietet sich die Darstellung als komplexer Widerstand
 \begin{equation}
 	Z = X + jY
