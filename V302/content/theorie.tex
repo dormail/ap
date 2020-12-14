@@ -2,7 +2,7 @@
 \label{sec:Theorie}
 
 % zielsetzung
-In diesem Versuch wurden verschieden elektrische Bauteile in Brückenschaltungen
+In diesem Versuch werden verschieden elektrische Bauteile in Brückenschaltungen
 eingesetz, um deren (komplexen) Widerstände zu bestimmen.
 
 Dabei wird hier mit der Nullmethode gearbeitet, d.h. dass durch variable Bauteile
@@ -47,10 +47,10 @@ Abgleichbedingung}
 \label{sec:abgleichbedingung}
 
 In einer Brückenschaltung werden die Stromflüsse in zwei parallelen (jedoch in ihren
-Bauteilen nur bedingt gleichen) Stromleitern zwischen zwei Punkten (in 
+Bauteilen nicht unbedingt gleichen) Stromleitern zwischen zwei Punkten (in 
 \autoref{fig:prinzipielle-brueckenschaltung} als A und B bezeichnet) die Potentialdifferenz 
 betrachtet.
-Diese Potentialdifferenz wird auch im Allgemeinen als Brückenspannung bezeichnet.
+Diese Potentialdifferenz wird im Allgemeinen als Brückenspannung bezeichnet.
 
 \begin{figure}[H]
 	\centering
@@ -108,7 +108,7 @@ Abgleichbedingung nur von den Widerständen abhängt, kann damit ein unbekannter
 bestimmt werden. Die Genauigkeit von einer Messung hängt dann nur noch von der Genauigkeit
 der bekannten Widerstände und davon, wie niedrig die Brückenspannung in ihrem Minimum ist
 (da $U=0$ auch nur ein theoretisches Optimum ist).
-Da die Brückenspannung proportional zur Speisespannung ist, sollte diese möglichst
+Da die Brückenspannung proportional zur Speisespannung ist, sollte Letztere möglichst
 groß gewählt werden.
 
 \subsection{Verallgemeinerung auf komplexe Widerstände}
@@ -149,7 +149,7 @@ Die Impedanzen im komplexen sind dabei
 	Z_C &= -\frac{j}{\omega} L.
 	\label{eqn:impedanzen}
 \end{align}
-Damit muss beachtet werden, dass diese auch von der Kreisfrequenz des Wechselstroms $\omega$ 
+Dabei sollte beachtet werden, dass diese auch von der Kreisfrequenz des Wechselstroms $\omega$ 
 abhängig sein können. 
 
 \subsection{Beschreibung der verwendeten Brückenschaltungen}
@@ -283,7 +283,7 @@ Diese liefern die unbekannten Größen
 \subsubsection{Wien-Robinson-Brücke}
 \label{sec:theorie-wien-robinson-bruecke}
 Zuletzt wird hier jetzt die Wien-Robinson-Brücke beschrieben. Diese unterscheidet sich von den 
-bisher genannten dadurch, dass die Ablgeichbedingung auch von der Frequenz des Wechselstroms $\omega$
+bisher genannten Schaltungen dadurch, dass die Ablgeichbedingung auch von der Frequenz des Wechselstroms $\omega$
 abhängt.
 \begin{figure}[H]
 	\centering
@@ -302,7 +302,7 @@ Die vier Brückenelemente besitzen damit die Widerstandsoperatoren
 	Z_3 = \frac{j\omega RC + 1}{j \omega C}
 	\quad
 	\text{und }
-	Z_4 = \frac{R}{1 + j\omega RC}
+	Z_4 = \frac{R}{1 + j\omega RC}.
 \end{equation}
 
 Damit folgt aus \autoref{eqn:komplexe-abgleichbedingung}
@@ -348,7 +348,7 @@ das ergibt dann
 	\left|\frac{U_\text{Br}}{U_S}\right|^2
 	=
 	\frac{1}{9}
-	\frac{\left(\Omega^2 - 1\right)^2}{\left(1 - \Omega^2\right)^2 + 9\Omega^2}
+	\frac{\left(\Omega^2 - 1\right)^2}{\left(1 - \Omega^2\right)^2 + 9\Omega^2}.
 	\label{eqn:wien-robinson-abgleich-einfach}
 \end{equation}
 
@@ -360,7 +360,7 @@ Kreisfrequenz $\omega$ werden entfernt und Frequenzen in der Nähe abgeschwächt
 \label{sec:klirrfaktor}
 
 Der Klirrfaktor ist ein Indikator für die Qualität eines Funktionenerzeugers. Ein idealer 
-Sinus-Generator erzeugt den Sinus zu der eingestellten Frequenz. Das ist beim realen 
+Sinus-Generator erzeugt nur den Sinus zu der eingestellten Frequenz. Das ist beim realen 
 Funktionen-Generator nicht der Fall; es entstehen Oberwellen.
 
 Für die Bestimmung des Klirrfaktors wird die Wien-Robinson-Brücke aus 
