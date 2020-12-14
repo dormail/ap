@@ -352,8 +352,37 @@ das ergibt dann
 	\label{eqn:wien-robinson-abgleich-einfach}
 \end{equation}
 
+In \autoref{eqn:wien-robinson-abgleich-einfach} wird deutlich, dass es sich bei der 
+Wien-Robinson-Brücke um einen elektronischen Filter handelt. Wechselströme mit der 
+Kreisfrequenz $\omega$ werden entfernt und Frequenzen in der Nähe abgeschwächt.
 
 \subsection{Bestimmung des Klirrfaktors}
 \label{sec:klirrfaktor}
 
-\cite{sample}
+Der Klirrfaktor ist ein Indikator für die Qualität eines Funktionenerzeugers. Ein idealer 
+Sinus-Generator erzeugt den Sinus zu der eingestellten Frequenz. Das ist beim realen 
+Funktionen-Generator nicht der Fall; es entstehen Oberwellen.
+
+Für die Bestimmung des Klirrfaktors wird die Wien-Robinson-Brücke aus 
+\autoref{sec:theorie-wien-robinson-bruecke} benutzt. Mit ihr wird die Hauptwelle des 
+Funktionenerzeugers rausgefiltert, sodass nur die Oberwellen zurückbleiben. Dann folgt der
+Klirrfaktor
+\begin{equation}
+	k = \frac{\sqrt{U_2^2 + U_3^2 + \hdots}}{U_1}.
+	\label{eqn:klirrfaktor}
+\end{equation}
+Dabei ist $U_1$ die Amplitude der Grundwelle und $U_n$ die der n-ten Oberwelle, welche dann die
+Frequenz $n\omega_0$ besitzt.
+
+Für diesen Versuch wird die Annahme 
+\begin{equation}
+	U_k = 0 \text{ für } k > 2
+	\label{eqn:klirrfaktor-annahme}
+\end{equation}
+gemacht. Dann lautet folgt aus \autoref{eqn:wien-robinson-abgleich-einfach}
+\begin{equation}
+	U_2 = \frac{U_\text{Br}}{f(2)}
+	\label{eqn:klirrfaktor-u2}
+\end{equation}
+Wobei $f(2)$ \autoref{eqn:wien-robinson-abgleich-einfach} bei $\Omega = 2$ ausgewertet ist.
+
