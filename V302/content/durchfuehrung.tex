@@ -1,2 +1,56 @@
 \section{Durchführung}
 \label{sec:Durchführung}
+Im nächsten Abschnitt wird auf die Durchführung eingegangen. Abgesehen von der Messung des
+Klirrfaktors beruhen die Messungen auf der 
+Nullmethode, die Brückenspannung wird dabei mit einem digitalen Oszillograph gemessen.
+
+\subsection{Wheatstonesche Brücke}
+\label{sec:exec-wheatstone}
+
+Hier sollen zwei unbekannte Widerstände bestimmt werden. Da \autoref{eqn:wheatstone-rx} nicht von 
+$R_3$ und $R_4$, sondern nur von deren Verhältnis abhängt,
+werden diese hier mit durch ein Potentiometer ersetzt.
+
+Es wird das Verhältnis $R_3/R_4$ variiert, bis mit dem Oszillographen ein Minimum der Brückenspannung
+gefunden wurde. Die Speisespannung wird auf $10\si{\volt}$ gestellt. Zur Fehlerbestimmung wird $R_2$
+(siehe \autoref{fig:wheatstone-bruecke}) variiert.
+
+\subsection{Kapazitätsmessbrücke}
+\label{sec:exec-kapazitaetsmessbrueck}
+
+Die Durchführung bei der Kapazitätsmessbrücke erfolgt analog zu der bei der Wheatstoneschen Brücke.
+
+Der Hauptunterschied liegt dadrin, dass nun zwei veränderliche Bauteile im Aufbau verbaut sind. Für die
+Nullmethode wird an einem Bauteil der Wert verändert, bis das Oszilloskop ein Minimum in der Brückenspannung
+verzeichnet. Danach wird dann am zweiten variablen Bauteil ein Minimum gesucht.
+\\
+Dies wird so lange durchgeführt, bis man ein totales Minimum gefunden hat, d.h. dass eine Veränderung eines
+Wertes die Brückenspannung erhöht.
+
+Da für die Bestimmung eines Wertes $R_2$ variert wird, muss für die Fehlerbestimmung $C_2$ in den 
+verschiedenen Messreihen variert werden.
+
+\subsection{Induktivitätsmessbrücke}
+\label{sec:exec-induktivitätsmessbrücke}
+
+Die Durchführung findet komplett analog zu der in \autoref{sec:exec-kapazitaetsmessbrueck} statt; zur
+Fehlerbestimmung wird $L_2$ variert.
+
+\subsection{Maxwell-Brücke}
+\label{sec:exec-maxwell-bruecke}
+
+Der Aufbau folgt gemäß \autoref{fig:maxwell-schaltplan}, für die Nullmethode werden $R_3$ und 
+$R_4$ durch Potentiometer ersetz welche so lange variiert werden, bis die Brückenspannung 
+minimal ist.
+
+Es werden die gleichen unbekannten Induktivitäten wie bei der Induktivitätsmessbrücke 
+eingesetzt.
+
+\subsection{Wien-Robinson-Brücke und Klirrfaktor}
+\label{sec:exec-wien-robinson-bruecke}
+
+Der Aufbau erfolgt gemäß dem Schaltplan in \autoref{fig:wien-robinson-schaltplan}. Im 
+Frequenzbereich von $20\si{\hertz}$ bis $30\si{\kilo\hertz}$ wird die Brückenspannung gemessen. 
+Dabei soll auch die Frequenz $\omega_0$ gefunden werden, bei der die Brückenspannung minimal ist.
+
+Für die Berechnung des Klirrfaktors muss auch die Brückenspannung im Minimum $\omega_0$ notiert werden.
