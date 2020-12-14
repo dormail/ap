@@ -18,7 +18,7 @@ f0=160
 om=f/f0
 U=U_Br/10
 
-f0theo=1006.036217
+f0theo=160.11
 omtheo=np.linspace(20,30000,num=10000)/f0theo
 Utheo=(1/9*((omtheo**2-1)**2/((1-omtheo**2)**2+9*omtheo**2)))**0.5
 

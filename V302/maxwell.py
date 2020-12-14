@@ -22,14 +22,14 @@ R_x=R_2*R3/R4
 L_x=R_2*R3*C_4
 mL_x=np.mean(noms(L_x))
 mR_x=np.mean(noms(R_x))
-#print(C_x)
+print(L_x)
 #print(noms(R_x))
 #print(stds(R_x))
 sdl=np.std(noms(L_x), ddof=1)
-sdml=sdl/(2**(1/2))
+sdml=sdl/(4**(1/2))
 
 sdr=np.std(noms(R_x), ddof=1)
-sdmr=sdr/(2**(1/2))
+sdmr=sdr/(4**(1/2))
 #print(f'Standardabweichung: \t {sd:.4}')
 #print(f'FehlerMittelwert: \t {sdm:.4}')
 #print(f'Mittelwert: \t {mR_x:.4}')
