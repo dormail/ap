@@ -1,4 +1,5 @@
 \input{header.tex}
+\usepackage{pdfpages}
 
 \subject{V302}
 \title{Brückenschaltungen}
@@ -20,6 +21,8 @@
 \input{content/auswertung.tex}
 \input{content/diskussion.tex}
 
+\nocite{sample}
 \printbibliography{}
+\includepdf[pages=-]{content/messdaten.pdf}
 
 \end{document}
