@@ -1,21 +1,33 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import scipy
+import scipy.optimize as opt
+from uncertainties import ufloat
+import uncertainties.unumpy as unp
+from uncertainties.unumpy import (nominal_values as noms,
+                                  std_devs as stds)
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+
+### data import ###
+d1 = pd.read_csv('daten/WienRobinson.csv')
+f = d1['f'] 
+U_Br = d1['2U_Br']/2
+f0=160
+om=f/f0
+U=U_Br/10
+
+f0theo=160.11
+omtheo=np.linspace(20,30000,num=10000)/f0theo
+Utheo=(1/9*((omtheo**2-1)**2/((1-omtheo**2)**2+9*omtheo**2)))**0.5
+
+plt.plot(om, U, label='Messdaten', linewidth=1.0)
+plt.plot(omtheo, Utheo, label='Theorie-Kurve', linewidth=1.0)
+plt.xscale('log')
+plt.xlabel(r'$f/f_0 \:$')
+plt.ylabel(r'$U_{Br}/U_S \:$')
 plt.legend(loc='best')
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+plt.savefig('build/WRplot.pdf')
