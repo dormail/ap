@@ -1,0 +1,28 @@
+\input{header.tex}
+\usepackage{pdfpages}
+
+\subject{V302}
+\title{Brückenschaltungen}
+\date{%
+  Durchführung: 01.12.2020
+  \hspace{3em}
+  Abgabe: 15.12.2020
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\input{content/theorie.tex}
+\input{content/durchfuehrung.tex}
+\input{content/auswertung.tex}
+\input{content/diskussion.tex}
+
+\nocite{sample}
+\printbibliography{}
+\includepdf[pages=-]{content/messdaten.pdf}
+
+\end{document}
