@@ -6,4 +6,4 @@
     - f in Hz, A in V
   * kondensatorspannung2.csv für Größenordnung über 1KHz
     - f in kHz, A in mV
-* phasenverschiebung.csv für 4c
+* bei 4c das gleiche wie in b)
