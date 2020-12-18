@@ -4,6 +4,9 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python3 plot.py
 
+RC.pdf: plot.py matplotlibrc header-matplotlib.tex daten/RC-Entladekurve.csv | build
+	TEXINPUTS=$$(pwd): python3 RC-Entladekurve.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 
