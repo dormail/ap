@@ -10,6 +10,9 @@ RC.pdf: plot.py matplotlibrc header-matplotlib.tex daten/RC-Entladekurve.csv | b
 spannungsverhaeltnis.pdf: plot.py matplotlibrc header-matplotlib.tex daten/kondensatorspannung1.csv daten/kondensatorspannung2.csv | build
 	TEXINPUTS=$$(pwd): python3 generatorspannung.py
 
+phasenverschiebung.pdf: plot.py matplotlibrc header-matplotlib.tex daten/4c-1.csv daten/4c-2.csv | build
+	TEXINPUTS=$$(pwd): python3 phasenverschiebung.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 
