@@ -46,4 +46,4 @@ plt.title('Entladung eines RC-Kreises')
 plt.xlabel(r'$t/(\mu \si{s})$')
 plt.ylabel(r'$U_C / \si{V}$')
 
-plt.savefig('RC.pdf')
+plt.savefig('build/4a.pdf')

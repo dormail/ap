@@ -4,7 +4,7 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python3 plot.py
 
-RC.pdf: plot.py matplotlibrc header-matplotlib.tex daten/RC-Entladekurve.csv RC-Entladekurve.py | build
+build/4a.pdf: plot.py matplotlibrc header-matplotlib.tex daten/RC-Entladekurve.csv RC-Entladekurve.py | build
 	TEXINPUTS=$$(pwd): python3 RC-Entladekurve.py
 
 spannungsverhaeltnis.pdf: plot.py matplotlibrc header-matplotlib.tex daten/kondensatorspannung1.csv daten/kondensatorspannung2.csv | build
