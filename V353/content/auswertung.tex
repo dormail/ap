@@ -4,6 +4,55 @@
 \subsection{Entladeverhalten des RC-Kreises}
 \label{sec:4a-auswertung}
 
+In der ersten Messreihe wurde die Entladung des RC-Kreises untersucht. Dabei ergaben sich
+die Messwerte in \autoref{tab:messdaten-4a}.
+
+\begin{table}
+\centering
+\caption{Messergebnisse zum Entladevorgang der RC-Schaltung}
+\label{tab:messdaten-4a}
+\sisetup{table-format=2.1}
+\begin{tabular}{c c}
+\toprule
+t / (\si{\micro s}) & U / \si{\volt} \\
+\midrule
+  0  	&2.10 \\
+ 10  	&1.90 \\
+ 20  	&1.80 \\
+ 30  	&1.70 \\
+ 40  	&1.55 \\
+ 50  	&1.40 \\
+ 60  	&1.30 \\
+ 70  	&1.20 \\
+ 80  	&1.10 \\
+ 90  	&0.90 \\
+100  	&0.80 \\
+120  	&0.65 \\
+150  	&0.30 \\
+160  	&0.25 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Wie in \autoref{sec:Theorie} gezeigt, wird dieses Verhalten durch die Funktion
+\begin{equation}
+	U_C(t) = U_C(0) \cdot \exp\left(-\frac{t}{RC}\right)
+\end{equation}
+
+Mit einer Ausgleichsrechnung wurde der Wert
+\begin{equation}
+	RC = (100.9 \pm 6.5) \si{\micro s}
+	\label{eqn:ergebnis-4a}
+\end{equation}
+ermittelt. In \autoref{fig:plot-4a} sind die Messdaten und die Theoriekurve zum ermittelten Wert zu sehen.
+
+\begin{figure}
+	\centering
+	\includegraphics{build/4a.pdf}
+	\caption{Messdaten und Theoriekurve}
+	\label{fig:plot-4a}
+\end{figure}
+
 \subsection{Amplitudenverhältnis des RC-Kreis}
 \label{sec:4b-auswertung}
 
