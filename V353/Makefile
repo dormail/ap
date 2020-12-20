@@ -16,6 +16,8 @@ build/4c.pdf: matplotlibrc header-matplotlib.tex daten/4c-1.csv daten/4c-2.csv p
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 
+build/main.pdf: build/4a.pdf build/4b.pdf build/4c.pdf
+
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
@@ -26,6 +28,11 @@ build/main.pdf: FORCE | build
 	  --interaction=nonstopmode \
 	  --halt-on-error \
 	main.tex
+
+build/all-plots.pdf: build/4a.pdf build/4b.pdf build/4c.pdf
+	pdfunite \
+		build/4a.pdf build/4b.pdf build/4c.pdf \
+		build/all-plots.pdf
 
 build:
 	mkdir -p build
