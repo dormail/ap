@@ -35,15 +35,20 @@ print(f'Ergebnisse vom curve_fit:')
 print(f'U0 = {U0} ± {error[0]:.2}')
 print(f'T = {T:.4} ± {error[1]:.2}')
 
+print(df)
+
 # plot
 t_plt = np.linspace(0, 180)
 #t_plt = np.linspace(0, 0.00018)
 plt.scatter(t,U, marker='+', label='Messdaten')
-plt.plot(t_plt, UC(t_plt, U0, T), color='r', label=rf'curve fit für $RC={{{T:.5}}}\mu s$')
+plt.plot(t_plt, UC(t_plt, U0, T), color='r', label=rf'curve fit für $RC={{{T:.5}}}\mu s$',
+        linewidth=0.5)
 plt.legend()
 
 plt.title('Entladung eines RC-Kreises')
 plt.xlabel(r'$t/(\mu \si{s})$')
 plt.ylabel(r'$U_C / \si{V}$')
+
+#plt.xscale('log')
 
 plt.savefig('build/4a.pdf')
