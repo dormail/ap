@@ -39,11 +39,11 @@ err = np.sqrt(np.diag(pcov))[0]
 T = T[0]
 
 # output
-print(f'RC = ({T * 10**6:.4f} ± {err * 10*6:.4f}) micro-seconds')
+print(f'RC = ({-1*T * 10**6:.4f} ± {err * 10*6:.4f}) micro-seconds')
 
 # plot
 phi_plt = np.linspace(30, 10**5, 10**4)
-plt.plot(phi_plt, phi_fit(phi_plt, T), color='r', label=rf'Curve Fit für $RC = {T * 10**6:.4f}\mu\si{{s}}$')
+plt.plot(phi_plt, phi_fit(phi_plt, T), color='r', label=rf'Curve Fit für $RC = {-1*T * 10**6:.2f}\mu\si{{s}}$')
 plt.scatter(f,phi, marker='+', label='Messdaten')
 
 plt.title(r'Phasenverschiebung zwischen $U_C$ und $U_\text{ext}$')
