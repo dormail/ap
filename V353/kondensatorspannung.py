@@ -13,14 +13,21 @@ df = pd.read_csv('daten/kondensatorspannung2.csv')
 f2 = df['f'] * 1000
 A2 = df['A'] / 1000
 
-# Spannung der Quelle und Anpassung auf Amplitudenverhaeltnis
+# Spannung der Quelle
 U0 = 4.2
-A1 = A1 / 4.2
-A2 = A2 / 4.2
 
 # merge arrays
 f = np.append(f1, f2)
 A = np.append(A1, A2)
+
+# alles in ein dataframe fuer die ausgabe
+data = {'f': f, 'UC': A, 'Urel': A/4.2}
+df_new = pd.DataFrame(data)
+print('Messdaten zum Amplitudenverhaeltnis')
+print(df_new)
+
+# anpassung auf spannungsverhaeltnis
+A = A / 4.2
 
 # curve fit
 def AC(f, T):
@@ -49,7 +56,7 @@ plt.plot(f_plt, AC(f_plt, T), color='r', label=rf'Curve Fit zu $RC={{{T * 10**6:
 
 plt.title(r'Spannungsverhältnis $U_C(\omega) / U_0$ im RC-Kreis')
 #plt.ylabel(r'$$')
-plt.xlabel(r'$\omega \cdot \si{s}$')
+plt.xlabel(r'$f \cdot \si{s}$')
 plt.xscale('log')
 plt.legend()
 
