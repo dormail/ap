@@ -46,7 +46,7 @@ phi_plt = np.linspace(30, 10**5, 10**4)
 plt.plot(phi_plt, phi_fit(phi_plt, T), color='r', label=rf'Curve Fit für $RC = {-1*T * 10**6:.2f}\mu\si{{s}}$')
 plt.scatter(f,phi, marker='+', label='Messdaten')
 
-plt.title(r'Phasenverschiebung zwischen $U_C$ und $U_\text{ext}$')
+plt.title(r'Phasenverschiebung zwischen $U_C$ und $U_G$')
 plt.xlabel(r'$f \cdot \si{s}$')
 plt.ylabel(r'$\varphi$')
 plt.legend()
