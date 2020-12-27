@@ -9,12 +9,13 @@ die Messwerte in \autoref{tab:messdaten-4a}.
 
 \begin{table}
 	\centering
-	\caption{Messergebnisse zum Entladevorgang der RC-Schaltung}
+	\caption{Messergebnisse zum Entladevorgang der RC-Schaltung. $t$ ist vergangene Zeit 
+	ab Beginn der Entladung, $U_C$ die gemessene Kondensatorspannung}
 	\label{tab:messdaten-4a}
 	\sisetup{table-format=2.1}
 	\begin{tabular}{c c}
 		\toprule
-		t / (\si{\micro s}) & U / \si{\volt} \\
+		$t / (\si{\micro s})$ & $U_C / \si{\volt}$ \\
 		\midrule
 		0  	&2.10 \\
 		10  	&1.90 \\
@@ -47,15 +48,28 @@ Mit einer Ausgleichsrechnung wurde der Wert
 ermittelt. Die Messunsicherheit folgt dabei aus der Covarianz-Matrix des Curve-Fits.
 In \autoref{fig:plot-4a} sind die Messdaten und die Theoriekurve zum ermittelten Wert zu sehen.
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics{build/4a.pdf}
 	\caption{Messdaten und Theoriekurve}
 	\label{fig:plot-4a}
 \end{figure}
 
+
 \subsection{Amplitudenverhältnis des RC-Kreis}
 \label{sec:4b-auswertung}
+
+\begin{equation}
+	RC = (1076.7 \pm 6.8) \si{\micro s}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/4b.pdf}
+	\caption{Amplitudenverhältnis von Speisespannung und Kondensatorspannung bei
+	verschiedenen Frequenzen der Speisespannung}
+	\label{fig:4b.pdf}
+\end{figure}
 
 \subsection{Phasenverschiebung des RC-Kreis}
 \label{sec:4c-auswertung}
@@ -64,6 +78,7 @@ In diesem Teil wurde die Phasenverschiebung zwischen externer Wechselspannung un
 Kondensatorspannung betrachtet. Da die Phasenverschiebung
 \begin{equation}
 	\varphi = \frac{a}{b} \cdot 2\pi
+	\label{eqn:4b-phase}
 \end{equation}
 nicht von den Wert $a$ und $b$ abhängt, sondern nur deren Verhältnis, wurden diese
 in Längeneinheiten des Oszillisgraphen gemessen. Dabei ergab die Messreihe die Werte in 
@@ -71,7 +86,10 @@ in Längeneinheiten des Oszillisgraphen gemessen. Dabei ergab die Messreihe die 
 
 \begin{table}
 	\centering
-	\caption{Phasenverschiebung zwischen Speisespannung und Kondensatorspannung}
+	\caption{Aufgenommene Messdaten: $f$ ist die Frequenz des Wechselstroms, $a$ die 
+	Verschiebung zwischen den Spannungen in relativen Zeiteinheiten, $b$ die
+	Gesamtperiodendauer in relativen Zeiteinheiten, $\varphi$ die dadraus resultierende
+	Phasenverschiebung gemäß \autoref{eqn:4b-phase}}
 	\label{tab:messdaten-4c}
 	\sisetup{table-format=2.1}
 	\begin{tabular}{c c c c}
@@ -102,6 +120,18 @@ Daher wird auch hier mit dem Curve Fit $RC$ bestimmt. Diese Methode liefert den 
 	RC = (891.7860 \pm 0.004) \si{\micro s}.
 	\label{eqn:ergebniss-4c}
 \end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/4c.pdf}
+	\caption{Gemessene Phasenverschiebung zwischen der Kondensatorspannung $U_C$ und der Speisespannung
+	$U_G$.}
+	\label{fig:4c.pdf}
+\end{figure}
+
+
+
+\newpage
 
 \subsection{Integrator-Funktion des RC-Kreises}
 \label{sec:4d-auswertung}
