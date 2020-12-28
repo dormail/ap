@@ -13,10 +13,13 @@ build/4b.pdf: matplotlibrc header-matplotlib.tex daten/kondensatorspannung1.csv 
 build/4c.pdf: matplotlibrc header-matplotlib.tex daten/4c-1.csv daten/4c-2.csv phasenverschiebung.py | build
 	TEXINPUTS=$$(pwd): python3 phasenverschiebung.py
 
+build/polarplot.pdf: matplotlibrc header-matplotlib.tex polarplot.py | build
+	TEXINPUTS=$$(pwd): python3 polarplot.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 
-build/main.pdf: build/4a.pdf build/4b.pdf build/4c.pdf
+build/main.pdf: build/4a.pdf build/4b.pdf build/4c.pdf build/polarplot.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
