@@ -91,11 +91,18 @@ wurden die Werte aus \autoref{tab:messdaten-4b} gemessen.
 	\end{tabular}
 \end{table}
 
-Eine nicht lineare Ausgleichsrechnung ergab dabei den Wert
+Das Amplitudenverhältnis wird durch die Funktion
+\begin{equation}
+	\frac{A(\omega)}{U_0}
+	=
+	\frac{1}{\sqrt{1 + \omega^2 R^2 C^2}}
+\end{equation}
+beschrieben, eine nicht lineare Ausgleichsrechnung ergab dabei den Wert
 \begin{equation}
 	RC = (1076.7 \pm 6.8) \si{\micro s}.
 	\label{eqn:ergebnis-4b}
 \end{equation}
+
 Die Messungenauigkeit folgt dabei aus den Kovarianzen beim Curve-Fit. Die Messdaten sowie
 die Theorikurve zum ermittelten Wert sind in  \autoref{fig:4b.pdf} dargestellt.
 
@@ -165,9 +172,17 @@ Daher wird auch hier mit dem Curve Fit $RC$ bestimmt. Diese Methode liefert den 
 	\label{fig:4c.pdf}
 \end{figure}
 
+Zusammen mit den Werten aus der zweiten Messung ist eine alternative Darstellung möglich.
+\autoref{fig:polarplot} zeigt die Messwerte und Theoriekurve in einem Polarplot.
 
-
-\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/polarplot.pdf}
+	\caption{Darstellung der Ergebnisse als Polarplot. Radial wird das Amplitudenverhältnis,
+		im Polarwinkel die Phasenverschiebung dargestellt. Bei den Messwerten des 
+		Amplitudenverhältnisses werden nur die ersten sechs dargestellt.}
+	\label{fig:polarplot}
+\end{figure}
 
 \subsection{Integrator-Funktion des RC-Kreises}
 \label{sec:4d-auswertung}
