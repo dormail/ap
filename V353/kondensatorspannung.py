@@ -54,7 +54,7 @@ plt.scatter(f,A, marker='+', label='Messdaten')
 plt.plot(f_plt, AC(f_plt, T), color='r', label=rf'Curve Fit zu $RC={{{T * 10**6:.5}}}\mu\si{{s}}$',
         linewidth=0.4)
 
-plt.title(r'Spannungsverhältnis $U_C(\omega) / U_0$ im RC-Kreis')
+plt.title(r'Spannungsverhältnis $A(\omega) / U_0$ im RC-Kreis')
 #plt.ylabel(r'$$')
 plt.xlabel(r'$f \cdot \si{s}$')
 plt.xscale('log')
