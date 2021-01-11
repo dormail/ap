@@ -1,2 +1,33 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Durch die drei Messreihen konnten für die Zeitkonstante des betrachteten Systems drei
+Werte für die Zeitkonstante gewonnen werden:
+
+\begin{align}
+	RC_1 &= (100.9 \pm 6.5) \si{\micro s} &
+	\label{eqn:RC_1}
+	     &\text{ Bestimmung durchs Entladeverhalten}
+	\\
+	RC_2 &= (1076.7 \pm 6.8) \si{\micro s} &
+	\label{eqn:RC_2}
+	     &\text{ Bestimmung durchs Amplitudenverhältnis}
+	\\
+	RC_3 &= (891.786 \pm 0.004) \si{\micro s} &
+	\label{eqn:RC_3}
+	     &\text{ Bestimmung durch Phasenverschiebung}
+\end{align}
+
+Dabei ist auffällig, dass der erste Wert von den anderen um eine ganze Größenordnung
+abweicht, während die letzteren nur um $20.7\%$ voneinander abweichen. Dies kann, weil die 
+Abweichung ziemlich genau der Faktor 10 ist, an einem Bedienfehler, wie einer falsch eingestellten
+Zeitskala am Oszilloskop, liegen.
+
+Allerdings ist auch die Differenz zwischen $RC_2$ und $RC_3$ signifikant, diese lässt sich jedoch
+durch systematische Fehler erklären. Für eine exakte Bestimmung der Phasenverschiebung müssen
+die Y-Achsen von $U_C$ und $U_G$ am Oszilliskop geeicht werden, sodass die Signale symmetrisch
+zur X-Achse liegen. Dies war für $U_G$ nicht möglich, da der Drehregler für
+die Y-Verschiebung des zweiten Inputs am Oszilloskop abgebrochen war.
+
+Dazu flackerte der Bildschirm des Oszilloskops nach einigen Sekunden, sodass die Werte nie lange 
+deutlich ablesbar waren, vor allem die erste Messung wurde dadurch erheblich erschwert, 
+was auch die Abweichung von $RC_1$ erklärt.
