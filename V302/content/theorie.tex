@@ -6,14 +6,14 @@ In diesem Versuch werden verschieden elektrische Bauteile in Brückenschaltungen
 eingesetz, um deren (komplexen) Widerstände zu bestimmen.
 
 Dabei wird hier mit der Nullmethode gearbeitet, d.h. dass durch variable Bauteile
-die Brückenspannung zum verschwinden gebracht wird.
+die Brückenspannung zum Verschwinden gebracht wird.
 
 Zuletzt soll noch der Klirrfaktor des benutzten Funktionenerzeugers bestimmt werden.
 
 \subsection{Kirchoffschen Gesetze}
 \label{sec:kirchhoff}
 Zur Berechnung vom Stromfluss in Schaltungen werden zwei Gesetze, die
-kirchhoffschen Gesetze, verwendet:
+Kirchhoff`schen Gesetze, verwendet:
 \begin{enumerate}
 	\item Die \textbf{Knotenregel} besagt, dass an jedem Punkt in einem Stromkreis
 		die Summe aller Ströme (wobei Eingangsströme mit $\mathbf{I} > 0$ und
@@ -25,7 +25,8 @@ kirchhoffschen Gesetze, verwendet:
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.4\textwidth]{bilder/knotenregel.png}
-			\caption{Darstellung eines ``Knotens`` in einem Stromkreis}
+			\caption{Darstellung eines ``Knotens`` in einem Stromkreis 
+			\cite{sample} }
 			\label{fig:knotenregel}
 		\end{figure}
 	\item Nach der \textbf{Maschenregel} ist die Summe der Potentialdifferenzen
@@ -37,7 +38,8 @@ kirchhoffschen Gesetze, verwendet:
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.5\textwidth]{bilder/maschenregel.png}
-			\caption{Darstellung einer Masche in einem Leiternetzwerk}
+			\caption{Darstellung einer Masche in einem Leiternetzwerk
+			\cite{sample}}
 			\label{fig:maschenregel}
 		\end{figure}
 \end{enumerate}
@@ -46,20 +48,21 @@ kirchhoffschen Gesetze, verwendet:
 Abgleichbedingung}
 \label{sec:abgleichbedingung}
 
-In einer Brückenschaltung werden die Stromflüsse in zwei parallelen (jedoch in ihren
-Bauteilen nicht unbedingt gleichen) Stromleitern zwischen zwei Punkten (in 
-\autoref{fig:prinzipielle-brueckenschaltung} als A und B bezeichnet) die Potentialdifferenz 
-betrachtet.
+In einer Brückenschaltung wird in zwei parallelen 
+(jedoch in ihren Bauteilen nicht unbedingt gleichen) 
+Stromleitern zwischen zwei Punkten 
+(in \autoref{fig:prinzipielle-brueckenschaltung} als A und B bezeichnet) 
+die Potentialdifferenz betrachtet.
 Diese Potentialdifferenz wird im Allgemeinen als Brückenspannung bezeichnet.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{bilder/prinzipielle-brueckenschaltung.png}
-	\caption{Prinzipielle Brückenschaltung}
+	\caption{Prinzipielle Brückenschaltung \cite{sample}}
 	\label{fig:prinzipielle-brueckenschaltung}
 \end{figure}
 
-Mit dem ersten kirchhoffschen Gesetz lassen sich dann für $U=0$ die Bedingungen für
+Mit dem ersten Kirchhoff`schen Gesetz lassen sich dann für $U=0$ die Bedingungen für
 die parallelen Ströme herleiten:
 \begin{equation}
 	\mathbf{I}_1 = \mathbf{I}_2
@@ -97,17 +100,18 @@ lautet die Brückenspannung
 	\label{eqn:brueckenspannung-unabhaengig}
 \end{equation}
 
-Die Brückenspannung verschwindet wenn der Zähler im Bruch 0 ist, also
+Die Brückenspannung verschwindet wenn der Zähler im Bruch 0 ist, also wenn
 \begin{equation}
-	R_1R_4 = R_2R_3.
+	R_1R_4 = R_2R_3
 	\label{eqn:prinzipielle-abgleichbedingung}
 \end{equation}
+ist.
 
 Im Falle $U=0$ spricht man auch von einer abgeglichenen Brücke. Da die 
 Abgleichbedingung nur von den Widerständen abhängt, kann damit ein unbekannter Widerstand
 bestimmt werden. Die Genauigkeit von einer Messung hängt dann nur noch von der Genauigkeit
 der bekannten Widerstände und davon, wie niedrig die Brückenspannung in ihrem Minimum ist
-(da $U=0$ auch nur ein theoretisches Optimum ist).
+(da $U=0$ praktisch nicht erreicht wird)
 Da die Brückenspannung proportional zur Speisespannung ist, sollte Letztere möglichst
 groß gewählt werden.
 
@@ -120,7 +124,7 @@ werden. Dazu bietet sich die Darstellung als komplexer Widerstand
 	Z = X + jY
 	\label{eqn:komplexer-widerstand}
 \end{equation}
-an, wobei X den leistungsverbrauchenden Wirkwiderstand und Y den Blindwiderstand darstellt.
+an, wobei X den  Wirkwiderstand und Y den Blindwiderstand darstellt.
 
 Die Abgleichbedingung aus \autoref{eqn:prinzipielle-abgleichbedingung} muss dann als komplexe
 Gleichung interpretiert werden, d.h. dass Imaginär- und Realteil auf beiden Seiten gleich sein
@@ -139,14 +143,14 @@ unabhängige Stellglieder existieren müssen.
 \subsection{Verwendete Widerstände}
 \label{seq:widerstände}
 In diesem Versuch werden ausschließlich Ohm'sche Widerstände benutzt. Von Interesse sind dabei
-die Intuktivität (Zeichen: L), die Kapazitäten (C) und die gewöhnlichen, nicht-komplexen 
-Widerstände R.
+die Intuktivität (L), die Kapazitäten (C) und die gewöhnlichen, 
+nicht-komplexen Widerstände (R).
 
 Die Impedanzen im komplexen sind dabei
 \begin{align}
-	Z_R &= R, \\
-	Z_L &= j\omega L, \\
-	Z_C &= -\frac{j}{\omega} L.
+	Z_\text{R} &= R, \\
+	Z_\text{L} &= j\omega L, \\
+	Z_\text{C} &= -\frac{j}{\omega} L.
 	\label{eqn:impedanzen}
 \end{align}
 Dabei sollte beachtet werden, dass diese auch von der Kreisfrequenz des Wechselstroms $\omega$ 
@@ -167,13 +171,13 @@ Widerstand ist, die Anderen sind bekannt.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{bilder/wheatstone.png}
-	\caption{Schaltplan der Wheatstoneschen Brückenschaltung}
+	\caption{Schaltplan der Wheatstoneschen Brückenschaltung \cite{sample}}
 	\label{fig:wheatstone-bruecke}
 \end{figure}
 
 Mit \autoref{eqn:prinzipielle-abgleichbedingung} lautet dann der unbekannte Widerstand
 \begin{equation}
-	R_x = R_2 \frac{R_3}{R_4}.
+	R_\text{x} = R_2 \frac{R_3}{R_4}.
 	\label{eqn:wheatstone-rx}
 \end{equation}
 
@@ -188,7 +192,7 @@ Daher benutzt man ein Ersatzschaltbild mit einem Widerstand $R$.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{bilder/ersatz-kapazitaet.png}
-	\caption{Ersatzschaltbild eines realen Kondensators.}
+	\caption{Ersatzschaltbild eines realen Kondensators. \cite{sample}}
 	\label{fig:ersatz-kondensator}
 \end{figure}
 Der reale Widerstand lautet somit
@@ -205,15 +209,15 @@ realisiert.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{bilder/kapazitaetsbruecke.png}
-	\caption{Schaltplan zur Kapazitätsmessbrücke.}
+	\caption{Schaltplan zur Kapazitätsmessbrücke \cite{sample}}
 	\label{fig:kapazitaetsbruecke}
 \end{figure}
 
 Die Abgleichbedingung liefert dann
 \begin{equation}
-	R_x = R_2 \frac{R_3}{R_4}
+	R_\text{x} = R_2 \frac{R_3}{R_4}
 	\qquad
-	C_x = C_2 \frac{R_4}{R_3}
+	C_\text{x} = C_2 \frac{R_4}{R_3}.
 	\label{eqn:values-kapazitaeten}
 \end{equation}
 
@@ -228,19 +232,19 @@ Die Impedanz lautet dann
 	\label{eqn:reale-induktivitaet}
 \end{equation}
 
-Der Aufbau der Induktivitätsmessbrücke besitzt erfolgt analog zu der Kapazitätsmessbrücke:
+Der Aufbau der Induktivitätsmessbrücke erfolgt analog zu der Kapazitätsmessbrücke.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{bilder/induktivitaetsbruecke.png}
-	\caption{Schaltplan zur Induktivitätsmessbrücke.}
+	\caption{Schaltplan zur Induktivitätsmessbrücke \cite{sample}}
 	\label{fig:induktivitaetsbruecke}
 \end{figure}
 
-Die Kennziffern der unbekannten Spule folgen dann aus \autoref{eqn:komplexe-abgleichbedingung}:
+Die Kennziffern der unbekannten Spule folgen dann aus \autoref{eqn:komplexe-abgleichbedingung}.
 \begin{equation}
-	R_x = R_2 \frac{R_3}{R_4}
+	R_\text{x} = R_2 \frac{R_3}{R_4}
 	\qquad
-	L_x = L_2 \frac{R_3}{R_4}.
+	L_\text{x} = L_2 \frac{R_3}{R_4}
 	\label{eqn:values-induktivitaetsbruecke}
 \end{equation}
 
@@ -254,41 +258,41 @@ Bestimmung unbekannter Induktivitäten ist die Maxwell-Brücke, die Schaltung is
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{bilder/maxwellbruecke.png}
-	\caption{Schaltplan zur Maxwell-Brücke.}
+	\caption{Schaltplan zur Maxwell-Brücke \cite{sample}}
 	\label{fig:maxwell-schaltplan}
 \end{figure}
 
 Der Unterschied zur Induktivitätsbrücke besteht dadrin, dass $R_2$ konstant gehalten wird und keine 
 Induktivität enthält. Der zweite Freihatsgrad im System wird durch den parallel liegenden, nun
-variablen $R_4$ mit einem parallel geschalteten Kondensator $C_4$ realisiert.
+variablen Widerstand $R_4$ mit einem parallel geschalteten Kondensator $C_4$ realisiert.
 
 Aus \autoref{eqn:komplexe-abgleichbedingung} folgen dann die Gleichungen
 \begin{equation}
-	R_x R_4 + \omega^2 R_4^2 C_4 L_x = R_2 R_3 \left(1 + \omega^2 C_4^2 R_4^2 \right)
+	R_\text{x} R_4 + \omega^2 R_4^2 C_4 L_\text{x} = R_2 R_3 \left(1 + \omega^2 C_4^2 R_4^2 \right)
 	\label{eqn:maxwell-gleichung1}
 \end{equation}
 und
 \begin{equation}
-	-\omega R_x R_4^2 C_4 = 0.
+	-\omega R_\text{x} R_4^2 C_4 = 0.
 	\label{eqn:maxwell-gleichung2}
 \end{equation}
 Diese liefern die unbekannten Größen
 \begin{equation}
-	R_x = \frac{R_2 R_3}{R_4}
+	R_\text{x} = \frac{R_2 R_3}{R_4}
 	\qquad
-	L_x = R_2 R_3 R_4.
+	L_\text{x} = R_2 R_3 R_4.
 	\label{eqn:kenngroessen-maxwell}
 \end{equation}
 
 \subsubsection{Wien-Robinson-Brücke}
 \label{sec:theorie-wien-robinson-bruecke}
-Zuletzt wird hier jetzt die Wien-Robinson-Brücke beschrieben. Diese unterscheidet sich von den 
+Zuletzt wird  die Wien-Robinson-Brücke beschrieben. Diese unterscheidet sich von den 
 bisher genannten Schaltungen dadurch, dass die Ablgeichbedingung auch von der Frequenz des Wechselstroms $\omega$
 abhängt.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{bilder/wien-robinson.png}
-	\caption{Schaltplan zur Wien-Robinson-Brücke.}
+	\caption{Schaltplan zur Wien-Robinson-Brücke \cite{sample}}
 	\label{fig:wien-robinson-schaltplan}
 \end{figure}
 
@@ -353,13 +357,13 @@ das ergibt dann
 \end{equation}
 
 In \autoref{eqn:wien-robinson-abgleich-einfach} wird deutlich, dass es sich bei der 
-Wien-Robinson-Brücke um einen elektronischen Filter handelt. Wechselströme mit der 
+Wien-Robinson-Brücke um einen  Frequenzfilter handelt. Wechselströme mit der 
 Kreisfrequenz $\omega$ werden entfernt und Frequenzen in der Nähe abgeschwächt.
 
 \subsection{Bestimmung des Klirrfaktors}
 \label{sec:klirrfaktor}
 
-Der Klirrfaktor ist ein Indikator für die Qualität eines Funktionenerzeugers. Ein idealer 
+Der Klirrfaktor ist ein Indikator für die Qualität eines Funktionsgenerators. Ein idealer 
 Sinus-Generator erzeugt nur den Sinus zu der eingestellten Frequenz. Das ist beim realen 
 Funktionen-Generator nicht der Fall; es entstehen Oberwellen.
 
