@@ -22,7 +22,7 @@ f0theo=160.11
 omtheo=np.linspace(20,30000,num=10000)/f0theo
 Utheo=(1/9*((omtheo**2-1)**2/((1-omtheo**2)**2+9*omtheo**2)))**0.5
 
-plt.plot(om, U, label='Messdaten', linewidth=1.0)
+plt.plot(om, U,"o", label='Messdaten', linewidth=1.0)
 plt.plot(omtheo, Utheo, label='Theorie-Kurve', linewidth=1.0)
 plt.xscale('log')
 plt.xlabel(r'$f/f_0 \:$')

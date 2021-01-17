@@ -28,8 +28,54 @@ Mit der für das Potentiometer (also für $R_3/R_4$) gegebenen Messungenauigkeit
 %\newpage
 \subsection{Kapazitätsmessbrücke}
 \label{sec:akap}
-In \autoref{sec:theorie-kapazitaetsmessbruecke} wurde bereits beschrieben, wie die Kenndaten eines Kondensators mit einer Kapazitätsmessbrücke bestimmt werden können. Es wurden 2 RC-Kombinationen (Werte 8 und 9) und ein Kondensator (Wert 3) ausgemessen. Die Kenndaten wurden nach \autoref{eqn:values-kapazitaeten} berechnet.
-Für die Werte der verlustbehafteten Kondensatoren ergibt sich dann:
+In \autoref{sec:theorie-kapazitaetsmessbruecke} wurde bereits beschrieben, wie die Kenndaten eines Kondensators mit einer Kapazitätsmessbrücke bestimmt werden können. Es wurden 2 RC-Kombinationen (Werte 8 und 9) und ein Kondensator (Wert 3) ausgemessen. Die Messdaten, die zur Berechnung genutzt wurden, sind in \autoref{tab:C8}, \autoref{tab:C9} und \autoref{tab:C3} zu sehen. 
+\begin{table}
+  \centering
+  \caption{Messdaten für die Berechnung von $C_8$}
+  \label{tab:C8}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $R_2 \, [\si{\ohm}]$ &$R_3 \, [\si{\ohm}]$ &$C_2 \, [\si{\nano} \si{\farad}]$\\
+  \midrule
+  482 & 568 & 399 \\
+  431  & 600 & 450 \\ 
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Messdaten für die Berechnung von $C_9$}
+  \label{tab:C9}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $R_2 \, [\si{\ohm}]$ &$R_3 \, [\si{\ohm}]$ &$C_2 \, [\si{\nano} \si{\farad}]$\\
+  \midrule
+  2000 & 798 & 992 \\
+  3000  & 880 & 992 \\ 
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Messdaten für die Berechnung von $C_3$}
+  \label{tab:C3}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $R_2 \, [\si{\ohm}]$ &$R_3 \, [\si{\ohm}]$ &$C_2 \, [\si{\nano} \si{\farad}]$\\
+  \midrule
+  0 & 482 & 399 \\
+  41  & 505 & 450 \\ 
+  \bottomrule
+\end{tabular}
+\end{table}
+
+Die hohen Werte für $R_2$ bei der Messung für $C_9$ wurden durch eine Reihenschaltung mehrerer Widerstände erreicht, um so möglichst nahe an das Minimum der Brückenspannung zu kommen. Die Kenndaten wurden nach \autoref{eqn:values-kapazitaeten} berechnet ($R_4$ ergibt sich wieder aus $R_3$ mit $R_4=1\si{\kilo}\si{\ohm}-R_3$).
+Für die Werte der verlustbehafteten Kondensatoren ergeben sich dann:
 
 \begin{align}
   C_8&=(301.73 \pm 3.24)\si{\nano} \si{\farad}\\
@@ -89,16 +135,16 @@ Mit einer Maxwell-Brücke wurden die Daten zu Wert 19 dann nochmal bestimmt(Mess
   \end{tabular}
 \end{table}
 %\newpage
-Als Toleranz der variaben Widerstände $R_3$ und $R_4$ waren hier $3\%$ angegeben.
+Als Toleranz der variablen Widerstände $R_3$ und $R_4$ waren hier $3\%$ angegeben.
 Mit  \autoref{tab:max} lassen sich nach \autoref{eqn:kenngroessen-maxwell} Induktivität und Verlustwiderstand der unbekannten Spule dann ein zweites Mal berechnen. Es ergeben sich:
 \begin{align}
-  L_{19Mw}&=(27.13 \pm 1.27)\si{\milli} \si{\henry}\\
-  R_{19Mw}&=(114.12 \pm 5.36)\si{\ohm}
+  L_{19 \text{Mw}}&=(27.13 \pm 1.27)\si{\milli} \si{\henry}\\
+  R_{19 \text{Mw}}&=(114.12 \pm 5.36)\si{\ohm}
 \end{align}
 
 
 \subsection{Wien-Robinson-Brücke}
-Wie in \autoref{fig:mess} zu sehen ergab sich für die Wien-Robinson-Brücke eine Messreihe von Brückenspannungen mit dazugehörigen Frequenzen.Bei der Auswertung der Wien-Robinson-Brücke konnte aus den Messdaten eine Frequenz $f_0$ bei der die Brückenspannung minimal wurde bestimmt werden. Hier ergab sich eine Frequenz $f_0=160 \si{\hertz}$ mit einer Brückenspannung von $U_{Br,Min}=11.1 \si{\milli} \si{\volt}$. Die theoretische Kreisfrequenz für die minimale Brückenspannung nach \autoref{eqn:wien-robinson-w0} liegt bei $\omega_0=\frac{1}{RC}=1006\si{\hertz}$ (dies entspricht als auf die Zeit bezogene Frequenz $(1006/2\pi)\si{\hertz}=160.11\si{\hertz}$) und liegt somit sehr nahe an dem gemessenen Wert für $f_0$. In \autoref{fig:plot} wurden die Messdaten geplottet. Dabei wurde der Quotient $U_{Br}/U_S$ in einem halblogarithmischen Diagramm gegen $\Omega=f/f_0$ aufgetragen. Die Theorie-Kurve wurde dabei aus \autoref{eqn:wien-robinson-abgleich-einfach} berechnet.
+Wie in \autoref{fig:mess} zu sehen ergab sich für die Wien-Robinson-Brücke eine Messreihe von Brückenspannungen mit dazugehörigen Frequenzen.Bei der Auswertung der Wien-Robinson-Brücke konnte aus den Messdaten eine Frequenz $f_0$ bei der die Brückenspannung minimal wurde bestimmt werden. Hier ergab sich eine Frequenz $f_0=160 \si{\hertz}$ mit einer Brückenspannung von $U_\text{Br,Min}=11.1 \si{\milli} \si{\volt}$. Die theoretische Kreisfrequenz für die minimale Brückenspannung nach \autoref{eqn:wien-robinson-w0} liegt bei $\omega_0=\frac{1}{RC}=1006\si{\hertz}$ (dies entspricht als auf die Zeit bezogene Frequenz $(1006/2\pi)\si{\hertz}=160.11\si{\hertz}$) und liegt somit sehr nahe an dem gemessenen Wert für $f_0$. In \autoref{fig:plot} wurden die Messdaten geplottet. Dabei wurde der Quotient $U_text{Br}/U_\text{S}$ in einem halblogarithmischen Diagramm gegen $\Omega=f/f_0$ aufgetragen. Die Theorie-Kurve wurde dabei aus \autoref{eqn:wien-robinson-abgleich-einfach} berechnet.
 \begin{figure}
   \centering
   \includegraphics{daten/WienR.JPG}
