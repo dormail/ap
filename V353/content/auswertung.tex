@@ -40,12 +40,16 @@ Wie in \autoref{sec:Theorie} gezeigt, wird dieses Verhalten durch die Funktion
 	U_C(t) = U_C(0) \cdot \exp\left(-\frac{t}{RC}\right)
 \end{equation}
 beschrieben.
-Mit einer Ausgleichsrechnung wurde der Wert
+Mit der Curve-Fit Funktion aus scipy wurde die Funktion
 \begin{equation}
-	RC = (100.9 \pm 6.5) \si{\micro s}
+	U_\text{C}(t) = U_0 \cdot \exp\left(\frac{-t}{RC}\right)
+\end{equation}
+an die Messdaten angepasst und ergab dabei den Wert 
+\begin{equation}
+	RC = (100.9 \pm 6.5) \si{\micro s}.
 	\label{eqn:ergebnis-4a}
 \end{equation}
-ermittelt. Die Messunsicherheit folgt dabei aus der Covarianz-Matrix des Curve-Fits.
+Die Messunsicherheit folgt dabei aus der Covarianz-Matrix des Curve-Fits.
 In \autoref{fig:plot-4a} sind die Messdaten und die Theoriekurve zum ermittelten Wert zu sehen.
 
 \begin{figure}[H]
