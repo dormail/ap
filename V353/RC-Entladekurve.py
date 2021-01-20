@@ -38,11 +38,11 @@ print(f'T = {T:.4} ± {error[1]:.2}')
 print(df)
 
 # plot
-plt.yscale('log')
+#plt.yscale('log')
 t_plt = np.linspace(0, 180)
 #t_plt = np.linspace(0, 0.00018)
 plt.scatter(t,U, marker='+', label='Messdaten')
-plt.plot(t_plt, UC(t_plt, U0, T), color='r', label=rf'Ausgleichsgerade für $RC={{{T:.5}}}\mu s$',
+plt.plot(t_plt, UC(t_plt, U0, T), color='r', label=rf'Theoriekurve für $RC={{{T:.5}}}\mu s$',
         linewidth=0.5)
 plt.legend()
 
