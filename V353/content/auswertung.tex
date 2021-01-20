@@ -35,12 +35,12 @@ die Messwerte in \autoref{tab:messdaten-4a}.
 	\end{tabular}
 \end{table}
 
-Wie in \autoref{sec:Theorie} gezeigt, wird dieses Verhalten durch die Funktion
-\begin{equation}
-	U_C(t) = U_C(0) \cdot \exp\left(-\frac{t}{RC}\right)
-\end{equation}
-beschrieben.
-Mit der Curve-Fit Funktion aus scipy wurde die Funktion
+% Wie in \autoref{sec:Theorie} gezeigt, wird dieses Verhalten durch die Funktion
+% \begin{equation}
+% 	U_C(t) = U_C(0) \cdot \exp\left(-\frac{t}{RC}\right)
+% \end{equation}
+% beschrieben.
+Mit der Curve-Fit Funktion aus der Scipy-Bibliothek wurde die Funktion
 \begin{equation}
 	U_\text{C}(t) = a \cdot \exp\left(\frac{-t}{b}\right)
 \end{equation}
@@ -51,7 +51,7 @@ an die Messdaten angepasst und ergab dabei den Werte
 \end{align}
 Mit \autoref{eqn:Qentl} folgt dann die Zeitkonstante
 \begin{equation}
-	RC = (100.9 \pm 6.5) \si{\micro s}.
+	RC = b = (100.9 \pm 6.5) \si{\micro s}.
 	\label{eqn:ergebnis-4a}
 \end{equation}
 Die Messunsicherheit folgt dabei aus der Covarianz-Matrix des Curve-Fits.
