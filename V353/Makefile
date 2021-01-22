@@ -19,6 +19,8 @@ build/polarplot.pdf: matplotlibrc header-matplotlib.tex polarplot.py | build
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/4a.pdf build/4b.pdf build/4c.pdf build/polarplot.pdf
 
+build/main.pdf: content/auswertung.tex
+
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \

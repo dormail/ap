@@ -55,7 +55,7 @@ plt.plot(f_plt, AC(f_plt, T), color='r', label=rf'Curve Fit zu $RC={{{T * 10**6:
         linewidth=0.4)
 
 plt.title(r'Spannungsverhältnis $A(\omega) / U_0$ im RC-Kreis')
-#plt.ylabel(r'$$')
+plt.ylabel(r'$A(\omega) / U_0$')
 plt.xlabel(r'$f \cdot \si{s}$')
 plt.xscale('log')
 plt.legend()
