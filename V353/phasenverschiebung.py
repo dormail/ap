@@ -48,7 +48,7 @@ plt.scatter(f,phi, marker='+', label='Messdaten')
 
 plt.title(r'Phasenverschiebung zwischen $U_C$ und $U_G$')
 plt.xlabel(r'$f \cdot \si{s}$')
-plt.ylabel(r'$\varphi$')
+plt.ylabel(r'$\varphi /$ rad')
 plt.legend()
 #plt.xlim(0,10000)
 plt.xscale('log')
