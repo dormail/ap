@@ -6,7 +6,7 @@
 
 Der Aufbau des Geiger-Müller-Zählrohrs ist in \autoref{fig:querschnitt} dargestellt. Es besteht aus
 einem Kathodenzylinder (Radius $R_\text{k}$) und einem mittig liegenden, axial verlaufenden
-Anodendraht (Radius $R_\text{a}$) und wird mit einem Gasgemisch gefüllt.
+Anodendraht (Radius $R_\text{a}$) und wird mit einem Gasgemisch (z.B. Argon und verschiedene Alkohole)gefüllt.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{content/aufbau.png}
@@ -34,7 +34,7 @@ einfallenden Teilchens sind.
 \noindent
 Dabei ist wichtig, dass die Vorgänge nach der ersten Ionisation im Zählrohr stark von der Spannung $U$ 
 abhängen, der Zusammenhang ist in \autoref{fig:ionisationen-u} dargestellt.
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{content/ionisationen-u.png}
 	\caption{Anzahl der erzeugten Elektron-Ionenpaare als Funktion der Spannung U bei einem
@@ -45,9 +45,26 @@ Dabei sind einige Bereiche bei $U$ zu unterscheiden:
 \begin{itemize}
 	\item Für kleine Spannungen geht nur ein Teil der Ionisationselektronen zur Anode, der Rest geht 
 		durch Rekombination verloren. (Entspricht Bereich \Romannum{1} in \autoref{fig:ionisationen-u})
-	\item Bei höheren Spannungen (Bereich \Romannum{2}) 
+	\item Bei höheren Spannungen (Bereich \Romannum{2} in \autoref{fig:ionisationen-u})
 		sinkt die Rekombinationswahrscheinlichkeit ab, sodass alle erzeugten Elektronen
 		die Anode erreichen. Der Ionisationsstrom ist dabei proportional der Intensität und Energie
 		der einfallenden Strahlung. Unter diesen Vorraussetzungen wird ein Gerät als Ionisationskammer
 		bezeichnet, eignet sich jedoch nur bei hohen Strahlungsintensitäten.
+	\item Wird die Spannung noch weiter erhöht erhalten die entstehenden Elektronen aufgrund der hohen Feldstärke
+		genug Energie um weitere Ionisationen durchzuführen (sog. Stoßionisationen). Da auch die bei den
+		Stoßionisationen entstehenden Elektronen weitere Ionisationen durchführen können kann eine ganze
+		Kaskade entstehen, was auch als Townsend-Lawine bezeichnet wird.
+		\\
+		Durch diese Lawinen sammelt sich jetzt am Anodendraht eine Ladung $Q$, welche als Ladungsimpuls 
+		gemessen werden kann, aber dennoch proportional zur ursprünglichen Energie des einfliegenden
+		Teilchens ist. Wegen dieser Proportionalität wird ein Betrieb in Bereich \Romannum{3} in 
+		\autoref{fig:ionisationen-u} also Proportionalzählrohr bezeichnet.
+	\item Nach dem Proportionalbereich folgt der Auslösebereich (Bereich \Romannum{4} in
+		\autoref{fig:ionisationen-u}). Hier entstehen bei der primären Elektronenlawine UV-Photonen, welche
+		sich im gesamten Zählrohr ausbreiten können und im gesamten Volumen weitere Elektronenkaskaden auslösen.
+		Die Ladung $Q$ hängt jetzt nicht mehr von der Teilchenenrgie, dafür aber vom Zählrohrvolumen und der 
+		Spanung $U$ ab.
+		\\
+		Daher kann keine Energiemessung mehr stattfinden, nur Intensitätsmessungen. Dafür ist $Q$ auch mit
+		geringem Elektronischen aufwand messbar.
 \end{itemize}
