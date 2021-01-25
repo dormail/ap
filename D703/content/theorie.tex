@@ -4,7 +4,7 @@
 \subsection{Aufbau und Funktionsweise}
 \label{sec:aufbau}
 
-Der Aufbau des Geiger-Müller-Zählrohrs ist in \autoref{fig:querschnitt} dargestellt. Es besteht aus
+Der Aufbau des Geiger-Müller-Zählrohres ist in \autoref{fig:querschnitt} dargestellt. Es besteht aus
 einem Kathodenzylinder (Radius $R_\text{k}$) und einem mittig liegenden, axial verlaufenden
 Anodendraht (Radius $R_\text{a}$) und wird mit einem Gasgemisch (z.B. Argon und verschiedene Alkohole)gefüllt.
 \begin{figure}[H]
@@ -21,8 +21,16 @@ radialsymetrische elektrische Feldstärke
 	\label{eqn:elektrisches-feld}
 \end{equation}
 folgt.
+\\
+Eine technische Schwierigkeit ist die Realisierung, dass $\alpha$- und
+$\beta$-Teilchen in das Rohr eintreten, da diese sehr leicht mit ihrer Umgebung (also mit dem Stahlmantel zum Beispiel)
+wechselwirken. Dabei wurde in diesem
+Versuch ein Endfensterzählrohr verwendet. Das bedeutet, dass eine Seite (in \autoref{fig:querschnitt} die linke
+Seite) des Zählrohres aus einem dünnwandigen Material mit Atomen niedriger Ordnungszahl besteht. Mit Mylar-Folie 
+erhält man ein sehr dünnes Material mit geinger Dichte, sodass selbst $\alpha$-Teilchen in das Zählrohr eintreten 
+können.
 
-\noindent
+\subsubsection{Spannungsbereiche}
 Es soll jetzt ein geladenes Teilchen, welches in das Zählrohrvolumen eindringt, betrachtet werden. Unter
 der Annahme, dass es vollständig absorbiert wird, wird es sich durch den Gasraum bewegen, bis es seine 
 Energie durch Ionisationen abgegeben hat. Dabei wird im Mittel eine Energie von $26\ \si{\eV}$ 
@@ -68,3 +76,78 @@ Dabei sind einige Bereiche bei $U$ zu unterscheiden:
 		Daher kann keine Energiemessung mehr stattfinden, nur Intensitätsmessungen. Dafür ist $Q$ auch mit
 		geringem Elektronischen aufwand messbar.
 \end{itemize}
+
+
+
+\subsection{Einfluss der positiven Ionen}
+\label{sec:einfluss-ionen}
+\subsubsection{Totzeit}
+\label{sec:totzeit}
+Bisher wurden hier die nur die Elektronen behandelt, welche aufgrund ihrer geringen Masse relativ schnell zur Anode 
+wandern. Anders sieht es mit den positiven Ionen aus, welche sich länger im Gasraum aufhalten. Vorübergehend bauen
+diese Ionen eine radialsymetrische, positive Ladungsdichte auf, welche die Feldstärke senkt. Daher kann für ein Zeit
+$T$ (``Totzeit``) keine Stoßionisation stattfinden und ein eintreffendes Teilchen wird nicht registriert. Nach der 
+Totzeit
+entstehen wieder Ladungsimpulse $Q$, diese sind zunächst nicht so hoch wie vorher, da die elektrische Feldstärke immer
+noch niedriger ist als in \autoref{eqn:elektrisches-feld}. Da sich das elektrische Feld ``erholen`` muss, nennt man
+diesen Zeitraum auch ``Erholungszeit``. 
+In \autoref{fig:totzeit} sind Tot- und Erholungszeit dargestellt, wobei letztere nur ungenau bestimmt werden kann.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{content/totzeit.png}
+	\caption{Tot- und Erholungszeit eines Zählrohres im Ladungs-Zeit-Diagramm \cite{sample}}
+	\label{fig:totzeit}
+\end{figure}
+
+\subsubsection{Nachentladung}
+\label{sec:nachentladung}
+
+Ein weiterer Effekt tritt auf, wenn die positiven Ionen auf den Zählrohrmantel auftreffen. Bei ihrer Neutralisation wird
+eine Energie freigesetzt, die größer als die Austrittsarbeit für die Elektronen ist, weswegen letztere in das Zählrohr
+ausgeworfen werden können. Diese sog. ``Sekundärelektronen`` können im Zählrohr dann neue Entladungen zünden und 
+ weitere Ladungsimpulse an der Anode auslösen, sog. Nachentladungen. Diese Nachentladungen finden (weil die
+Ionen zuvor schon abgewandert sind) nach der Totzeit statt, weshalb sie das Eintreffen eines weiteren Teilchens 
+vortäuschen.
+\\
+Offensichtlich sind die Nachentladungen unerwünscht, da sie die Präzision des Rohres stark in eine Richtung verringern.
+Die Unterbindung der Nachentladungen geschieht durch die in \autoref{sec:aufbau} erwähnten Alkoholdämpfe im 
+Zählrohr. Die Alkoholmoleküle besitzen eine geringere Ionisationsenrgie als die des Argons, verbrauchen die Energie 
+jedoch bei Schwingungen innerhalb der großen Moleküle und können somit keine Sekundärelektronen erzeugen, wenn sie 
+auf die Kathode auftreffen.
+
+\subsection{Charakteristik des Zählrohres}
+\label{sec:theo:charakteristik}
+
+Ein Merkmal eines Zählrohres ist die Charakteristik. Dabei wird das Rohr mit konstanter Intensität bestrahlt und
+die Spannung $U$ wird variiert. Der Graph $N(U)$ ($N$ sei nun die Anzahl an Ladungsimpulsen pro Zeiteinheit). In
+\autoref{fig:theo:charakteristik} ist ein Beispiel für eine Charakteristik.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{content/charakteristik.png}
+	\caption{Zählrohrcharakteristik (gemessene Ladungsimpulse bei konstanter Strahlungsintensität). $U_\text{E}$
+	markiert den Start des Auslösebereichs. \cite{sample}}
+	\label{fig:theo:charakteristik}
+\end{figure}
+
+\noindent
+Auffällig ist dabei der flache, lineare Teil der Kurve, das Plateau. Bei einem idealen Zählrohr wäre die Steigung
+im Plateau null, in der Praxis wird aufgrund von Nachentladungen immer eine leichte Steigung entstehen. Allgemein gilt
+jedoch, dass ein flacheres und längeres Plateu für eine höhere Qualität des Zählrohres spricht.
+\\
+Auffällig ist auch die starke Steigung rechts vom Plateau. Dies ist die folge von Selbstentladungen aufgrund 
+der hohen Feldstärke. Dort sorgt dann ein eintreffendes Teilche für eine Dauerentladung. Wegen den hohen Stromdichten
+wird das Zählrohr in diesem Bereich schnell zerstört.
+
+\subsection{Ansprechvermögen des Zählrohres}
+\label{sec:theo:ansprechvermoegen}
+
+Unter Ansprechvermögen versteht man die Wahrscheinlichkeit, dass ein einfallendes Teilchen tatsächlich als solches 
+detektiert wird. Da $\alpha$- und $\beta$-Teilchen ein hohes Ionisationsvermögen besitzen, liegt das Ansprechvermögen
+bei nahezu $100\%$. Mit der anfangs erwähnten Mylar-Folie (vgl. \autoref{sec:aufbau}) ist auch das Eindringen in
+den Zählraum realisiert.
+\\
+Im Vergleich zu den geladenen Teilchen ist das Ansprechvermögen von Photonen jedoch sehr niedrig. Bei hochenergetischen
+Photonen (z.B. $\gamma$-Strahlung) liegt es bei ungefähr $1\%$. Daher ist eine Verwendung dort nur bei hohen 
+Intensitäten sinnvoll.
+\\
+Mit einem schweren Füllgas (z.B. Xenon) können allerdings die niederenergetischen Röntgen-Quanten gut gemessen werden.
