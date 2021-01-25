@@ -168,5 +168,54 @@ Im folgenden werden beide Messmethoden erläutert.
 Stellt man eine hohe Strahlintensität ein und stellt den Trigger des Oszillographen auf die Anstiegsflanke, liefert
 das Oszilloskop ein Oszillogramm ähnlich dem in \autoref{fig:totzeit}.
 \\
-Bei hoher Intesität, so die Theorie, folgt ein Puls auf den Anderen direkt nach der Totzeit, weswegen hier die
-Zeit zwischen zwei Pulsen vom Oszillogramm abgelesen werden muss.
+Bei hoher Intensität, so die Theorie, folgt ein Puls auf den Anderen direkt nach der Totzeit, weswegen wir hier die
+Zeit zwischen zwei Pulsen als Totzeit annehmen können.
+
+\subsubsection{Zwei-Quellen-Methode}
+\label{sec:theo:zwei-quellen}
+
+Wie in \autoref{sec:totzeit} erklärt, ist aufgrund der Totzeit $T$ die Impulsrate der detektierten Teilchen $N_\text{r}$
+immer kleiner als die Rate der eindringenden Teilchen $N_\text{w}$. So ist bei einer Impulsrate $N_\text{r}$ das 
+Messrohr für die Zeit $TN_\text{r}$ unempfindlich. Wird über einen Zeitraum $t$ gemessen, so ist die Zeit wo
+das Messrohr tatsächlich empfindlich war $(1-TN_\text{r})t$. Die wahre Impulsrate ist daher
+\begin{equation}
+	N_\text{w} = \frac{\text{Gemessene Impulse}}{\text{Tatsächliche Messzeit}}
+	= \frac{N_\text{r} t}{(1-TN_\text{r}) t} = \frac{N_\text{r}}{1 - TN_\text{r}}.
+	\label{eqn:wahre-zaehlrate}
+\end{equation}
+\noindent
+Auf Grundlage von \autoref{eqn:wahre-zaehlrate} beruht die Zwei-Quellen-Methode, bei der, wie der Name andeutet, mit
+zwei radioaktiven Quellen gearbeitet wird.
+Zunächst misst man die Zählrate $N_1$, die das Präparat 1 im Zählrohr hervorruft. Dann fügt man das 2. Präparat hinzu
+und misst die Summenzählrate $N_{1+2}$, wobei dadrauf geachtet werden muss, Quelle 1 nicht zu verschieben. Zuletzt
+wird Präparat 1 entfernt und die Zählrate $N_2$ des zweiten Präparats gemessen.
+\\
+Hätte das Zählrohr keine Totzeit, wäre
+\begin{equation}
+	N_{1+2} = N_1 + N_2.
+\end{equation}
+In der Praxis beobachtet man aber, dass
+\begin{equation}
+	N_{1+2} < N_1 + N_2.
+\end{equation}
+Gemäß \autoref{eqn:wahre-zaehlrate} drangen während der Messung
+\begin{equation}
+	N_{{\text{w}_i}} = \frac{N_i}{1 - TN_i} 
+		\quad \text{für } i \in \{1, 2, 1+2\}
+\end{equation}
+Teilchen ins Zählrohr ein.
+\\
+Hierbei gilt $N_{\text{w}_{1+2}} = N_{\text{w}_{1}} + N_{\text{w}_{2}}$, damit folgt
+\begin{equation}
+	\frac{N_{1+2}}{1 - TN_{1+2}} =
+	\frac{N_1}{1 - TN_1} +
+	\frac{N_2}{1 - TN_2} .
+	\label{eqn:theo:paar-brueche}
+\end{equation}
+\noindent
+Die Größen $N_1$, $N_2$ und $N_{1+2}$ werde gemessen, daher kann man mit \autoref{eqn:theo:paar-brueche} die 
+Totzeit bestimmen. Für $T^2N_i^2 \ll 1$ mit $i \in \{1, 2, 1+2\}$ gilt dann näherungsweise
+\begin{equation}
+	T \approx \frac{N_1 + N_2 - N_{1+2}}{2N_1N_2}
+	\label{eqn:totzeit-naeherung}
+\end{equation}
