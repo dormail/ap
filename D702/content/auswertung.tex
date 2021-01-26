@@ -1,12 +1,37 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Bestimmung der Untergrundrate}
+\label{sec:aus:untergrundrate}
 
+Für eine exakte Auswertung ist die Bestimmung der Nullrate notwendig.
+In sieben Messintervallen mit $t = \SI{300}{\second}$ wurden die 
+Untergrundraten aus \autoref{tab:untergrundrate} aufgenommen.
+\begin{table}
+	\centering
+	\caption{Messdaten zur Untergrundrate, Messintervall jeweils $t = \SI{300}{\second}$.}
+	\label{tab:untergrundrate}
+	\begin{tabular}{c c}
+		\toprule
+		$N_U$ & $\Delta N_U$ \\
+		\midrule
+		129 & 11.36 \\
+		143 & 11.96 \\
+		144 & 12 \\
+		136 & 11.66 \\
+		139 & 11.79 \\
+		126 & 11.22 \\
+		158 & 12.57 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
-Siehe \autoref{fig:plot}!
+\noindent
+Da die Zählraten Poisson verteilt sind, ist die Messunsicherheit durch $\Delta N = \sqrt{N}$ 
+gegeben.
+\\
+Zu den sieben Messdaten lautet der Durchschnitt
+\begin{equation}
+	\langle N_U \rangle_{t = \SI{300}{\second}} = 139 \pm 4.
+\end{equation}
+Wobei dieser im folgenden auf die verschiedenen Messintervalle angepasst werden muss.
