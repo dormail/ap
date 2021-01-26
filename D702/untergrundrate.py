@@ -22,4 +22,4 @@ def get_untergrund():
     return N_U
 
 N_U = get_untergrund()
-print(f'Die Untergrundrate betraegt {N_U}')
+#print(f'Die Untergrundrate betraegt {N_U}')
