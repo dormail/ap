@@ -4,6 +4,10 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python plot.py
 
+build/vanadium.pdf: daten/vanadium.csv
+build/vanadium.pdf: vanadium.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python vanadium.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 
