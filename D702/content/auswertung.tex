@@ -237,7 +237,7 @@ Die lineare Ausgleichsrechnung ergab die Steigung
 \end{equation}
 \noindent
 Als zweites soll die Halbwertszeit für den schnelleren Zerfall bestimmt werden. Dafür wird mit
-$T_\text{l}$ berechnet, wie viele Impulse/Messintervall am Anfang durch den langsamen Zerfall ausgelöst wurden.
+$T_\text{l}$ berechnet, wie viele Impulse/Messintervall am Anfang durch den schnellen Zerfall ausgelöst wurden.
 Laut dem Zerfallsgesetz liegt das bei
 \begin{equation}
 	N_{\Delta t_\text{l}} (t) = N_{0_\text{l}} \left(1 - e^{-\lambda_\text{l}\Delta t}\right) 
@@ -249,8 +249,11 @@ die Zerfallsrate des kurzlebigeren Atomkerns. Über den Logarithmus dieser Zerfa
 \begin{equation}
 	\{ \ln(N_{\Delta t}(t_i) - N_{\Delta t_\text{l}} (t_i)) \}
 \end{equation}
-wird eine lineare Ausgleichsrechnung wie in \autoref{eqn:logarithmisch2} beschrieben durchgeführt. Die
-Fit-Parameter lieferten
+wird eine lineare Ausgleichsrechnung wie in \autoref{eqn:logarithmisch2} beschrieben durchgeführt. Diesmal
+wird allerdings nur das Intervall von $t=0$ bis $t=\SI{120}{\second}$ betrachtet, da hier der schnelle 
+Zerfall dominiert.
+\\
+Die Fit-Parameter lieferten
 \begin{equation}
 	\lambda_\text{s} = (1.43 \pm 0.04) 10^{-2} \si{\second}^{-1}.
 \end{equation}
