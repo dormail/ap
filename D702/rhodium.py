@@ -1,4 +1,4 @@
-# vanadium.py
+# rhodium.py
 
 from untergrundrate import get_untergrund
 import numpy as np
@@ -9,68 +9,63 @@ from uncertainties import unumpy, ufloat
 
 N_U = get_untergrund()
 
-df = pd.read_csv('daten/vanadium.csv')
-df['DN'] = round(np.sqrt(df['N[Impulse]']))
-df['N Korrigiert'] = round(df['N[Impulse]'] - N_U.n / 10)
+df = pd.read_csv('daten/rhodium.csv')
+df['DN'] = round(np.sqrt(df['N']))
+df['N Korrigiert'] = round(df['N'] - N_U.n / 20)
 
-#print(df)
+print(df)
 
 t = df['t']
-Dt = 30
-N = df['N[Impulse]']
+Dt = 15
+N = df['N Korrigiert']
 DN = np.sqrt(N)
 
-# konvertiere in uarray und ziehe untergrund ab
-uN = unumpy.uarray(N, DN)
-uN = uN - N_U / 10
+# Ausgleichsrechnung fuer langsamen Zerfall
+N_slow = N[19:-1]
+t_slow = t[19:-1]
 
-N = unumpy.nominal_values(uN)
-DN = unumpy.std_devs(uN)
+print(f'Langsamer Zerfall startet bei {t[19]}s')
 
-# polynom fit ersten grades
-coef, cov = np.polyfit(t, np.log(unumpy.nominal_values(uN)), 1, cov=True)
+coef, cov = np.polyfit(t_slow, np.log(N_slow), 1, cov=True)
 err = np.sqrt(np.diag(cov))
+lmd = ufloat(-1 *  coef[0], err[0])
+T_slow = np.log(2) / lmd
+print(f'Steigung der Ausgleichsgerade: {lmd}')
+print(f'Halbwertszeit fuer langsames Rhodium: {T_slow}')
 
-lmd = ufloat(-1 * coef[0], err[0])
-T = np.log(2) / lmd
-print(f'Steigung der AUsgleichsgerade: {lmd}')
-print(f'Halbwertszeit fuer vanadium: {T}')
+x = np.linspace(300, 660)
+plt.plot(x, 90 * np.exp(x * -1 * lmd.n),
+        color='k',
+        label='Langsamer Zerfall')
 
-print(coef)
-lmd = -1 * coef[0]
-lmd_err = err[0]
-N_0 = np.exp(coef[1]) / (1 - np.exp(-1 * lmd * Dt))
-print(N_0)
+# Kurzlegebiger Zerfall ###
+N_fast = N[0:8]
+t_fast = t[0:8]
+print(f'Schneller Zerfall geht bis {t_fast[len(t_fast) - 1]}s')
 
-# plot
-plt.errorbar(t, N, yerr=DN, ls='', marker='+',
-        label='Messdaten')
-plt.fill_between(t, 10**2 * 2 * np.exp(-1 * (lmd-lmd_err) * t),
-         10**2 * 2 * np.exp(-1 * (lmd+lmd_err) * t),
-         alpha=0.3, color='r')
-plt.plot(t, 10**2 * 2 * np.exp(-1 * lmd * t),
+N_korr = 667 * (1 - np.exp(-1 * lmd.n * Dt)) * np.exp(-1 * lmd.n * t_fast)
+
+coef, cov = np.polyfit(t_fast, np.log(N_fast - N_korr), 1, cov=True)
+err = np.sqrt(np.diag(cov))
+lmd = ufloat(-1 *  coef[0], err[0])
+T_slow = np.log(2) / lmd
+print(f'Steigung der Ausgleichsgerade: {lmd}')
+print(f'Halbwertszeit fuer langsames Rhodium: {T_slow}')
+
+x = np.linspace(0, 150)
+plt.plot(x, 800 * np.exp(x * -1 * lmd.n),
         color='r',
-        label=f'Fit für $T={T.n:.0f}\pm{T.s:.0f}$ s')
+        label='Schneller Zerfall')
 
-plt.title(r'Messdaten und Fit zum Zerfall von Vanadium-52')
+# plots
+plt.errorbar(t,N, yerr=DN,
+        ls='', marker='+',
+        label='Messdaten')
+
+
+plt.title(r'Messdaten und Fit zum Zerfall von Rhodium-104')
 plt.legend()
 plt.xlabel(r'$t/$s')
-plt.ylabel(r'Zerfälle / $30$s')
+plt.ylabel(r'Zerfälle / $15$s')
 plt.yscale('log')
-plt.savefig('build/vanadium.pdf')
-
-# polynom fit ersten grades
-uN = uN[0:10]
-t = t[0:10]
-coef, cov = np.polyfit(t, np.log(unumpy.nominal_values(uN)), 1, cov=True)
-err = np.sqrt(np.diag(cov))
-
-lmd = ufloat(-1 * coef[0], err[0])
-T = np.log(2) / lmd
-print(f'Halbwertszeit fuer vanadium etwas exakter: {T}')
-
-print(coef)
-lmd = -1 * coef[0]
-N_0 = np.exp(coef[1]) / (1 - np.exp(-1 * lmd * Dt))
-print(N_0)
-
+plt.savefig('build/rhodium.pdf')

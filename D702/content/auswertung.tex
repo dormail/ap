@@ -42,7 +42,7 @@ Die Abweichung folgt aus der linearen Approximation der Fehlerfortplanzung
 	\label{eqn:fehlerfortpflanzung}
 \end{equation}
 
-\subsection{Zerfallskurve und Halbwertszeit von Vanadium}
+\subsection{Zerfallskurve und Halbwertszeit von Vanadium-52}
 \label{sec:aus:vanadium}
 
 In dieser Messreihe wurde der Zerfall von Vanadium-52 betrachtet. Als Messintervall wurden hier
@@ -57,8 +57,7 @@ abgezogen.
 	%\centering
 	\caption{Messdaten zum Zerfall von Vanadium-52. Die Abweichung folgt aus der Poisson Verteilung
 		mit $\Delta N = \sqrt{N}$. Für die Korrigierte Zerfallsraten wurde der Untergrund 
-	$14 \frac{\text{Zerfällen}}{\SI{30}{\second}}$ abgezogen.}\\
-	%\label{tab:vanadium}
+	$14 \frac{\text{Zerfällen}}{\SI{30}{\second}}$ abgezogen.} \label{tab:vanadium} \\
 		\hline
 		$t / \si{\second}$ & $N$ & $\Delta N$ &$N$ Korrigiert \\
 		%\midrule
@@ -129,7 +128,7 @@ Zusammenhang $m = -\lambda$.
 \\
 Die lineare Ausgleichsrechnung ergab
 \begin{equation}
-	\lambda = (3.2 \pm 0.16) \ \si{\second}^{-1}.
+	\lambda = (3.2 \pm 0.16) 10^{-3} \  \si{\second}^{-1}.
 \end{equation}
 \noindent Dann folgt die Halbwertszeit
 \begin{equation}
@@ -145,4 +144,125 @@ In \autoref{fig:zerfallskurve} sind die Messdaten und die Ausgleichsfunktion zu 
 	\includegraphics{build/vanadium.pdf}
 	\caption{Messdaten und Fit für die Zerfallskurve von Vanadium.}
 	\label{fig:zerfallskurve}
+\end{figure}
+
+
+\subsection{Zerfallskurve und Halbwertszeit von Rhodium-104}
+\label{sec:aus:rhodium}
+
+Wie in \autoref{sec:Theorie} erklärt, besitzt Rhodium-104 zwei isomere Kerne mit unterschiedlichen 
+Energien und somit zwei verschiedenen Halbwertszeiten.
+\\
+Die Messung der Zerfallsraten  die Messwerte in \autoref{tab:rhodium}.
+\begin{longtable}{c c c c}
+	%\centering
+	\caption{Messdaten zum Zerfall von Rhodium-104. Die Abweichung folgt aus der Poisson Verteilung
+		mit $\Delta N = \sqrt{N}$. Für die Korrigierte Zerfallsraten wurde der Untergrund 
+	$14 \frac{\text{Zerfällen}}{\SI{30}{\second}}$ abgezogen.} \label{tab:rhodium} \\
+		\hline
+		$t / \si{\second}$ & $N$ & $\Delta N$ &$N$ Korrigiert \\
+		%\midrule
+		\hline
+		\endhead
+		\hline
+		\endfoot
+		15  	& 667  	& 26.0         	& 660.0 \\
+		 30  	& 585  	& 24.0         	& 578.0 \\
+		 45  	& 474  	& 22.0         	& 467.0 \\
+		 60  	& 399  	& 20.0         	& 392.0 \\
+		 75  	& 304  	& 17.0         	& 297.0 \\
+		 90  	& 253  	& 16.0         	& 246.0 \\
+		105  	& 213  	& 15.0         	& 206.0 \\
+		120  	& 173  	& 13.0         	& 166.0 \\
+		135  	& 152  	& 12.0         	& 145.0 \\
+		150  	& 126  	& 11.0         	& 119.0 \\
+		165  	& 111  	& 11.0         	& 104.0 \\
+		180  	&  92  	& 10.0         	&  85.0 \\
+		195  	&  79  	&  9.0         	&  72.0 \\
+		210  	&  74  	&  9.0         	&  67.0 \\
+		225  	&  60  	&  8.0         	&  53.0 \\
+		240  	&  52  	&  7.0         	&  45.0 \\
+		255  	&  56  	&  7.0         	&  49.0 \\
+		270  	&  53  	&  7.0         	&  46.0 \\
+		285  	&  41  	&  6.0         	&  34.0 \\
+		300  	&  36  	&  6.0         	&  29.0 \\
+		315  	&  37  	&  6.0         	&  30.0 \\
+		330  	&  32  	&  6.0         	&  25.0 \\
+		345  	&  36  	&  6.0         	&  29.0 \\
+		360  	&  38  	&  6.0         	&  31.0 \\
+		375  	&  34  	&  6.0         	&  27.0 \\
+		390  	&  40  	&  6.0         	&  33.0 \\
+		405  	&  21  	&  5.0         	&  14.0 \\
+		420  	&  35  	&  6.0         	&  28.0 \\
+		435  	&  33  	&  6.0         	&  26.0 \\
+		450  	&  36  	&  6.0         	&  29.0 \\
+		465  	&  20  	&  4.0         	&  13.0 \\
+		480  	&  24  	&  5.0         	&  17.0 \\
+		495  	&  30  	&  5.0         	&  23.0 \\
+		510  	&  30  	&  5.0         	&  23.0 \\
+		525  	&  26  	&  5.0         	&  19.0 \\
+		540  	&  28  	&  5.0         	&  21.0 \\
+		555  	&  23  	&  5.0         	&  16.0 \\
+		570  	&  20  	&  4.0         	&  13.0 \\
+		585  	&  28  	&  5.0         	&  21.0 \\
+		600  	&  17  	&  4.0         	&  10.0 \\
+		615  	&  26  	&  5.0         	&  19.0 \\
+		630  	&  19  	&  4.0         	&  12.0 \\
+		645  	&  13  	&  4.0         	&   6.0 \\
+		660  	&  17  	&  4.0         	&  10.0 \\
+\end{longtable}
+\noindent
+Das Ziel dieser Messung ist es, beide Halbwertszeiten zu bestimmen. Dafür wird wie in \autoref{sec:aus:vanadium}
+vorgegangen, wobei hier mit dem langsameren Zerfall angefangen wird.
+\\
+Zunächst wurden die Messdaten ab $\SI{300}{\second}$ betrachtet und die Funktion
+\begin{equation}
+	f(x) = -\lambda \cdot x + b
+	\label{eqn:mx+b2}
+\end{equation}
+\noindent
+an 
+\begin{equation}
+	\ln N_{\Delta t}(t) = \ln(N_0 \cdot (1 - e^{-\lambda \Delta t})) - \lambda t.
+	\label{eqn:logarithmisch2}
+\end{equation}
+angepasst.
+Die lineare Ausgleichsrechnung ergab die Steigung
+\begin{equation}
+	\lambda_\text{l} = (3 \pm 0.6) 10^{-3}\ \si{\second}^{-1}.
+\end{equation}
+\noindent Dann folgt die Halbwertszeit des langsameren Zerfalls mit
+\begin{equation}
+	T_\text{l} = \SI{230\pm50}{\second}.
+\end{equation}
+\noindent
+Als zweites soll die Halbwertszeit für den schnelleren Zerfall bestimmt werden. Dafür wird mit
+$T_\text{l}$ berechnet, wie viele Impulse/Messintervall am Anfang durch den langsamen Zerfall ausgelöst wurden.
+Laut dem Zerfallsgesetz liegt das bei
+\begin{equation}
+	N_{\Delta t_\text{l}} (t) = N_{0_\text{l}} \left(1 - e^{-\lambda_\text{l}\Delta t}\right) 
+	e^{-\lambda_\text{l}t }.
+\end{equation}
+\noindent
+Zieht man $N_{\Delta t_\text{l}}(t)$ von den Messwerten die vor $\SI{120}{\second}$ ab, so erhalten wir
+die Zerfallsrate des kurzlebigeren Atomkerns. Über den Logarithmus dieser Zerfallsrate, also
+\begin{equation}
+	\{ \ln(N_{\Delta t}(t_i) - N_{\Delta t_\text{l}} (t_i)) \}
+\end{equation}
+wird eine lineare Ausgleichsrechnung wie in \autoref{eqn:logarithmisch2} beschrieben durchgeführt. Die
+Fit-Parameter lieferten
+\begin{equation}
+	\lambda_\text{s} = (1.43 \pm 0.04) 10^{-2} \si{\second}^{-1}.
+\end{equation}
+Dann folgt unter Zuhilfenahme der Gaußschen Fehlerfortpflanzung
+\begin{equation}
+	T_\text{s} = (48\pm1.2)\si{\second}.
+\end{equation}
+\noindent
+In \autoref{fig:rhodium} sind die Messdaten sowie die Ausgleichsgeraden skiziert.
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/rhodium.pdf}
+	\caption{Messdaten und Fit für langsamen und schnellen Zerfall von Rhodium-104.}
+	\label{fig:rhodium}
 \end{figure}
