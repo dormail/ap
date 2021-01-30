@@ -35,3 +35,114 @@ Zu den sieben Messdaten lautet der Durchschnitt
 	\langle N_U \rangle_{t = \SI{300}{\second}} = 139 \pm 4.
 \end{equation}
 Wobei dieser im folgenden auf die verschiedenen Messintervalle angepasst werden muss.
+\noindent
+Die Abweichung folgt aus der linearen Approximation der Fehlerfortplanzung
+\begin{equation}
+	\Delta N_U = \sqrt{(\partial_x N)^2 (\Delta x)^2 + (\partial_y N)^2 (\Delta y)^2 + \hdots}.
+	\label{eqn:fehlerfortpflanzung}
+\end{equation}
+
+\subsection{Zerfallskurve und Halbwertszeit von Vanadium}
+\label{sec:aus:vanadium}
+
+In dieser Messreihe wurde der Zerfall von Vanadium-52 betrachtet. Als Messintervall wurden hier
+$\SI{30}{\second}$ gewählt, daher wird von den Messdaten der Untergrund
+\begin{equation}
+	\langle N_U \rangle_{t=\SI{30}{\second}} = 
+	\frac{\langle N_U \rangle_{t=\SI{30}{\second}}}{10} = 14 \pm 0.4
+\end{equation}
+abgezogen.
+
+\begin{longtable}{c c c c}
+	%\centering
+	\caption{Messdaten zum Zerfall von Vanadium-52. Die Abweichung folgt aus der Poisson Verteilung
+		mit $\Delta N = \sqrt{N}$. Für die Korrigierte Zerfallsraten wurde der Untergrund 
+	$14 \frac{\text{Zerfällen}}{\SI{30}{\second}}$ abgezogen.}\\
+	%\label{tab:vanadium}
+		\hline
+		$t / \si{\second}$ & $N$ & $\Delta N$ &$N$ Korrigiert \\
+		%\midrule
+		\hline
+		\endhead
+		\hline
+		\endfoot
+		30   	&      189  	& 14.0 &      175.0 \\
+		  60   	&      197  	& 14.0 &      183.0 \\
+		  90   	&      150  	& 12.0 &      136.0 \\
+		 120   	&      159  	& 13.0 &      145.0 \\
+		 150   	&      155  	& 12.0 &      141.0 \\
+		 180   	&      132  	& 11.0 &      118.0 \\
+		 210   	&      117  	& 11.0 &      103.0 \\
+		 240   	&      107  	& 10.0 &       93.0 \\
+		 270   	&       94  	& 10.0 &       80.0 \\
+		 300   	&      100  	& 10.0 &       86.0 \\
+		 330   	&       79  	&  9.0 &       65.0 \\
+		 360   	&       69  	&  8.0 &       55.0 \\
+		 390   	&       81  	&  9.0 &       67.0 \\
+		 420   	&       46  	&  7.0 &       32.0 \\
+		 450   	&       49  	&  7.0 &       35.0 \\
+		 480   	&       61  	&  8.0 &       47.0 \\
+		 510   	&       56  	&  7.0 &       42.0 \\
+		 540   	&       40  	&  6.0 &       26.0 \\
+		 570   	&       45  	&  7.0 &       31.0 \\
+		 600   	&       32  	&  6.0 &       18.0 \\
+		 630   	&       27  	&  5.0 &       13.0 \\
+		 660   	&       43  	&  7.0 &       29.0 \\
+		 690   	&       35  	&  6.0 &       21.0 \\
+		 720   	&       19  	&  4.0 &        5.0 \\
+		 750   	&       28  	&  5.0 &       14.0 \\
+		 780   	&       27  	&  5.0 &       13.0 \\
+		 810   	&       36  	&  6.0 &       22.0 \\
+		 840   	&       25  	&  5.0 &       11.0 \\
+		 870   	&       29  	&  5.0 &       15.0 \\
+		 900   	&       18  	&  4.0 &        4.0 \\
+		 930   	&       17  	&  4.0 &        3.0 \\
+		 960   	&       24  	&  5.0 &       10.0 \\
+		 990   	&       21  	&  5.0 &        7.0 \\
+		1020   	&       25  	&  5.0 &       11.0 \\
+		1050   	&       21  	&  5.0 &        7.0 \\
+		1080   	&       24  	&  5.0 &       10.0 \\
+		1110   	&       25  	&  5.0 &       11.0 \\
+		1140   	&       17  	&  4.0 &        3.0 \\
+		1170   	&       20  	&  4.0 &        6.0 \\
+		1200   	&       19  	&  4.0 &        5.0 \\
+		1230   	&       20  	&  4.0 &        6.0 \\
+		1260   	&       18  	&  4.0 &        4.0 \\
+		1290   	&       16  	&  4.0 &        2.0 \\
+		1320   	&       17  	&  4.0 &        3.0 \\
+\end{longtable}
+
+Für die im Zeitinterval $\Delta t$ gemessenen Zerfälle gilt
+\begin{equation}
+	\ln N_{\Delta t}(t) = \ln(N_0 \cdot (1 - e^{-\lambda \Delta t})) - \lambda t.
+	\label{eqn:logarithmisch}
+\end{equation}
+\noindent
+In einer linearen Ausgleichsrechnung wurde die Funktion 
+\begin{equation}
+	f(x) = m \cdot x + b
+	\label{eqn:mx+b}
+\end{equation}
+\noindent
+an die Messdaten angepasst. Dabei gilt zwischen \autoref{eqn:logarithmisch} und \autoref{eqn:mx+b} der 
+Zusammenhang $m = -\lambda$.
+\\
+Die lineare Ausgleichsrechnung ergab
+\begin{equation}
+	\lambda = (3.2 \pm 0.16) \ \si{\second}^{-1}.
+\end{equation}
+\noindent Dann folgt die Halbwertszeit
+\begin{equation}
+	T = \SI{219\pm11}{\second}.
+\end{equation}
+Hier wurde wie bei der Untergrundrate mit der gaußschen Fehlerfortplanzung gerechnet (Siehe 
+\autoref{eqn:fehlerfortpflanzung}).
+\\
+In \autoref{fig:zerfallskurve} sind die Messdaten und die Ausgleichsfunktion zu sehen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/vanadium.pdf}
+	\caption{Messdaten und Fit für die Zerfallskurve von Vanadium.}
+	\label{fig:zerfallskurve}
+\end{figure}
