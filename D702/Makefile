@@ -8,8 +8,12 @@ build/vanadium.pdf: daten/vanadium.csv
 build/vanadium.pdf: vanadium.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python vanadium.py
 
+build/rhodium.pdf: daten/rhodium.csv
+build/rhodium.pdf: rhodium.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python rhodium.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/plot.pdf build/vanadium.pdf content/auswertung.tex
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
