@@ -33,8 +33,11 @@ err = np.sqrt(np.diag(cov))
 
 lmd = ufloat(-1 * coef[0], err[0])
 T = np.log(2) / lmd
-print(f'Steigung der AUsgleichsgerade: {lmd}')
+lit = 3.743 * 60
+error = (T - lit) / lit
+print(f'Steigung der Ausgleichsgerade: {lmd}')
 print(f'Halbwertszeit fuer vanadium: {T}')
+print(f'Abweichung vom Literaturwert: {error:.4f}')
 
 print(coef)
 lmd = -1 * coef[0]
