@@ -10,7 +10,7 @@ build/vanadium.pdf: vanadium.py matplotlibrc header-matplotlib.tex | build
 
 build/rhodium.pdf: daten/rhodium.csv
 build/rhodium.pdf: rhodium.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python3 rhodium.py
+	TEXINPUTS=$$(pwd): python rhodium.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf build/vanadium.pdf build/rhodium.pdf content/auswertung.tex

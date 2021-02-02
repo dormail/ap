@@ -1,209 +1,57 @@
 \section*{Zielsetzung}
 \label{sec:zielsetzung}
 
-In diesem Versuch 
+Das Ziel dieses Versuchs ist die Bestimmung der Halbwertszeiten eines Isotops und eines Isotopengemischs. 
 
 \section{Theorie}
 \label{sec:Theorie}
 
 
-\subsection{A}
+\subsection{Kernreaktionen}
 \label{sec:a}
-
-Der Aufbau des Geiger-Müller-Zählrohres ist in \autoref{fig:querschnitt} dargestellt. Es besteht aus
-einem Kathodenzylinder (Radius $R_\text{k}$) und einem mittig liegenden, axial verlaufenden
-Anodendraht (Radius $R_\text{a}$) und wird mit einem Gasgemisch (z.B. Argon und verschiedene Alkohole) gefüllt.
-\begin{figure}[H]
-	\centering
-	%\includegraphics[width=0.8\textwidth]{content/querschnitt.png}
-	\caption{Querschnitt durch ein Endfenster-Zählrohr \cite{sample}}
-	\label{fig:querschnitt}
-\end{figure}
-\noindent
-Bei Anlegen einer Spannung $U$ verhält sich das Rohr wie ein zylindrischer Kondensator, woraus die 
-radialsymetrische elektrische Feldstärke
+Wenn ein Neutron in einen Kern A eindringt, entsteht durch Absorption ein neuer Kern A*, der auch als Zwischenkern oder Compoundkern bezeichnet wird. Der Kern A* ist aber oft nicht in der Lage das aufgenommene Neutron oder ein anderes Nukleon abzustoßen, sodass er durch die Emission eines $\gamma$-Quants wieder in seinen Grundzustand übergeht. Dieses Verhalten lässt sich mit \autoref{eqn:a} beschreiben. 
 \begin{equation}
-	E = \frac{U}{r \ln(r_\text{k} / r_\text{a})}
-	\label{eqn:elektrisches-feld}
+    \label{eqn:a}
+    {^{m}_{z}A} + {^{1}_{0}n} \rightarrow {^{m+1}_{z}A*} \rightarrow {^{m+1}_{z}A} + \gamma
 \end{equation}
-folgt.
+
+
+Der neu entstandene Kern ${^{m+1}_{z}A}$ ist in der Regel nicht stabil, da er mehr Neutronen enthält als ein entsprechender stabiler Kern. Die überschüssige Masse wird nach der Einsteinschen Beziehung in kinetische Energie eines Elektrons und Antineutrinos umgewandelt.
 \\
-Eine technische Schwierigkeit ist die Realisierung, dass $\alpha$- und
-$\beta$-Teilchen in das Rohr eintreten, da diese sehr leicht mit ihrer Umgebung (also auch mit dem Stahlmantel)
-wechselwirken. Dabei wurde in diesem
-Versuch ein Endfensterzählrohr verwendet. Das bedeutet, dass eine Seite (in \autoref{fig:querschnitt} die linke
-Seite) des Zählrohres aus einem dünnwandigen Material mit Atomen niedriger Ordnungszahl besteht. Mit Mylar-Folie 
-erhält man ein sehr dünnes Material mit geringer Dichte, sodass selbst $\alpha$-Teilchen in das Zählrohr eintreten 
-können.
-
-\subsection{Spannungsbereiche}
-\label{sec:spannungsbereiche}
-
-Es soll jetzt ein geladenes Teilchen, welches in das Zählrohrvolumen eindringt, betrachtet werden. Unter
-der Annahme, dass es vollständig absorbiert wird, wird es sich durch den Gasraum bewegen, bis es seine 
-Energie durch Ionisationen abgegeben hat. Dabei wird im Mittel eine Energie von $26\ \si{\eV}$ 
-abgegeben 
-Die Teilchen, die hier betrachtet werden, haben eine Energie in der Größenordnung $10^5\ \si{\eV}$, d.h. 
-dass die Anzahl an Ionisation und der dabei freigesetzten Elektronen proportional zur Energie des 
-einfallenden Teilchens sind.
-
-\noindent
-Dabei ist wichtig, dass die Vorgänge nach der ersten Ionisation im Zählrohr stark von der Spannung $U$ 
-abhängen, der Zusammenhang ist in \autoref{fig:ionisationen-u} dargestellt.
-\begin{figure}[H]
-	\centering
-	%\includegraphics[width=0.6\textwidth]{content/ionisationen-u.png}
-	\caption{Anzahl der erzeugten Elektron-Ionenpaare als Funktion der Spannung U bei einem
-	Proportionalzählrohr (nach Kleinknecht, Detektoren für Teilchenstrahlen) \cite{sample}}
-	\label{fig:ionisationen-u}
-\end{figure}
-Dabei sind einige Bereiche bei $U$ zu unterscheiden:
-\begin{itemize}
-	\item Für kleine Spannungen geht nur ein Teil der Ionisationselektronen zur Anode, der Rest geht 
-		durch Rekombination verloren. (Entspricht Bereich \Romannum{1} in \autoref{fig:ionisationen-u})
-	\item Bei höheren Spannungen (Bereich \Romannum{2} in \autoref{fig:ionisationen-u})
-		sinkt die Rekombinationswahrscheinlichkeit ab, sodass alle erzeugten Elektronen
-		die Anode erreichen. Der Ionisationsstrom ist dabei proportional der Intensität und Energie
-		der einfallenden Strahlung. Unter diesen Vorraussetzungen wird ein Gerät als Ionisationskammer
-		bezeichnet, eignet sich jedoch nur bei hohen Strahlungsintensitäten.
-	\item Wird die Spannung noch weiter erhöht, erhalten die entstehenden Elektronen aufgrund der hohen Feldstärke
-		genug Energie um weitere Ionisationen durchzuführen (sog. Stoßionisationen). Da auch die bei den
-		Stoßionisationen entstehenden Elektronen weitere Ionisationen durchführen können, kann eine ganze
-		Kaskade entstehen, die auch als Townsend-Lawine bezeichnet wird.
-		\\
-		Durch diese Lawinen sammelt sich jetzt am Anodendraht eine Ladung $Q$, welche als Ladungsimpuls 
-		gemessen werden kann, aber dennoch proportional zur ursprünglichen Energie des einfliegenden
-		Teilchens ist. Wegen dieser Proportionalität wird ein Betrieb in Bereich \Romannum{3} in 
-		\autoref{fig:ionisationen-u} als Proportionalzählrohr bezeichnet.
-	\item Nach dem Proportionalbereich folgt der Auslösebereich (Bereich \Romannum{4} in
-		\autoref{fig:ionisationen-u}). Hier entstehen bei der primären Elektronenlawine UV-Photonen, welche
-		sich im gesamten Zählrohr ausbreiten können und im gesamten Volumen weitere Elektronenkaskaden auslösen.
-		Die Ladung $Q$ hängt jetzt nicht mehr von der Teilchenenergie, dafür aber vom Zählrohrvolumen und der 
-		Spanung $U$ ab.
-		\\
-		Daher kann keine Energiemessung mehr stattfinden, nur Intensitätsmessungen. Dafür ist $Q$ auch mit
-		geringem elektronischen aufwand messbar.
-\end{itemize}
 
 
-
-\subsection{Einfluss der positiven Ionen}
-\label{sec:einfluss-ionen}
-
-\begin{figure}[H]
-	\centering
-	%\includegraphics[width=0.8\textwidth]{content/totzeit.png}
-	\caption{Tot- und Erholungszeit eines Zählrohres im Ladungs-Zeit-Diagramm \cite{sample}}
-	\label{fig:totzeit}
-\end{figure}
-\subsubsection{Nachentladung}
-\label{sec:nachentladung}
-Ein weiterer Effekt tritt auf, wenn die positiven Ionen auf den Zählrohrmantel treffen. Bei ihrer Neutralisation wird
-eine Energie freigesetzt, die größer als die Austrittsarbeit für die Elektronen ist, weswegen letztere in das Zählrohr
-ausgeworfen werden können. Diese sog. ``Sekundärelektronen`` können im Zählrohr dann neue Entladungen zünden und 
- weitere Ladungsimpulse an der Anode auslösen, sog. Nachentladungen. Diese Nachentladungen finden (weil die
-Ionen zuvor schon abgewandert sind) nach der Totzeit statt, weshalb sie das Eintreffen eines weiteren Teilchens 
-vortäuschen.
-\\
-Offensichtlich sind die Nachentladungen unerwünscht, da sie die Präzision des Rohres stark in eine Richtung verringern.
-Die Unterbindung der Nachentladungen geschieht durch die in \autoref{sec:aufbau} erwähnten Alkoholdämpfe im 
-Zählrohr. Die Alkoholmoleküle besitzen eine geringere Ionisationsenergie als Argon, weswegen diese von den Ionen als 
-Reaktionspartner bevorzugt werden. Sie verbrauchen die Energie 
-jedoch bei Schwingungen innerhalb der großen Moleküle und können somit keine Sekundärelektronen erzeugen, wenn sie 
-auf die Kathode treffen.
-\subsection{Charakteristik des Zählrohres}
-\label{sec:theo:charakteristik}
-Ein Merkmal eines Zählrohres ist die Charakteristik. Dabei wird das Rohr mit konstanter Intensität bestrahlt und
-die Spannung $U$ wird variiert. Der Graph $N(U)$ ($N$ sei nun die Anzahl an Ladungsimpulsen pro Zeiteinheit) ist dann
-die Charakteristik des Zählrohres. In
-\autoref{fig:theo:charakteristik} ist ein Beispiel für eine Charakteristik.
-\begin{figure}[H]
-	\centering
-	%\includegraphics[width=0.6\textwidth]{content/charakteristik.png}
-	\caption{Zählrohrcharakteristik (gemessene Ladungsimpulse bei konstanter Strahlungsintensität). $U_\text{E}$
-	markiert den Start des Auslösebereichs. \cite{sample}}
-	\label{fig:theo:charakteristik}
-\end{figure}
-\noindent
-Auffällig ist dabei der flache, lineare Teil der Kurve, das Plateau. Bei einem idealen Zählrohr wäre die Steigung
-im Plateau gleich null, in der Praxis wird aufgrund von Nachentladungen immer eine leichte Steigung entstehen. 
-Allgemein gilt
-jedoch, dass ein flacheres und längeres Plateu für eine höhere Qualität des Zählrohres spricht.
-\\
-Auffällig ist auch die starke Steigung rechts vom Plateau. Dies ist die Folge von Selbstentladungen aufgrund 
-der hohen Feldstärke. Dort sorgt dann ein eintreffendes Teilchen für eine Dauerentladung. Wegen den hohen Stromdichten
-wird das Zählrohr in diesem Bereich schnell zerstört.
-\subsection{Ansprechvermögen des Zählrohres}
-\label{sec:theo:ansprechvermoegen}
-Unter Ansprechvermögen versteht man die Wahrscheinlichkeit, dass ein einfallendes Teilchen tatsächlich als solches 
-detektiert wird. Da $\alpha$- und $\beta$-Teilchen ein hohes Ionisationsvermögen besitzen, liegt das Ansprechvermögen
-bei nahezu $100\%$. Mit der anfangs erwähnten Mylar-Folie (vgl. \autoref{sec:aufbau}) ist auch das Eindringen in
-den Zählraum realisiert.
-\\
-Im Vergleich zu den geladenen Teilchen ist das Ansprechvermögen von Photonen jedoch sehr niedrig. Bei hochenergetischen
-Photonen (z.B. $\gamma$-Strahlung) liegt es bei ungefähr $1\%$, weshalb nur $\gamma$-Strahlung mit hohen
-Intensitäten gemessen werden kann.
-\\
-Mit einem schweren Füllgas (z.B. Xenon) können allerdings die niederenergetischen Röntgen-Quanten gut gemessen werden.
-\subsection{Bestimmung der Totzeit}
-\label{sec:bestimmung-totzeit}
-Für die Bestimmung der Totzeit (vgl. \autoref{sec:totzeit}) stehen zwei Methoden zur Verfügung:
-\begin{enumerate}
-	\item Oszillographische Messung
-	\item Zwei-Quellen-Methode
-\end{enumerate}
-Im Folgenden werden beide Messmethoden erläutert.
-\subsubsection{Oszillographische Messung der Totzeit}
-\label{sec:theo:oszillographisch}
-Es wird eine hohe Strahlungsintensität eingestellt, zusätzlich muss der Trigger des Oszillographen auf die 
-Anstiegsflanke gestellt werden. Dadurch wird ein Oszillogramm ähnlich zu dem in \autoref{fig:totzeit} erzeugt.
-\\
-Bei hoher Intensität, so die Theorie, folgt ein Puls auf den Anderen direkt nach der Totzeit, weswegen wir hier die
-Zeit zwischen zwei Pulsen als Totzeit annehmen können.
-\subsubsection{Zwei-Quellen-Methode}
-\label{sec:theo:zwei-quellen}
-Wie in \autoref{sec:totzeit} erklärt, ist aufgrund der Totzeit $T$ die Impulsrate der detektierten Teilchen $N_\text{r}$
-immer kleiner als die Rate der eindringenden Teilchen $N_\text{w}$. So ist bei einer Impulsrate $N_\text{r}$ das 
-Messrohr für die Zeit $TN_\text{r}$ unempfindlich. Wird über einen Zeitraum $t$ gemessen, so ist die Zeit wo
-das Messrohr tatsächlich empfindlich war $(1-TN_\text{r})t$. Die wahre Impulsrate ist daher
+\subsection{Erzeugung niederenergetischer Neutronen}
+\label{sec:erzeugung}
+Da Neutronen als freie Teilchen instabil sind, kommen sie in der Natur nicht vor und müssen für das vorliegende Experiment erzeugt werden. Die Neutronen wurden hier durch Beschuss von Be-Kernen mit $\alpha$-Teilchen gemäß \autoref{eqn:b} freigesetzt.
 \begin{equation}
-	N_\text{w} = \frac{\text{Gemessene Impulse}}{\text{Tatsächliche Messzeit}}
-	= \frac{N_\text{r} t}{(1-TN_\text{r}) t} = \frac{N_\text{r}}{1 - TN_\text{r}}.
-	\label{eqn:wahre-zaehlrate}
+    \label{eqn:b}
+    {^{9}_{4}Be} + {^{4}_{2}\alpha} \rightarrow {^{12}_{6}C}+{^{0}_{1}n}
 \end{equation}
-\noindent
-Auf Grundlage von \autoref{eqn:wahre-zaehlrate} beruht die Zwei-Quellen-Methode, bei der, wie der Name andeutet, mit
-zwei radioaktiven Quellen gearbeitet wird.
-Zunächst misst man die Zählrate $N_1$, die das Präparat 1 im Zählrohr hervorruft. Dann fügt man das 2. Präparat hinzu
-und misst die Summenzählrate $N_{1+2}$, wobei dadrauf geachtet werden muss, Quelle 1 nicht zu verschieben. Zuletzt
-wird Präparat 1 entfernt und die Zählrate $N_2$ des zweiten Präparats gemessen.
-\\
-Hätte das Zählrohr keine Totzeit würden sich die Impulse addieren, also müsste der Zusammenhang
+
+Zur Abbremsung der Neutronen werden sie durch Materieschichten mit leichten Kernen geschickt. Mit elastischen Stöße geben die Neutronen ihre Energie an
+die leichten Kerne nach  
 \begin{equation}
-	N_{1+2} = N_1 + N_2
+	E_\text{ü} = E_0 \frac{4Mm}{(M+m)^2}
+		\label{eqn:e}
 \end{equation}
-gelten. \\
-In der Praxis beobachtet man aber, dass
+ab. Die beste Substanz ist hier nach also Wasserstoff(geringste Massenunterschiede). Es wird daher ein Mantel aus Paraffin für die Neutronenquelle benutzt.
+
+\subsection{Zerfall instabiler Isotope}
+\label{sec:zerfall}
+Stabile Isotope können durch Neutronenstrahlung in instabile verwandelt werden. Für Vanadium läuft die Aktivierung und der Zerfall gemäß folgender Gleichung ab:
 \begin{equation}
-	N_{1+2} < N_1 + N_2.
+    \label{eqn:v}
+    {^{51}_{23}V} + n \rightarrow {^{52}_{23}V} \rightarrow {^{52}_{24}Cr} + \beta^- +v_e
 \end{equation}
-Gemäß \autoref{eqn:wahre-zaehlrate} drangen während der Messung
+
+Die Zahl $N(t)$, der zu einem Zeitpunkt t noch nicht zerfallenen Kerne kann durch
 \begin{equation}
-	N_{{\text{w}_i}} = \frac{N_i}{1 - TN_i} 
-		\quad \text{für } i \in \{1, 2, 1+2\}
+    N(t) = N_0 exp(− \lambda t)
 \end{equation}
-Teilchen ins Zählrohr ein.
-\\
-Hierbei gilt $N_{\text{w}_{1+2}} = N_{\text{w}_{1}} + N_{\text{w}_{2}}$, damit folgt
+bestimmt werden.
+Die Halbwertszeit T kann dann durch
 \begin{equation}
-	\frac{N_{1+2}}{1 - TN_{1+2}} =
-	\frac{N_1}{1 - TN_1} +
-	\frac{N_2}{1 - TN_2} .
-	\label{eqn:theo:paar-brueche}
+T = ln \frac{2}{\lambda}
 \end{equation}
-\noindent
-Die Größen 
-\begin{equation}
-	\overline{\mathbf{I}} = \frac{\Delta Q}{\Delta t} Z.
-\end{equation}
+berechnet werden.
 
