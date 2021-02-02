@@ -39,7 +39,6 @@ print(f'Steigung der Ausgleichsgerade: {lmd}')
 print(f'Halbwertszeit fuer vanadium: {T}')
 print(f'Abweichung vom Literaturwert: {error:.4f}')
 
-print(coef)
 lmd = -1 * coef[0]
 lmd_err = err[0]
 N_0 = np.exp(coef[1]) / (1 - np.exp(-1 * lmd * Dt))
@@ -53,7 +52,7 @@ plt.fill_between(t, 10**2 * 2 * np.exp(-1 * (lmd-lmd_err) * t),
          alpha=0.3, color='r')
 plt.plot(t, 10**2 * 2 * np.exp(-1 * lmd * t),
         color='r',
-        label=f'Fit für $T={T.n:.0f}\pm{T.s:.0f}$ s')
+        label=f'Fit für $T=({T.n:.0f}\pm{T.s:.0f})$ s')
 
 plt.title(r'Messdaten und Fit zum Zerfall von Vanadium-52')
 plt.legend()
@@ -61,19 +60,3 @@ plt.xlabel(r'$t/$s')
 plt.ylabel(r'Zerfälle / $30$s')
 plt.yscale('log')
 plt.savefig('build/vanadium.pdf')
-
-# polynom fit ersten grades
-uN = uN[0:10]
-t = t[0:10]
-coef, cov = np.polyfit(t, np.log(unumpy.nominal_values(uN)), 1, cov=True)
-err = np.sqrt(np.diag(cov))
-
-lmd = ufloat(-1 * coef[0], err[0])
-T = np.log(2) / lmd
-print(f'Halbwertszeit fuer vanadium etwas exakter: {T}')
-
-print(coef)
-lmd = -1 * coef[0]
-N_0 = np.exp(coef[1]) / (1 - np.exp(-1 * lmd * Dt))
-print(N_0)
-
