@@ -25,7 +25,7 @@ N_slow = N[19:-1]
 t_slow = t[19:-1]
 
 print(f'Langsamer Zerfall startet bei {t[19]}s')
-
+a=1
 coef, cov = np.polyfit(t_slow, np.log(N_slow), 1, cov=True)
 err = np.sqrt(np.diag(cov))
 lmd = ufloat(-1 *  coef[0], err[0])
