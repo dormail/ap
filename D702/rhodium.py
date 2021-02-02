@@ -39,7 +39,7 @@ print(f'Abweichung vom Literaturwert: {error:.4f}')
 x = np.linspace(300, 660)
 plt.plot(x, 90 * np.exp(x * -1 * lmd.n),
         color='k',
-        label='Langsamer Zerfall')
+        label=f'Langsamer Zerfall (T = {T_slow.n:.0f} s)')
 
 # Kurzlegebiger Zerfall ###
 N_fast = N[0:8]
@@ -51,17 +51,17 @@ N_korr = 667 * (1 - np.exp(-1 * lmd.n * Dt)) * np.exp(-1 * lmd.n * t_fast)
 coef, cov = np.polyfit(t_fast, np.log(N_fast - N_korr), 1, cov=True)
 err = np.sqrt(np.diag(cov))
 lmd = ufloat(-1 *  coef[0], err[0])
-T_slow = np.log(2) / lmd
+T_fast = np.log(2) / lmd
 lit = 42.3
-error = (T_slow - lit) / lit
+error = (T_fast - lit) / lit
 print(f'Steigung der Ausgleichsgerade: {lmd}')
-print(f'Halbwertszeit fuer langsames Rhodium: {T_slow}')
+print(f'Halbwertszeit fuer langsames Rhodium: {T_fast}')
 print(f'Abweichung vom Literaturwert: {error:.4f}')
 
 x = np.linspace(0, 150)
 plt.plot(x, 800 * np.exp(x * -1 * lmd.n),
         color='r',
-        label='Schneller Zerfall')
+        label=f'Schneller Zerfall (T = {T_fast.n:.0f} s)')
 
 # plots
 plt.errorbar(t,N, yerr=DN,

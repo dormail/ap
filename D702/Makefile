@@ -15,6 +15,8 @@ build/rhodium.pdf: rhodium.py matplotlibrc header-matplotlib.tex | build
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf build/vanadium.pdf content/auswertung.tex
 
+build/main.pdf: build/rhodium.pdf
+
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
