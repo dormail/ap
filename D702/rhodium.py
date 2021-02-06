@@ -54,7 +54,7 @@ T_fast = np.log(2) / lmd
 lit = 42.3
 error = (T_fast - lit) / lit
 print(f'Steigung der Ausgleichsgerade: {lmd}')
-print(f'Halbwertszeit fuer langsames Rhodium: {T_fast}')
+print(f'Halbwertszeit fuer schnelles Rhodium: {T_fast}')
 print(f'Abweichung vom Literaturwert: {error:.4f}')
 
 x = np.linspace(0, 150)
