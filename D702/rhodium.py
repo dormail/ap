@@ -68,7 +68,6 @@ plt.errorbar(t,N, yerr=DN,
         label='Messdaten')
 
 
-plt.title(r'Messdaten und Fit zum Zerfall von Rhodium-104')
 plt.legend()
 plt.xlabel(r'$t/$s')
 plt.ylabel(r'Zerfälle / $15$s')
