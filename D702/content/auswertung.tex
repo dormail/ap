@@ -27,14 +27,13 @@ Untergrundraten aus \autoref{tab:untergrundrate} aufgenommen.
 \end{table}
 
 \noindent
-Da die Zählraten Poisson verteilt sind, ist die Messunsicherheit durch $\Delta N = \sqrt{N}$ 
-gegeben.
-\\
-Zu den sieben Messdaten lautet der Durchschnitt
+Da die Zählraten Poisson-verteilt sind, ist die Messunsicherheit durch $\Delta N = \sqrt{N}$ 
+gegeben. \\
+Zu den sieben Messdaten lautet der Mittelwert
 \begin{equation}
 	\langle N_U \rangle_{t = \SI{300}{\second}} = 139 \pm 4.
 \end{equation}
-Wobei dieser im folgenden auf die verschiedenen Messintervalle angepasst werden muss.
+Wobei dieser im Folgenden auf die verschiedenen Messintervalle angepasst werden muss.
 \noindent
 Die Abweichung folgt aus der linearen Approximation der Fehlerfortplanzung
 \begin{equation}
@@ -127,7 +126,7 @@ an den Logarithmus der Messdaten angepasst.
 Dabei gilt zwischen \autoref{eqn:logarithmisch} und \autoref{eqn:mx+b} der 
 Zusammenhang $m = -\lambda$.
 \\
-Die lineare Ausgleichsrechnung ergab
+Die lineare Ausgleichsrechnung ergibt
 \begin{equation}
 	\lambda = (3,2 \pm 0,16) 10^{-3} \  \si{\second}^{-1}.
 \end{equation}
@@ -135,7 +134,7 @@ Die lineare Ausgleichsrechnung ergab
 \begin{equation}
 	T = \SI{219\pm11}{\second}.
 \end{equation}
-Hier wurde, wie bei der Untergrundrate, mit der gaußschen Fehlerfortplanzung gerechnet (Siehe 
+Hier wird, wie bei der Untergrundrate, mit der gaußschen Fehlerfortplanzung gerechnet (Siehe 
 \autoref{eqn:fehlerfortpflanzung}).
 \\
 In \autoref{fig:zerfallskurve} sind die Messdaten und die Ausgleichsfunktion zu sehen.
@@ -154,7 +153,7 @@ In \autoref{fig:zerfallskurve} sind die Messdaten und die Ausgleichsfunktion zu 
 Wie in \autoref{sec:Theorie} erklärt, besitzt Rhodium-104 zwei isomere Kerne mit unterschiedlichen 
 Energien und somit zwei verschiedenen Halbwertszeiten.
 \\
-Die Messung der Zerfallsraten ergab die Messwerte in \autoref{tab:rhodium}.
+Die Messung der Zerfallsraten ergibt die Messwerte in \autoref{tab:rhodium}.
 \begin{longtable}{c c c c}
 	%\centering
 	\caption{Messdaten zum Zerfall von Rhodium-104. Die Abweichung $\Delta N = \sqrt{N}$ folgt
@@ -228,7 +227,7 @@ an
 	\label{eqn:logarithmisch2}
 \end{equation}
 angepasst.
-Die lineare Ausgleichsrechnung ergab die Steigung
+Die lineare Ausgleichsrechnung ergibt die Steigung
 \begin{equation}
 	\lambda_\text{l} = (3 \pm 0,6) 10^{-3}\ \si{\second}^{-1}.
 \end{equation}
@@ -238,7 +237,7 @@ Die lineare Ausgleichsrechnung ergab die Steigung
 \end{equation}
 \noindent
 Als zweites soll die Halbwertszeit für den schnelleren Zerfall bestimmt werden. Dafür wird mit
-$T_\text{l}$ berechnet, wie viele Impulse/Messintervall am Anfang durch den schnellen Zerfall ausgelöst wurden.
+$T_\text{l}$ berechnet, wie viele $\frac{\text{Impulse}}{\text{Messintervall}}$ am Anfang durch den schnellen Zerfall ausgelöst wurden.
 Laut dem Zerfallsgesetz liegt das bei
 \begin{equation}
 	N_{\Delta t_\text{l}} (t) = N_{0_\text{l}} \left(1 - e^{-\lambda_\text{l}\Delta t}\right) 
@@ -254,7 +253,7 @@ wird eine lineare Ausgleichsrechnung wie in \autoref{eqn:logarithmisch2} beschri
 wird allerdings nur das Intervall von $t=0$ bis $t=\SI{120}{\second}$ betrachtet, da hier der schnelle 
 Zerfall dominiert.
 \\
-Die Fit-Parameter lieferten
+Die Fit-Parameter liefern
 \begin{equation}
 	\lambda_\text{s} = (1,43 \pm 0,04) 10^{-2} \si{\second}^{-1}.
 \end{equation}
