@@ -54,7 +54,6 @@ plt.plot(t, 10**2 * 2 * np.exp(-1 * lmd * t),
         color='r',
         label=f'Fit für $T=({T.n:.0f}\pm{T.s:.0f})$ s')
 
-plt.title(r'Messdaten und Fit zum Zerfall von Vanadium-52')
 plt.legend()
 plt.xlabel(r'$t/$s')
 plt.ylabel(r'Zerfälle / $30$s')
