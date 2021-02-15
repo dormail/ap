@@ -7,7 +7,6 @@ bestimmt.
 \section{Theorie}
 \label{sec:Theorie}
 
-
 \subsection{Aufbau und Funktionsweise}
 \label{sec:aufbau}
 
@@ -33,9 +32,10 @@ Eine technische Schwierigkeit ist die Realisierung, dass $\alpha$- und
 $\beta$-Teilchen in das Rohr eintreten, da diese sehr leicht mit ihrer Umgebung (also auch mit dem Stahlmantel)
 wechselwirken. Dabei wurde in diesem
 Versuch ein Endfensterzählrohr verwendet. Das bedeutet, dass eine Seite (in \autoref{fig:querschnitt} die linke
-Seite) des Zählrohres aus einem dünnwandigen Material mit Atomen niedriger Ordnungszahl besteht. Mit Mylar-Folie 
-erhält man ein sehr dünnes Material mit geringer Dichte, sodass selbst $\alpha$-Teilchen in das Zählrohr eintreten 
-können.
+Seite) des Zählrohres aus einem dünnwandigen Material mit Atomen niedriger Ordnungszahl besteht. Das
+Endfenster besteht hier aus d\"unner Mylar-Folie.
+Aufgrund ihrer geringen Dichte k\"onnen selbst $\alpha$-Teilchen
+in das Z\"ahlrohr eintreten.
 
 \subsection{Spannungsbereiche}
 \label{sec:spannungsbereiche}
@@ -63,7 +63,7 @@ Dabei sind einige Bereiche bei $U$ zu unterscheiden:
 	\item Für kleine Spannungen geht nur ein Teil der Ionisationselektronen zur Anode, der Rest geht 
 		durch Rekombination verloren. (Entspricht Bereich \Romannum{1} in \autoref{fig:ionisationen-u})
 	\item Bei höheren Spannungen (Bereich \Romannum{2} in \autoref{fig:ionisationen-u})
-		sinkt die Rekombinationswahrscheinlichkeit ab, sodass alle erzeugten Elektronen
+		sinkt die Rekombinationswahrscheinlichkeit ab, sodass die meisten erzeugten Elektronen
 		die Anode erreichen. Der Ionisationsstrom ist dabei proportional der Intensität und Energie
 		der einfallenden Strahlung. Unter diesen Vorraussetzungen wird ein Gerät als Ionisationskammer
 		bezeichnet, eignet sich jedoch nur bei hohen Strahlungsintensitäten.
@@ -83,7 +83,7 @@ Dabei sind einige Bereiche bei $U$ zu unterscheiden:
 		Spanung $U$ ab.
 		\\
 		Daher kann keine Energiemessung mehr stattfinden, nur Intensitätsmessungen. Dafür ist $Q$ auch mit
-		geringem elektronischen aufwand messbar.
+		geringem elektronischen Aufwand messbar.
 \end{itemize}
 
 
@@ -153,8 +153,8 @@ wird das Zählrohr in diesem Bereich schnell zerstört.
 \subsection{Ansprechvermögen des Zählrohres}
 \label{sec:theo:ansprechvermoegen}
 
-Unter Ansprechvermögen versteht man die Wahrscheinlichkeit, dass ein einfallendes Teilchen tatsächlich als solches 
-detektiert wird. Da $\alpha$- und $\beta$-Teilchen ein hohes Ionisationsvermögen besitzen, liegt das Ansprechvermögen
+Das Ansprechverm\"ogen steht f\"ur die Wahrscheinlichkeit, dass ein einfallendes Teilchen tats\"achlich als solches detektiert wird.
+Da $\alpha$- und $\beta$-Teilchen ein hohes Ionisationsvermögen besitzen, liegt das Ansprechvermögen
 bei nahezu $100\%$. Mit der anfangs erwähnten Mylar-Folie (vgl. \autoref{sec:aufbau}) ist auch das Eindringen in
 den Zählraum realisiert.
 \\
@@ -180,6 +180,7 @@ Im Folgenden werden beide Messmethoden erläutert.
 Es wird eine hohe Strahlungsintensität eingestellt, zusätzlich muss der Trigger des Oszillographen auf die 
 Anstiegsflanke gestellt werden. Dadurch wird ein Oszillogramm ähnlich zu dem in \autoref{fig:totzeit} erzeugt.
 \\
+Bei hoher Intensität, so die Theorie, folgt ein Puls auf den Anderen direkt nach der Totzeit, weswegen hier die Zeit zwischen zwei Pulsen als Totzeit angenommen werden kann.z
 Bei hoher Intensität, so die Theorie, folgt ein Puls auf den Anderen direkt nach der Totzeit, weswegen wir hier die
 Zeit zwischen zwei Pulsen als Totzeit annehmen können.
 
@@ -198,20 +199,20 @@ das Messrohr tatsächlich empfindlich war $(1-TN_\text{r})t$. Die wahre Impulsra
 \noindent
 Auf Grundlage von \autoref{eqn:wahre-zaehlrate} beruht die Zwei-Quellen-Methode, bei der, wie der Name andeutet, mit
 zwei radioaktiven Quellen gearbeitet wird.
-Zunächst misst man die Zählrate $N_1$, die das Präparat 1 im Zählrohr hervorruft. Dann fügt man das 2. Präparat hinzu
-und misst die Summenzählrate $N_{1+2}$, wobei dadrauf geachtet werden muss, Quelle 1 nicht zu verschieben. Zuletzt
-wird Präparat 1 entfernt und die Zählrate $N_2$ des zweiten Präparats gemessen.
+Zunächst wird die Zählrate $N_1$, die das Präparat 1 im Zählrohr hervorruft, gemessen. 
+Dann wird das 2. Pr\"aparat hinzugef\"ugt und es wird die gemeinsame Z\"ahlrate $N_{1+2}$ gemessen, wobei dadrauf geachtet werden muss, Quelle 1 nicht zu verschieben. 
+Zuletzt wird Präparat 1 entfernt und die Zählrate $N_2$ des zweiten Präparats gemessen.
 \\
 Hätte das Zählrohr keine Totzeit würden sich die Impulse addieren, also müsste der Zusammenhang
 \begin{equation}
 	N_{1+2} = N_1 + N_2
 \end{equation}
 gelten. \\
-In der Praxis beobachtet man aber, dass
+In der Praxis gilt jedoch
 \begin{equation}
 	N_{1+2} < N_1 + N_2.
 \end{equation}
-Gemäß \autoref{eqn:wahre-zaehlrate} drangen während der Messung
+Gemäß \autoref{eqn:wahre-zaehlrate} dringen während der Messung
 \begin{equation}
 	N_{{\text{w}_i}} = \frac{N_i}{1 - TN_i} 
 		\quad \text{für } i \in \{1, 2, 1+2\}
@@ -226,8 +227,8 @@ Hierbei gilt $N_{\text{w}_{1+2}} = N_{\text{w}_{1}} + N_{\text{w}_{2}}$, damit f
 	\label{eqn:theo:paar-brueche}
 \end{equation}
 \noindent
-Die Größen $N_1$, $N_2$ und $N_{1+2}$ werde gemessen, daher kann man mit \autoref{eqn:theo:paar-brueche} die 
-Totzeit bestimmen. Für $T^2N_i^2 \ll 1$ mit $i \in \{1, 2, 1+2\}$ gilt dann näherungsweise
+Die Größen $N_1$, $N_2$ und $N_{1+2}$ werden gemessen, daher kann mit \autoref{eqn:theo:paar-brueche} die 
+Totzeit bestimmt werden. Für $T^2N_i^2 \ll 1$ mit $i \in \{1, 2, 1+2\}$ gilt dann näherungsweise
 \begin{equation}
 	T \approx \frac{N_1 + N_2 - N_{1+2}}{2N_1N_2}.
 	\label{eqn:totzeit-naeherung}
