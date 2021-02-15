@@ -30,6 +30,13 @@ plt.clf()
 dN=np.sqrt(N)
 plt.errorbar(U, N,  yerr=dN, fmt='.', label = r'Messwerte mit Fehler')
 plt.plot(x, params[0] * x + params[1], label = 'Plateau-Gerade')
+
+#print(U) 
+#print(N) 
+plt.clf()
+dN=np.sqrt(N)
+plt.errorbar(U, N,  yerr=dN, fmt='.', label = r'Messwerte mit Fehler')
+
 plt.xlabel(r'$U [\si{\volt}]$')
 plt.ylabel(r'$N [ Imp / 60 s]$')
 plt.legend(loc='best')
