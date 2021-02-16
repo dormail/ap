@@ -9,20 +9,35 @@ Das Ziel dieses Versuchs ist die Bestimmung der Halbwertszeiten eines Isotops un
 
 \subsection{Kernreaktionen}
 \label{sec:a}
-Wenn ein Neutron in einen Kern A eindringt, entsteht durch Absorption ein neuer Kern A*, der auch als Zwischenkern oder Compoundkern bezeichnet wird. Der Kern A* ist aber oft nicht in der Lage das aufgenommene Neutron oder ein anderes Nukleon abzustoßen, sodass er durch die Emission eines $\gamma$-Quants wieder in seinen Grundzustand übergeht. Dieses Verhalten lässt sich mit \autoref{eqn:a} beschreiben. 
+Wenn ein Neutron in einen Kern A eindringt, entsteht durch Absorption ein neuer Kern $A^{*}$, der auch als Zwischenkern oder Compoundkern bezeichnet wird. Der Kern $A^{*}$ ist aber oft nicht in der Lage das aufgenommene Neutron oder ein anderes Nukleon abzustoßen, sodass er durch die Emission eines $\gamma$-Quants wieder in seinen Grundzustand übergeht. Dieses Verhalten lässt sich mit \autoref{eqn:a} beschreiben. 
 \begin{equation}
     \label{eqn:a}
-    {^{m}_{z}A} + {^{1}_{0}n} \rightarrow {^{m+1}_{z}A*} \rightarrow {^{m+1}_{z}A} + \gamma
+    {^{m}_{z}A} + {^{1}_{0}n} \rightarrow {^{m+1}_{z}A^{*}} \rightarrow {^{m+1}_{z}A} + \gamma
 \end{equation}
 
 
 Der neu entstandene Kern ${^{m+1}_{z}A}$ ist in der Regel nicht stabil, da er mehr Neutronen enthält als ein entsprechender stabiler Kern. Die überschüssige Masse wird nach der Einsteinschen Beziehung in kinetische Energie eines Elektrons und Antineutrinos umgewandelt.
 \\
-
+Der Wirkungsquerschnitt $\sigma$ ist in der Kernphysik ein Maß für die Wahrscheinlichkeit, dass ein stabiler Kern ein Neutron einfängt. Der Wirkungsquerschnitt ist durch 
+\begin{equation}
+    \label{eqn:u}
+    \sigma = \frac{u}{nKd}
+\end{equation}
+gegeben. Dabei wird angenommen, dass $1cm^2$ einer dünnen Folie mit der Dicke $d$ von $n$ Neutronen pro Sekunde getroffen wird und dabei $u$ Einfänge auftreten. Dieser Wirkungsquerschnitt kann als Funktion der Neutronenenergie E nach  
+\begin{equation}
+    \label{eqn:sig}
+    \sigma(E) =\sigma_0 \sqrt{\frac{E_{r_i}}{E}} \frac{c^*}{(E-E_{r_i})^2 + c^*}
+\end{equation}
+berechnet werden. $c^*$ und $\sigma_0$ sind Konstanten der Kernreaktion und die $E_{r_i}$ sind die Energieniveaus des Zwischenkerns. Für $E<<E_{r_i}$ folgt nach \autoref{eqn:sig}:
+\begin{equation}
+    \label{eqn:prop}
+    \sigma \sim \frac{1}{\sqrt{E}} \sim \frac{1}{v}
+\end{equation}
+Der Einfangsquerschnitt ist also umgekehrt proportional zur Neutronengeschwindigkeit. Somit wird die Wahrscheinlichkeit, dass ein Neutron durch den Kern aufgenommen wird für niedrigere Neutronengeschwindigkeiten höher.
 
 \subsection{Erzeugung niederenergetischer Neutronen}
 \label{sec:erzeugung}
-Da Neutronen als freie Teilchen instabil sind, kommen sie in der Natur nicht vor und müssen für das vorliegende Experiment erzeugt werden. Die Neutronen wurden hier durch Beschuss von Be-Kernen mit $\alpha$-Teilchen gemäß \autoref{eqn:b} freigesetzt.
+Wie in \autoref{sec:a} beschrieben ist die Wahrscheinlichkeit eines Neutroneneinfangs durch den Kern für niederenergetische Neutronen höher. Daher ist es sinnvoll für das vorliegende Experiment niederenergetische Neutronen zu verwenden. Da Neutronen als freie Teilchen instabil sind, kommen sie in der Natur nicht vor und müssen für den Versuch erzeugt werden. Die Neutronen wurden hier durch Beschuss von Be-Kernen mit $\alpha$-Teilchen gemäß \autoref{eqn:b} freigesetzt.
 \begin{equation}
     \label{eqn:b}
     {^{9}_{4}Be} + {^{4}_{2}\alpha} \rightarrow {^{12}_{6}C}+{^{0}_{1}n}
@@ -34,17 +49,35 @@ die leichten Kerne nach
 	E_\text{ü} = E_0 \frac{4Mm}{(M+m)^2}
 		\label{eqn:e}
 \end{equation}
-ab. Die beste Substanz ist hier nach also Wasserstoff(geringste Massenunterschiede). Es wird daher ein Mantel aus Paraffin für die Neutronenquelle benutzt.
+ab. Die beste Substanz ist dementsprechend Wasserstoff (geringste Massenunterschiede). Es wird daher ein Mantel aus Paraffin für die Neutronenquelle benutzt.
 
 \subsection{Zerfall instabiler Isotope}
 \label{sec:zerfall}
-Stabile Isotope können durch Neutronenstrahlung in instabile verwandelt werden. Für Vanadium läuft die Aktivierung und der Zerfall gemäß folgender Gleichung ab:
+Stabile Isotope können durch Neutronenstrahlung in instabile verwandelt werden. Die so erzeugten instabilen Isotope
+gehen jewils durch einen $β-$-Zerfall wieder in stabile Isotope über. Im vorliegenden Versuch wurde der Zerfall von Vanadium und Rhodium betrachtet. 
+\subsubsection*{Vanadium}
+Für Vanadium läuft die Aktivierung und der Zerfall gemäß folgender Gleichung ab:
 \begin{equation}
     \label{eqn:v}
     {^{51}_{23}V} + n \rightarrow {^{52}_{23}V} \rightarrow {^{52}_{24}Cr} + \beta^- +v_e
 \end{equation}
 
-Die Zahl $N(t)$, der zu einem Zeitpunkt t noch nicht zerfallenen Kerne kann durch
+\subsubsection*{Rhodium}
+Für ${^{103}Rh}$ läuft die Reaktion mit einer Wahrscheinlichkeit von $90 \% $ nach folgender Gleichung ab:
+\begin{equation}
+    \label{eqn:r}
+    {^{103}_{45}Rh} + n \rightarrow {^{104}_{45}Rh} \rightarrow {^{104}_{46}Pd} + \beta^- +v_e
+\end{equation}
+\newline
+Neben ${^{104}Rh}$ entsteht mit einer Wahrscheinlichkeit von $10 \%$ außerdem ${^{104i}Rh}$: 
+\begin{equation}
+    \label{eqn:ri}
+    {^{103}_{45}Rh} + n \rightarrow {^{104i}_{45}Rh}\rightarrow {^{104}_{45}Rh} + \gamma \rightarrow {^{104}_{46}Pd} + \beta^- +v_e
+\end{equation}
+${^{104}Rh}$ und ${^{104i}Rh}$ sind zueinander isomere Kerne. Das heißt, dass die beiden Kerne die gleiche Ladungs- und Massenzahl haben, aber aufgrund einer unterschiedlichen Anordnung der Nukleonen verschiedene Energien und Halbwertszeiten besitzen.
+\newline
+\\
+Die Zahl $N(t)$, der zu einem Zeitpunkt $t$ noch nicht zerfallenen Kerne kann durch
 \begin{equation}
     N(t) = N_0 exp(− \lambda t)
 \end{equation}
