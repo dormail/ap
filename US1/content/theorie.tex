@@ -63,9 +63,35 @@ der beiden Materialien zusammen.
 \subsection{Erzeugung von Ultraschall}
 \label{sec:Erzeugung von Ultraschall}
 
-Ultraschall kann verschieden erzeugt werden, hier wird die Verwendung von piezoelektrischen Kristallen betrachtet. 
-Eben erwähnter Kristall wird dazu in einem zeitlich veränderlichen, elektrischen Feld zu Schwingungen angeregt.
-Bei diesen Schwingungen werden Ultraschallwellen abgestrahlt. Durch Resonanz können sehr große Amplituden erzeugt
-werden. Ein Vorteil vom Piezokristall ist, dass er auch als Schallempfänger benutzt werden kann; die eintreffenden
-Schallwellen regen dann den Kristall zu Schwingungen an.
+Ultraschall kann auf unterschiedlicher Weise erzeugt werden, hier wird die Erzeugung mittels
+piezoelektrischer Kristalle erläutert. Eben erwähnter Kristall wird dazu in einem zeitlich
+veränderlichen, elektrischen Feld zu Schwingungen angeregt. Bei diesen Schwingungen werden
+Ultraschallwellen abgestrahlt, treten Resonanzen (Anregefrequenz $\approx$ Eigenfrequenz) auf sind
+sehr große Amplituden möglich.  Ein Vorteil vom Piezokristall ist, dass er auch als Schallempfänger
+benutzt werden kann; die eintreffenden Schallwellen regen dann den Kristall zu Schwingungen an.
+
+\subsection{Verwendung in der Medizin}
+\label{sec:Verwendung in der Medizin}
+
+Ein wichtiges Anwendungsgebiet des Ultraschalls liegt in der Medizin als bildgebendes Verfahren.
+Zwei Verfahren sind das Durchschallungs- und das Impuls-Echo-Verfahren.
+
+% Durchschallungs Verfahren
+Beim Durchschallungs-Verfahren wird mit getrenntem Sender und Empfänger gearbeitet, wobei der
+Schallgang durch das Probenstück durchführt. Fehlstellen werden dann als abgeschwächtes Signal am
+Empfänger deutlich, die Tiefe einer Fehlstell kann bei einer einzelnen Messung allerdings nicht
+bestimmt werden.
+
+% Impuls Echo
+Beim \textit{Impuls-Echo-Verfahren} ist der Ultraschallsender gleichzeit auch der Empfänger. Das Verfahren
+beruht auf der zuvor beschriebenen Reflexion an Grenzflächen, welche ebenfalls an der Fehlstelle in
+der Probe auftritt. Nach ausgesendetem Impuls werden die reflektierten Schallsignale aufgenommen.
+\\
+Der Vorteil des \textit{Impuls-Echo-Verfahren} ist der, dass auch die Tiefe der Fehlstelle detektiert
+werden kann. Aus der Latenz des Echos kann bei bekanntet Schallgeschwindigkeit die Tiefe gemäß
+\begin{equation}
+	\label{eqn:tiefe_fehlstelle}
+	s = \frac12 ct
+\end{equation}
+bestimmt werden.
 
