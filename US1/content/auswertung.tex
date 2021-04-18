@@ -1,6 +1,55 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Acrylquader}
+Bei der Ultraschalluntersuchung des Acrylquaders wurde mittels Impuls-Echo-Verfahrens die Laufzeit der Ultraschallimpulse für verschiedene Fehlstellen im Acrylquader gemessen. Dazu wurden die Positionen der Fehlstellen mit einer Schieblehre ausgemessen. Da der Acrylquader 9 Fehlstellen hat und von 2 Seiten gemessen wurde ergeben sich 18 Datenpaare. In \autoref{tab:mess} sind diese mit der gemessenen Position der Fehlstelle und der Laufzeit des Ultraschallimpulses aufgelistet.
+\begin{table}
+  \centering
+  \caption{Messergebnisse zum Acrylquader}
+\label{tab:mess}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c }
+  \toprule
+  Position der Fehlstelle[$mm$] & Laufzeit Ultraschallimpuls [$\mu s$]\\
+  \midrule
+  7 & 5,9 \\
+  15,2 & 11,8 \\
+  23,2 & 17,5 \\
+  30,9 & 23,35 \\
+  39,2 & 29,2 \\
+  46,4 & 34,5 \\
+  54,4 & 40 \\
+  61,45 & 45,4 \\
+  55,65 & 41,2 \\
+  70,65 & 46,8 \\
+  62,6 & 46,5 \\
+  54,55 & 40,7 \\
+  46,55 & 34,9 \\
+  38,6 & 29,1 \\
+  30,25 & 22,9 \\
+  21,7 & 16,8 \\
+  13,2 & 10,5 \\
+  15,45 & 11,9 \\
+  \bottomrule
+  \end{tabular}
+\end{table} 
+\newpage
+Aus diesen Daten lässt sich nach ... mit einer linearen Ausgleichsrechnung die Schallgeschwindigkeit in dem Acrylquader berechnen. Dies wird in \autoref{fig:quader} dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{build/plot.pdf}
+  \caption{Diagramm: Position der Fehlstellen(s)-Laufzeit des Ultraschall Impulses(t), mit Ausgleichsgerade}
+  \label{fig:quader}
+\end{figure}
 
+Die lineare Ausgleichsrechnung mit Python ergibt für die Parameter der Geraden:\newline
+a=(1.41789 $\pm$ 0.03051) $\frac{mm}{\mu s}$(Steigung)\newline
+b=-(1.92975 $\pm$ 0.95282) $mm$(y-Achsenabschnitt)\newline
+Diese Steigung entspricht also einer Schallgeschwindigkeit von:
+\begin{equation*}
+  c=2*a= (2835.78 \pm 61.02) \frac{m}{s}
+\end{equation*} 
+  
+\subsection{Augenmodell}
 In \autoref{fig:auge} sind die Ergebnisse der Untersuchung des Augenmodells mit einem A-Scan mit Impuls-Echo-Verfahren zu sehen.
 \begin{figure}[H]
   \centering
@@ -9,7 +58,6 @@ In \autoref{fig:auge} sind die Ergebnisse der Untersuchung des Augenmodells mit 
   \label{fig:auge}
 \end{figure}
 
-\cite{sample}
 Die ersten beiden in \autoref{fig:auge} zu sehenden Peaks werden als der Ein- und Austritt des Ultraschalls in die bzw. aus der Linse interpretiert. Der dritte Peak entspricht dem Echo des Ultraschalls von der Rückwand der Retina. Mit den bekannten Schallgeschwindigkeiten für die Linse ($c_{L} = 2500 m/s$) und die Glaskörperflüssigkeit ($c_{GK} = 1410 m/s$) sowie den Daten des A-Scans lassen sich die Abmessungen des Augenmodells berechnen. Aus den Messdaten konnten die Zeiten der 3 Peaks ermittelt werden:\newline
 1.Peak: $11,4 \mu s$ \newline 2.Peak: $16,3 \mu s$ \newline 3.Peak: $23,2 \mu s$ \newline
 Mit ergeben sich für die Maße des Augenmodells:
@@ -18,13 +66,13 @@ Mit ergeben sich für die Maße des Augenmodells:
   \caption{Abmessungen des Augenmodells}
 \label{tab:mess2}
   \sisetup{table-format=2.1}
-  \begin{tabular}{c c c c}
+  \begin{tabular}{c c c}
   \toprule
   Strecke & Zeit $[\mu s]$ & Weg[$mm$]\\
   \midrule
   Hornhaut-Linse & 11,4 & 8,037 \\
   Innerhalb der Linse & 4,9 & 6,125\\
-  Linse-Retina & 6,9 & 4,865\\
+  Linse-Retina & 6,9 & 4.865\\
   \bottomrule
   \end{tabular}
   \end{table}
