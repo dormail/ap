@@ -25,3 +25,6 @@ plt.ylabel(r'$s [\si{\milli \meter}]$')
 plt.legend(loc='best')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/plot.pdf')
+
+#daempfung
+a1, a2, d = np.genfromtxt('content/daempfung.txt', unpack=True)

@@ -1,7 +1,8 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Acrylquader}
-Bei der Ultraschalluntersuchung des Acrylquaders wurde mittels Impuls-Echo-Verfahrens die Laufzeit der Ultraschallimpulse für verschiedene Fehlstellen im Acrylquader gemessen. Dazu wurden die Positionen der Fehlstellen mit einer Schieblehre ausgemessen. Da der Acrylquader 9 Fehlstellen hat und von 2 Seiten gemessen wurde ergeben sich 18 Datenpaare. In \autoref{tab:mess} sind diese mit der gemessenen Position der Fehlstelle und der Laufzeit des Ultraschallimpulses aufgelistet.
+\subsubsection{Schallgeschwindigkeit}
+Bei der Ultraschalluntersuchung des Acrylquaders wurde mittels Impuls-Echo-Verfahrens die Laufzeit der Ultraschallimpulse für verschiedene Fehlstellen im Acrylquader gemessen. Dazu wurden die Positionen der Fehlstellen mit einer Schieblehre ausgemessen. Da der Acrylquader 9 Fehlstellen hat und von 2 Seiten gemessen wurde ergeben sich 18 Datenpaare. Die Aufnahmen des A-Scans sind im Anhang zu finden. In \autoref{tab:mess} sind die Ergebnisse mit der gemessenen Position der Fehlstelle und der Laufzeit des Ultraschallimpulses aufgelistet.
 \begin{table}
   \centering
   \caption{Messergebnisse zum Acrylquader}
@@ -48,7 +49,37 @@ Diese Steigung entspricht also einer Schallgeschwindigkeit von:
 \begin{equation*}
   c=2*a= (2835.78 \pm 61.02) \frac{m}{s}
 \end{equation*} 
-  
+\subsubsection{Dämpfung}
+Zur Bestimmung des materialspezifischen Schwächungskoeffizienten von Acryl wurde die Schwächung der Amplitude der Pulse zwischen einer Fehlstelle und dem Ende des Acrylquaders untersucht. In wurden dazu jeweils beide Amplituden und die ausgemessene Distanz der beiden Stellen aufgelistet.
+\begin{table}
+  \centering
+  \caption{Messdaten zur Dämpfung}
+\label{tab:messd}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c}
+  \toprule
+  Amplitude1 [$V$] & Amplitude2 [$V$] & Distanz[$mm$]\\
+  \midrule
+1.196 0.445 48.65\\
+1.168 0.385 65.3\\
+0.9 0.569 57.3\\
+0.841 0.403 49.6\\
+0.975 0.477 41.3\\
+0.927 0.354 34.1\\
+0.852 0.253 26.1\\
+0.645 0.244 19.1\\
+1.229 0.219 65.05\\
+0.435 0.258 17.9\\
+0.683 0.205 25.95\\
+0.984 0.194 33.95\\
+1.098 0.226 41.9\\
+0.798 0.274 50.25\\
+1.229 0.219 65.05\\
+0.994 0.145 67.3\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
 \subsection{Augenmodell}
 In \autoref{fig:auge} sind die Ergebnisse der Untersuchung des Augenmodells mit einem A-Scan mit Impuls-Echo-Verfahren zu sehen.
 \begin{figure}[H]
