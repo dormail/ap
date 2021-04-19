@@ -8,7 +8,7 @@ In diesem Versuch soll mittels Ultraschallechographie die Schallgeschwindigkeit 
 \subsection{Grundlagen zu Schallwellen}
 \label{sec:GrundlagenSchallwellen}
 
-Schallwellen lassen sich gemäß ihrer Frequenz in verschiedene Bereiche aufteilen. Einige wichten 
+Schallwellen lassen sich gemäß ihrer Frequenz in verschiedene Bereiche aufteilen. Einige wichtige 
 Frequenzbereiche sind
 \begin{itemize}
 	\item Infraschall ($f < \SI{16}{Hz}$),
@@ -21,9 +21,9 @@ In Luft breitet sich Schall als longitudinale Welle aus, die sich aufgrund von D
 	p(x,t) = p_0 + v_0 Z \cos(\omega t - kx)
 \end{equation}
 fortbewegt. 
-Wie bei elektromagnetischen Wellen, lassen sich auch bei Schallwellen Phänomene wie Reflexion und Brechung
-beobachten. Im Gegensatz zum Licht ist bei Schall die Phasengeschwindigkeit Druck-, Dichte- und somit
-Materialabhängig. Für Flüssigkeiten wird das durch die Kompressibilität $\kappa$ ausgedrückt.
+Wie bei elektromagnetischen Wellen lassen sich auch bei Schallwellen Phänomene wie Reflexion und Brechung
+beobachten. Im Gegensatz zum Licht ist bei Schall die Phasengeschwindigkeit druck-, dichte- und somit
+materialabhängig. Für Flüssigkeiten wird das durch die Kompressibilität $\kappa$ ausgedrückt.
 Damit lautet die Schallgeschwindigkeit in Flüssigkeiten
 \begin{equation}
 	\label{eqn:c_fl}
@@ -40,7 +40,7 @@ berechnen. Dabei tritt der Elastizitätsmodul $E$ als Pendant zur Kompressibilit
 auf. Die Schallgeschwindigkeit ist aber grundsätzlich richtungsabhängig.
 
 \noindent
-Schallausbreitung ist allermeistens verlustbehaftet. Die Intensität nimmt dabei exponentiell gemäß
+Schallausbreitung ist allermeistens verlustbehaftet. Die Intensität nimmt dabei exponentiell ab gemäß
 \begin{equation}
 	I(x) = I_0 \cdot e^{-\alpha}
 \end{equation}
@@ -66,7 +66,7 @@ der beiden Materialien zusammen.
 Ultraschall kann auf unterschiedlicher Weise erzeugt werden, hier wird die Erzeugung mittels
 piezoelektrischer Kristalle erläutert. Eben erwähnter Kristall wird dazu in einem zeitlich
 veränderlichen, elektrischen Feld zu Schwingungen angeregt. Bei diesen Schwingungen werden
-Ultraschallwellen abgestrahlt, treten Resonanzen (Anregefrequenz $\approx$ Eigenfrequenz) auf sind
+Ultraschallwellen abgestrahlt, bei Resonanz (Anregefrequenz $\approx$ Eigenfrequenz) sind
 sehr große Amplituden möglich.  Ein Vorteil vom Piezokristall ist, dass er auch als Schallempfänger
 benutzt werden kann; die eintreffenden Schallwellen regen dann den Kristall zu Schwingungen an.
 
@@ -77,7 +77,7 @@ Ein wichtiges Anwendungsgebiet des Ultraschalls liegt in der Medizin als bildgeb
 Zwei Verfahren sind das Durchschallungs- und das Impuls-Echo-Verfahren.
 
 % Durchschallungs Verfahren
-Beim Durchschallungs-Verfahren wird mit getrenntem Sender und Empfänger gearbeitet, wobei der
+Beim \textit{Durchschallungs-Verfahren} wird mit getrenntem Sender und Empfänger gearbeitet, wobei der
 Schallgang durch das Probenstück durchführt. Fehlstellen werden dann als abgeschwächtes Signal am
 Empfänger deutlich, die Tiefe einer Fehlstell kann bei einer einzelnen Messung allerdings nicht
 bestimmt werden.
@@ -87,8 +87,8 @@ Beim \textit{Impuls-Echo-Verfahren} ist der Ultraschallsender gleichzeit auch de
 beruht auf der zuvor beschriebenen Reflexion an Grenzflächen, welche ebenfalls an der Fehlstelle in
 der Probe auftritt. Nach ausgesendetem Impuls werden die reflektierten Schallsignale aufgenommen.
 \\
-Der Vorteil des \textit{Impuls-Echo-Verfahren} ist der, dass auch die Tiefe der Fehlstelle detektiert
-werden kann. Aus der Latenz des Echos kann bei bekanntet Schallgeschwindigkeit die Tiefe gemäß
+Der Vorteil des Impuls-Echo-Verfahren ist der, dass auch die Tiefe der Fehlstelle detektiert
+werden kann. Aus der Latenz des Echos kann bei bekannter Schallgeschwindigkeit die Tiefe gemäß
 \begin{equation}
 	\label{eqn:tiefe_fehlstelle}
 	s = \frac12 ct
