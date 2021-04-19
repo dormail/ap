@@ -34,7 +34,7 @@ Bei der Ultraschalluntersuchung des Acrylquaders wurde mittels Impuls-Echo-Verfa
   \end{tabular}
 \end{table} 
 \newpage
-Aus diesen Daten lässt sich nach ... mit einer linearen Ausgleichsrechnung die Schallgeschwindigkeit in dem Acrylquader berechnen. Dies wird in \autoref{fig:quader} dargestellt.
+Aus diesen Daten lässt sich nach \autoref{eqn:tiefe_fehlstelle} mit einer linearen Ausgleichsrechnung die Schallgeschwindigkeit in dem Acrylquader berechnen. Dies wird in \autoref{fig:quader} dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{build/plot.pdf}
@@ -50,8 +50,8 @@ Diese Steigung entspricht also einer Schallgeschwindigkeit von:
   c=2*a= (2835.78 \pm 61.02) \frac{m}{s}
 \end{equation*} 
 \subsubsection{Dämpfung}
-Zur Bestimmung des materialspezifischen Schwächungskoeffizienten von Acryl wurde die Schwächung der Amplitude der Pulse zwischen einer Fehlstelle und dem Ende des Acrylquaders untersucht. In wurden dazu jeweils beide Amplituden und die ausgemessene Distanz der beiden Stellen aufgelistet.
-\begin{table}
+Zur Bestimmung des materialspezifischen Schwächungskoeffizienten von Acryl wurde die Schwächung der Amplitude der Pulse zwischen einer Fehlstelle und dem Ende des Acrylquaders untersucht. In \autoref{tab:messd} wurden dazu jeweils beide Amplituden und die ausgemessene Distanz der beiden Stellen aufgelistet.
+\begin{table}[H]
   \centering
   \caption{Messdaten zur Dämpfung}
 \label{tab:messd}
@@ -60,25 +60,29 @@ Zur Bestimmung des materialspezifischen Schwächungskoeffizienten von Acryl wurd
   \toprule
   Amplitude1 [$V$] & Amplitude2 [$V$] & Distanz[$mm$]\\
   \midrule
-1.196 0.445 48.65\\
-1.168 0.385 65.3\\
-0.9 0.569 57.3\\
-0.841 0.403 49.6\\
-0.975 0.477 41.3\\
-0.927 0.354 34.1\\
-0.852 0.253 26.1\\
-0.645 0.244 19.1\\
-1.229 0.219 65.05\\
-0.435 0.258 17.9\\
-0.683 0.205 25.95\\
-0.984 0.194 33.95\\
-1.098 0.226 41.9\\
-0.798 0.274 50.25\\
-1.229 0.219 65.05\\
-0.994 0.145 67.3\\
+1.196& 0.445& 48.65\\
+1.168 &0.385 &65.3\\
+0.9 &0.569& 57.3\\
+0.841& 0.403& 49.6\\
+0.975 &0.477 &41.3\\
+0.927 &0.354 &34.1\\
+0.852 &0.253 &26.1\\
+0.645 &0.244 &19.1\\
+1.229 &0.219 &65.05\\
+0.435 &0.258& 17.9\\
+0.683 &0.205 &25.95\\
+0.984 &0.194& 33.95\\
+1.098 &0.226 &41.9\\
+0.798 &0.274& 50.25\\
+1.229 &0.219 &65.05\\
+0.994& 0.145 &67.3\\
   \bottomrule
   \end{tabular}
 \end{table}
+Nach \autoref{eqn:daempfung} kann aus diesen Daten der Absorptionskoeffizient $\alpha$ berechnet werden. Eine Ausgleichsrechnung ergibt für $\alpha$:
+\begin{equation*}
+  \alpha = (-0.0292 \pm 0.0131) \frac{1}{mm}
+\end{equation*}
 
 \subsection{Augenmodell}
 In \autoref{fig:auge} sind die Ergebnisse der Untersuchung des Augenmodells mit einem A-Scan mit Impuls-Echo-Verfahren zu sehen.
@@ -91,7 +95,7 @@ In \autoref{fig:auge} sind die Ergebnisse der Untersuchung des Augenmodells mit 
 
 Die ersten beiden in \autoref{fig:auge} zu sehenden Peaks werden als der Ein- und Austritt des Ultraschalls in die bzw. aus der Linse interpretiert. Der dritte Peak entspricht dem Echo des Ultraschalls von der Rückwand der Retina. Mit den bekannten Schallgeschwindigkeiten für die Linse ($c_{L} = 2500 m/s$) und die Glaskörperflüssigkeit ($c_{GK} = 1410 m/s$) sowie den Daten des A-Scans lassen sich die Abmessungen des Augenmodells berechnen. Aus den Messdaten konnten die Zeiten der 3 Peaks ermittelt werden:\newline
 1.Peak: $11,4 \mu s$ \newline 2.Peak: $16,3 \mu s$ \newline 3.Peak: $23,2 \mu s$ \newline
-Mit ergeben sich für die Maße des Augenmodells:
+Mit \autoref{eqn:tiefe_fehlstelle} ergeben sich für die Maße des Augenmodells:
 \begin{table}
   \centering
   \caption{Abmessungen des Augenmodells}
