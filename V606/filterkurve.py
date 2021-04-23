@@ -2,9 +2,15 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 from scipy.optimize import curve_fit
 
 f, U = np.genfromtxt('Daten/filterkurve.txt', unpack=True)
+
+data = {'f': f, 'U': U}
+df = pd.DataFrame(data)
+df = df.sort_values('f')
+df.to_csv('build/filterkurve.csv')
 
 
 # fitten eine Gaussglocke drüber
