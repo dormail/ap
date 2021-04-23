@@ -42,11 +42,16 @@ print(f'gaus(m-5) = {gaus(m-5, m, a, n)}')
 print(f'Güte Q = {Q}')
 print(f'{sqrt(2 * np.log(2) / a)}')
 
+Q_opt = 50
+m_opt = 35
+a_opt = Q_opt / m_opt * 2 * np.log(2)
 x = np.linspace(20, 50, 200)
 plt.scatter(f,U, color='k', marker='+',
         label='Messdaten')
 plt.plot(x, gaus(x,m,a,n), color='r',
         label='Curve Fit')
+plt.plot(x, gaus(x,m_opt,a_opt,n * 1.2), color='b', ls='--',
+        label='Ideale Filterkurve')
 
 plt.xlabel(r'$f$ / kHz')
 plt.ylabel(r'$U$ / V')
