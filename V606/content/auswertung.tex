@@ -158,6 +158,7 @@ Bestimmung wurde im Experiment mit einer Brückenschaltung gearbeitet. Die Speis
 hatte eine Amplitude von $U_\text{Sp} = \SI{0.9}{\volt}$.
 
 \subsubsection{$\symup{Dy_2O_3}$}
+\label{sec:ausw-Dy2O3}
 
 Vor der Messung wurde die Brücke abgeglichen auf $R_3 = \SI{1001.2}{\ohm}$ mit einer
 Restspannung an der Brücke von $U_\text{Br} = \SI{12.5}{m\volt}$. Danach wurde in drei
@@ -170,27 +171,36 @@ $\Delta R = R_3 - R_3^\prime$ sind in \autoref{tab:probe1} dargestellt.
   \caption{Messwerte zu $\symup{Dy_2O_3}$.}
   \label{tab:probe1}
   \sisetup{table-format=2.1}
-  \begin{tabular}{c c c c}
+  \begin{tabular}{c c c c c}
   \toprule
   Durchlauf &
   $U_\text{Br}^\prime / \si{m\volt}$ &
+  $\Delta U_\text{Br} / \si{m\volt}$ &
   $R_3^\prime / \si{\ohm} $ &
   $\Delta R_3 / \si{\ohm} $ \\
   \midrule
   % content
-  1 & 66 & 999,55 & 1,62 \\
-  2 & 66 & 999,51 & 1,655 \\
-  3 & 66 & 999,55 & 1,615 \\
+  1 & 60 & 47,5 & 999,55 & 1,62 \\
+  2 & 66 & 53,5 & 999,51 & 1,655 \\
+  3 & 66 & 53,5 & 999,55 & 1,615 \\
   \bottomrule
   \end{tabular}
 \end{table}
 
 Aus den Formeln für Mittelwert und Standartabweichung folgen
 \begin{equation}
-	\Delta R = (1,63 \pm 0,018) \Omega
+	\Delta R = (1,63 \pm 0,018) \symup\Omega
 	\qquad
-	U_\text{Br} = (64 \pm 2,8) \Omega
+	U_\text{Br} = (64 \pm 2,8) \symup{mV}
 \end{equation}
+
+Mit der gemessenen Länge der Probe
+$L = \SI{0.073}{\meter}$ folgt mit der Dichte und Masse der Probe 
+(vgl. \autoref{tab:theo-susz}) der Probenquerschnitt 
+\[
+	Q =  \frac{m_\text{Pr}}{L \cdot \rho_\text{w}}
+	= 2,85 \cdot 10^{-5} \symup{m}^2
+\]
 
 Mit den zwei Methoden für die Bestimmung der Suszeptibilität folgen dann zwei Ergebnisse
 für $\chi(\symup{Dy_2O_3})$:
@@ -200,3 +210,54 @@ für $\chi(\symup{Dy_2O_3})$:
 	\chi_R = 0.00987 \pm 0.00011
 \end{equation}
 Hier wurde, wie bei der Güteziffer, mit der linearer Fehlerfortpflanzung gerechnet.
+
+\subsubsection{$\symup{Gd_2O_3}$}
+
+Das Vorgehen erfolgte analog zu dem in \autoref{sec:ausw-Dy2O3} Beschriebenen. Die Brücke
+wurde immer zu Beginn auf $R_3 = \SI{1001.065}{\ohm}$ mit $U_\text{Br} =
+\SI{12.5}{m\volt}$ abgeglichen. Die Messwerte sind in \autoref{tab:probe3} dargestellt.
+
+\begin{table}
+  \centering
+  \caption{Messwerte zu $\symup{Gd_2O_3}$.}
+  \label{tab:probe3}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c}
+  \toprule
+  Durchlauf &
+  $U_\text{Br}^\prime / \si{m\volt}$ &
+  $\Delta U_\text{Br} / \si{m\volt}$ &
+  $R_3^\prime / \si{\ohm} $ &
+  $\Delta R_3 / \si{\ohm} $ \\
+  \midrule
+  % content
+  1 & 31 & 18,5 & 1000,37 & 0,695 \\
+  2 & 33 & 20,5 & 1000,31 & 0,755 \\
+  3 & 30.5 & 18 & 1000,31 & 0,755 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Wie beim Dysprosiumoxid kann auch hier mit den Formeln für Mittelwert und
+Standartabweichung gearbeitet werden, damit folgen 
+\begin{equation}
+	\Delta U_\text{Br} = (31,5 \pm 1,1) \symup{mV}
+	\quad
+	\text{und}
+	\quad
+	\Delta R_3 = (0,735 \pm 0,028) \symup\Omega.
+\end{equation}
+
+Mit der gemessenen Länge $L = \SI{7.6}{c\meter}$ folgt mit den Werten für Masse und Dichte
+die Querschnittsfläche der Probe
+\begin{equation}
+	Q = 2,503 \cdot 10^{-5} \symup{m}^2.
+\end{equation}
+
+Abschließend können dann zwei Werte für $\chi(\symup{Gd_2O_3})$ bestimmt werden:
+\begin{equation}
+	\chi_\text{U} = 0.484 \pm 0.017
+	\quad
+	\chi_\text{R} = 0.00508 \pm 0.0002
+\end{equation}
+
