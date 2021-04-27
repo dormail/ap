@@ -25,7 +25,7 @@ dense = 7.24e3
 Q = M / (L * dense)
 print(f'Querschnittsfläche der Probe: {Q}')
 
-U_Br = np.array([60, 66, 66]) - U_Br_0
+U_Br = (np.array([60, 66, 66]) - U_Br_0) / 10
 print(f'U_Br = {U_Br}')
 U_Br = ufloat(U_Br.mean(), U_Br.std())
 R_3 = 998 + np.array([309, 302, 310]) * 0.005
@@ -53,7 +53,7 @@ print(f'R_3_0 = {R_3_0}')
 
 print(f'Querschnittsfläche der Probe: {Q}')
 
-U_Br = np.array([31, 33, 30.5])
+U_Br = (np.array([31, 33, 30.5]) - 12.5) / 10
 print(f'U_Br: {U_Br}')
 print(f'𝛥U_Br: {U_Br - U_Br_0}')
 U_Br = ufloat(U_Br.mean(), U_Br.std())
