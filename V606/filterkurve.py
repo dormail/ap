@@ -23,7 +23,7 @@ df.to_csv('build/filterkurve.tex',
 def gaus(x, m, a, n):
     return n * np.exp(-1 * a * (x - m)**2)
 
-popt, pcov = curve_fit(gaus, f, U, p0=[35, 5, 2])
+popt, pcov = curve_fit(gaus, f, U, p0=[35, 0.1, 2])
 errors = np.sqrt(np.diag(pcov))
 m = ufloat(popt[0], errors[0])
 a = ufloat(popt[1], errors[1])
