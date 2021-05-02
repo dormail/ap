@@ -47,3 +47,60 @@ Elektroden wird mit einem Picoamperemeter gemessen. Der elektrische Aufbau ist i
 	\label{fig:ElektrischerAufbau}
 \end{figure}
 
+Die Elektronen müssen nun auch das Potential des E-Feldes überwinden, aus der
+Energieerhaltung folgt, dass der Strom verschwindet, wenn
+\begin{equation}
+	\label{eqn:v_max}
+	e_0 U_\text{g} = \frac12 m_0 v_\text{max}^2.
+\end{equation}
+Mit $v_\text{max}$ für die schnellsten Elektronen. Zusammen mit \autoref{eqn:theo:energiegleichung}
+folgt 
+\begin{equation}
+	h\nu = e_0 U_\text{g} + A_\text{k}.
+\end{equation}
+Aus den Ergebnissen einer Messreihe ``Bremsspannung $U$ in Abhängigkeit von $\nu$`` lässt
+sich dann das Verhältnis $\frac{h}{e_0}$ bestimmen.
+
+\subsection{Fehlerquelle: Fermi-Dirac-Statistik}
+\label{sec:Fehlerquelle: Fermi-Dirac-Statistik}
+
+Ein großes Problem bei der in \autoref{sec:Energiemessung mit der Gegenfeldmethode}
+beschriebenen Methode ist, dass der Photostrom nicht bei einer bestimmten Gegenspannung
+$U_\text{g}$ verschwindet, sondern schon vorher ($U < U_\text{g}$) stark sinkt. Der
+tatsächliche Verlauf $I(U)$ entspricht qualitativ dem in \autoref{fig:photostrom-approx}
+gezeigten.
+\\
+Grund für dieses Verhalten ist, dass die Elektronen vor Ausstoßung verschiedene Energien
+besitzen, die sich im Intervall von $0$ bis $\frac12 m_0 v_\text{max}^2$ befinden. Die
+Energie der Photoelektronen hängt dann davon ab, welche Energie sie vorher im Festkörper
+besessen haben. Diese Energieverteilung wird durch die Fermi-Dirac-Statistik beschrieben.
+Nach dieser Statistik haben die außen liegenden Elektronen eine Energie zwischen $0$ und
+der Fermi-Energie $\zeta$, eine geringe Anzahl kann sogar noch mehr Energie haben. Damit
+lässt sich auch zeigen, dass unter bestimmten Vorrausetzungen ein parabolischer
+Zusammenhang
+\[
+	I_\text{Ph} \sim U^2
+\]
+zwischen Photostrom und Bremsspannung $U$ besteht.
+
+\begin{figure}
+	\centering
+	\includegraphics[height=5cm]{pictures/photostrom.png}
+	\caption{Photostrom in Abhängigkeit von der Bremsspannung in einer mit monochromatischem Licht
+	bestrahlten Photozelle \cite{anleitung}.}
+	\label{fig:photostrom-approx}
+\end{figure}
+
+\subsection{Fehlerquelle: Hohe Austittsarbeit der Anode}
+\label{sec:Fehlerquelle: Hohe Austittsarbeit der Anode}
+
+Durch eine hohe Austrittsarbeit $A_\text{A}$ an der Anode kann ein Auftreten des Photostroms erschwert
+werden. Gilt $A_\text{K} < h\nu < A_\text{A}$, so würde nach der linken Ungleichung ein
+Photostrom auftreten, wegen der rechten müssen die Elektronen aber gegen ein Gegenfeld
+anlauf. In diesem Fall ist erst mit einer beschleunigenden Spannung $U_\text{b}$, sodass
+\[
+	h\nu + e_0 U_\text{b} \geq A_\text{A}
+\]
+erfüllt ist. Mit der Photozelle in diesem Versuch sind bei niedrigen Spannungen sogar
+negative Photoströme möglich, die die Bestimmung von $U_\text{g}$ weiter erschweren.
+
