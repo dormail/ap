@@ -19,7 +19,7 @@ U_Br_0 = 12.5
 R_3_0 = 998 + 633 * 0.005
 print(f'R_3_0 = {R_3_0}')
 
-L = 0.073
+L = 0.173
 M = 0.0151
 dense = 7.24e3 
 Q = M / (L * dense)
@@ -40,11 +40,12 @@ susz2 = 2 * dR/R_3_0 * F / Q
 print(f'U_Br = {U_Br}')
 print(f'Spannungsmethode 𝜒 = {susz1}')
 print(f'Widerstandsmethode 𝜒 = {susz2}')
+print(f'Theo: 𝜒 = 0.026')
 
 
 # probe 3 Gd2O3
 print('\nGd2O3:')
-L = 0.076
+L = 0.176
 M = 0.01408
 dense = 7.4e3 
 Q = M / (L * dense)
@@ -69,3 +70,4 @@ susz2 = 2 * dR/R_3_0 * F / Q
 print(f'U_Br = {U_Br}')
 print(f'Spannungsmethode 𝜒 = {susz1}')
 print(f'Widerstandsmethode 𝜒 = {susz2}')
+print(f'Theo: 𝜒 = 0.014')
