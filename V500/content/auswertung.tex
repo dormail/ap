@@ -1,12 +1,213 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-\begin{figure}
+\subsection{Bestimmung der Gegenspannung $U_g$}
+Im ersten Teil der Auswertung des Versuchs wird die Gegenspannung mit einer linearen Ausgleichrechnung zu den gemessenen Strömen und Brems- bzw. Beschleunigungsspannungen bestimmt. In den einzelnen Unterabschnitten sind zu den 4 vermessenen Spektrallinien die Messdaten und die zugehörige Ausgleichsgerade in einer Tabelle sowie einem Diagramm dargestellt. Aus den Parametern der Ausgleichsgeraden werden dann nach $U_g=-b/a$ die Gegenspannungen als die Nullstellen der Ausgleichsgeraden (Form $y=ax+b$) berechnet.
+\subsubsection{Gelbe Spektrallinie}
+\begin{table}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Messdaten zur gelben Spektrallinie}
+  \label{tab:gelb}
+  \begin{tabular}{ll}
+  \toprule
+  U {[}V{]} & I {[}nA{]} \\
+  \midrule
+  -2 & 0 \\
+  -1 & 0 \\
+  0 & 0 \\
+  0.4 & 0.1 \\
+  0.5 & 0.2 \\
+  1 & 0.3 \\
+  1.5 & 0.4 \\
+  2 & 0.5 \\
+  2.5 & 0.6 \\
+  3 & 0.8 \\
+  3.5 & 0.9 \\
+  4 & 0.9 \\
+  4.5 & 1.3 \\
+  5.5 & 1.3 \\
+  7 & 1.2 \\
+  10 & 1.8 \\
+  14 & 1.8 \\
+  18.7 & 1.9 \\
+  19.14 & 2\\\bottomrule
+  \end{tabular}
+  \end{table}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics{gelb.pdf}
+    \caption{Messdaten und Ausgleichsgerade zur gelben Spektrallinie}
+    \label{fig:gelb}
+  \end{figure}
+
+  \begin{table}[H]
+    \centering
+    \caption{Parameter der Ausgleichsgeraden und Gegenspannung zur grünen Spektrallinie}
+    \label{tab:ugl}
+    \begin{tabular}{lll}
+      \toprule
+      $a [\si{\sqrt{\nano\ampere}\per\volt}]$ &
+      $b [\sqrt{\si{\nano\ampere}}]$ &
+      $U_g [\si{\volt}]$ \\ \midrule
+      -0.31 \pm 0.07     & 0.16 \pm 0.08  & 0.51 \pm 0.28   \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\subsubsection{Grüne Spektrallinie}
+\begin{table}[H]
+  \centering
+  \caption{Messdaten zur grünen Spektrallinie}
+  \label{tab:gruen}
+  \begin{tabular}{ll}
+    \toprule
+    U [V] & I [nA] \\ \midrule
+    0     & 0      \\
+    0.22  & 0.2     \\
+    0.5   & 0.4     \\
+    1     & 0.6     \\
+    1.52  & 1      \\
+    2     & 1.2    \\
+    3     & 1.5    \\
+    4     & 1.8    \\
+    5     & 2      \\
+    6     & 2.2    \\
+    7     & 2.4    \\
+    10.2  & 2.7    \\
+    13    & 2.9    \\
+    16    & 3      \\
+    19.14 & 3.2    \\
+    10    & 1.8    \\
+    14    & 1.8    \\
+    18.7  & 1.9    \\
+    19.14 & 2      \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics{gruen.pdf}
+    \caption{Messdaten und Ausgleichsgerade zur grünen Spektrallinie}
+    \label{fig:gruen}
+  \end{figure}
+
+  \begin{table}[H]
+    \centering
+    \caption{Parameter der Ausgleichsgeraden und Gegenspannung zur grünen Spektrallinie}
+    \label{tab:ugr}
+    \begin{tabular}{lll}
+      \toprule
+      $a [\si{\sqrt{\nano\ampere}\per\volt}]$ &
+      $b [\sqrt{\si{\nano\ampere}}]$ &
+      $U_g [\si{\volt}]$ \\ \midrule
+      -0.48 \pm 0.09     & 0.24 \pm 0.11  & 0.50 \pm 0.24   \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\subsubsection{Erste violette Spektrallinie}
+\begin{table}[H]
+  \centering
+  \caption{Messdaten zur ersten violetten Spektrallinie}
+  \label{tab:violett1}
+  \begin{tabular}{ll}
+  \toprule
+  U [V]& I [nA]\\
+  \midrule
+  -0.7 & 0 \\
+  -0.54 & 0.05 \\
+  -0.38 & 0.1 \\
+  -0.1 & 0.2 \\
+  0 & 0.35 \\
+  0.5 & 1 \\
+  1 & 1.4 \\
+  1.5 & 1.6 \\
+  2 & 2 \\
+  3 & 2.8 \\
+  4 & 3.2 \\
+  5 & 3.7 \\
+  6 & 4.1 \\
+  7.03 & 4.5 \\
+  9 & 4.9 \\
+  12 & 5.5 \\
+  15 & 5.6 \\
+  19.14 & 6.2\\\bottomrule
+  \end{tabular}
+  \end{table}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics{v1.pdf}
+    \caption{Messdaten und Ausgleichsgerade zur ersten violetten Spektrallinie}
+    \label{fig:v1}
+  \end{figure}
+
+  \begin{table}[H]
+    \centering
+    \caption{Parameter der Ausgleichsgeraden und Gegenspannung zur ersten violetten Spektrallinie}
+    \label{tab:uv1}
+    \begin{tabular}{lll}
+      \toprule
+      $a [\si{\sqrt{\nano\ampere}\per\volt}]$ &
+      $b [\sqrt{\si{\nano\ampere}}]$ &
+      $U_g [\si{\volt}]$ \\ \midrule
+      -0.55 \pm 0.06    & 0.56 \pm 0.04  &1.02 \pm 0.13   \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+  \subsubsection{violett}
+\begin{table}[H]
+  \centering
+  \caption{Messdaten zur zweiten violetten Spektrallinie}
+  \label{tab:violett2}
+  \begin{tabular}{ll}
+    \toprule
+    U [V] & I [nA] \\ \midrule
+    -1.2  & 0      \\
+    -0.7  & 0.02    \\
+    -0.5  & 0.06    \\
+    -0.2  & 0.12    \\
+    0     & 0.2     \\
+    0.5    & 0.2     \\
+    1     & 0.5     \\
+    2     & 1      \\
+    3     & 1      \\
+    4     & 1.4    \\
+    5     & 1.6    \\
+    6     & 1.8    \\
+    7     & 1.9    \\
+    8     & 2.2    \\
+    9     & 2.5    \\
+    10    & 2.6    \\
+    11    & 2.7    \\
+    12    & 2.7    \\
+    15    & 2.8    \\ 
+    19.11 & 3      \\ \bottomrule
+  \end{tabular}
+  \end{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics{v2.pdf}
+  \caption{Messdaten und Ausgleichsgerade zur zweiten violetten Spektrallinie}
+  \label{fig:v2}
 \end{figure}
 
+\begin{table}[H]
+  \centering
+  \caption{Parameter der Ausgleichsgeraden und Gegenspannung zur zweiten violetten Spektrallinie}
+  \label{tab:uv2}
+  \begin{tabular}{lll}
+    \toprule
+    $a [\si{\sqrt{\nano\ampere}\per\volt}]$ &
+    $b [\sqrt{\si{\nano\ampere}}]$ &
+    $U_g [\si{\volt}]$ \\ \midrule
+    -0.29 \pm 0.04    & 0.373 \pm 0.028  & 1.29 \pm 0.22   \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
-Siehe \autoref{fig:plot}!
+\subsection{Bestimmung von $\frac{h}{e}$ und der Austrittsarbeit $A_K$}
+Das Verhältnis $\frac{h}{e}$ und die Austrittsarbeit $A_K$ lassen sich mit einer  linearen Ausgleichsrechnung zu den bereits ermittelten Gegenspannungen und den entsprechenden Lichtfrequenzen bestimmen. 
+\begin{figure}[H]
+  \centering
+  \includegraphics{ug.pdf}
+  \caption{Daten und Ausgleichsgerade zu den Gegenspannungen und den entsprechenden Frequenzen des Lichts}
+  \label{fig:ug}
+\end{figure}
