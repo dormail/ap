@@ -16,6 +16,7 @@ print(f'Querschnittsfläche der Spule: {F}')
 # Spannungen in milivolt
 print('\nDy2O3')
 U_Br_0 = 12.5
+U_Br_0 = 0
 R_3_0 = 998 + 633 * 0.005
 print(f'R_3_0 = {R_3_0}')
 
