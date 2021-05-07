@@ -16,7 +16,7 @@ print(f'Querschnittsfläche der Spule: {F}')
 # Spannungen in milivolt
 print('\nDy2O3')
 U_Br_0 = 12.5
-U_Br_0 = 0
+#U_Br_0 = 0
 R_3_0 = 998 + 633 * 0.005
 print(f'R_3_0 = {R_3_0}')
 
@@ -41,7 +41,12 @@ susz2 = 2 * dR/R_3_0 * F / Q
 print(f'U_Br = {U_Br}')
 print(f'Spannungsmethode 𝜒 = {susz1}')
 print(f'Widerstandsmethode 𝜒 = {susz2}')
-print(f'Theo: 𝜒 = 0.026')
+theo = 0.026
+print(f'Theo: 𝜒 = {theo}')
+
+print(f'Relative Fehler:')
+print(f'Spannungsmethode: {(susz1 - theo) / theo}')
+print(f'Widerstandsmethode: {(susz2 - theo) / theo}')
 
 
 # probe 3 Gd2O3
@@ -72,3 +77,7 @@ print(f'U_Br = {U_Br}')
 print(f'Spannungsmethode 𝜒 = {susz1}')
 print(f'Widerstandsmethode 𝜒 = {susz2}')
 print(f'Theo: 𝜒 = 0.014')
+theo = 0.014
+print(f'Relative Fehler:')
+print(f'Spannungsmethode: {(susz1 - theo) / theo}')
+print(f'Widerstandsmethode: {(susz2 - theo) / theo}')

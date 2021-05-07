@@ -55,7 +55,7 @@ m_opt = 35
 a_opt = Q_opt / m_opt * 2 * np.log(2)
 x = np.linspace(20, 50, 200)
 plt.scatter(f,U, color='k', marker='+',
-        label='Messdaten')
+        label='Normierte Messdaten')
 plt.plot(x, gaus(x,m,a), color='r',
         label='Curve Fit')
 plt.plot(x, gaus(x,m_opt,a_opt), color='b', ls='--',

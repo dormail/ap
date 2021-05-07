@@ -6,16 +6,16 @@ Das Ziel des in diesem Protokoll beschriebenen Versuchs ist es die Suszeptibilit
 \subsection{Die Suszeptibilität paramagnetischer Substanzen}
 Die magnetische Flussdichte $\symbf{B}$ hängt bei Anwesenheit von Materie von der magnetischen Feldstärke $\symbf{H}$ und der Magnetisierung $\symbf{M}$ ab:
     \begin{equation}
-        B = \mu_0 H + M
+        \vec B = \mu_0 \vec H + \vec M
     \label{eqn:b}
     \end{equation}
 Die Magnetisierung $\symbf{M}$ ist ebenfalls von der magnetischen Feldstärke $\symbf{H}$ abhängig:
 \begin{equation}
     \label{eqn:m}
-    M = \mu_0 \chi H 
+    \vec M = \mu_0 \chi \vec H 
 \end{equation} 
 Der Proportionalitätsfaktor $\chi$ in \autoref{eqn:m} ist die sogenannte \textbf{Suszeptibilität}.
-Generell wird der Paramagnetismus nur bei Atomen, Ionen oder Molekülen beobachtet, die einen nicht verschwindenden Drehimpuls besitzen. Dieses Phänomen entsteht dadurch, dass sich die ,mit dem Drehimpuls gekoppelten, magnetischen Momente relativ zum äußeren Magnetfeld ausrichten. Weil die Ausrichtung dieser Momente auch von den thermischen Bewegungen innerhalb des Atoms beeinflusst wird, ist der Paramagnetismus außerdem temperaturabhängig.  
+Generell wird der Paramagnetismus nur bei Atomen, Ionen oder Molekülen beobachtet, die einen nicht verschwindenden Drehimpuls besitzen. Dieses Phänomen entsteht dadurch, dass sich die, mit dem Drehimpuls gekoppelten, magnetischen Momente relativ zum äußeren Magnetfeld ausrichten. Weil die Ausrichtung dieser Momente auch von den thermischen Bewegungen innerhalb des Atoms beeinflusst wird, ist der Paramagnetismus außerdem temperaturabhängig.  
 Der Gesamtdrehimpuls $\vec{J}$ eines Atoms setzt sich aus dem Bahndrehimpuls $\vec{L}$ und dem Gesamtspin $\vec{S}$ zusammen.
 \begin{equation*}
     \vec{J} = \vec{L} + \vec{S} ,
@@ -36,12 +36,11 @@ Aus \autoref{fig:vektor} ergibt sich für $|\vec{\mu_\text{J}}|$:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{content/vektoren.JPG}
-    \caption{Vektorielle Darstellung der Drehimpulsvektoren und der entsprechenden magnetischen Momente \cite{versuchsanleitung}}
+    \caption{Vektorielle Darstellung der Drehimpulsvektoren und der entsprechenden
+    magnetischen Momente \cite{versuchsanleitung}.}
     \label{fig:vektor}
   \end{figure}
-
-Der Lande-Faktor $g_J$ eines Atoms ist definiert als:
-
+\noindent Der Lande-Faktor $g_J$ eines Atoms ist definiert als:
 \begin{equation}
     g_J = \frac{3J(J+1) + [S(S+1) - L(L+1)]} {2 J(J+1)}
 \end{equation}
@@ -49,8 +48,7 @@ Mit dieser Definition gilt für $|\vec{\mu_\text{J}}|$:
 \begin{equation}
     |\vec{\mu_\text{J}}| = \vec{\mu_\text{B}} g_J \sqrt{J (J+1)} 
 \end{equation}
-
-Bei Seltenen-Erd-Verbindungen resultiert der Gesamtdrehimpuls $\vec{J}$ aus der Anordnung der Elektronen in der unabgeschlossenen 4f-Schale. Diese Anordnung wird durch die \textbf{Hundschen Regeln} beschrieben, die im folgenden aufgelistet sind:
+Bei Seltenen-Erd-Verbindungen resultiert der Gesamtdrehimpuls $\vec{J}$ aus der Anordnung der Elektronen in der unabgeschlossenen 4f-Schale. Diese Anordnung wird durch die \textbf{Hundschen Regeln} beschrieben, die im Folgenden aufgelistet sind:
 
 \begin{itemize}
     \item Die Spins $\vec{s_i}$ summieren sich nach dem Pauli-Prinzip zum maximalen Gesamtspin
@@ -76,11 +74,10 @@ Als Differenz der Induktivitäten ergibt sich also:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{content/bruecke.JPG}
-    \caption{Brückenschaltung zur Suszeptibilitätsmessung \cite{versuchsanleitung}}
+    \caption{Brückenschaltung zur Suszeptibilitätsmessung \cite{versuchsanleitung}.}
     \label{fig:bruecke}
   \end{figure}
-
-Für die Suszeptibilitätsmessung wird eine Brückenschaltung nach \autoref{fig:bruecke} verwendet. Für den Betrag der Brückenspannung einer solchen Schaltung ergibt sich:
+\noindent Für die Suszeptibilitätsmessung wird eine Brückenschaltung nach \autoref{fig:bruecke} verwendet. Für den Betrag der Brückenspannung einer solchen Schaltung ergibt sich:
 \begin{equation}
 U_\text{Br} = \frac{\omega \symup{\Delta} L}{4} \frac{1}{\sqrt{R^2 + {\omega}^2 L^2 }} U_\text{Sp}
 \end{equation}
@@ -108,10 +105,10 @@ Bei der Messung der Brückenspannung stellen die immer auftretenden Störspannun
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{content/filterkurve.jpg}
-    \caption{Filterkurve \cite{versuchsanleitung}}
+    \caption{Filterkurve \cite{versuchsanleitung}.}
     \label{fig:filterkurve2}
-  \end{figure}
-Die Güte $Q$ ist ein Maß für die Qualität des Filters und kann nach 
+\end{figure}
+\noindent Die Güte $Q$ ist ein Maß für die Qualität des Filters und kann nach 
   \begin{equation}
     \label{eqn:güte}
     Q = \frac{\nu_0}{\nu_+ - \nu_-}
