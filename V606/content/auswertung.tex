@@ -7,55 +7,54 @@
 Im ersten Versuchsteil sollte die Güte des Selektivverstärkers untersucht werden. Dazu
 wurde zu verschiedenen Eingangsfrequenzen bei konstanter Amplitude die Ausgangsspannung
 vom Filter gemessen. Die dabei aufgenommenen Daten sind in \autoref{tab:filterkurve}
-abgedruckt.
+abgedruckt. Als Normierung der gemessenen Spannung wurde diese normiert, sodass der
+höchste Messwert den Betrag $1$ hat.
 
 \begin{table}
   \centering
-  \caption{Messdaten zur Bestimmung der Filterkurve}
+  \caption{Messdaten zur Bestimmung der Filterkurve.}
   \label{tab:filterkurve}
   \sisetup{table-format=2.1}
-  \begin{tabular}{c c}
+  \begin{tabular}{c c c}
   \toprule
-  $f / \si{kHz}$	& $U / \si{V}$ \\
+  $f / \si{kHz}$	& $U / \si{V}$ & $U / U_\text{max}$\\
   \midrule
-  18,9&0,08	\\
-  20,2&0,09	\\
-  22,1&0,12	\\
-  23,0&0,14	\\
-  27,2&0,205	\\
-  29,0&0,26	\\
-  31,0&0,44	\\
-  32,4&0,5	\\
-  33,7&0,42	\\
-  33,9&0,51	\\
-  34,0&0,5	\\
-  34,3&0,55	\\
-  35,7&0,66	\\
-  36,0&0,64	\\
-  36,8&0,54	\\
-  37,1&0,49	\\
-  39,1&0,28	\\
-  41,0&0,19	\\
-  42,7&0,16	\\
-  42,9&0,33	\\
-  46,5&0,14	\\
-  52,3&0,09	\\
+	18,9&0,08&0,121	\\
+	20,2&0,09&0,136	\\
+	22,1&0,12&0,182	\\
+	23,0&0,14&0,212	\\
+	27,2&0,20&0,311	\\
+	29,0&0,26&0,394	\\
+	31,0&0,44&0,667	\\
+	32,4&0,50&0,758	\\
+	33,7&0,42&0,636	\\
+	33,9&0,51&0,773	\\
+	34,0&0,50&0,758	\\
+	34,3&0,55&0,833	\\
+	35,7&0,66&1,000	\\
+	36,0&0,64&0,970	\\
+	36,8&0,54&0,818	\\
+	37,1&0,49&0,742	\\
+	39,1&0,28&0,424	\\
+	41,0&0,19&0,288	\\
+	42,7&0,16&0,242	\\
+	42,9&0,33&0,500	\\
+	46,5&0,14&0,212	\\
+	52,3&0,09&0,136	\\
   \bottomrule
   \end{tabular}
 \end{table}
-
-Die Güte ist, wie in \autoref{sec:Theorie} schon erwähnt die relative Breite der Kurve
+Die Güte ist, wie in \autoref{sec:Theorie} schon erwähnt, die relative Breite der Kurve
 \[
 	Q = \frac{\nu_0}{\nu_+ - \nu_-}.
 \]
-
 Für die Berechnung der Güte wird in einer nicht linearen Ausgleichsrechnung eine
 Gaußglocke
 \begin{equation}
 	\label{eqn:gauss-glocke}
-	f(\nu) = N * \exp\left(-a \cdot (\nu - \mu)^2\right)
+	f(\nu) = \exp\left(-a \cdot (\nu - \mu)^2\right)
 \end{equation}
-an die Messdaten gefittet.
+an die normierten Messdaten gefittet.
 \\
 Wegen
 \begin{equation}
@@ -73,22 +72,25 @@ und
 	\label{eqn:Q-Auswertung}
 	Q = \frac{\mu}{\sqrt{2/a \ln(2)}}.
 \end{equation}
-
 Die nicht lineare Ausgleichsrechnung ergab die Fitparameter
 \begin{align}
 	\label{eqn:fit-ergebnisse}
 	\mu &= (34,8 \pm 0,5) \si{kHz}, \\
-	a &= (0,0139 \pm 0,0025) \si{s}, \\
-	n &= (0,53 \pm 0,028) \si{V}.
+	a &= (0,0139 \pm 0,0025) \si{s}.%, \\
+	%n &= (0,53 \pm 0,028) \si{V}.
 \end{align}
-
+Die Stellen $\nu_\pm$ lauten demnach
+\begin{equation}
+	\label{eqn:ausw:nu_pm}
+	\nu_- = (31,3 \pm 0,6) \,\si{kHz}
+	\quad
+	\nu_+ = (38,8 \pm 0,6) \,\si{kHz}.
+\end{equation}
 Mit \autoref{eqn:Q-Auswertung} folgt dann unter Verwendung linearer Fehlerfortpflanzung
 \begin{equation}
-	Q = 3,48 \pm 0,5.
+	Q = 4,7 \pm 0,4.
 \end{equation}
-
 Die Messdaten und die Ausgleichsfunktion sind in \autoref{fig:filterkurve} dargestellt.
-
 \begin{figure}
 	\includegraphics{build/filterkurve.pdf}
 	\caption{Plot der Messdaten, der Ausgleichsfunktion sowie der Filterkurve die bei
@@ -124,7 +126,7 @@ Die Teilchendichte ergibt sich gemäß
 	N = \frac{\rho}{M} N_A
 \]
 mit der dichte $\rho$, der molaren Masse $M$ und der Avogradokonstanten $N_A$.
-
+\\
 $N$ und $g_J$ können nun in die Gleichung für $\chi$ eingesetzt werden, die Ergebnisse
 sind in \autoref{tab:theo-susz} zusammengefasst.
 \begin{table}
@@ -134,7 +136,7 @@ sind in \autoref{tab:theo-susz} zusammengefasst.
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c}
   \toprule
-   & $\symup{Dy_2O_3}$	& $\symup{Gd_2O_3}$ \\
+   & $\symup{Gd_2O_3}$ 	& $\symup{Dy_2O_3}$\\
   \midrule
   % content
   4f-Elektronen                           & 7      & 9      \\
@@ -186,28 +188,26 @@ $\Delta R = R_3 - R_3^\prime$ sind in \autoref{tab:probe1} dargestellt.
   \bottomrule
   \end{tabular}
 \end{table}
-
+\noindent
 Aus den Formeln für Mittelwert und Standartabweichung folgen
 \begin{equation}
-	\Delta R = (1,63 \pm 0,018) \symup\Omega
+	\Delta R = (1,63 \pm 0,018) \,\symup\Omega
 	\qquad
-	U_\text{Br} = (64 \pm 2,8) \symup{mV}
+	U_\text{Br} = (64 \pm 2,8) \,\symup{mV}
 \end{equation}
-
 Mit der gemessenen Länge der Probe
-$L = \SI{0.073}{\meter}$ folgt mit der Dichte und Masse der Probe 
+$L = \SI{0.173}{\meter}$ folgt mit der Dichte und Masse der Probe 
 (vgl. \autoref{tab:theo-susz}) der Probenquerschnitt 
 \[
 	Q =  \frac{m_\text{Pr}}{L \cdot \rho_\text{w}}
-	= 2,85 \cdot 10^{-5} \symup{m}^2
+	= 1,21 \cdot 10^{-5} \,\symup{m}^2
 \]
-
 Mit den zwei Methoden für die Bestimmung der Suszeptibilität folgen dann zwei Ergebnisse
 für $\chi(\symup{Dy_2O_3})$:
 \begin{equation}
-	\chi_U = 0,069 \pm 0,004
+	\chi_\text{U} = 0,164 \pm 0,009
 	\qquad
-	\chi_R = 0,00987 \pm 0,00011
+	\chi_\text{R} = 0,0234 \pm 0,00026
 \end{equation}
 Die Spannungsdifferenz wurde im auswertenden Programm um eine Zehnerpotenz runterskaliert, da
 im Filter ein zehnfach-Gain aktiviert wurde. Für die Messungenauigkeit wurde 
@@ -250,17 +250,17 @@ Standartabweichung gearbeitet werden, damit folgen
 	\Delta R_3 = (0,735 \pm 0,028) \symup\Omega.
 \end{equation}
 
-Mit der gemessenen Länge $L = \SI{7.6}{c\meter}$ folgt mit den Werten für Masse und Dichte
+Mit der gemessenen Länge $L = \SI{0.176}{\meter}$ folgt mit den Werten für Masse und Dichte
 die Querschnittsfläche der Probe
 \begin{equation}
-	Q = 2,503 \cdot 10^{-5} \symup{m}^2.
+	Q = 1,081 \cdot 10^{-5} \symup{m}^2.
 \end{equation}
 
 Abschließend können dann zwei Werte für $\chi(\symup{Gd_2O_3})$ bestimmt werden:
 \begin{equation}
-	\chi_\text{U} = 0,0292 \pm 0,0017
+	\chi_\text{U} = 0,068 \pm 0,004
 	\quad
-	\chi_\text{R} = 0,00508 \pm 0,0002
+	\chi_\text{R} = 0,0118 \pm 0,0005
 \end{equation}
 Wie bei $\chi(\symup{Dy_2O_3})$ musste auch hier $\Delta U_\text{Br}$ um Zehnfaches
 runterskaliert werden.
