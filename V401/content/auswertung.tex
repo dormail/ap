@@ -1,12 +1,95 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+\subsection{Experimentelle Bestimmung der Wellenlänge des Laserlichts}
+\label{sec:Experimentelle Bestimmung der Wellenlänge des Laserlichts}
+Im ersten Versuchsteil sollte die Wellenlänge des verwendeten Lasers experimentell
+gemessen werden. Dazu wurde in acht Messungen der Motor um $d = \SI{5}{mm}$ in eine
+Richtung verschoben. Mit der Hebeluntersetzung von 1:5,046 folgt die Verschiebung 
+des Spiegels
+\begin{equation}
+	\Delta d = \SI{0,99}{mm}.
+\end{equation}
+Die automatische Zählung der Maxima ergab die Messwerte in \autoref{tab:wellenlaenge}.
+% Messwerte erster Teil
+\begin{table}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{Messdaten zur Bestimmung der Wellenlänge des Lasers.}
+  \label{tab:wellenlaenge}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c}
+  \toprule
+  Messreihe & Anzahl Maxima\\
+  \midrule
+    1 & 2371 \\
+    2 & 2365 \\
+    3 & 2367 \\
+    4 & 2383 \\
+    5 & 2364 \\
+    6 & 2361 \\
+    7 & 2371 \\
+    8 & 2375 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+Mit den Formeln für Mittelwert und Standartabweichung folgt die gemittelte Anzahl an
+detektierten Maxima
+\begin{equation}
+	z = 2370+/-7.
+\end{equation}
+Mit der in \autoref{sec:Theorie} gezeigten Formel für die Wellenlänge folgt mit linearer
+Fehlerfortpflanzung 
+\begin{equation}
+	\lambda = 2 \frac{d}{z} = (836 \pm 23) \, \si{nm}.
+\end{equation}
+Auf dem Etikett des Lasers war die Wellenlänge mit
+\begin{equation}
+	\label{eqn:wellenlaenge-real}
+	\lambda_\text{real} = \SI{635}{\nano\meter}.
+\end{equation}
+Mit dem letzteren Wert wird im nächsten Abschnitt gerechnet.
 
-
-Siehe \autoref{fig:plot}!
+\subsection{Messung des Brechungsindex in Luft}
+\label{sec:Messung des Brechungsindex in Luft}
+Im zweiten Teil soll nun der Brechungsindex von Luft bestimmt werden. Dazu wurde in
+einem Lichtkanal eine Messzelle mit Länge $b = \SI{50}{mm}$ eingeschoben und der Gasdruck
+wurde um $\Delta p = \SI{600}{torr} = \SI{7999,32}{Pa}$ herabgesetzt. Die automatische
+Zählung ergab die Maximaanzahl in \autoref{tab:brechungsindex}.
+% Messwerte
+\begin{table}
+  \centering
+  \caption{Messdaten zur Bestimmung des Brechungsindex von Luft, aufgeschlüsselt nach
+  Erhöhen bzw Verringerung des Drucks. In der vierten Messreihe war beim Ablassen des
+  Unterdrucks kein Maximum messbar, daher wurde vor der Fünften der Laser neu justiert,
+  genauso wie vor der Siebten.}
+  \label{tab:brechungsindex}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c}
+  \toprule
+  Messreihe & Maxima Abpumpen & Maxima Vakuum ablassen\\
+  \midrule
+  1 & 22 & 28 \\
+  2 & 22 & 30 \\
+  3 & 21 & 22 \\
+  4 & 18 & -  \\
+  5 & 32 & 31 \\
+  6 & 33 & 31 \\
+  7 & 49 & 42 \\
+  8 & 52 & 38 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+Analog zu \autoref{sec:Experimentelle Bestimmung der Wellenlänge des Laserlichts} folgt
+dann die gemittelte Zahl der Maxima mit Standartabweichung
+\[
+	z = 38+/-8.
+\]
+Mit der gegebenen Wellenlänge (vgl. \autoref{eqn:wellenlaenge-real}) folgt dann
+\begin{equation}
+	\Delta n = \frac{z \lambda}{2b} = 0.00024 \pm 0.00005.
+\end{equation}
+Für Normalbedingungen folgt dann der Brechungsindex unter Normalbedingung
+\begin{equation}
+	n = 1 + \Delta n \frac{T}{T_0} \frac{p_0}{\Delta p} = 1.00033 \pm 0.00007
+\end{equation}
+Wie zuvor wurde mit Fehlerfortplanzung nach Gauß gerechnet.
