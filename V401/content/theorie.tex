@@ -1,17 +1,19 @@
 \section*{Zielsetzung}
 \label{sec:zielsetzung}
 
-Schönes Michelson-Interferometer
+Im Versuch zum vorliegenden Protokoll wird mit einem Michelson-Interferometer x und y gemessen.
 
 \section{Theorie}
 \label{sec:Theorie}
+In diesem Abschnitt werden die theoretischen Grundlagen des Versuchs erläutert. Zuerst werden die Phänomene der Interferenz und Kohärenz im Zusammenhang mit Lichtwellen erklärt. Anschließend 
 \subsection{Überlagerung von Lichtwellen, Begriff der Interferenz}
-Elektromagnetische Wellen:
+Die elektrische Feldstärke einer elektromagnetischen Welle lässt sich mit ihrer Wellenzahl $k$, ihrer Kreisfrequenz $\omega$ und ihrem Phasenwinkel $\delta$ als
 \begin{equation}
     \label{eqn:emwelle}
-    \vec{E} = \vec{E_0} \cos(kx - \omega t - \delta) \; .
+    \vec{E} = \vec{E_0} \cos(kx - \omega t - \delta) \; 
 \end{equation}
-Intensität:
+darstellen. \newline
+Die Intensität $I$ mehrerer überlagerter Lichtwellen, also der zeitliche Mittelwert der auf eine Flächeneinheit treffenden Lichtleistung, berechnet sich nach:
 \begin{equation}
     \label{eqn:Intensität}
     I = const |\vec{E}|
@@ -20,9 +22,15 @@ Intensität:
 \begin{equation}
     I_\text{ges} = 2 const \vec{E_0}^2 (1 + \symup{cos(\delta_2 - \delta_1))}.
 \end{equation}
+Die Gesamtintensität kann auch, in Abhängigkeit der Phasenwinkel $\delta$ der beiden einzelnen Wellen, verschwinden. Dies ist der Fall für:
+\begin{equation}
+    \delta_2 - \delta_1 = (2n + 1)\pi \: , \; n = 0,1,2,3,... 
+\end{equation}
 
-\cite{anleitung}
-%\subsection{Kohärenz}
+\subsection{Kohärenz}
+In der Regel treten allerdings keine Interferenzerscheinungen auf wenn sich die Wellen zweier unabhängiger Lichtquellen überlagern. Dies liegt daran, dass die Phasenwinkel $\delta_1$ und $\delta_2$ von 2 Lichtquellen in der Regel statistisch verteilte Funktionen der Zeit sind. Bei einer Mittelung über eine Zeit, die groß
+gegen die Periodendauer $2\pi/\omega$ ist, wird der Interferenzterm daher zu 0.
+
 \subsection{Funktion Michelson-Interferometer, Brechungsindexaenderung?}
 Brechungsindexänderung:
     \begin{equation}
