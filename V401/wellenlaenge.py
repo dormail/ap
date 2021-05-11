@@ -8,6 +8,7 @@ data = np.array(data)
 
 d = 0.005 # distanz die der Motor bewegt hat
 d = d / 5.046 # ∆d für den Spiegel
+print(f'd = {d}')
 
 from uncertainties import ufloat
 from uncertainties.umath import *
