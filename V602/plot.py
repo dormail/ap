@@ -1,21 +1,21 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import uncertainties as unc
+import uncertainties.unumpy as unp
+from uncertainties import ufloat
+from scipy.optimize import curve_fit
+import scipy.constants as const
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+th , n = np.genfromtxt('daten/Bragg.dat', unpack=True)
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+N_MAX=np.amax(n)
+print("N_MAX=",N_MAX)
+
+#plt.plot(x,x*pa_gl[0]+pa_gl[1], label='Ausgleichsgerade')
+plt.plot(th,n,".", label='Messdaten')
+plt.plot(28.2,N_MAX,'r.',label = 'Maximum')
+plt.xlabel(r'$\theta \:/\: °$')
+plt.ylabel(r'$N \:/\: \frac{Imp}{s}$')
 plt.legend(loc='best')
-
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+plt.tight_layout()
+plt.savefig('build/bragg.pdf')
