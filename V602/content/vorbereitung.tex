@@ -1,35 +1,36 @@
 \section{Vorbereitung}
-Als Vorbereitung zu dem Versuch sollten der Glanzwinkel zu verschiedenen Elementen ermittelt werden. Diesen kann mit mit der \autoref{eqn:bragg}, den gegebenen Literaturwerten der 
-K-Kante $E_\text{K}^\text{Lit}$ \cite{wissen} und der Gitterkonstante $d = \SI{201.4}{\pico\meter}$ berechnet werden mit 
+Zur Vorbereitung sollten die Energien, bei denen die Cu-$K_\alpha$ und Cu-$K_\beta$
+erwartet werden, ermittelt werden. Diese liegen bei $E_{K_\alpha} = \SI{8.046}{\kilo\eV}$ und 
+$E_{K_\beta} = \SI{8.904}{\kilo\eV}$. Mit der dadraus abgeleiteten Wellenlänge folgt aus
+\autoref{eqn:braggsche-bedingung} die Glanzwinkel $\theta_{K_\alpha} = \SI{22.49}{\degree}$ 
+und $\theta_{K_\beta} = \SI{20.22}{\degree}$.
+Ferner sollte der Glanzwinkel zu verschiedenen Elementen ermittelt 
+werden. Dieser kann mit \autoref{eqn:braggsche-bedingung}, den gegebenen Literaturwerten 
+zur K-Kante $E_\text{K}^\text{Lit}$ \cite{wissen} und der Gitterkonstante 
+$d = \SI{201.4}{\pico\meter}$ berechnet werden mit 
 \begin{equation}
-    \theta_\text{glanz} = \text{arcsin}\left(\frac{h \cdot c}{E \cdot 2d}\right) \, .
-    \label{eqn:theta}
+	\theta_\text{glanz} = \text{arcsin}\left(\frac{h \cdot c}{E \cdot 2d}\right) \, .
+	\label{eqn:theta}
 \end{equation}
-\noindent
 Daraus folgen die Werte die in der \autoref{tab:Glanz} aufgeführt sind. 
 \begin{table}
-    \centering
-    \caption{Literaturwerte und daraus errechnete Größen verschiedener Elemente}
-    \label{tab:Glanz}
-    \sisetup{table-format=2.1}
-    \begin{tabular}{c c c c c}
-    \toprule
-    $ $ & $Z$ & $E_\text{K}^\text{Lit} \,/\, \si{\kilo\eV}$
-    & $\theta_\text{glanz}^\text{Lit} \,/\, \si{\degree}$ & 
-    $\sigma_\text{k}$\\
-    \midrule 
-    Zn & 30 &  9,65 & 18.60042993 & 3,56 \\
-    Ge & 32 & 11,10 & 16.09910447 & 3,68 \\
-    Br & 35 & 13,47 & 13.20934876 & 3,85 \\
-    Rb & 37 & 15,2 & 11.68329037 & 3,95 \\
-    Sr & 38 & 16,10 & 11.02175704 & 4,01 \\
-    Zr & 40 & 17,99 &  9.851577763 & 4,11 \\
-    \bottomrule
-    \end{tabular}
-    \end{table}
-
-\noindent
-Zusätzlich dazu sollten die Energien bei denen die Cu-$K_\alpha$ und Cu-$K_\beta$ erwartet werden ermittelt werden. Diese liegen bei $E_{K_\alpha} = \SI{8.046}{\kilo\eV}$ und $E_{K_\beta} = \SI{8.904}{\kilo\eV}$.
-Dazu lässt sich ebenfalls der Glanzwinkel jeweils bestimmen zu $\theta_{K_\alpha} = \SI{22.49}{\degree}$ und $\theta_{K_\beta} = \SI{20.22}{\degree}$.
-
+	\centering
+	\caption{Literaturwerte und daraus errechnete Größen verschiedener Elemente}
+	\label{tab:Glanz}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c c}
+		\toprule
+		$ $ & $Z$ & $E_\text{K}^\text{Lit} \,/\, \si{\kilo\eV}$
+		    & $\theta_\text{glanz}^\text{Lit} \,/\, \si{\degree}$ & 
+		    $\sigma_\text{k}$\\
+		    \midrule 
+		Zn & 30 &  9,65 & 18.60042993 & 3,56 \\
+		Ge & 32 & 11,10 & 16.09910447 & 3,68 \\
+		Br & 35 & 13,47 & 13.20934876 & 3,85 \\
+		Rb & 37 & 15,2 & 11.68329037 & 3,95 \\
+		Sr & 38 & 16,10 & 11.02175704 & 4,01 \\
+		Zr & 40 & 17,99 &  9.851577763 & 4,11 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
