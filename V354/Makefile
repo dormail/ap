@@ -4,8 +4,15 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python plot.py
 
+build/frequenz.pdf: c.py daten/frequenzabhaengigkeit.csv
+	TEXINPUTS=$$(pwd): python c.py
+
+build/5a.pdf: a.py daten/zeitabhaengigkeit.csv
+	TEXINPUTS=$$(pwd): python a.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/frequenz.pdf
+build/main.pdf: build/5a.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \

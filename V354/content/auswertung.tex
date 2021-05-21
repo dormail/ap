@@ -1,12 +1,80 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+\subsection{Zeitabhängigkeit der Amplitude beim Schwingfall}
+\label{sec:Zeitabhängigkeit der Amplitude beim Schwingfall}
+Im ersten Teil wurde im beim Schwingfall das exponentielle Abklingen der Amplitude beim
+Schwingfall untersucht. Dabei wurden im festen Intervall von $\SI{13.6}{\micro\second}$
+die Maxima bzw. Minima der Schwingung betrachtet, um so die momentane Schwingungsamplitude
+zu erhalten. Dabei wurden folgende Messwerte gemessen:
+\begin{table}
+	\centering
+	\caption{Messdaten zur Zeitabhängigkeit der Amplitude. Das Zeitintervall zwischen
+	zwei Messpunkten folgt aus der Speisefrequenz mit $\Delta t =
+\SI{13.6}{\micro\second}$.}
+	\label{tab:Messwerte-5a}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c}
+		\toprule
+		$U / \si{\milli\volt}$\\
+		\midrule
+		372	\\
+		308	\\
+		276	\\
+		232	\\
+		196	\\
+		168	\\
+		144	\\
+		116	\\
+		100	\\
+		84 	\\
+		76 	\\
+		64 	\\
+		52 	\\
+		48 	\\
+		40 	\\
+		36 	\\
+		24 	\\
+		20 	\\
+		24 	\\
+		16 	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Da das Abklingen exponentiell stattfindet, liegt eine Funktion der Form
+\begin{equation}
+	U(t) = U_0 e^{-kt}
+\end{equation}
+für die Ausgleichsrechnung nahe. Mit der \texttt{curve\_fit}-Funktion aus scipy konnten
+die Parameter
+\begin{equation}
+	U_0 = (436,2 \pm 3,5) \, \si{\milli\volt}
+	\qquad
+	k = (1,183 \pm 0,013) \cdot 10^4 \, \si{\second^{-1}}
+\end{equation}
+bestimmt werden. Die Messdaten sowie die Ausgleichskurve sind in \autoref{fig:5a-plot}
+grafisch dargestellt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/5a.pdf}
+	\caption{Messdaten und Curve Fit für die Zeitabhängigkeit der Amplitude. Die
+		Messwerte stammen alternierend aus Wellenberg und -Tal, es wurden jedoch
+	nur die Beträge betrachtet.}
+	\label{fig:5a-plot}
 \end{figure}
+Damit lässt sich die Zerfallszeit $T_\text{ex}$ bestimmen, welche definiert ist durch
+\begin{equation}
+	U\left( T_\text{ex} \right) = \frac{U(0)}{e}.
+\end{equation}
+Diese lässt sich aus den Fitparametern bestimmen:
+\begin{equation}
+	T_\text{ex} = \frac{1}{k} = (8,45 \pm 0,09)10^{-5} \, \si{\second}
+\end{equation}
+Daraus lässt sich bei bekannter Induktivität der Dämpfungswiderstand $R$ bestimmen.
+Erstere wurde durch $L = (3,5 \pm 0,01) \, \si{\milli\henry}$ gegeben, damit folgt der
+Widerstand
+\begin{equation}
+	R = \frac{2L}{T_\text{ex}} = (82.8 \pm 0.9) \, \si{\ohm}.
+\end{equation}
+Für die Ungenauigkeiten wurde mit linearer Fehlerfortpflanzung gearbeitet.
 
-
-Siehe \autoref{fig:plot}!
