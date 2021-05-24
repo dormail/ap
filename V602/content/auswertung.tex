@@ -1,12 +1,12 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 In diesem Abschnitt werden die Messdaten ausgewertet, um die Bragg Bedingung zu überprüfen, um das Emissionspektrum der Kupferröhre zu bestimmten und um die Absorptionsspektren von Brom, Gallium, Rubidium, Strontium und Zink zu bestimmen.
-\subsection{Bragg}
+\subsection{Überprüfung der Bragg Bedingung}
 Für die Überprüfung der Bragg Bedingung wurden die in \autoref{fig:bragg1} aufgelisteten Daten verwendet.
 \begin{figure}[H]
   \centering
   \includegraphics{daten/bragg.JPG}
-  \caption{Bragg Daten}
+  \caption{Messdaten, Bragg Bedingung}
   \label{fig:bragg1}
 \end{figure}
 In \autoref{fig:bragg2} wurden die pro Sekunde aufgenommenen Impulse in Abhänigkeit des Winkels dargestellt. Das gesuchte Maximum ist farblich markiert.
@@ -45,6 +45,15 @@ Für die $K_\alpha-$ und die $K_\beta-$Linie ergeben sich:
   \Delta\text{E}_{\text{FWHM}\alpha}&=165.63 \, \mathrm{V}   &\Delta\text{E}_{\text{FWHM}\beta}&=205.58 \, \mathrm{V} \\
   \text{A}_\alpha&=48.56  &\text{A}_\beta&=43.36 \\
   \end{align*}
+\noindent
+Schließlich lassen sich die materialspezifischen Abschirmungskonstanten für Kupfer zu 
+\begin{align*}
+  \sigma_1 &= 3.3° \\
+  \sigma_2 &= 12.4°\\
+  \sigma_3 &= 22.4°
+\end{align*}
+berechnen.
+
 \subsection{Absorptionsspektren}
 Im Folgenden werden die Absorptionsspektren 5 verschiedener Absorber untersucht. In \autoref{fig:Brom} bis \autoref{fig:Zink} sind die gemessenen Zählraten pro Sekunde $N$ in Abhängigkeit der Winkel $\theta$ für Brom, Gallium, Rubidium, Strontium und Zink dargestellt. 
 \begin{figure}[H]
@@ -81,3 +90,24 @@ Im Folgenden werden die Absorptionsspektren 5 verschiedener Absorber untersucht.
   \caption{Zink}
   \label{fig:Zink}
 \end{figure}
+Auch hier lassen sich aus den K-Kanten die materialspezifischen Konstanten bestimmen.
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für Zink zu: Energieübergang $\text{E}_\text{K}$, Bragg-Winkel $\theta_\text{K}$ und Abschirmzahl $\sigma_\text{K}$}
+  \label{tab:mess}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c}
+  \toprule
+       & $\text{Z}$ & $\text{E}_\text{K} \,/\, \mathrm{keV}$ & $\theta_\text{K} \,/\, ° $ & $\sigma_\text{K} $\\
+  \midrule 
+    Zn & 30 & 9.6  & 18.7 & 3.6 \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+\noindent
+  Mit den recherchierten Literaturwerten aus \autoref{tab:Glanz} lassen sich die Messabweichungen für Zink bestimmen:
+\begin{align*}
+    \Delta\text{E}&=0,05 \, \mathrm{keV} & \Delta\text{E}_\text{rel}&=0,52\%\\
+    \Delta\theta&=0.1° & \Delta\theta_\text{rel}&=0.54\%\\
+    \Delta\sigma&=0.04 & \Delta\sigma_\text{rel}&=1,12\%
+\end{align*}
