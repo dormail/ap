@@ -73,7 +73,7 @@ plt.plot(x, (x - x + 1) * np.max(A) / np.sqrt(2),
 
 plt.xlabel(r'$f / \si{kHz}$')
 plt.ylabel(r'$U_{\text{C}} / U_0$')
-#plt.yscale('log')
+plt.yscale('log')
 
 plt.legend()
 
