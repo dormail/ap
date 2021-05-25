@@ -50,7 +50,7 @@ Mit diesen Beziehungen und $I=\symup{\frac{d}{dt}}Q$ kann die DGL für die Schal
     \end{equation}
 
 \noindent Es lassen sich nun 3 unterschiedliche Fälle für die Lösung der DGL, in Abhängigkeit des Wurzelterms in \autoref{eqn:dgl3}, unterscheiden. 
-Im ersten Fall ist $\frac{1}{LC} > \frac{R²}{4L²}$ und die Wurzel in \autoref{eqn:dgl3} bleibt reell. Dieser Fall wird als Schwingfall bezeichnet. Der typische Verlauf der Stromstärke für diesen Fall ist in autoref{fig:daempf} dargestellt.
+Im ersten Fall ist $\frac{1}{LC} > \frac{R²}{4L²}$ und die Wurzel in \autoref{eqn:dgl3} bleibt reell. Dieser Fall wird als Schwingfall bezeichnet. Der typische Verlauf der Stromstärke für diesen Fall ist in \autoref{fig:daempf} dargestellt.
 \begin{figure}[H]
     \centering
     \includegraphics{bilder/daempf.jpg}
@@ -88,4 +88,42 @@ Um erzwungene Schwingungen mit einem elektrischen Schwingkreis zu realisieren, k
     \label{fig:erzwungen}
   \end{figure}
 \noindent
-Die DGL der Schaltung erhält durch diese Veränderung eine Inhomogenität.
+Die DGL dieser Schaltung lässt sich wieder über die Kirchhoffschen Gesetze aufstellen. Mit den bereits beschriebnen Zusammenhängen für die Spannungen an den einzelnen Bauelementen lässt sich die DGL außerdem für die Kondensatorspannung $U_C$ umschreiben:
+\begin{equation}
+    LC \frac{\text{d}^2 U_C}{\text{dt}^2} + RC \frac{\text{d} U_C}{\text{dt}} + U_C = U_0 e^{j \omega t}.
+\end{equation}
+    
+\noindent Auch diese DGL kann wieder mit einem komplexen $\symup{e}$-Funktionsansatz gelöst werden. Auf diese Weise erhält man für $U_C$:
+\begin{equation}
+    U_C(\omega) = \frac{U_0}{\sqrt{(1-LC\omega^2)^2 + \omega^2 R^2 C^2}}.
+    \label{eqn:uc}
+\end{equation}
+\noindent Wie an \autoref{eqn:uc} zu sehen ist, strebt $U_C$ für $\omega \to \infty $ gegen 0 und für $\omega \to 0$ gegen die Erregerspannung $U_0$. Außerdem existiert ein $\omega_{\text{res}}$, die sogenannte Resonanzfrequenz, bei der $U_C$ maximal wird. Als Wert für die Resonanzfrequenz kann
+\begin{equation}
+    \omega_{\text{res}} = \sqrt{\frac{1}{LC}-\frac{R^2}{2L^2}} 
+\end{equation}
+\noindent berechnet werden. Für den interessanten Fall von schwacher Dämpfung, also für
+\begin{equation*}
+    \frac{R^2}{2L^2} << \frac{1}{LC}
+\end{equation*}
+, nähert sich $\omega_{\text{res}}$ der Kreisfrequenz $\omega_0=\frac{1}{\sqrt{LC}}$ der ungedämpften Schwingung an. Für diesen Fall ergibt sich für $U_C$:
+\begin{equation}
+    U_{\text{C,max}} = \frac{1}{\omega_0 RC} U_0 = \frac{1}{R} \sqrt{\frac{L}{C}} U_0 
+    \label{eqn:ucmax}
+\end{equation}
+Wie an \autoref{eqn:ucmax} zu sehen ist, strebt $U_C$ für $R \to 0 $ gegen $\infty$. Dieser Fall wird auch als Resonanzkatastrophe bezeichnet. Der Faktor $\frac{1}{\omega_0 RC}$ ist die sogenannte Resonanzüberhöhung oder Güte q des Schwingkreises.
+\newline
+Die Güte q kann in ein Verhältnis zu der Breite der Resonanzkurve gebracht werden. Die Breite wird dabei über die Frequenzen  $\omega_+$ und $\omega_-$ charakterisiert, bei denen $U_C$ auf einen Anteil von $\frac{1}{\sqrt{2}}$ von ihrem Ursprungswert abgefallen ist. Mit \autoref{eqn:uc} und \autoref{eqn:ucmax} lässt sich dies als
+\begin{equation}
+    \frac{U_0}{\sqrt{2}} \frac{1}{\omega_0 RC} = \frac{U_0}{C \sqrt{\omega^2_{\pm} R^2 + ( \omega^2_{\pm}L - \frac{1}{C} ) }}
+\end{equation} 
+schreiben. Mit der Breite der Resonanzkurve
+\begin{equation}
+    \omega_+ - \omega_- \approx \frac{R}{L}.
+    \label{eqn:breite}
+\end{equation}
+ergibt sich dann als Zusammenhang von Güte und Breite:
+\begin{equation}
+    q = \frac{\omega_0}{\omega_+ - \omega_-}
+    \label{eqn:guete}
+\end{equation}
