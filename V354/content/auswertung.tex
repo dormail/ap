@@ -10,8 +10,8 @@ zu erhalten. Dabei wurden folgende Messwerte gemessen:
 \begin{table}
 	\centering
 	\caption{Messdaten zur Zeitabhängigkeit der Amplitude. Das Zeitintervall zwischen
-	zwei Messpunkten folgt aus der Speisefrequenz mit $\Delta t =
-\SI{13.6}{\micro\second}$.}
+		zwei Messpunkten folgt aus der Speisefrequenz mit $\Delta t =
+	\SI{13.6}{\micro\second}$.}
 	\label{tab:Messwerte-5a}
 	\sisetup{table-format=2.1}
 	\begin{tabular}{c}
@@ -74,7 +74,7 @@ Daraus lässt sich bei bekannter Induktivität der Dämpfungswiderstand $R$ best
 Erstere wurde durch $L = (3,5 \pm 0,01) \, \si{\milli\henry}$ gegeben, damit folgt der
 Widerstand
 \begin{equation}
-	R = \frac{2L}{T_\text{ex}} = (82.8 \pm 0.9) \, \si{\ohm}.
+	R = \frac{2L}{T_\text{ex}} = (82,8 \pm 0,9) \, \si{\ohm}.
 \end{equation}
 Für die Ungenauigkeiten wurde mit linearer Fehlerfortpflanzung gearbeitet.
 
@@ -96,3 +96,86 @@ Experimentell wurde ein Wert von
 \end{equation}
 bestimmt. Dadraus folgt eine relative Abweichung von $24,4 \%$.
 
+\subsection{Untersuchung der Frequenzabhängigkeit der Kondensatorspannung}
+\label{sec:Untersuchung der Frequenzabhängigkeit der Kondensatorspannung}
+Im letzten Teil wurde die Kondensatorspannung in Abhängigkeit von der Frequenz untersucht.
+Da das Amplitudenverhältniss $U_C / U_0$ von Interesse ist, wurde auch $U_0$ gemessen und
+dann $A = U_C / U_0$ berechnet. Die Messung ergab die Werte in \autoref{tab:c-messwerte}.
+\begin{table}
+	\centering
+	\caption{Messdaten zur Frequenzabhängigkeit.}
+	\label{tab:c-messwerte}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c}
+		\toprule
+		$f / \si{kHz}$	& $U_0 / \si{\milli\volt}$ & $U_C / \si{\milli\volt}$ &$A$ \\
+		\midrule
+		20	&48	&66&1,375	\\
+		25	&46	&84&1,826	\\
+		30	&46	&134&2,913	\\
+		31	&46	&152&3,304	\\
+		32	&44	&176&4,000	\\
+		32	&42	&192&4,571	\\
+		33	&42	&212&5,048	\\
+		33	&42	&236&5,619	\\
+		34	&42	&264&6,286	\\
+		34	&42	&292&6,952	\\
+		35	&38	&336&8,842	\\
+		35	&38	&384&10,105	\\
+		36	&30	&420&14,000	\\
+		36	&22	&464&21,091	\\
+		37	&20	&480&24,000	\\
+		37	&22	&456&20,727	\\
+		38	&28	&408&14,571	\\
+		39	&36	&312&8,667	\\
+		42	&42	&168&4,000	\\
+		45	&46	&96&2,087	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Gemäß dem in \autoref{sec:Theorie} beschriebenen Verhalten wurde die Funktion
+\begin{equation}
+	A(\omega) = \frac{c}{\sqrt{(1 - a \omega^2)^2 + b\omega^2}}
+\end{equation}
+an die Messdaten gefitet. Die nicht lineare Ausgleichsrechnung ergab die Parameter
+\begin{align}
+	a &= 1,65 \cdot 10^{-11} \si{\second^2}, \\
+	b &= 3,05 \cdot 10^{-14} \si{\second^2}, \\
+	c &= 0,91.
+\end{align}
+Die Messdaten mit gefitteter Funktion sind in \autoref{fig:c-plot} dargestellt.
+\begin{figure}
+	\centering
+	\includegraphics{build/c.pdf}
+	\caption{Messdaten und Curve Fit für die Frequenzabhängigkeit der Amplitude. Für
+	die Bestimmung der relativen Breite wurde zusätzlich eine Linie gezogen, mit der
+	$\omega_{\pm}$ abgelesen werden kann.}
+	\label{fig:c-plot}
+\end{figure}
+Für die Bestimmung der relativen Breite wurden die Stellen, an denen die Fitfunktion um
+$\frac{1}{\sqrt 2}$ abgefallen ist, numerisch bestimmt. Das liefert die Werte
+\begin{equation}
+	\omega_- = \SI{227.87}{\kilo\hertz}
+	\qquad
+	\omega_+ = \SI{237.3}{\kilo\hertz}.
+\end{equation}
+Diese können auch mit der Formel $\omega = 2\pi f$ aus \autoref{fig:c-plot} entnommen
+werden. Die Differenz der beiden Werte ist die Breite
+\begin{equation}
+	b = \frac{\omega_+ - \omega_-}{2\pi} = \frac{\SI{9.43}{\kilo\hertz}}{2\pi}
+	= \SI{1.5}{\kilo\hertz}.
+\end{equation}
+Für die Breite kann mit den gegebenen Werten für Widerstand, Induktivität und Kapazität
+auch ein theoretischer Wert von 
+\begin{equation}
+	b_\text{theo} = \frac{1}{2\pi} \frac{R}{L} 
+	= \frac{1}{2\pi}(77,6 \pm 0,23)	\,\si{\kilo\hertz}
+	= (12,35 \pm 0,04) \,\si{\kilo\hertz}.
+\end{equation}
+Dabei wurden die Werte
+\begin{equation}
+	L = (3,5 \pm 0,01) \si{\milli\henry} \qquad
+	C = (5 \pm 0,02) \si{\nano\farad} \qquad
+	R = (271,6 \pm 0,2) \si{\ohm}
+\end{equation}
+und lineare Fehlerfortpflanzung verwendet.
