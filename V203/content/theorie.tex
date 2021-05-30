@@ -56,5 +56,36 @@ Gleichgewichtszustand erreicht.
 
 \subsection{Ableitung einer Differentialgleichung für die Dampfdruckkurve}
 \label{sec:Ableitung einer Differentialgleichung für die Dampfdruckkurve}
-
+Der Kreisprozess, bestehend aus isothermer und isobarer Verdampfung und Kondensation, ist
+in \autoref{fig:kreisprozess.png} dargestellt.
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=8cm]{images/kreisprozess.png}
+	\caption{Darstellung eines Kreisprozesses im pV-Diagramm, bei dem ein Stoff verdampft und wieder
+	kondensiert. \cite{anleitung}}
+	\label{fig:kreisprozess.png}
+\end{figure}
+Der Kreisprozess startet am Punkt A, wo nur Flüssigkeit bei Temperatur $T$ und Druck $p$
+vorhanden ist. Wird eine Wärmemenge $dQ_\text{AB}$ hinzugefügt, so gilt mit der Molwärme
+der Flüssigkeit $C_F$ 
+\begin{equation}
+	dQ_\text{AB} = C_F dT.
+	\label{eqn:Wärmeenergie-AB}
+\end{equation}
+Im zweiten Schritt wird unter Zufuhr der Verdampfungswärme
+\[
+	L(T + dT) = L(T) + dL
+\]
+die Flüssigkeit verdampft. Das Volumen steigt dabei auf $V_D$, die Substanz hat dazu die
+Arbeit
+\[
+	-A_\text{BC} = (p + dp)(V_D + V_F)
+\]
+Im Kühler wird der Dampf wieder auf $T$ abgekühlt, dabei wird analog zu \autoref{eqn:Wärmeenergie-AB}
+die Wärmeenergie 
+\[
+	-dQ_\text{CD} = C_D dT
+\]
+abgegeben.
+\\
 
