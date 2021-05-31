@@ -58,7 +58,7 @@ Gleichgewichtszustand erreicht.
 \label{sec:Ableitung einer Differentialgleichung für die Dampfdruckkurve}
 Der Kreisprozess, bestehend aus isothermer und isobarer Verdampfung und Kondensation, ist
 in \autoref{fig:kreisprozess.png} dargestellt.
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[height=8cm]{images/kreisprozess.png}
 	\caption{Darstellung eines Kreisprozesses im pV-Diagramm, bei dem ein Stoff verdampft und wieder
@@ -66,26 +66,93 @@ in \autoref{fig:kreisprozess.png} dargestellt.
 	\label{fig:kreisprozess.png}
 \end{figure}
 Der Kreisprozess startet am Punkt A, wo nur Flüssigkeit bei Temperatur $T$ und Druck $p$
-vorhanden ist. Wird eine Wärmemenge $dQ_\text{AB}$ hinzugefügt, so gilt mit der Molwärme
+vorhanden ist. Wird eine Wärmemenge $\symup dQ_\text{AB}$ hinzugefügt, so gilt mit der Molwärme
 der Flüssigkeit $C_F$ 
 \begin{equation}
-	dQ_\text{AB} = C_F dT.
+	dQ_\text{AB} = C_F \symup dT.
 	\label{eqn:Wärmeenergie-AB}
 \end{equation}
 Im zweiten Schritt wird unter Zufuhr der Verdampfungswärme
-\[
-	L(T + dT) = L(T) + dL
-\]
+\begin{equation}
+	L(T + \symup dT) = L(T) + \symup dL
+\end{equation}
 die Flüssigkeit verdampft. Das Volumen steigt dabei auf $V_D$, die Substanz hat dazu die
 Arbeit
-\[
-	-A_\text{BC} = (p + dp)(V_D + V_F)
-\]
+\begin{equation}
+	-A_\text{BC} = (p + \symup dp)(V_D + V_F)
+	\label{eqn:Kreisprozess-AB}
+\end{equation}
 Im Kühler wird der Dampf wieder auf $T$ abgekühlt, dabei wird analog zu \autoref{eqn:Wärmeenergie-AB}
 die Wärmeenergie 
-\[
-	-dQ_\text{CD} = C_D dT
-\]
-abgegeben.
+\begin{equation}
+	-\symup dQ_\text{CD} = C_D \symup dT
+\end{equation}
+abgegeben. Weil die Probe hier nun Gasförmig ist, muss die Molwärme des Dampfes $C_D$
+verwendet werden.
 \\
+Zuletzt kondensiert der Dampf am Punkt D unter Zufuhr mechanischer Energie. Im Schritt 
+$D \rightarrow A$ wird dann die Wärmemenge $L(T)$ abgegeben, es wird allerdings die
+externe Arbeit
+\begin{equation}
+	-A_\text{DA} = p(V_D - V_F)
+	\label{eqn:Kreisprozess-DA}
+\end{equation}
+benötigt.
+\\
+Werden die $\symup dQ_{ij}$ aufsummiert so liefert das die Gleichung
+\begin{equation}
+	\symup dQ_\text{ges} = C_F \symup dT - C_D \symup dT + L(T) + \symup dL - L(T).
+\end{equation}
+Dieser Ausdruck soll nach dem ersten Hauptsatz der Thermodynamik gleich der insgesamt
+geleisteten Arbeit sein. Aus \autoref{eqn:Kreisprozess-AB} \autoref{eqn:Kreisprozess-DA}
+folgt diese mit
+\[
+	\symup dp (V_D - V_F).
+\]
+Daraus folgt dann
+\begin{equation}
+	(C_F - C_D) \symup dT + \symup dL = (V_D - V_F) \symup dp.
+	\label{eqn:theo-trash1}
+\end{equation}
+Bei einem reversiblen Kreisprozess, wie er hier vorliegt, muss nach dem zweiten Hauptsatz
+die Summe der reduzierten Wärmemengen verschwinden. Für diesen Prozess folgt damit
+\begin{equation}
+	\frac{C_F \symup dT}{T} + \frac{L + \symup dL}{T + \symup dT} - \frac{C_D \symup dT}{T} - \frac{L}{T} = 0.
+\end{equation}
+Differentialausdrücke 2. Ordnung sollen vernachlässigt werden. Dann gilt hier
+\begin{equation}
+	(C_F - C_D) \symup dT + \symup dL - \frac{L \symup dT}{T} = 0.
+	\label{eqn:theo-trash2}
+\end{equation}
+Durch Vergleich mit \autoref{eqn:theo-trash1} folgt dann die 
+\textbf{Clausius-Clapeyronsche Gleichung}
+\begin{equation}
+	(V_D - V_F) \symup dp = \frac{L}{T} \symup dT.
+	\label{eqn:clausisus-clapeyron}
+\end{equation}
+Im Allgemeinen ist die Integration sehr schwierig, weil die Koeffizienten selbst
+komplizierte Funktionen von $T$ sein können. In diesem Experiment können allerdings
+Näherungen getroffen werden, die eine Integration erlauben.
+
+\subsection{Die Integration der Clausius-Clapeyronschen Gleichung unter vereinfachenden
+Annahmen}
+\label{sec:Die Integration der Clausius-Clapeyronschen Gleichung unter vereinfachenden
+Annahmen}
+In diesem Experiment gilt $T \ll T_\text{Kr}$, damit gilt näherungsweise
+\begin{enumerate}
+	\item $V_F \ll V_D$,
+	\item Für $V_D$ kann die ideale Gasgleichung verwendet werden
+		\[
+			V_D(p, T) = R \frac{T}{p},
+		\]
+	\item $L = const.$
+\end{enumerate}
+Damit vereinfacht sich \autoref{eqn:clausisus-clapeyron} zu
+\[
+	\frac{R}{p} \symup dp = \frac{L}{T^2} \symup dT.
+\]
+Diese ist einfach integrierbar, es folgt eine Exponentialfunktion für $p$ mit
+\[
+	p = p_0 \exp\left( -\frac{L}{R} \cdot \frac{1}{T} \right).
+\]
 
