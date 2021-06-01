@@ -54,12 +54,11 @@ Zu den ermittelten Winkeln ergeben sich nach \autoref{eqn:braggsche-bedingung} b
   \symup{\Delta}\theta_{K_\beta}  &= \SI{0.476}{\degree} \; .
 \end{align}
 
-
- 
+Mit diesen Winkeln können die entsprechenden Energien berechnet werden:
 \begin{align}
-  \symup{\Delta}\text{E}_{\text{FWHM}\alpha}&=165.63 \, \mathrm{V}   &\symup{\Delta}\text{E}_{\text{FWHM}\beta}&=205.58 \, \mathrm{V} \\
-  \text{A}_\alpha&=48.56  &\text{A}_\beta&=43.36 \\
-  \end{align}
+  \symup{\Delta}E_{K_\alpha} &= \SI{0.165}{\kilo\electronvolt} \\
+  \symup{\Delta}E_{K_\beta}  &= \SI{0.2}{\kilo\electronvolt} \; .
+\end{align}
 \noindent 
 Das Auflösungsvermögen kann nach der Formel
 \begin{equation*}
@@ -67,8 +66,8 @@ Das Auflösungsvermögen kann nach der Formel
 \end{equation*}
 berechnet werden, sodass sich die Werte
 \begin{align*}
-    A_{K_\alpha} &= \num{48.92} \\
-    A_{K_\beta}  &= \num{44.85} \\
+    A_{K_\alpha} &= \num{48.6} \\
+    A_{K_\beta}  &= \num{44.6} \\
 \end{align*}
 ergeben. \newline
 Für die Bestimmung der materialspezifischen Abschirmungskonstanten werden weitere Formeln für die Energien benötigt.
@@ -147,4 +146,34 @@ Auch hier lassen sich aus den K-Kanten die materialspezifischen Konstanten besti
   \end{tabular}
   \end{table}
 \noindent
-  
+
+\subsection{Moseley´sches Gesetz}
+Mit den erhaltenen Messpaaren aus Energie $E_K$ und den Ordnungszahlen Z (siehe \autoref{tab:mess}) wird nun das Moseley'sche Gesetz überprüft.
+Dazu wird eine Geradengleichung für $\sqrt{E_K}$ und Z berechnet:
+\begin{align}
+    E_\text{K} &= R h (z - \sigma)^2 \\
+    \Leftrightarrow
+    \sqrt{E_\text{K}} &= \underbrace{\sqrt{R h}}_a \cdot z - \underbrace{\sqrt{R h} \sigma_k}_b \; .
+  \label{eqn:mosely}
+\end{align}
+In \autoref{fig:mosely} sind die ermittelten Werte und die entsprechende Ausgleichsgerade dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/mosely.pdf}
+  \caption{$\sqrt{E_\text{K}}$ in Abhängigkeit von der Ordnungszahl Z mit Ausgleichsgeraden}
+  \label{fig:mosely}
+\end{figure}
+\noindent
+Eine lineare Ausgleichsrechnung ergibt für die Parameter der Geraden:
+\begin{align*}
+    a &= \SI{0.113}{\sqrt{\kilo\electronvolt}} \\
+    b &= \SI{-0.279}{\sqrt{\kilo\electronvolt}} \\
+\end{align*}
+Nach \autoref{eqn:mosely} ergibt sich dann für die Rydbergenergie:
+\begin{align*}
+  Rh = a^2 = \SI{12.769}{\electronvolt}
+\end{align*}
+Demnach beträgt die Rydbergfrequenz:
+\begin{align*}
+  R = \SI{3.09e15}{\hertz}
+\end{align*}

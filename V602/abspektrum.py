@@ -105,3 +105,37 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('build/Zink.pdf')
 plt.figure()
+
+
+E_K_z=9.60
+E_K_ga=10.32
+E_K_br=13.43
+E_K_r=15.12
+E_K_s=15.99
+Z = np.array ([30,31,35,37,38])
+E_K=np.array([E_K_z,E_K_ga,E_K_br,E_K_r,E_K_s])
+
+params, covariance_matrix = np.polyfit(Z, np.sqrt(E_K), deg=1, cov=True)
+
+x_plot = np.linspace(30, 40)
+plt.plot(
+    x_plot,
+    params[0] * x_plot + params[1],
+    ls='-', label='Ausgleichsgerade',  
+)
+plt.plot(Z, np.sqrt(E_K),".", label="Messdaten")
+plt.legend(loc="best")
+plt.ylabel(r'$\sqrt{E_K} \:/\: \sqrt{\si{\kilo\electronvolt}}$')
+plt.xlabel(f"Ordnungszahl Z")
+plt.tight_layout()
+plt.savefig('build/mosely.pdf')
+plt.close()
+#rconst=(params[0]**2)*e/(h*c)
+
+print(f"gerade={params[0]}x {params[1]}")
+#ry_m=(params[0]**2)/h
+#rconstabs=10973731.56816-((params[0]**2)*e/(h*c))
+#rconstrel=(10973731.56816-(params[0]**2)*e/(h*c))/10973731.56816
+
+
+#print(f"rydberg energie = {params[0]**2} rydberg const {rconst} ryconst abs{rconstabs} ryconst rel {rconstrel}")
