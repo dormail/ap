@@ -1,12 +1,155 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-\begin{figure}
+\subsection{Messung bis 1 Bar}
+In \autoref{tab:bis1} sind die ermittelten Messwerte für den Messbereich bis 1 Bar aufgelistet.
+\begin{table}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Messwerte bis 1 \si{\bar}}
+  \label{tab:bis1}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{ccc}
+  \toprule
+  $T_Wasser \,/\, \si{\celsius}$ & $p \,/\, \si{\milli\bar}$ & $T_Dampf\,/\, \si{\celsius}$\\
+  \midrule
+  21  & 35  & 23   \\
+  26  & 43  & 24   \\
+  30  & 50  & 30   \\
+  35  & 60  & 34.5 \\
+  40  & 76  & 39   \\
+  45  & 96  & 44.5 \\
+  50  & 121 & 49   \\
+  55  & 152 & 54   \\
+  60  & 178 & 57.5 \\
+  65  & 190 & 59   \\
+  70  & 208 & 62   \\
+  75  & 225 & 62   \\
+  80  & 230 & 67   \\
+  85  & 234 & 67   \\
+  90  & 247 & 70   \\
+  95  & 253 & 72   \\
+  100 & 260 & 75   \\
+  105 & 267 & 82   \\
+  120 & 275 & 88   \\
+  130 & 276 & 92   \\
+  145 & 288 & 98  \\ 
+  150 &400 &99\\
+  152& 600 &100\\
+  154 &800 &102\\
+  155 &1000 &105 \\  
+  \end{tabular} 
+\end{table}
+\noindent
+Die Formel für den Zusammenhang des Logarithmus des Dampfdruckes und der reziproken absoluten Temperatur ist:
+\begin{align}
+  \ln(\frac{p}{p_0})=- \frac{L}{R} \frac{1}{T}+const 
+\end{align}
+\noindent
+Bezogen auf diese Gleichung kann nun mit einem linearen Fit der Messwerte die Verdampfungswärme ermittelt werden.
+In \autoref{fig:plot1} sind Messwerte und die entsprechende Ausgleichsgerade abgebildet. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{build/plot1.pdf}
+  \caption{Messwerte für den Messbereich bis 1\si[]{\bar} mit Ausgleichsgerade }
+  \label{fig:plot1}
 \end{figure}
+\noindent
+Die Ausgleichsrechnung ergibt für die Gerade
+\begin{align}
+  \ln(\frac{p}{p_0})&=- m \frac{1}{T}+b \\
+  m&=(3647.434 \pm 223.452) \si{\kelvin}\\
+  b&=223.452 \pm 0.664 .
+\end{align}
+Mit der Gaskonstanten $\symup{R}$ lässt sich nun aus der Steigung ein Wert für $L$ bestimmen:
+\begin{align}
+    L&=m  \symup{R} \\
+    \leftrightarrow L&=\SI{30.326 \pm 1.858 }{\kilo\joule\per\mol} 
+\end{align}\\
+\noindent
+Um die innere Verdampfungswärme $L_i$, pro Molekül zu bestimmen, wird die äußere Verdampfungswärme $L_a$ berechnet, um $L_i$ aus der Formel $L=L_i+L_a$ zu bestimmen.\\
+Für die äußere Verdampfungswärme wird $T=373 \si{\kelvin}$, also $T\approx 100 \si{\celsius}$, angenommen, sodass sich $L_a$ über die Allgemeine Gasgleichung bestimmen lässt:
+\begin{equation}
+    L_a=pV=\symup{R} \cdot T = \SI{3101.2946}{\joule\per\mol} 
+\end{equation}
+Daraus folgt :
+\begin{align}
+    L_i&=L-L_a \\
+    L_i&=\SI{27.225\pm 1.858 }{\kilo\joule\per\mol}
+\end{align}
+Für die Berechnung pro Molekül in $\si{\electronvolt}$ wird $L_i$ noch durch die Avogadro-Konstante $\symup{N_A}$ und die Elementarladung dividiert:
+\begin{equation}
+    L_i=\SI{0.2822 \pm 0.0193}{\electronvolt} 
+\end{equation}
 
+\subsection{Messung 1 bis 15 Bar}
+Die gemessenen Werte für den Messbereich von 1 Bar bis 15 Bar sind in \autoref{tab:bis15hz} aufgelistet.
+  \begin{table}[H]
+    \centering
+    \caption{Messwerte bis 15 Hz}
+    \label{tab:bis15hz}
+    \begin{tabular}{ll}
+      \toprule
+      $p \,/\, \si{\bar}$ & $T\,/\, \si{\celsius}$\\
+      \midrule
+    1  & 117   \\
+    2  & 130   \\
+    3  & 140   \\
+    4  & 149   \\
+    5  & 156   \\
+    6  & 161   \\
+    7  & 167   \\
+    8  & 171   \\
+    9  & 176   \\
+    10 & 180   \\
+    11 & 184   \\
+    12 & 188   \\
+    13 & 191   \\
+    14 & 194.5 \\
+    15 & 197  
+    \end{tabular}
+    \end{table}
+\noindent
+In diesem Teil wird zuerst die Clausius-Clapeyronsche Gleichung nach der Verdampfungswärme $L$ umgestellt:
+    \begin{equation}
+        L= T \cdot (V_D-V_F) \frac{\symup{d}p}{\symup{d}T}
+        \label{eqn:clausL}
+    \end{equation}
+Da der Sättigunsdampfdruck hier nicht mehr vom Volumen abhängig ist, lässt sich $V_D$ nicht 
+über die Allgemeine Gasgleichung bestimmen. Stattdessen wird folgende Näherung genutzt:
+\begin{align}
+  \symup{R}\cdot T &= \left( p + \frac{A}{V_D^2}\right)\cdot V_D  &
+   &\text{mit} &
+   A&=\SI{0.9}{\joule\cubic\metre\per\mol\squared} \\
+   \implies V_D&=\frac{\symup{R}\cdot T}{2p} \pm \sqrt{\frac{\symup{R}^2\cdot T^2}{4p^2}-\frac{A}{p}} 
+   \intertext{Da $V_F$ vernachlässigbar ist, kann L wie folgend berechnet werden:}
+   L&=T\left(\frac{\symup{d}p}{\symup{d}t}\frac{\symup{R}\cdot T}{2p} \pm\sqrt{\frac{\symup{R}^2\cdot T^2}{4p^2}-\frac{A}{p}}\right)\frac{\symup{d}p}{\symup{d}t} \nonumber\\
+   L&=\frac{T}{p}\left( \frac{\symup{R} \cdot T}{2} \pm\sqrt{\frac{\symup{R}^2\cdot T^2}{4}-Ap} \right)\frac{\symup{d}p}{\symup{d}t} \label{eqn:ohnedp}
+   \intertext{Um $\frac{\symup{d}p}{\symup{d}t}$ zu nähern, wird eine Fit-Funktion 3.Grades
+   für die Temperatur $T$ und den Druck $p$ bestimmt. Diese wird anschließend differenziert.}  \nonumber
+\end{align}    
 
-Siehe \autoref{fig:plot}!
+    Der Fit auf $p$ und seine dazugehörige Ableitung sind: 
+    \begin{align*}
+        p(T)&=a\cdot T^3+b\cdot T^2 + c\cdot T+d \\
+        \frac{\symup{d}p}{\symup{d}t}&=3a\cdot T^2+2b\cdot T + c 
+    \end{align*}
+    Eine Ausgleichsrechnung in python mit der Funktion numpy.polyfit ergibt für die Parameter der Ausgleichskurve:
+  
+    \begin{align}
+      a	&= (0.000007337 \pm 0.000001827) & \si{\bar\per\cubic\kelvin}\\
+      b	&= (-0.007780 \pm 0.002363) & \si{\bar\per\kelvin\squared}\\
+    c	&=(2.782  \pm 1.017 )&  \si{\bar\per\kelvin}\\
+    d	&=(-336.017  \pm 145.664) & \si{\bar}
+  \end{align}
+  In \autoref{fig:plot2} sind die ermittelte Ausgleichskurve und die entsprechenden Messwerte dargestellt.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\textwidth]{build/plot2.pdf}
+      \caption{Messwerte für den Messbereich bis 15\si[]{\bar} mit Ausgleichskurve}
+      \label{fig:plot2}
+    \end{figure}
+    \noindent
+    Einsetzen der Fit-Funktionen in \autoref{eqn:ohnedp} führt zu:
+    \begin{equation}
+        L(T)=\left( \frac{\symup{R} \cdot T}{2} \pm\sqrt{\frac{\symup{R}^2\cdot T^2}{4}-Ap} \right)\frac{3a\cdot T^3+2b\cdot T^2 + c\cdot T}{a\cdot T^3+b\cdot T^2 + c\cdot T+d}
+        \label{eqn:mitdp}
+    \end{equation}
