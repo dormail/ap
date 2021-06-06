@@ -1,0 +1,10 @@
+# phi Phasenfaktor
+# U Spannung <-> doppelt Amplitude in Volt
+phi,U
+0,38
+60,27
+120,27
+180,-38
+240,-28
+300,-28
+360,38
