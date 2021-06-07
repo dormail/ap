@@ -33,6 +33,10 @@ x = np.linspace(-1, 6.3)
 plt.plot(x, f(x, a, b, c, d),
         color='k',
         label='Curve Fit')
+plt.plot(x, a * np.cos(x),
+        color='r',
+        ls='--',
+        label='Theoriekurve')
 
 plt.legend()
 plt.xlabel(r'$\phi$')
