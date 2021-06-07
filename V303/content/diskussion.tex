@@ -1,2 +1,52 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Diskussion der Phasenahängigkeit}
+\label{sec:Diskussion der Phasenahängigkeit}
+Im ersten Teil wurde der Zusammenhang zwischen Referenzphase und Amplitude untersucht. Die
+Messdaten (\autoref{tab:messdaten-phase}) sind konsistent mit der Periodizitätsbedingung
+\begin{equation}
+	U(\phi) = U(\phi + 2\pi) \approx -U(\phi + \pi).
+\end{equation}
+Dies spiegelt sich auch im Fitparameter $b = 0,96\pm0,12 \approx 1$ wieder. Problematisch
+stellte sich die Identifikation eines Cosinus dar. Fit- und Theoriekurve sind um einen
+Phasenfaktor von $\Delta \phi \approx \pi/4$ verschoben. Dies lässt sich auf den
+Koeffizient $c = 0,86 \pm 0,49 \approx \pi / 4$ schieben. Um aus dem Sinus der
+Fitfunktion einen Cosinus zu erhalten wäre fast das doppelte $c_\text{Theo} = \pi/2 \approx
+1,57$ nötig gewesen.
+\\
+Die Skalenfaktoren in y-Richtung $a$ und $d$ stimmen mit der optischen Beobachtung einer
+geringen y-Verschiebung überrein. In den Fitparametern wird das durch das
+Verhältniss der Parameter mit $d \ll b$ deutlich.
+\\
+Für eine exaktere Bestimmung wären mehr Messwerte nötig gewesen, wobei dann jedoch das
+Aliasing problematisch werden würde.
+
+\subsection{Diskussion zur Diodenintensität}
+\label{sec:Diskussion zur Diodenintensität}
+Im dritten Teil wurde der Abfall der Diodenintensität in Abhängigkeit von der
+Beobachterdistanz $d$ untersucht. Dabei wurden die zwei Funktionen
+\begin{equation}
+	U(d) = = \frac{a}{d} + b,
+	\qquad
+	a = (637 \pm 51,2) \, \frac{\si{\volt}}{\si{\centi\meter}}
+	\quad
+	b = (-20,7 \pm 3,5) \, \si{\volt}
+\end{equation}
+und 
+\begin{equation}
+	g(d) = \frac{a^\prime}{d^2} + b^\prime
+	\qquad
+	a^\prime = (4988 \pm 147,4) \, \frac{\si{\volt}}{\si{\centi\meter}}
+	\quad
+	b^\prime = (-3 \pm 0,82) \, \si{\volt}
+\end{equation}
+berechnet. Optisch ist die zweite Kurve sehr viel näher an den Messwerten in
+\autoref{fig:plot-diode} dran. Auch sind die relativen Unsicherheiten sehr viel kleiner.
+Damit konnte die $1/x$-Gesetzmäßigkeit experimentell nicht bestätigt werden.
+\\
+Auffällig sind bei beiden Fits die Werte $b < b^\prime < 0$. Die entspräche einem Raum mit
+negativem Untergrund, welcher offensichtlich nicht möglich ist. Die Messung sollte
+wahrscheinlich unter besseren Bedingungen (Raum verdunkeln) durchgeführt werden, um
+mögliche Fehlerquellen auszuschließen. 
+
