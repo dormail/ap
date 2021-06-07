@@ -7,6 +7,9 @@ build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 build/phase.pdf: phase.py daten/phase.csv
 	TEXINPUTS=$$(pwd): python phase.py
 
+build/diode.pdf: Diode.py daten/Diode.txt
+	TEXINPUTS=$$(pwd): python Diode.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/phase.pdf
 
