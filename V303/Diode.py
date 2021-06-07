@@ -8,7 +8,7 @@ d, U = np.genfromtxt('daten/Diode.txt', unpack=True)
 
 # curve fit
 def f(d, a, b):
-    return a / d + b
+    return a / d**1 + b
 
 popt, pcov = curve_fit(f, d, U)
 a, b = popt[:]

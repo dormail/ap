@@ -1,15 +1,63 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Untersuchung der Phasenabhänigkeit der Ausgangsspannung}
-\label{sec:Untersuchung der Phasenabhänigkeit der Ausgangsspannung}
+\subsection{Untersuchung der Phasenabhängigkeit der Ausgangsspannung}
+\label{sec:Untersuchung der Phasenabhängigkeit der Ausgangsspannung}
 Im ersten Teil wurde der Zusammenhang zwischen Ausgangsspannung und der Phase der
 Referenzspannung untersucht. Dabei wurden sieben Messwerte aufgenommen, welche in
-\autoref{fig:plot1} dargestellt sind.
+\autoref{fig:plot-phase} dargestellt sind.
 \begin{figure}
-  \centering
-  \includegraphics{phase.pdf}
-  \caption{Messdaten und Curv Fit.}
-  \label{fig:plot1}
+	\centering
+	\includegraphics{phase.pdf}
+	\caption{Messdaten und Curve Fit für den Zusammenhang zwischen Ausgangsspannung und
+	Phase der Referenzspannung.}
+	\label{fig:plot-phase}
 \end{figure}
 
+\subsection{Messung der Lichtintensität einer LED}
+\label{sec:Messung der Lichtintensität einer LED}
+Mit der in \autoref{sec:Durchführung} beschriebenen Apparatur wurden die in 
+\autoref{tab:messdaten-led} aufgenommen. Aufgrund der Ausbreitung der Lichtwellen wird
+hier eine Fitfunktion der Form
+\begin{equation}
+	f(d) = \frac{a}{d} + b
+\end{equation}
+verwendet.\\
+Der Curve Fit aus scipy hat dabei die Parameter
+\begin{equation}
+	a = (637 \pm 51.2) \frac{\si{\volt}}{\si{\centi\meter}}
+	\qquad
+	b = (-20.7 \pm 3.5) \si{\volt}
+\end{equation}
+gefunden.
+\begin{table}
+	\centering
+	\caption{Messergebnisse zur Lichtintensität der LED.}
+	\label{tab:messdaten-led}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c}
+		\toprule
+		$d / (\si{\centi\meter})$ & $U / \si{\volt}$ \\
+		\midrule
+		9,55         &           54 \\
+		11           &           38 \\
+		12           &           30 \\
+		13           &           26 \\
+		14           &           20 \\
+		15           &           18 \\
+		17           &           16 \\
+		20           &           10 \\
+		25           &           5  \\
+		30           &           3  \\
+		35           &           2  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Die Messdaten sowie Ausgleichskurve sind in \autoref{fig:plot-diode} dargestellt.
+\begin{figure}
+	\centering
+	\includegraphics{diode.pdf}
+	\caption{Messdaten und Curve Fit der Lichtintensität in Abhängigkeit von der
+	Distanz.}
+	\label{fig:plot-diode}
+\end{figure}

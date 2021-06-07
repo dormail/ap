@@ -11,7 +11,7 @@ build/diode.pdf: Diode.py daten/Diode.txt
 	TEXINPUTS=$$(pwd): python Diode.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/phase.pdf
+build/main.pdf: build/phase.pdf build/diode.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
