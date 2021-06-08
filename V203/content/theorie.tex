@@ -1,0 +1,158 @@
+\section*{Zielsetzung}
+\label{sec:Zielsetzung}
+In diesem Versuch soll der Übergang zwischen den Phasen flüssig und gasförmig quantitativ
+untersucht werden. Ziel ist es, dabei die Dampfdruckkurve von Wasser im Bereich von
+$\SI{30}{\milli\bar}$ bis $\SI{15}{\bar}$ zu bestimmen.
+
+\section{Theorie}
+\label{sec:Theorie}
+Der anfangs verwendete Begriff der ``Phase`` beschreibt hierbei einen räumlich
+abgegrenzten Bereich, in dem sich ein Stoff in einem physikalisch homogenen Zustand
+befindet. Anschauliche Beispiele sind die Aggregatszustände.
+\\
+Die Unterteilung dieser Phasen kann im Zustandsdiagramm stattfinden, wo der Druck $p$
+gegen die Temperatur $T$ aufgetragen wird. Für Wasser lassen sich dann mit drei Kurven
+die drei Aggregatszustände abgrenzen:
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=8cm]{images/Zustandsdiagramm.png}
+	\caption{Zustandsdiagramm des Wassers (nur qualitativ) \cite{anleitung}}
+	\label{fig:zustandsdiagramm}
+\end{figure}
+\noindent
+Offensichtlich kann innerhalb eines Aggregatszustandes $p$ und $T$ frei gewählt werden
+(solange die Kombination noch im entsprechenden Zustand liegt), das System hat also zwei Freiheitsgrade.
+Sind Druck und Temperatur jedoch so, dass der Zustand nahe an einer der Kurven ist, ändert
+sich das. Dort existieren zwei Phasen nebeneinander. Für die sog. \textbf{Dampfdruckkurve}, die
+zwischen Tripelpunkt und kritischem Punkt verläuft und die Aggregatszustände flüssig und
+gasförmig trennt, hat das System dann auch nur noch einen Freiheitsgrad.
+\\
+Der Verlauf folgt hauptsächlich aus der \textbf{Verdampfungswärme $L$}, welche eine
+charakteristische Eigenschaft für einen Stoff ist. Problematisch ist, dass $L$ nicht
+konstant ist, sondern selbst auch temperaturabhängig ist. Es existiert jedoch ein
+beschränkter Bereich, wo $L$ nahezu konstant ist. Dieser Bereich ist in diesem Versuch
+von Interesse; dort soll die Dampfdruckkurve aufgenommen und $L$ bestimmt werden.
+
+\subsection{Die mikroskopischen Vorgänge bei der Verdampfung und Kondensation}
+\label{sec:Die mikroskopischen Vorgänge bei der Verdampfung und Kondensation}
+Wird ein Gefäß mit Flüssigkeit evakuiert, so wird kurz nach der Evakuierung der Druck
+wieder ansteigen. Das lässt sich dadurch erklären, dass ein Teil der Flüssigkeit in die
+gasförmige Phase übergegangen ist. Dafür muss eine Arbeit gegen die Molekularkräfte aufgebracht
+werden, welche aus dem Wärmevorrat der Flüssigkeit entnommen wird. Die für die Umwandlung
+von einem Mol Flüssigkeit in Dampf gleicher Temperatur wird als molare Verdampfungswärme
+$L$ bezeichnet. Die gasförmig frei beweglichen Moleküle können aber auch wieder auf die
+Flüssigkeit treffen und dann teilweise kondensieren. Dabei geben sie ihre
+Verdampfungswärme auch wieder ab. Beide Prozesse sind zufallsverteilt; nach längerer Zeit
+kann sich jedoch ein Gleichgewicht einstellen, wo dann die Verdampfungsrate genau so hoch
+ist wie die Kondensationsrate. Im Gleichgewichtszustand ist der Druck konstant, welcher
+dann als \textbf{Sättigungsdampfdruck} bezeichnet wird. Da bei höheren Temperaturen die
+Geschwindigkeitskurve der Moleküle in der Flüssigkeit auch ins schnellere verschoben wird,
+benötigen diese nicht mehr so viel Energie um auszutreten. Daher steigt der
+Sättigungsdruck mit der Temperatur an. 
+\\
+Der Sättigungsdampfdruck ist allerdings nicht volumenabhängig. Wird das Gasvolumen
+vergrößert, so verdunstet auch mehr Flüssigkeit und es wird der gleiche Druck im
+Gleichgewichtszustand erreicht.
+
+\subsection{Ableitung einer Differentialgleichung für die Dampfdruckkurve}
+\label{sec:Ableitung einer Differentialgleichung für die Dampfdruckkurve}
+Der Kreisprozess, bestehend aus isothermer und isobarer Verdampfung und Kondensation, ist
+in \autoref{fig:kreisprozess.png} dargestellt.
+\begin{figure}
+	\centering
+	\includegraphics[height=8cm]{images/kreisprozess.png}
+	\caption{Darstellung eines Kreisprozesses im pV-Diagramm, bei dem ein Stoff verdampft und wieder
+	kondensiert. \cite{anleitung}}
+	\label{fig:kreisprozess.png}
+\end{figure}
+Der Kreisprozess startet am Punkt A, wo nur Flüssigkeit bei Temperatur $T$ und Druck $p$
+vorhanden ist. Wird eine Wärmemenge $\symup dQ_\text{AB}$ hinzugefügt, so gilt mit der Molwärme
+der Flüssigkeit $C_F$ 
+\begin{equation}
+	dQ_\text{AB} = C_F \symup dT.
+	\label{eqn:Wärmeenergie-AB}
+\end{equation}
+Im zweiten Schritt wird unter Zufuhr der Verdampfungswärme
+\begin{equation}
+	L(T + \symup dT) = L(T) + \symup dL
+\end{equation}
+die Flüssigkeit verdampft. Das Volumen steigt dabei auf $V_D$, die Substanz hat dazu die
+Arbeit
+\begin{equation}
+	-A_\text{BC} = (p + \symup dp)(V_D + V_F)
+	\label{eqn:Kreisprozess-AB}
+\end{equation}
+Im Kühler wird der Dampf wieder auf $T$ abgekühlt, dabei wird analog zu \autoref{eqn:Wärmeenergie-AB}
+die Wärmeenergie 
+\begin{equation}
+	-\symup dQ_\text{CD} = C_D \symup dT
+\end{equation}
+abgegeben. Weil die Probe hier nun Gasförmig ist, muss die Molwärme des Dampfes $C_D$
+verwendet werden.
+\\
+Zuletzt kondensiert der Dampf am Punkt D unter Zufuhr mechanischer Energie. Im Schritt 
+$D \rightarrow A$ wird dann die Wärmemenge $L(T)$ abgegeben, es wird allerdings die
+externe Arbeit
+\begin{equation}
+	-A_\text{DA} = p(V_D - V_F)
+	\label{eqn:Kreisprozess-DA}
+\end{equation}
+benötigt.
+\\
+Werden die $\symup dQ_{ij}$ aufsummiert so liefert das die Gleichung
+\begin{equation}
+	\symup dQ_\text{ges} = C_F \symup dT - C_D \symup dT + L(T) + \symup dL - L(T).
+\end{equation}
+Dieser Ausdruck soll nach dem ersten Hauptsatz der Thermodynamik gleich der insgesamt
+geleisteten Arbeit sein. Aus \autoref{eqn:Kreisprozess-AB} \autoref{eqn:Kreisprozess-DA}
+folgt diese mit
+\[
+	\symup dp (V_D - V_F).
+\]
+Daraus folgt dann
+\begin{equation}
+	(C_F - C_D) \symup dT + \symup dL = (V_D - V_F) \symup dp.
+	\label{eqn:theo-trash1}
+\end{equation}
+Bei einem reversiblen Kreisprozess, wie er hier vorliegt, muss nach dem zweiten Hauptsatz
+die Summe der reduzierten Wärmemengen verschwinden. Für diesen Prozess folgt damit
+\begin{equation}
+	\frac{C_F \symup dT}{T} + \frac{L + \symup dL}{T + \symup dT} - \frac{C_D \symup dT}{T} - \frac{L}{T} = 0.
+\end{equation}
+Differentialausdrücke 2. Ordnung sollen vernachlässigt werden. Dann gilt hier
+\begin{equation}
+	(C_F - C_D) \symup dT + \symup dL - \frac{L \symup dT}{T} = 0.
+	\label{eqn:theo-trash2}
+\end{equation}
+Durch Vergleich mit \autoref{eqn:theo-trash1} folgt dann die 
+\textbf{Clausius-Clapeyronsche Gleichung}
+\begin{equation}
+	(V_D - V_F) \symup dp = \frac{L}{T} \symup dT.
+	\label{eqn:clausisus-clapeyron}
+\end{equation}
+Im Allgemeinen ist die Integration sehr schwierig, weil die Koeffizienten selbst
+komplizierte Funktionen von $T$ sein können. In diesem Experiment können allerdings
+Näherungen getroffen werden, die eine Integration erlauben.
+
+\subsection{Die Integration der Clausius-Clapeyronschen Gleichung unter vereinfachenden
+Annahmen}
+\label{sec:Die Integration der Clausius-Clapeyronschen Gleichung unter vereinfachenden
+Annahmen}
+In diesem Experiment gilt $T \ll T_\text{Kr}$, damit gilt näherungsweise
+\begin{enumerate}
+	\item $V_F \ll V_D$,
+	\item Für $V_D$ kann die ideale Gasgleichung verwendet werden
+		\[
+			V_D(p, T) = R \frac{T}{p},
+		\]
+	\item $L = const.$
+\end{enumerate}
+Damit vereinfacht sich \autoref{eqn:clausisus-clapeyron} zu
+\[
+	\frac{R}{p} \symup dp = \frac{L}{T^2} \symup dT.
+\]
+Diese ist einfach integrierbar, es folgt eine Exponentialfunktion für $p$ mit
+\[
+	p = p_0 \exp\left( -\frac{L}{R} \cdot \frac{1}{T} \right).
+\]
+
