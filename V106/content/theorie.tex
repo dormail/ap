@@ -1,4 +1,45 @@
+\section*{Zielsetzung}
+\label{sec:Zielsetzung}
+In diesem Versuch sollen verschiedene Phänomene, die bei gekoppelten Pendeln auftreten,
+untersucht werden. Im Fokus steht dabei die Schwebung.
+
 \section{Theorie}
 \label{sec:Theorie}
+Wichtige Kenngrößen beim Pendel sind die Fadenlänge $l$ und Masse $m$. Wird das Pendel
+ausgelenkt, so sorgt die Gewichtskraft mit ihrer tangentialen Komponente für ein
+Drehmoment $M = D_p \cdot \phi$, wobei $\phi$ der Auslenkwinkel und $D_p$ die
+Winkelrichtgröße des Pendels sind. Bei kleinen Winkeln ($\phi \leq \SI{10}{\deg}$) 
+folgt aus der linearen Taylorentwicklung die Näherung $\sin(\phi) \approx \phi$.
+Damit lässt sich die Bewegungsgleichung des Pendels
+\begin{equation}
+	J \cdot \ddot \phi + D_p \phi = 0
+	\label{eqn:dgl-harm-osz}
+\end{equation}
+aufstellen, mit dem Trägheitsmoment $J$. Diese DGL wird durch eine harmonische Schwingung
+mit der Frequenz
+\begin{equation}
+	\omega = \sqrt{\frac{D_p}{J}} = \sqrt{\frac{g}{l}}.
+\end{equation}
+Bemerkenswert ist dabei die Tatsache, dass $\omega$ komplett unabhängig von Pendelmasse
+und dem Auslenkwinkel $\phi$ ist.
+\\
+In diesem Versuch sollen gezielt gekoppelte Pendel betrachtet werden; das wird hier durch
+eine Feder realisiert. Diese sorgt für ein zusätzliches Drehmoment 
+$M_1 = D_F (\phi_2 - \phi_1)$ aufs erste bzw. $M_2 = D_F (\phi_1 - \phi_2)$ auf das zweite
+Pendel. Aus \hyperref{eqn:dgl-harm-osz} folgt ein System gekoppelter Differentialgleichung 
+\begin{align}
+	J \ddot \phi_1 + D \phi_1 &= D_F (\phi_2 - \phi_1), \\
+	J \ddot \phi_2 + D \phi_2 &= D_F (\phi_1 - \phi_2).
+\end{align}
+Durch eine Variablensubstitution können diese entkoppelt werden und als zwei unabhängige,
+harmonische Schwingungen dargestellt werden. Die Frequenzen dieser zwei Schwingungen
+werden mit $\omega_1$ und $\omega_2$ bezeichnet, die Auslenkwinkel der Pendel $\alpha_i$.
+Abhängig von den Anfangsbedingungen $\alpha(t = 0)$ und $\dot \alpha(t = 0)$ können dabei
+drei Schwingungsarten auftreten.
 
-\cite{sample}
+\subsection{Auftretende Schwingungsarten}
+\label{sec:Auftretende Schwingungsarten}
+\begin{itemize}
+	\item \textbf{Gleichsinnige Schwingung:} $\alpha_1 = \alpha_2$ \\
+\end{itemize}
+
