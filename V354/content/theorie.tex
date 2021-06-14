@@ -1,0 +1,133 @@
+\section*{Zielsetzung}
+In diesem Versuch werden der effektive Dämpfungswiderstand, der Dämpfungswiderstand, bei dem der aperiodische Grenzfall auftritt sowie die Frequenzabhängigkeit gedämpfter und erzwungener Schwingungen bestimmt. Dazu wird ein elektrischer Serienschwingkreis untersucht. 
+
+\section{Theorie}
+\label{sec:Theorie}
+\subsection{Gedämpfte Schwingung}
+In \autoref{fig:rlc} ist die prinzipielle Schaltung eines gedämpften Serienschwingkreises dargestellt. 
+\begin{figure}[H]
+    \centering
+    \includegraphics{bilder/rlc.JPG}
+    \caption{Schaltung eines gedämpften Serienschwingkreises. \cite{sample}}
+    \label{fig:rlc}
+  \end{figure}
+\noindent 
+Durch diese Schaltung wird eine gedämpfte Schwingung der Energie realisiert, die
+zwischen den beiden Speichern (Spule L und Kapazität C) hin und her pendelt. Der
+Widerstand R sorgt für die Dämpfung der Schwingung, indem er elektrische Energie
+irreversibel in Wärmeenergie umwandelt. Für diese Schaltung kann mit dem 2. Kirchhoffschen
+Gesetz eine Differentialgleichung (DGL) ermittelt werden.
+
+\begin{equation}
+    U_{\symup{R}} + U_{\symup{C}} + U_{\symup{L}}   = 0     
+    \label{eqn:masche}
+\end{equation}
+
+\noindent Die Spannungsbeziehungen für die 3 Bauelemente sind durch die Beziehungen
+    \begin{align}
+        U_{\symup{R}} & = RI \\
+        U_{\symup{C}} & = \frac{Q}{C}\\
+        U_{\symup{L}} & = L \cdot \symup{\frac{d}{dt}}I 
+    \end{align}
+\noindent gegeben. 
+Mit diesen Beziehungen und $I=\symup{\frac{d}{dt}}Q$ kann die DGL für die Schaltung mit einmaligem Ableiten aufgestellt werden:
+\begin{align}
+        L  \symup{\frac{d}{dt}}I + RI + \frac{Q}{C} & = 0 \\
+       \iff \symup{\frac{d^2}{dt^2}}I + \frac{R}{L} \symup{\frac{d}{dt}}I + \frac{1}{LC}I & = 0 
+        \label{eqn:dgl}
+\end{align}
+    
+\noindent Die DGL kann mit einem komplexen $\symup{e}$-Funktionsansatz gelöst werden.
+    \begin{equation}
+        I(t) = A \cdot \symup{e}^{j \tilde{w} t}
+        \label{eqn:dgl2}
+    \end{equation}
+
+    \begin{equation}
+        \tilde{\omega}_{1,2} = j \frac{R}{2L} \pm \sqrt{\frac{1}{LC}-\frac{R^2}{4L}} 
+        \label{eqn:dgl3}
+    \end{equation}
+    
+    \noindent Das heißt $I(t)$ lässt sich durch folgende Gleichung ausdrücken:
+    \begin{equation}
+        I(t) = A_1 \cdot \symup{e}^{j \tilde{w}_1t} + A_2 \cdot \symup{e}^{j\tilde{w}_2 t} 
+    \end{equation}
+
+\noindent Es lassen sich nun 3 unterschiedliche Fälle für die Lösung der DGL, in Abhängigkeit des Wurzelterms in \autoref{eqn:dgl3}, unterscheiden. 
+Im ersten Fall ist $\frac{1}{LC} > \frac{R²}{4L²}$ und die Wurzel in \autoref{eqn:dgl3} bleibt reell. Dieser Fall wird als Schwingfall bezeichnet. Der typische Verlauf der Stromstärke für diesen Fall ist in \autoref{fig:daempf} dargestellt.
+\begin{figure}[H]
+    \centering
+    \includegraphics{bilder/daempf.jpg}
+    \caption{Qualitativer Verlauf der Stromstärke einer gedämpften Schwingung abhängig von der Zeit. \cite{sample}}
+    \label{fig:daempf}
+  \end{figure}
+\noindent
+Die in \autoref{fig:daempf} gestrichelt gezeichnete Einhüllende der Schwingung ist eine e-Funktion der Form
+\begin{equation*}
+    \pm U_0 e^{-2\pi\mu t} \\ \text{.}
+    \label{eqn:einh}
+\end{equation*}
+\noindent
+Für den zweiten Fall gilt:
+\begin{equation}
+    \frac{1}{LC} < \frac{R^2}{4L^2} 
+\end{equation}
+
+\noindent In diesem Fall ist $\tilde{\omega} \in \mathbb{C}$.
+Den Fall
+
+\begin{align*}
+\frac{1}{LC} &= \frac{R²}{4L²}\\
+\iff R &= 2\sqrt{\frac{L}{C}}
+\end{align*}
+
+\noindent bezeichnet man als aperiodischen Grenzfall. In diesem Fall bewegt sich $I(t)$ ohne 
+Überschwingen am schnellsten gegen 0. 
+\subsection{Erzwungene Schwingung}
+Um erzwungene Schwingungen mit einem elektrischen Schwingkreis zu realisieren, kann die Schaltung aus \autoref{fig:rlc} zu der Schaltung aus \autoref{fig:erzwungen} erweitert werden. Hier sorgt eine Spannungsquelle mit sinusförmiger Wechselspannung für die äußere Anregung.
+\begin{figure}[H]
+    \centering
+    \includegraphics{bilder/erzwungen.JPG}
+    \caption{Schaltung zur Erzeugung einer erzwungenen Schwingung mit einem elektrischen Schwingkreis. \cite{sample}}
+    \label{fig:erzwungen}
+  \end{figure}
+\noindent
+Die DGL dieser Schaltung lässt sich wieder über die Kirchhoffschen Gesetze aufstellen. Mit den bereits beschriebnen Zusammenhängen für die Spannungen an den einzelnen Bauelementen lässt sich die DGL außerdem für die Kondensatorspannung $U_C$ umschreiben:
+\begin{equation}
+    LC \frac{\text{d}^2 U_C}{\text{dt}^2} + RC \frac{\text{d} U_C}{\text{dt}} + U_C = U_0 e^{j \omega t}.
+\end{equation}
+    
+\noindent Auch diese DGL kann wieder mit einem komplexen $\symup{e}$-Funktionsansatz gelöst werden. Auf diese Weise erhält man für $U_C$:
+\begin{equation}
+    U_C(\omega) = \frac{U_0}{\sqrt{(1-LC\omega^2)^2 + \omega^2 R^2 C^2}}.
+    \label{eqn:uc}
+\end{equation}
+\noindent Wie an \autoref{eqn:uc} zu sehen ist, strebt $U_C$ für $\omega \to \infty $ gegen 0 und für $\omega \to 0$ gegen die Erregerspannung $U_0$. Außerdem existiert ein $\omega_{\text{res}}$, die sogenannte Resonanzfrequenz, bei der $U_C$ maximal wird. Als Wert für die Resonanzfrequenz kann
+\begin{equation}
+    \omega_{\text{res}} = \sqrt{\frac{1}{LC}-\frac{R^2}{2L^2}} 
+\end{equation}
+\noindent berechnet werden. Für den interessanten Fall von schwacher Dämpfung, also für
+\begin{equation*}
+    \frac{R^2}{2L^2} << \frac{1}{LC}
+\end{equation*}
+, nähert sich $\omega_{\text{res}}$ der Kreisfrequenz $\omega_0=\frac{1}{\sqrt{LC}}$ der ungedämpften Schwingung an. Für diesen Fall ergibt sich für $U_C$:
+\begin{equation}
+    U_{\text{C,max}} = \frac{1}{\omega_0 RC} U_0 = \frac{1}{R} \sqrt{\frac{L}{C}} U_0 
+    \label{eqn:ucmax}
+\end{equation}
+Wie an \autoref{eqn:ucmax} zu sehen ist, strebt $U_C$ für $R \to 0 $ gegen $\infty$. Dieser Fall wird auch als Resonanzkatastrophe bezeichnet. Der Faktor $\frac{1}{\omega_0 RC}$ ist die sogenannte Resonanzüberhöhung oder Güte q des Schwingkreises.
+\newline
+Die Güte q kann in ein Verhältnis zu der Breite der Resonanzkurve gebracht werden. Die Breite wird dabei über die Frequenzen  $\omega_+$ und $\omega_-$ charakterisiert, bei denen $U_C$ auf einen Anteil von $\frac{1}{\sqrt{2}}$ von ihrem Ursprungswert abgefallen ist. Mit \autoref{eqn:uc} und \autoref{eqn:ucmax} lässt sich dies als
+\begin{equation}
+    \frac{U_0}{\sqrt{2}} \frac{1}{\omega_0 RC} = \frac{U_0}{C \sqrt{\omega^2_{\pm} R^2 + ( \omega^2_{\pm}L - \frac{1}{C} ) }}
+\end{equation} 
+schreiben. Mit der Breite der Resonanzkurve
+\begin{equation}
+    \omega_+ - \omega_- \approx \frac{R}{L}.
+    \label{eqn:breite}
+\end{equation}
+ergibt sich dann als Zusammenhang von Güte und Breite:
+\begin{equation}
+    q = \frac{\omega_0}{\omega_+ - \omega_-}
+    \label{eqn:guete}
+\end{equation}
