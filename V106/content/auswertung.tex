@@ -1,12 +1,206 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+In diesem Abschnitt werden nacheinander die Messdaten zur gleichsinnigen, zur gegensinnigen und zur gekoppelten Schwingung ausgewertet. \newline
+Dabei werden einige Mittelwerte aus den Messwerten mit der Formel
+\begin{equation}
+    \bar{T}=\frac{1}{n}\sum_{\textrm{i=1}}^n T_\textrm{i} 
+    \label{eqn:mittelwert}
+\end{equation}
+\noindent
+berechnet. \newline
+Die Standardabweichung der Mittelwerte wird nach
+\begin{equation}
+    \sigma_T = \sqrt{\frac{\sum_{i=1}^{n}(T_i-\bar{T})^2}{n}}
+    \label{eqn:standardabweichung}
+\end{equation}
+\noindent
+berechnet. Die beiden Formeln beziehen sich jeweils auf n Messwerte.
 
-\begin{figure}
+\subsection{Gleichsinnige Schwingung}
+\label{sec:gleichsinnig}
+
+In \autoref{tab:gleichsinnig} sind die Messwerte für die gleichsinnige Schwingung aufgelistet. Diese Messwerte geben immer die Dauer von 3 Schwingungsperioden an, da die Messung über einen längeren Zeitraum weniger fehleranfällig ist. Die Werte $T_1$ und $T_2$ sind jeweils, für 2 unterschiedliche Pendellängen, die Werte für das rechte und das linke Pendel. Bei der gleichsinnigen Schwingung werden die Mittelwerte und Standardabweichungen dann aus den kombinierten Werten von $T_1$ und $T_2$ gebildet.    
+
+\begin{table}[H]
+    \centering
+    \caption{Messwerte und Schwingungsdauern für die gleichsinnige Schwingung, jeweils für 3 Schwingungsperioden.}
+    \label{tab:gleichsinnig}
+    \begin{tabular}{r S S S S}
+        \toprule
+        Pendellänge $l [\si{\meter}]$ &
+        \multicolumn{2}{S}{0.28} &
+        \multicolumn{2}{S}{0.76} \\
+        \cmidrule(lr){2-3}
+        \cmidrule(lr){4-5}
+        & {$T_1 [s]$}
+        & {$T_2 [s]$}
+        & {$T_1 [s]$}
+        & {$T_2 [s]$} \\
+        \midrule
+        & 3.49 & 3.49 & 4.96 & 4.91 \\
+        & 3.55 & 3.7  & 5.4  & 5.24 \\
+        & 3.73 & 3.39 & 5.16 & 5.2  \\
+        & 3.6  & 3.7  & 5.33 & 5.25 \\
+        & 3.72 & 3.73 & 5.21 & 5.17 \\
+        & 3.62 & 3.71 & 5.3  & 5.3  \\
+        & 3.51 & 3.63 & 4.82 & 5.04 \\
+        & 3.81 & 3.57 & 5.59 & 5.32 \\
+        & 3.72 & 3.68 & 5.49 & 6.54 \\
+        & 3.2  & 3.61 & 5.16 & 5.19 \\
+        & 3.59 & 3.36 & 4.9  & 5.31 \\
+        & 3.75 & 3.69 & 5.61 & 5.19 \\
+        & 3.84 & 3.65 & 5.31 & 5.2  \\
+        & 3.58 & 3.58 & 5.33 & 5.23 \\
+        & 3.4  & 3.73 & 5.14 & 5.34 \\
+        & 3.98 & 3.69 & 5.19 & 5.27 \\
+        & 3.52 & 3.59 & 5.27 & 5.07 \\
+        & 3.71 & 3.49 & 5.25 & 5.13 \\
+        & 3.51 & 3.45 & 5.42 & 5.35 \\
+        & 3.64 & 3.99 & 5.2  & 5.03 \\
+        \midrule
+        {Mittelwert} $\bar{T_+} [s]$&
+        \multicolumn{2}{S}{3.62} &
+        \multicolumn{2}{S}{5.26} \\
+        {Standardabweichung des Mittelwerts} $\sigma_{T_+} [s]$&
+        \multicolumn{2}{S}{0.15} &
+        \multicolumn{2}{S}{0.26} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
+Bezogen auf eine Schwingungsperiode ergeben sich für die gleichsinnige Schwingung also
+\begin{align}
+  T_{1,+}&=(1.21 \pm 0.050) \si{\second}\\
+  \text{und}& \nonumber\\
+  T_{2,+}&=(1.75 \pm 0.087) \si{\second} \text{.}
+\end{align}
+\noindent
+Zusätzlich lassen sich nach \autoref{eqn:T_+} für die beiden Schwingungdauern die Theoriewerte
+\begin{align}
+  T_{1,+,\text{th}}&=1.06 \si{\second}\\
+  \text{und}& \nonumber\\
+  T_{2,+,\text{th}}&=1.75 \si{\second} 
+\end{align}
+\noindent
+bestimmen.
+
+\subsection{Gegensinnige Schwingung}
+\label{sec:gegensinnig}
+Analog zu dem Vorgehen bei der gleichsinnigen Schwingung sind die Messwerte, Mittelwerte und Standardabweichungen zur gegensinnigen Schwingung in \autoref{tab:gegensinnig} aufgeführt.
+\begin{table}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{Messwerte und Schwingungsdauern für die gegensinnige Schwingung, jeweils für 3 Schwingungsperioden.}
+  \label{tab:gegensinnig}
+  \begin{tabular}{r S S}
+      \toprule
+      Pendellänge $l [\si{\meter}]$ &
+      0.28 &
+      0.76 \\ 
+      \cmidrule(lr){2-3}
+      & \multicolumn{2}{c}{$T_- [\si{\second}]$} \\
+      \midrule
+      & 2.19 & 4.43 \\
+ & 2.99 & 4.92 \\
+ & 2.52 & 4.88 \\
+ & 2.81 & 4.78 \\
+ & 2.57 & 4.93 \\
+ & 2.76 & 4.63 \\
+ & 2.66 & 5.35 \\
+ & 2.89 & 4.45 \\
+ & 2.62 & 4.96 \\
+ & 2.67 & 4.65 \\
+ & 2.82 & 4.87 \\
+ & 2.4  & 5.17 \\
+ & 2.75 & 4.91 \\
+ & 2.62 & 4.78 \\
+ & 2.47 & 4.76 \\
+ & 2.67 & 4.84 \\
+ & 2.34 & 4.78 \\
+ & 2.5  & 4.7  \\
+ & 2.72 & 4.85 \\
+ & 2.76 & 4.72 \\
+      \midrule
+      {Mittelwert} $\bar{T_-} [s]$                       & 2.64   & 4.82 \\
+      {Standardabweichung des Mittelwerts} $\sigma_{T_-} [s]$ & 0.19 & 0.21 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+\noindent Bezogen auf eine Schwingungsperiode ergeben sich für die gegensinnige Schwingung also
+\begin{align}
+  T_{1,-}&=(0,88 \pm 0,063) \si{\second}\\
+  \text{und}& \nonumber\\
+  T_{2,-}&=(1,61 \pm 0,07) \si{\second} \text{.}
+\end{align}
+\noindent
+Mit den ermittelten Werten kann nun nach \autoref{eqn:kopplungskonstante} die Kopplungskonstante K bestimmt werden.
+Für das $0.28m$ Pendel ergibt sich
+\begin{equation}
+  K_1=\frac{1.21^2-0.88^2}{1.21^2+0.88^2}=0.31
+\end{equation}
+\noindent
+und für das $0.76m$ Pendel erhält man:
+\begin{equation}
+  K_2=\frac{1.75^2-1.61^2}{1.75^2+1.61^2}=0.083
+\end{equation}
 
+\noindent Nach \autoref{eqn:t-} können nun die theoretischen Werte für $T_-$ bestimmt werden. Man erhält:
+\begin{align}
+  T_{1,-,\text{th}}&=1.03 \si{\second}\\
+  \text{und}& \nonumber\\
+  T_{2,-,\text{th}}&=1.73 \si{\second} 
+\end{align}
 
-Siehe \autoref{fig:plot}!
+\subsection{Gekoppelte Schwingung}
+\label{sec:gekoppelt}
+Die Messwerte, Schwingungsdauern und Schwebungsdauern für die gekoppelte Schwingung sind in \autoref{tab:gekoppelt} aufgeführt. Die Werte für die Schwingungsdauern beziehen sich wieder auf 3 Schwingungsperioden, während sich die Schwebungsperioden auf eine Periode der Schwebung beziehen.
+\begin{table}[H]
+  \centering
+  \caption{Schwingungsdauern $T$ und Schwebungsdauern $T_S$ der gekoppelten Schwingung.}
+  \label{tab:gekoppelt}
+  \begin{tabular}{r S S S S}
+      \toprule
+      Pendellänge $l  [\si{\meter}]$ &
+      \multicolumn{2}{S}{0.28} &
+      \multicolumn{2}{S}{0.76} \\
+      \cmidrule(lr){2-3}
+      \cmidrule(lr){4-5}
+      & {$T    [\si{\second}]$}
+      & {$T_S  [\si{\second}]$}
+      & {$T    [\si{\second}]$}
+      & {$T_S  [\si{\second}]$} \\
+      \midrule
+      & 2.41& 3.48 & 4.69 &19.18 \\
+      & 3.81 &3.85 & 6.74& 20.34 \\
+      & 3.04 &4.73 & 5.19 &20.05 \\
+      & 3.57 &4.01 & 4.64& 21.22 \\
+      & 3.65 &4.33 & 5.52 &19.31 \\
+      & 3.4 &4.1   & 5.14 &20.2  \\
+      & 3.8 &3.3   & 5.15 &20.75 \\
+      & 2.58 &3.91 & 5.08& 20.64 \\
+      & 2.82 &3.7  & 4.97 &19.61 \\
+      & 4.1 &4.02  & 5.3 &19.93  \\
+      & 3.45 &     & 4.57      & \\
+      & 3.53  &    & 5.44     &  \\
+      & 3.12   &   & 4.81    &   \\
+      & 2.52 &     & 4.73      & \\
+      & 3.44 &     & 5.01     &  \\
+      & 3.55  &    & 5.54    &   \\
+      & 3.7    &   & 4.74   &    \\
+      & 3.13    &  & 4.64  &     \\
+      & 3.34    &  & 5.3      &  \\
+      & 3.52    &  & 5.1     &   \\
+      \midrule
+      {Mittelwert [s]} &
+      3.32 & 3.94 & 5.12 & 20.12 \\
+      {Standardabweichung des Mittelwerts [s]} &
+      0.45& 0.39 & 0.47 & 0.61 \\
+      \bottomrule
+  \end{tabular}
+\end{table}
+\noindent Mit den berechneten Werten für $T_+$ und $T_-$ lassen sich nun nach \autoref{eqn:ts} die theoretischen Werte 
+\begin{align}
+  T_{S,1,\text{th}}&=36.393 \si{\second}\\
+  T_{S,2,\text{th}}&=151.375 \si{\second}
+\end{align}
+\noindent
+für die Schwebungsdauern der beiden Pendel berechnen.
