@@ -63,3 +63,58 @@ In \autoref{fig:plot1} sind die Messdaten grafisch dargestellt.
 	\label{fig:plot1}
 \end{figure}
 
+\subsection{Brechungsgesetz}
+\label{sec:Brechungsgesetz}
+Nun soll das Brechungsgesetz
+\begin{equation}
+	\frac{\sin\alpha}{\sin\beta} = n
+	\label{eqn:ausw:brechungsgesetz}
+\end{equation}
+untersucht werden. Das vorgehen ist ähnlich zu dem für das Reflexionsgesetz im vorherigen
+Abschnitt. Hier ist jedoch das Verhältnis des sinus zu Ein- und Brechungswinkel von
+Interesse. Die Messwerte, der sinus der Winkel sowie das Verhältnis der beiden Sinuswerte
+sind in \autoref{tab:messwerte-brechungssgesetz} gegeben.
+\begin{table}
+	\centering
+	\caption{Messwerte und Winkelverhältnis für das Brechungsgesetz. Die Winkel sind
+	in Grad.}
+	\label{tab:messwerte-brechungssgesetz}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c c}
+		\toprule
+		$\alpha$ &
+		$\beta$ &
+		$\sin\alpha$ &
+		$\sin\beta$ &
+		$\frac{\sin\alpha}{\sin\beta}$ \\
+		\midrule
+		30 & 19   & 0,500 & 0,326 & 1,536	\\
+		35 & 24   & 0,574 & 0,407 & 1,410	\\
+		40 & 26   & 0,643 & 0,438 & 1,466	\\
+		50 & 31   & 0,766 & 0,515 & 1,487	\\
+		55 & 34   & 0,819 & 0,559 & 1,465	\\
+		60 & 36   & 0,866 & 0,588 & 1,473	\\
+		70 & 39,5 & 0,940 & 0,636 & 1,477	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Das weitere Vorgehen ist ebenso analog. Mittelwert und Standartabweichung folgen gemäß
+\autoref{eqn:mittelwert} und \autoref{eqn:standardabweichung}, mit diesen lässt sich hier
+für der Brechungsindex
+\begin{equation}
+	n = 1,47 \pm 0,034
+	\label{eqn:brechung-exp}
+\end{equation}
+errechnen. Als Theoriewert folgt aus der Literatur
+\begin{equation}
+	n_\text{Theo} = 1,49.
+	\label{eqn:brechung-theo}
+\end{equation}
+Die für die Rechnung verwendeten Werte sind auch nochmals in \autoref{fig:plot2} dargestellt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/2.pdf}
+	\caption{Verhältnis der sinus Werte von Einfalls- und Brechungswinkel. Der
+	Theoriewert gemäß \autoref{eqn:brechung-theo}.}
+	\label{fig:plot2}
+\end{figure}
