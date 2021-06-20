@@ -121,11 +121,23 @@ Die für die Rechnung verwendeten Werte sind auch nochmals in \autoref{fig:plot2
 
 \subsection{Prisma}
 \label{sec:Prisma}
-
+In diesem Teil soll nun die Ablenkung $\delta$ von einem Prisma für zwei Wellenlängen
+bestimmt werden. Mit der Formel
+\begin{equation}
+	\delta = (\alpha_1 + \alpha2) - (\beta_1 + \beta_2)
+\end{equation}
+und dem Zusammenhang
+\begin{equation}
+	\beta_i = \arcsin\left(\frac{\sin\alpha_i}{n}\right),
+\end{equation}
+welcher direkt aus dem Snelliussches Brechungsgesetz folgt, lässt sich $\delta$ bestimmen.
+Die Messwerte sowie die Ergebnisse für die Ablenkung sind in \autoref{tab:messwerte-prisma}
+dargestellt. Die Abhängigkeit $\delta(\alpha_1)$ ist auch in \autoref{fig:plot4} grafisch
+dargestellt.
 \begin{table}
 	\centering
 	\caption{Messwerte und errechnete Werte für das Prisma.}
-	\label{tab:messwerte-brechungssgesetz}
+	\label{tab:messwerte-prisma}
 	\sisetup{table-format=2.1}
 	\begin{tabular}{c c c c c c c c}
 		\toprule
@@ -146,3 +158,26 @@ Die für die Rechnung verwendeten Werte sind auch nochmals in \autoref{fig:plot2
 		\bottomrule
 	\end{tabular}
 \end{table}
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/4.pdf}
+	\caption{Die errechneten Werte der Ablenkung in Abhängigkeit vom eingestellten
+	Einfallwinkel $\alpha_1$.}
+	\label{fig:plot4}
+\end{figure}
+
+\subsection{Beugung am Gitter}
+\label{sec:Beugung am Gitter}
+Für den letzten Teil wurden drei Gitter mit $100$, $300$ bzw. $600
+\,\text{Linien}/\si{\milli\meter}$ betrachtet. Die Gitterkonstanten sind jeweils die
+Kehrwerte mit
+\begin{equation}
+	d\left(100 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
+	= \SI{10}{\micro\meter}
+	\qquad
+	d\left(300 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
+	= \SI{3,3}{\micro\meter}
+	\qquad
+	d\left(600 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
+	= \SI{1,67}{\micro\meter}.
+\end{equation}
