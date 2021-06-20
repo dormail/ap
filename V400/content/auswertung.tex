@@ -4,11 +4,11 @@ Im nachfolgenden Teil sollen die Messdaten ausgewertet werden. Dazu werden die F
 Mittelwert und Standartabweichung
 \begin{equation}
 	\mu(T) = \bar{T}=\frac{1}{n}\sum_{\textrm{i=1}}^n T_\textrm{i}
-    \label{eqn:mittelwert}
+	\label{eqn:mittelwert}
 \end{equation}
 \begin{equation}
 	\sigma(T) = \sigma_T = \sqrt{\frac{\sum_{i=1}^{n}(T_i-\bar{T})^2}{n}}
-    \label{eqn:standardabweichung}
+	\label{eqn:standardabweichung}
 \end{equation}
 \noindent
 verwendet. Die beiden Formeln beziehen sich jeweils auf $n$ Messwerte.
@@ -118,3 +118,31 @@ Die für die Rechnung verwendeten Werte sind auch nochmals in \autoref{fig:plot2
 	Theoriewert gemäß \autoref{eqn:brechung-theo}.}
 	\label{fig:plot2}
 \end{figure}
+
+\subsection{Prisma}
+\label{sec:Prisma}
+
+\begin{table}
+	\centering
+	\caption{Messwerte und errechnete Werte für das Prisma.}
+	\label{tab:messwerte-brechungssgesetz}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c c c c c}
+		\toprule
+		$\alpha_1$ &
+		$\alpha_2^\text{rot}$ &
+		$\alpha_2^\text{grün}$ &
+		$\beta_1$ &
+		$\beta_2^\text{rot}$ &
+		$\beta_2^\text{grün}$ &
+		$\delta^\text{rot}$ &
+		$\delta^\text{grün}$ \\
+		\midrule
+		30 & 77 & 78   & 18,8 & 38,9 & 39,1 & 49,2 & 50,0	\\
+		35 & 65 & 66   & 21,7 & 35,8 & 36,1 & 42,5 & 43,1	\\
+		40 & 57 & 58   & 24,5 & 32,8 & 33,2 & 39,7 & 40,3	\\
+		45 & 51 & 52   & 27,1 & 30,1 & 30,6 & 38,8 & 39,3	\\
+		50 & 45 & 45,5 & 29,6 & 27,1 & 27,4 & 38,2 & 38,5	\\
+		\bottomrule
+	\end{tabular}
+\end{table}

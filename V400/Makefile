@@ -10,10 +10,14 @@ build/1.pdf: 1.py matplotlibrc header-matplotlib.tex | build
 build/2.pdf: 2.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python 2.py
 
+build/4.pdf: 4.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python 4.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 #build/main.pdf: build/plot.pdf
 build/main.pdf: build/1.pdf
 build/main.pdf: build/2.pdf
+build/main.pdf: build/4.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
