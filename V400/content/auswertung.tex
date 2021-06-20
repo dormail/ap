@@ -1,12 +1,65 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Im nachfolgenden Teil sollen die Messdaten ausgewertet werden. Dazu werden die Formeln für
+Mittelwert und Standartabweichung
+\begin{equation}
+	\mu(T) = \bar{T}=\frac{1}{n}\sum_{\textrm{i=1}}^n T_\textrm{i}
+    \label{eqn:mittelwert}
+\end{equation}
+\begin{equation}
+	\sigma(T) = \sigma_T = \sqrt{\frac{\sum_{i=1}^{n}(T_i-\bar{T})^2}{n}}
+    \label{eqn:standardabweichung}
+\end{equation}
+\noindent
+verwendet. Die beiden Formeln beziehen sich jeweils auf $n$ Messwerte.
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+\subsection{Reflexionsgesetz}
+\label{sec:Reflexionsgesetz}
+In diesem Teil soll das Reflexionsgesetz $\alpha_1 = \alpha_2$ überprüft werden. Es folgt
+direkt das Verhältnis 
+\begin{equation}
+	\frac{\alpha_1}{\alpha_2} = 1.
+\end{equation}
+Zu sechs verschiedenen Einfallswinkeln wurde der Ausfallwinkel gemessen, die Messdaten
+sowie das Winkelverhältnis
+sind in \autoref{tab:messwerte-reflexionsgesetz} angegeben.
+\begin{table}
+	\centering
+	\caption{Messwerte und Winkelverhältnis für das Reflexionsgesetz. Die Winkel sind
+	in Grad.}
+	\label{tab:messwerte-reflexionsgesetz}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c}
+		\toprule
+		$\alpha_1$ & $\alpha_2$ & $\frac{\alpha_1}{\alpha_2}$ \\
+		\midrule
+		20 & 19,5 & 0,975 \\
+		25 & 25,5 & 1,02  \\
+		29 & 29,5 & 1,017 \\
+		35 & 35,5 & 1,014 \\
+		40 & 41   & 1,025 \\
+		45 & 46   & 1,022 \\
+		50 & 51   & 1,02  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Aus den Werten für das Verhältnis lassen sich Mittelwert und Standartabweichung berechnen
+\begin{equation}
+	\mu\left(\frac{\alpha_1}{\alpha_2}\right) = 1,013 
+	\qquad
+	\sigma\left(\frac{\alpha_1}{\alpha_2}\right) = 0,016.
+	\label{eqn:ergebnis1}
+\end{equation}
+Damit folgt das experimentell bestimmte Winkelverhältnis von
+\begin{equation}
+	\frac{\alpha_1}{\alpha_2} = 1,013 \pm 0,016.
+\end{equation}
+In \autoref{fig:plot1} sind die Messdaten grafisch dargestellt.
+\begin{figure}[H]
+	\centering
+	\includegraphics{build/1.pdf}
+	\caption{Winkelverhältnis aus den Messdaten sowie Mittelwert, Standartabweichung
+	und Theoriewert $1$.}
+	\label{fig:plot1}
 \end{figure}
 
-
-Siehe \autoref{fig:plot}!

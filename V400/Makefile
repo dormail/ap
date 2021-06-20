@@ -4,6 +4,9 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python plot.py
 
+build/1.pdf: 1.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python 1.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 
