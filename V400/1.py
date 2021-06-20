@@ -35,7 +35,7 @@ plt.fill_between(xplot, mean - std, mean + std,
         label='Standartabweichung')
 
 plt.ylabel(r'$\alpha_1 / \alpha_2$')
-plt.xlabel(r'$\alpha_1$')
+plt.xlabel(r'$\alpha_1 / \text{deg}$')
 plt.legend()
 
 plt.savefig('build/1.pdf')

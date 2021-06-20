@@ -59,7 +59,7 @@ plt.fill_between(xplot, mean - std, mean + std,
         alpha=0.3,
         label='Standartabweichung')
 
-plt.xlabel(r'$\alpha$')
+plt.xlabel(r'$\alpha / \deg$')
 plt.ylabel(r'$\sin(\alpha) / \sin(\beta)$')
 plt.legend()
 
