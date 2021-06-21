@@ -181,3 +181,103 @@ Kehrwerte mit
 	d\left(600 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
 	= \SI{1,67}{\micro\meter}.
 \end{equation}
+Die Messwerte sind in den nachfolgenden Tabellen gegeben. Es wurde jeweils nach der linken
+und rechten Streuung getrennt, wodurch für jeden Lasen und jede Ordnung je zwei Winkel
+$\varphi_i$ gemessen wurden.
+\begin{table}
+	\centering
+	\caption{Messwerte zu Streuung an einem 100 Linien/mm Gitter. Die Winkel sind in
+	Grad}
+	\label{tab:messwerte-gitter100}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c c}
+		\toprule
+		Beugungsordnung $k$ &
+		$\varphi_1^\text{grün}$ &
+		$\varphi_2^\text{grün}$ &
+		$\varphi_1^\text{rot}$ &
+		$\varphi_2^\text{rot}$ \\
+		\midrule
+		1 & 3    & 3,2  &  3,8 & 3,8 \\
+		2 & 6    & 6,2  &  7,2 & 7,5 \\
+		3 & 9,1  & 9,5  & 11,1 & 11,1 \\
+		4 & 12,2 & 12,6 & 15   & 15 \\
+		5 & 15,5 & 16 \\
+		6 & 18,8 & 19,2 \\
+		7 & 22   & 22,8 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\begin{table}
+	\centering
+	\caption{Messwerte zu Streuung an einem 300 Linien/mm Gitter. Die Winkel sind in
+	Grad}
+	\label{tab:messwerte-gitter300}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c c}
+		\toprule
+		Beugungsordnung $k$ &
+		$\varphi_1^\text{grün}$ &
+		$\varphi_2^\text{grün}$ &
+		$\varphi_1^\text{rot}$ &
+		$\varphi_2^\text{rot}$ \\
+		\midrule
+		1 & 9    & 9,3  &  11   & 11 \\
+		2 & 18,2 & 19   &  22,2 & 22,8 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\begin{table}
+	\centering
+	\caption{Messwerte zu Streuung an einem 600 Linien/mm Gitter. Die Winkel sind in
+	Grad}
+	\label{tab:messwerte-gitter600}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c c c}
+		\toprule
+		Beugungsordnung $k$ &
+		$\varphi_1^\text{grün}$ &
+		$\varphi_2^\text{grün}$ &
+		$\varphi_1^\text{rot}$ &
+		$\varphi_2^\text{rot}$ \\
+		\midrule
+		1 & 18,8 & 19,5 & 23,5 & 22,8 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Für die Auswertung wurde zunächst aus zwei zugehörigen Winkeln $\varphi$ ($k_1 = k_2$ und gleiches Gitter,
+Laser) der Durchschnitt berechnet. Danach wurde mit der Formel 
+\begin{equation}
+	\lambda = d \frac{\sin\varphi}{k}
+	\label{eqn:ausw:beugungsmaxima}
+\end{equation}
+mit den jeweiligen Werten für $d$ für jedes Winkelpaar die Wellenlänge bestimmt. Zuletzt
+wurde von diesen Wellenlängen Mittelwert und Standartabweichung berechnet. Das ergab die
+Werte in \autoref{tab:ergebnisse5}.
+\begin{table}
+	\centering
+	\caption{Ergebnisse für die Wellenlängen der zwei Laser. Für 600 Linien/mm
+	ist nur ein Wertepaar in die Rechnung eingeflossen, weswegen dort keine sinnvolle
+	Berechnung der Standartabweichung möglich ist.}
+	\label{tab:ergebnisse5}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c c}
+		\toprule
+		&
+		$\lambda^\text{rot}$ &
+		$\lambda^\text{grün}$ \\
+		\midrule
+		$100 \, \text{Linien} / \si{\milli\meter}$ &
+		(648 \pm 9) \si{\nano\meter} &
+		(540 \pm 4.2) \si{\nano\meter} \\
+		$300 \, \text{Linien} / \si{\milli\meter}$ & 
+		(631 \pm 0,9) \si{\nano\meter} &
+		(526 \pm 0,7) \si{\nano\meter} \\
+		$600 \, \text{Linien} / \si{\milli\meter}$ & 
+		657 \si{\nano\meter} &
+		548 \si{\nano\meter} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
