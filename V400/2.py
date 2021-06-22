@@ -65,3 +65,20 @@ plt.legend()
 
 plt.savefig('build/2.pdf')
 
+# part 3: Strahlversatz
+d = 0.0585
+alpha = [30, 35, 40, 50, 55, 60, 70]
+alpha = np.array(alpha)
+alpha = alpha * 2 * np.pi / 360
+
+beta = [19, 24, 26, 31, 34, 36, 39.5]
+beta = np.array(beta)
+beta = beta * 2 * np.pi / 360
+
+sina = np.sin(alpha)
+sinb = np.sin(beta)
+
+s = d * np.divide(np.sin(np.subtract(alpha, beta)), sinb)
+s = np.round(s, 3)
+print(f'Strahlversatz s = {s}')
+
