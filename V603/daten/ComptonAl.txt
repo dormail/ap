@@ -1,5 +1,5 @@
 #Kristallwinkel	Rate bei 35kV
-#theta/°	R(35kV)/Imp/s
+#theta/deg	R(35kV)/Imp/s
 #
 7.0	113.5
 7.1	112.0
