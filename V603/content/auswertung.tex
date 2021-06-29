@@ -1,12 +1,135 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Emissionsspektrum einer Cu-Röntgenröhre}
+\label{sec:Emissionsspektrum einer Cu-Röntgenröhre}
+Als erstes wurde das Emissionsspektrum der Cu-Röntgenröhre aufgezeichnet, um es hier
+auswerten zu können. Als Messwerte wurden die vorgegebenen Messwerte verwendet. Diese sind
+in \autoref{fig:emiss} grafisch dargestellt.
 \begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+	\centering
+	\includegraphics{build/EmisionCu.pdf}
+	\caption{Emissionsspektrum der Cu-Röntgenröhre.}
+	\label{fig:emiss}
 \end{figure}
+Für die $K_i$-Kanten wurde die Scipy Funktion zur peak-Findung verwendet. Diese ergab die
+Winkel
+\begin{equation}
+	\theta_{K_\alpha} = (22,5 \pm 0,25)^\circ
+	\qquad
+	\theta_{K_\beta} = (20,2 \pm 0,25)^\circ.
+\end{equation}
+Da dies in erster Ordnung ist folgt die Wellenlänge des Lichts mit
+\begin{equation}
+	\lambda = 2 d \sin\theta.
+\end{equation}
+Die zugehörige Energie der Kanten folgen dann mit gausscher Fehlerfortplanzung aus dem
+Zusammenhang $E = hc / \lambda$. Für die oben ermittelten Winkel folgen die Energien
+\begin{equation}
+	E_{K_\alpha} = (8040 \pm 80) \si{eV}
+	\qquad
+	E_{K_\beta} = (8910 \pm 110) \si{eV}.
+\end{equation}
 
+\subsection{Transmission}
+\label{sec:Transmission}
+Auch in diesem Teil wurde mit vorgegebenen Messwerten gearbeitet. Diese sind in
+\autoref{tab:trans} angegeben.
+\begin{table}
+    \centering
+    \begin{tabular}{c c c}
+        \toprule
+        $\alpha$ [°] & $N_0$ [Imp/s] & $N_\text{Al}$ [Imp/s] \\
+        \midrule
+        7.0     &  226.0 & 113.5 \\
+        7.1     &  232.0 & 112.0 \\
+        7.2     &  240.5 & 112.0 \\
+        7.3     &  248.0 & 113.5 \\
+        7.4     &  255.0 & 115.0 \\
+        7.5     &  262.0 & 113.5 \\
+        7.6     &  269.0 & 113.0 \\
+        7.7     &  276.0 & 114.5 \\
+        7.8     &  281.0 & 114.0 \\
+        7.9     &  289.5 & 112.0 \\
+        8.0     &  295.0 & 109.5 \\
+        8.1     &  300.0 & 109.0 \\
+        8.2     &  308.5 & 108.0 \\
+        8.3     &  311.0 & 106.0 \\
+        8.4     &  317.0 & 104.5 \\
+        8.5     &  324.0 & 101.5 \\
+        8.6     &  328.5 & 100.0 \\
+        8.7     &  332.5 & 100.5  \\
+        8.8     &  337.0 & 97.5  \\
+        8.9     &  340.5 & 95.0  \\
+        9.0     &  348.0 & 92.5  \\
+        9.1     &  350.0 & 89.5  \\
+        9.2     &  353.0 & 88.0  \\
+        9.3     &  356.5 & 84.5 \\
+        9.4     &  359.0 & 83.0 \\
+        9.5     &  363.5 & 81.0 \\
+        9.6     &  367.0 & 78.5 \\
+        9.7     &  369.0 & 76.0 \\
+        9.8     &  370.5 & 74.0 \\
+        9.9     &  375.0 & 72.0 \\
+        10.0&  375.5 & 68.5 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Gegebene Messwerte zur Transmission.}
+    \label{tab:trans}
+\end{table}
+Zur Bereinigung der Daten muss die Totzeitkorrektur 
+\[
+	I_i = \frac{N_i}{1 - \tau N_i}
+\]
+für das Geiger-Müller-Zählrohr angewendet werden.
+Die Messdaten sind in \autoref{fig:trans} grafisch dargestellt.
+\begin{figure}
+	\centering
+	\includegraphics{build/transmission.pdf}
+	\caption{Emissionsspektrum der Cu-Röntgenröhre.}
+	\label{fig:trans}
+\end{figure}
+Für den nachfolgenden Teil wird eine Ausgleichgerade der Form 
+\[
+	T(x) = a\cdot x + b
+\]
+benötigt. Der Scipy curve\_fit ergab hier die Fitparameter
+\begin{equation}
+	a = (-1,518 \pm 0,024) \cdot 10^{10}
+	\qquad
+	b = (1,225 \pm 0,014).
+\end{equation}
 
-Siehe \autoref{fig:plot}!
+\newpage
+\subsection{Compton-Wellenlänge}
+\label{sec:Compton-Wellenlänge}
+Für die Bestimmung der Compton-Wellenlänge müssen drei weitere Werte gemessen werden. Hier
+wurden folgende Werte aufgezeichnet:
+\begin{align*}
+	&\text{ohne Al-Absorber} & & I_0 = 2731 \, \text{Impulse} \\
+	&\text{mit Al-Absorber zw. Röntgenröhre und Streuer} & & I_0 = 2731 \, \text{Impulse} \\
+	&\text{ohne Al-Absorber zw. Streuer und GM-Rohr} & & I_0 = 2731 \, \text{Impulse}
+\end{align*}
+Daraus lassen sich die Transmissionen
+\begin{equation}
+	T_1 = 0,432 \quad
+	T_2 = 0,375
+\end{equation}
+berechnen. Die Ausgleichsgerade aus dem vorherigen Abschnittlässt sich umformen zu
+\[ \alpha = \frac{T - b}{a}. \]
+Mit der Braggschen Bedingung folgt 
+\[
+	\lambda = 2d \sin\alpha.
+\]
+Mit den Fitparametern und den errechneten Transmissionen folgen die Wellenlängen
+\begin{equation}
+	\lambda_1 = (5,219 \pm 0,12) \cdot 10^{-11} \si{\meter}
+	\quad
+	\lambda_2 = (5,595 \pm 0,13) \cdot 10^{-11} \si{\meter}.
+\end{equation}
+Die Comptonwellenlänge ist dann die Differenz
+\[
+	\Delta \lambda = (3,76 \pm 0,06) \cdot 10^{-11} \si{\meter}.
+\]
+	
+\end{document}
