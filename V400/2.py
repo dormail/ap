@@ -3,24 +3,27 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from uncertainties import unumpy as unp
 
 alpha = [30, 35, 40, 50, 55, 60, 70]
-alpha = np.array(alpha)
+alpha = unp.uarray(alpha, np.ones_like(alpha))
 alpha = alpha * 2 * np.pi / 360
 
 beta = [19, 24, 26, 31, 34, 36, 39.5]
 beta = np.array(beta)
+beta = unp.uarray(beta, np.ones_like(beta))
 beta = beta * 2 * np.pi / 360
 
-sina = np.sin(alpha)
-sinb = np.sin(beta)
+sina = unp.sin(alpha)
+sinb = unp.sin(beta)
 
 relsin = sina / sinb
-print(relsin)
+print(f'relsin\n{relsin}\n')
 
-mean = np.mean(relsin)
-std = np.std(relsin)
-print(f'n = {mean} \pm {std}')
+mean = relsin.mean()
+print(f'n = {mean}')
+std = mean.s
+mean = mean.n
 
 # export fuer das protokoll
 conv = 360 / (2 * np.pi) # konstante fuer rad -> deg
@@ -40,19 +43,22 @@ data.to_csv('build/2.tex',
         float_format='%.3f')
 
 # plotting
-plt.scatter(alpha, relsin,
-        marker='+',
+plt.errorbar(unp.nominal_values(alpha), unp.nominal_values(relsin),
+        yerr=unp.std_devs(relsin),
+        xerr=unp.std_devs(alpha),
+        fmt='none',
         label=r'Messdaten')
 
-plt.axline((alpha.min(), mean), (alpha.max(), mean),
+alpha_nom = unp.nominal_values(alpha)
+plt.axline((alpha_nom.min(), mean), (alpha_nom.max(), mean),
         c='r',
         label='Mittelwert')
 
-plt.axline((alpha.min(), 1.49), (alpha.max(), 1.49),
+plt.axline((alpha_nom.min(), 1.49), (alpha_nom.max(), 1.49),
         c='g',
         label=r'Theoriewert $n=1,49$')
 
-xplot = np.linspace(alpha.min(), alpha.max())
+xplot = np.linspace(alpha_nom.min(), alpha_nom.max())
 plt.fill_between(xplot, mean - std, mean + std,
         color='r',
         linestyle=':',
