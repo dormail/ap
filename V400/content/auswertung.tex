@@ -277,20 +277,17 @@ $\varphi_i$ gemessen wurden.
 		\bottomrule
 	\end{tabular}
 \end{table}
-Für die Auswertung wurde zunächst aus zwei zugehörigen Winkeln $\varphi$ ($k_1 = k_2$ und gleiches Gitter,
-Laser) der Durchschnitt berechnet. Danach wurde mit der Formel 
+Für die Auswertung wurde zunächst mit der Formel
 \begin{equation}
 	\lambda = d \frac{\sin\varphi}{k}
 	\label{eqn:ausw:beugungsmaxima}
 \end{equation}
-mit den jeweiligen Werten für $d$ für jedes Winkelpaar die Wellenlänge bestimmt. Zuletzt
+mit den jeweiligen Werten für $d$ für jeden Winkel die Wellenlänge bestimmt. Zuletzt
 wurde von diesen Wellenlängen Mittelwert und Standartabweichung berechnet. Das ergab die
 Werte in \autoref{tab:ergebnisse5}.
 \begin{table}
 	\centering
-	\caption{Ergebnisse für die Wellenlängen der zwei Laser. Für 600 Linien/mm
-	ist nur ein Wertepaar in die Rechnung eingeflossen, weswegen dort keine sinnvolle
-	Berechnung der Standartabweichung möglich ist.}
+	\caption{Ergebnisse für die Wellenlängen der zwei Laser.}
 	\label{tab:ergebnisse5}
 	\sisetup{table-format=2.1}
 	\begin{tabular}{c c c}
@@ -300,15 +297,22 @@ Werte in \autoref{tab:ergebnisse5}.
 		$\lambda^\text{grün}$ \\
 		\midrule
 		$100 \, \text{Linien} / \si{\milli\meter}$ &
-		(648 \pm 9) \si{\nano\meter} &
-		(540 \pm 4.2) \si{\nano\meter} \\
+		(648 \pm 11,1) \si{\nano\meter} &
+		(540 \pm 11,2) \si{\nano\meter} \\
 		$300 \, \text{Linien} / \si{\milli\meter}$ & 
-		(631 \pm 0,9) \si{\nano\meter} &
-		(526 \pm 0,7) \si{\nano\meter} \\
+		(631 \pm 5,7) \si{\nano\meter} &
+		(526 \pm 9,8) \si{\nano\meter} \\
 		$600 \, \text{Linien} / \si{\milli\meter}$ & 
-		657 \si{\nano\meter} &
-		548 \si{\nano\meter} \\
+		(656 \pm 9,4) \si{\nano\meter} &
+		(548 \pm 9,6) \si{\nano\meter} \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+Zuletzt kann mit der Python Bibliothek uncertainties über die in \autoref{tab:ergebnisse5}
+angegeben Werte gemittelt werden. Mit dieser erhält man die Wellenlängen
+\begin{equation}
+	\lambda^\text{rot} = (645 \pm 5) \si{\nano\meter}
+	\qquad
+	\lambda^\text{grün} = (538 \pm 6) \si{\nano\meter}
+\end{equation}
 
