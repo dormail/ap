@@ -11,7 +11,7 @@ def nth_largest(x, n=1):
 
 # L_inf normalize
 def normalize(x):
-    return x / nth_largest(x, n=1)
+    return x / np.max(np.abs(x))
 
 # differentiate y with respect to x
 def differentiate(x, y):
