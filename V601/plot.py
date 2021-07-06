@@ -11,7 +11,8 @@ def create_plot(temp,
         ylabel='',
         ydif_scale=1,
         y_scale=1,
-        remove_max_dif=False):
+        remove_max_dif=False,
+        no_der=False):
     fn_input = 'Daten/' + str(temp) + '.csv'
     data = pd.read_csv(fn_input)
     x,y = data['x'], data['y']
@@ -31,9 +32,10 @@ def create_plot(temp,
     plt.scatter(x,y / y_scale,
             marker='+',
             label='Messdaten')
-    plt.scatter(x_dif, y_dif / ydif_scale,
-            marker='+',
-            label='Ableitung')
+    if not no_der:
+        plt.scatter(x_dif, y_dif / ydif_scale,
+                marker='+',
+                label='Ableitung')
 
     plt.legend()
 
@@ -50,11 +52,17 @@ def create_plot(temp,
     # export data as a latex table
     x_dif = np.append(x_dif, np.nan)
     y_dif = np.append(y_dif, np.nan)
-    d = {   'x': x,
-            'y': y,
-            #'xdif': x_dif,
-            'ydif': y_dif
-            }
+    if not no_der:
+        d = {   'x': x,
+                'y': y,
+                #'xdif': x_dif,
+                'ydif': y_dif
+                }
+    else:
+        d = {   'x': x,
+                'y': y,
+                }
+
 
     df = pd.DataFrame(d)
     output = 'build/' + str(temp) + '.tex'
@@ -72,6 +80,10 @@ create_plot('0025', xlabel=f'$U_A / $V', ylabel=f'$I_A$')
 create_plot(1480, xlabel=f'$U_A / $V', ylabel=f'$I_A$',
         remove_max_dif=False)
 create_plot(1680,
-        remove_max_dif=True)
-create_plot('1975', remove_max_dif=False)
+        remove_max_dif=True,
+        no_der=True,
+        xlabel=f'$U_B /$ V')
+create_plot('1975', remove_max_dif=False,
+        no_der=True,
+        xlabel=f'$U_B /$ V')
 
