@@ -1,21 +1,38 @@
+# plot.py
+
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+from functions import differentiate, normalize
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+def create_plot(fn_input,
+        xlabel='',
+        ylabel='',
+        output='output.pdf'):
+    data = pd.read_csv(fn_input)
+    x,y = data['x'], data['y']
+    
+    y = normalize(y)
+    x_dif, y_dif = differentiate(x, y)
+    y_dif = normalize(y_dif)
+    
+    plt.scatter(x,y,
+            marker='+',
+            label='Data')
+    plt.scatter(x_dif, y_dif,
+            marker='+',
+            label='Derivative')
+    plt.legend()
+    plt.xlabel=xlabel
+    plt.ylabel=ylabel
+    plt.savefig(output)
+    print('Plot saved in ' + output)
+    plt.clf()
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+data_dir = 'Daten/'
+create_plot(data_dir + '0025.csv', output='build/0025.pdf')
+create_plot(data_dir + '1480.csv', output='build/1480.pdf')
+create_plot(data_dir + '1680.csv', output='build/1680.pdf')
+create_plot(data_dir + '1975.csv', output='build/1975.pdf')
 
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
