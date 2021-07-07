@@ -1,8 +1,10 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
+build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex functions.py | build
 	TEXINPUTS=$$(pwd): python plot.py
+	rm -rf build/plot.pdf
+	touch build/plot.pdf # damit make nicht immer diese skript ausführt
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
