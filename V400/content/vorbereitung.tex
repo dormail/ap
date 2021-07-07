@@ -1,0 +1,38 @@
+% Vorbereitungsstuff
+\section{Vorbereitung}
+\label{sec:Vorbereitung}
+Als Vorbereitung sollten verschihedene Brechungsindize aus passender Literatur
+herausgesucht werden. Diese sind in \autoref{tab:brechungsindex} angegeben.
+\begin{table}
+	\centering
+	\caption{Brechungsindex verschiedener Materialien. \cite{cosmos-indirekt}}
+	\label{tab:brechungsindex}
+	\sisetup{table-format=2.1}
+	\begin{tabular}{c c}
+		\toprule
+		Material &
+		Brechungsindex $n$ \\
+		\midrule
+		Luft 		& 1,000292 \\
+		Wasser		& 1,33 \\
+		Kronglas	& 1,46 ... 1,65 \\
+		Plexiglas (PMMA)& 1,49 \\
+		Diamant		& 2,42 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Wegen der Unsicherheit für Kronglas wird mit $n(\text{Kronglas}) = 1,55$ gerechnet.
+\\
+Ferner sollte für die Liniendichten 600, 300, 100 Linien/mm die Gitterkonstante berechnet
+werden. Dies ist der Kehrwert der Dichte, damit folgen
+\begin{equation}
+	d\left(100 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
+	= \SI{10}{\micro\meter},
+	\qquad
+	d\left(300 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
+	= \SI{3,3}{\micro\meter},
+	\qquad
+	d\left(600 \, \frac{\text{Linien}}{\si{\milli\meter}} \right) 
+	= \SI{1,67}{\micro\meter}.
+\end{equation}
+
