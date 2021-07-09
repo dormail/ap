@@ -18,7 +18,18 @@ Winkel
 	\theta_{K_\alpha} = (22,5 \pm 0,25)^\circ
 	\qquad
 	\theta_{K_\beta} = (20,2 \pm 0,25)^\circ.
+	\label{eqn:K-ergebnisse}
 \end{equation}
+Die Breite der beiden Peaks wurde von Scipy mit
+\begin{equation}
+	W_\alpha = 4,75
+	\qquad
+	W_\alpha = 4,9
+\end{equation}
+angegeben. Da sich diese auf die Anzahl Messwerte bezieht, welche diskret sind, können die
+Breiten beide auf $W = 5$ aufgerundet werden. Die Abweichungen in
+\autoref{eqn:K-ergebnisse} folgen aus dieser Rundung.
+\\
 Da dies in erster Ordnung ist folgt die Wellenlänge des Lichts mit
 \begin{equation}
 	\lambda = 2 d \sin\theta.
@@ -86,7 +97,7 @@ Die Messdaten sind in \autoref{fig:trans} grafisch dargestellt.
 \begin{figure}
 	\centering
 	\includegraphics{build/transmission.pdf}
-	\caption{Emissionsspektrum der Cu-Röntgenröhre.}
+	\caption{Transsmissionskoeffizient in Abhängigkeit vom Kristallwinkel $\alpha$.}
 	\label{fig:trans}
 \end{figure}
 Für den nachfolgenden Teil wird eine Ausgleichgerade der Form 
@@ -99,6 +110,8 @@ benötigt. Der Scipy curve\_fit ergab hier die Fitparameter
 	\qquad
 	b = (1,225 \pm 0,014).
 \end{equation}
+Diese beziehen sich allerdings auf die Funktion $N(\lambda)$, also auf die obere x-Achsen
+Skala in \autoref{fig:trans}.
 
 \newpage
 \subsection{Compton-Wellenlänge}
