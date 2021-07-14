@@ -11,7 +11,7 @@ build/5a.pdf: a.py daten/zeitabhaengigkeit.csv
 	TEXINPUTS=$$(pwd): python a.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/frequenz.pdf
+#build/main.pdf: build/frequenz.pdf
 build/main.pdf: build/5a.pdf build/c.pdf
 
 build/main.pdf: FORCE | build
